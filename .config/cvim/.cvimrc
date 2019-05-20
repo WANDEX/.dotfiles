@@ -1,0 +1,216 @@
+" unmap all mappings
+unmapAll
+iunmapAll
+
+" Settings
+set nohud
+set noautofocus
+set typelinkhints
+let searchlimit = 30
+set nosmoothscroll
+let scrollduration = 500
+let scrollstep = 30
+let barposition = "bottom"
+set ignorecase
+set smartcase
+set incsearch
+set changelog
+set scalehints
+let defaultengine = "google"
+let activehighlight = '#2B2B2B'
+let highlight = '#252525'
+
+let mapleader = "<,>"
+
+" Miscellaneous
+map . repeatCommand
+map : openCommandBar
+map / openSearchBar
+map ? openSearchBarReverse
+map r reloadTab
+map k insertMode
+map v toggleVisualMode
+map V toggleVisualLineMode
+" Miscellaneous
+
+" Movement
+map n scrollDown
+map e scrollUp
+
+
+map H scrollLeft
+map I scrollRight
+
+map gg scrollToTop
+map G scrollToBottom
+
+map 0 scrollToLeft
+map $ scrollToRight
+"?
+map # resetScrollFocus
+
+map gi goToInput
+map gI goToLastInput
+
+map N scrollFullPageDown
+map E scrollFullPageUp
+
+" Movement
+
+" Link Hints
+map f createHint
+map F createTabbedHint
+
+map W createHintWindow
+map A openLastHint
+
+map q createHoverHint
+map Q createUnhoverHint
+
+map mf createMultiHint
+map mr multiReverseImage
+map my multiYankUrl
+
+map gy yankUrl
+map gr reverseImage
+" ; change the link hint focus???
+" Link Hints
+
+" Miscellaneous
+map gR reloadTabUncached
+map a :tabnew google
+"map I :history
+
+map " lastScrollPosition
+map <C-o> previousScrollPosition
+map <C-i> nextScrollPosition
+
+map zi zoomPageIn
+map zo zoomPageOut
+map z0 zoomOrig
+map z<Enter> toggleImageZoom
+
+
+"map gd :chrome://downloads<CR>
+"map ge :chrome://extensions<CR>
+
+map yy yankDocumentUrl
+map yY yankRootUrl
+map ya yankWindowUrls
+map yh yankHighlight
+
+map b :bookmarks
+
+map p openPaste
+map P openPasteTab
+
+map gj hideDownloadsShelf
+map gf nextFrame
+map gF rootFrame
+map gq cancelWebRequest
+map gQ cancelAllWebRequests
+map gu goUpUrl
+map gU goToRootUrl
+map gs :viewsource!
+
+map <C-b> createBookmark
+
+" Tab Navigation
+map h previousTab
+map i nextTab
+
+map g0 firstTab
+map g$ lastTab
+
+map gh openLastLinkInTab
+map gl openNextLinkInTab
+
+map x closeTab
+map X lastClosedTab
+map gxT closeTabLeft
+map gxt closeTabRight
+map gx0 closeTabsToLeft
+map gx$ closeTabsToRight
+
+map t :tabnew
+map T :tabnew @%
+map O :open @%
+
+map S goBack
+map D goForward
+
+map B :buffer
+
+map < moveTabLeft
+map > moveTabRight
+
+map ]] nextMatchPattern
+map [[ previousMatchPattern
+
+map gp pinTab
+
+map <C-6> lastUsedTab
+" Tab Navigation
+
+" Find Mode
+map zz centerMatchH
+map jn nextSearchResult
+map jp previousSearchResult
+map jj :execute jn zz<CR>
+map je :execute jp zz<CR>
+
+map L clearSearchHighlight
+" Find Mode
+
+" Visual/Caret Mode
+setColemakVisualMappings -> {{
+Visual.movements = {
+  i: ['right', 'character'],
+  h: ['left', 'character'],
+  e: ['left', 'line'],
+  n: ['right', 'line'],
+  w: ['right', 'word'],
+  b: ['left', 'word'],
+  0: ['left', 'lineboundary'],
+  $: ['right', 'lineboundary'],
+  G: ['right', 'documentboundary']
+};
+}}
+call setColemakVisualMappings
+" Visual/Caret Mode
+
+" Text Boxes
+imap <C-i> beginningOfLine
+imap <C-e> endOfLine
+imap <C-u> deleteToBeginning
+imap <C-o> deleteToEnd
+"?
+imap <C-y> deleteWord
+imap <C-p> deleteForwardWord
+
+imap <C-h> backwardWord
+imap <C-l> forwardWord
+imap <C-f> forwardChar
+imap <C-b> backwardChar
+imap <C-j> forwardLine
+imap <C-k> backwardLine
+" Text Boxes
+
+" Toggle the current HUD display value
+map <C-h> :set hud!<CR>
+
+" Switch between alphabetical hint characters and numeric hints
+"map gh :set numerichints!<CR>
+
+
+
+
+"test
+" following should be at the end of a file
+let homedirectory = '/home/wndx'
+let configpath = '~/.config/cvim/.cvimrc'
+set localconfig
+" Update settings via a local file (and the `:source` command) rather
+" than the default options page in chrome
+" As long as localconfig is set in the .cvimrc file. cVim will continue to read
+" settings from there

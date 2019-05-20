@@ -1,0 +1,9 @@
+set tui.theme default.theme
+
+unbind --context tabs n
+bind --context tabs N tab
+bind n <down>
+bind e <up>
+bind h <left>
+bind i <right>
+
