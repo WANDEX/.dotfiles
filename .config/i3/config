@@ -1,0 +1,350 @@
+# i3 config file generated from (v4)
+
+#font -gbdfed-creep-Regular-R-Normal--16-120-96-96-M-4-ISO10646-1
+font pango:NotoMono Nerd Font 8, Icons 8
+
+# *** BASIC DEFINITIONS ***
+#
+# need for i3-gaps
+for_window [class="^.*"] border pixel 2
+gaps inner 10
+gaps outer 0
+set $term --no-startup-id $TERMINAL
+set $mod Mod4
+set $shutdown sudo -A shutdown -h now
+set $reboot sudo -A reboot
+set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
+
+# hardcoded because this does not work #set $output0 $OUT0/set $output1 $OUT1
+# left monitor
+set $output0 "HDMI-1-4"
+# right monitor
+set $output1 "HDMI2"
+#
+# *** END ***
+
+
+# *** Starting External Scripts ***
+#
+# chmod 755 "filepath" for right permissions? or chmod +x "filepath"?
+
+# run monitors configuration script on startup
+exec --no-startup-id sleep 2 && arun_xrandr.sh
+
+exec_always --no-startup-id xinput disable 'Video Bus'
+
+# set keyboard layout
+exec --no-startup-id setxkbmap -model pc104 -layout us,ru -variant colemak,  -option grp:caps_toggle,grp_led:scroll
+
+# disable display power manager signaling and monitor standby
+exec_always --no-startup-id xset -dpms && xset s off
+
+# keyboard delay and rate for X. for tty there is "kbdrate -r -d"
+exec_always --no-startup-id xset r rate 200 50
+
+# unclutter makes the mouse invisible after a brief period
+exec --no-startup-id unclutter
+
+# mpd & mpdscribble
+exec --no-startup-id mpd ~/.config/mpd/mpd.conf && \
+                     mpdscribble --conf ~/.config/mpdscribble/mpdscribble.conf
+
+# set background wallpaper
+exec --no-startup-id sleep 5 && setbg.sh
+
+# load/reload resource file every i3 restart
+exec_always --no-startup-id xrdb ~/.Xresources
+
+# set wal color scheme
+#exec_always --no-startup-id "wal -R"
+
+# run compton for transparancy support
+exec --no-startup-id compton --config ~/.config/compton/compton.conf
+
+exec --no-startup-id conky -d
+#
+# *** END ***
+
+
+# *** Startup Windows/Workspaces Configuration ***
+#
+# define names for workspaces
+set $ws1 "1:  "
+set $ws2 "2:  "
+set $ws3 "3:  "
+set $ws4 "4"
+set $ws5 "5:  "
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9:  "
+set $ws0 "10:  "
+
+# workspace outputs difinition
+workspace $ws1 output $output0
+workspace $ws2 output $output1
+workspace $ws9 output $output1
+workspace $ws0 output $output1
+
+workspace $ws2 gaps inner 0
+workspace $ws2 gaps outer 0
+
+workspace $ws5 gaps inner 0
+workspace $ws5 gaps outer 0
+
+# assign classes could be get with "xprop" after click on particular window
+# i.e.
+# assign [class="Google-chrome"] $ws2
+# exec --no-startup-id i3-msg 'workspace $ws2; exec google-chrome-stable; workspace $ws1'
+
+# exec chrome on workspace 2
+#exec --no-startup-id arun_chrome.sh
+
+# exec telegram on workspace 9
+#exec --no-startup-id arun_telegram.sh
+
+# exec ncmpcpp (music player) on workspace 10
+#exec --no-startup-id arun_ncmpcpp.sh
+
+#
+# *** END ***
+
+# *** COLORS ***
+#
+# set Xresources colors:
+set_from_resource $darkblack    color0  #000000
+set_from_resource $darkred      color1  #000000
+set_from_resource $darkgreen    color2  #000000
+set_from_resource $darkyellow   color3  #000000
+set_from_resource $darkblue     color4  #000000
+set_from_resource $darkmagenta  color5  #000000
+set_from_resource $darkcyan     color6  #000000
+set_from_resource $darkwhite    color7  #000000
+set_from_resource $black        color8  #000000
+set_from_resource $red          color9  #000000
+set_from_resource $green        color10 #000000
+set_from_resource $yellow       color11 #000000
+set_from_resource $blue         color12 #000000
+set_from_resource $magenta      color13 #000000
+set_from_resource $cyan         color14 #000000
+set_from_resource $white        color15 #000000
+set $transparent                        #00000000
+set $transparent_30                     #0000004D
+set $transparent_50                     #00000080
+set $transparent_70                     #000000B3
+
+#                       BORDER          BACKGROUND  TEXT        INDICATOR       CHILD_BORDER
+client.focused          $red            $red        $magenta    $darkmagenta    $darkblue
+client.unfocused        $transparent    $blue       $white      $darkblue       $darkblack
+client.focused_inactive $transparent    $blue       $white      $darkblue       $darkblack
+client.urgent           $darkred        $darkred    $black      $darkred        $darkred
+client.background       $black
+
+#
+# *** END ***
+
+
+bar {
+    # for transparancy support
+    #i3bar_command i3bar -t
+    height 18
+    colors {
+        #background          $transparent_70
+        background          $darkblack
+        statusline          $darkwhite
+        separator           $black
+        focused_workspace   $blue        $darkred    $white
+        active_workspace    $blue        $darkblue   $white
+        inactive_workspace  $darkblack   $darkblack  $white
+        urgent_workspace    $darkblack   $darkblack  $white
+    }
+    #status_command i3status
+    status_command py3status -c ~/.config/i3status/i3status.conf
+    position top
+    #tray_output primary
+}
+
+mode "resize" {
+    # These bindings trigger as soon as you enter the resize mode
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym n resize grow height 10 px or 10 ppt
+    bindsym e resize shrink height 10 px or 10 ppt
+    bindsym i resize grow width 10 px or 10 ppt
+
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+r mode "resize"
+
+
+# *** Custom Keyboard Shortcuts ***
+#
+# monitor configuration script hotkey
+bindsym $mod+Shift+m exec --no-startup-id arun_xrandr.sh
+
+# launch browser
+bindsym $mod+g exec --no-startup-id $BROWSER
+bindsym $mod+Shift+g exec --no-startup-id $BROWSER -incognito
+
+# toggle monitor mute on/off
+bindsym $mod+m exec --no-startup-id \
+pactl set-sink-mute alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1 toggle
+
+# move workspaces between monitors/outputs
+bindsym $mod+Control+1 move workspace to output $output0
+bindsym $mod+Control+2 move workspace to output $output1
+
+# exec ranger
+bindsym $mod+Shift+Return exec --no-startup-id $term -e ranger
+
+bindsym $mod+Shift+k exec --no-startup-id \
+$term -e ncmpcpp --config ~/.config/ncmpcpp/config
+
+# For screenshots: selection, window, window with imagemagick processing
+bindsym Print       exec --no-startup-id maim -u -s \
+| xclip -selection clipboard -t image/png
+
+bindsym Shift+Print exec --no-startup-id maim -i $(xdotool getactivewindow) -u\
+| xclip -selection clipboard -t image/png
+
+bindsym $mod+Print  exec --no-startup-id maim -i $(xdotool getactivewindow) -u\
+| convert - \( +clone -background black -shadow 100x3+0+0 \) \
++swap -background none -layers merge \
++repage ~/Downloads/Pictures/shadow.png && \
+xclip -selection clipboard -t image/png -i ~/Downloads/Pictures/shadow.png \
+
+#
+# *** END ***
+
+
+# *** MULTIMEDIA KEYS BINDINGS ***
+#
+
+# F1
+#XF86Explorer
+# F2
+#XF86Search
+# F3
+#XF86Calculator
+# F4
+#XF86Tools
+# F5
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
+# F6
+bindsym XF86AudioNext exec --no-startup-id mpc next
+# F7
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle
+# F8
+bindsym XF86AudioStop exec --no-startup-id mpc stop
+# F9
+#bindsym XF86AudioMute exec --no-startup-id mpc
+bindsym $mod+F9 exec --no-startup-id pactl set-sink-mute 0 toggle
+# F10
+bindsym XF86AudioLowerVolume exec --no-startup-id mpc volume -5
+bindsym $mod+F10 exec --no-startup-id pactl set-sink-volume 0 -5%
+# F11
+bindsym XF86AudioRaiseVolume exec --no-startup-id mpc volume +5
+bindsym $mod+F11 exec --no-startup-id pactl set-sink-volume 0 +5%
+# F12
+bindsym $mod+F12 exec --no-startup-id toggle_mono.sh
+#
+# *** END ***
+
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec --no-startup-id dmenu_run
+
+# change focus
+bindsym $mod+h           focus left
+bindsym $mod+n           focus down
+bindsym $mod+e           focus up
+bindsym $mod+i           focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left        focus left
+bindsym $mod+Down        focus down
+bindsym $mod+Up          focus up
+bindsym $mod+Right       focus right
+
+# move focused window
+bindsym $mod+Shift+h     move left
+bindsym $mod+Shift+n     move down
+bindsym $mod+Shift+e     move up
+bindsym $mod+Shift+i     move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+v split toggle
+
+# enter fullscreen mode for the focused container
+bindsym $mod+t fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+f layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+#bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws0
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws0
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+p restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+f exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+

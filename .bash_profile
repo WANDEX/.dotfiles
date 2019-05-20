@@ -1,0 +1,1 @@
+/home/wndx/.profile
