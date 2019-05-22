@@ -1,6 +1,9 @@
 #!/bin/sh
 alias \
     neo='nvim ' \
+    neoc='nvim +PlugClean +qall' \
+    neou='nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall' \
+    neous='nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall > /dev/null' \
     grep='grep --color=auto' \
     ls='ls -hN --color=auto --group-directories-first' \
     la='ls -Fa --color=auto' \
