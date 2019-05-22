@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
 export HISTSIZE=404
 
 powerline-daemon -q
