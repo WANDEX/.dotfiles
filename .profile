@@ -32,6 +32,11 @@ export LESS_TERMCAP_se="$(printf '%b' '\E[0m')";        a="${a%_}"
 export LESS_TERMCAP_us="$(printf '%b' '\E[1;32m')";     a="${a%_}"
 export LESS_TERMCAP_ue="$(printf '%b' '\E[0m')";        a="${a%_}"
 
+export PAGER="page -q 90000"
+#export MANPAGER="nvim -u NORC -c 'set ft=man' - "
+export MANPAGER="nvim -c 'set ft=man' -"
+#export MANPAGER="page -C -e 'au User PageDisconnect sleep 100m|%y p|enew! |bd! #|pu p|set ft=man'"
+
 echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && source "$HOME/.bashrc"
 
 #start graphical serer if i3 not already running.
