@@ -1,1 +1,1 @@
-/home/wndx/.profile
+.profile
