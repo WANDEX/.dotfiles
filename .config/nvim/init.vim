@@ -14,6 +14,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
+Plug 'tpope/vim-fugitive'
+
 "Plug 'ap/vim-css-color'
 Plug 'lilydjwg/colorizer'
 Plug 'KabbAmine/vCoolor.vim'
@@ -107,9 +109,7 @@ let maplocalleader="\\"
 
 
 " Enable file type detection.
-filetype plugin on
-" Enable language-dependent indenting.
-filetype plugin indent on
+"filetype plugin on
 
 if has('conceal')
     set conceallevel=2 concealcursor=niv
@@ -117,9 +117,9 @@ endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-    syntax on
-endif
+"if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+    "syntax on
+"endif
 
 "*****************************************************************************
 "" Core Mappings For Colemak
@@ -306,13 +306,6 @@ if has('autocmd')
         au FileType help nested call ILikeHelpToTheRight()
     aug END
 
-    " toggle relative and normal line numbering between splits
-    aug numbertoggle
-        au!
-        au BufEnter,FocusGained,InsertLeave * set relativenumber
-        au BufLeave,FocusLost,InsertEnter   * set norelativenumber
-    aug END
-
     aug i3config_ft_detection
         au!
         au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
@@ -345,14 +338,14 @@ if has('autocmd')
                 \ b:NERDTree.isTabTree()) | q | endif
 
     " color characters > 80 or draw line at 80 characters :TODO fix condition
-    if exists('+colorcolumn')
-        " characters to the end of a line
-        "au BufEnter * let w:m2=matchadd('ErrorMsg', '\%80v.\+', -1)
-        " single character
-        au BufEnter * let w:m2=matchadd('ErrorMsg', '\%81v\+', -1)
-    else
-        set colorcolumn=80,120
-    endif
+    "if exists('+colorcolumn')
+        "" characters to the end of a line
+        ""au BufEnter * let w:m2=matchadd('ErrorMsg', '\%80v.\+', -1)
+        "" single character
+        "au BufEnter * let w:m2=matchadd('ErrorMsg', '\%81v\+', -1)
+    "else
+        "set colorcolumn=80,120
+    "endif
 
     " highlight tabs that not at the beginning and trailing whitespace.
     hi ExtraWhitespace ctermbg=Gray guibg=Gray
