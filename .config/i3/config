@@ -31,6 +31,9 @@ set $output1 "HDMI2"
 # run monitors configuration script on startup
 exec --no-startup-id sleep 2 && arun_xrandr.sh
 
+# autorun script that executes startup programs
+exec --no-startup-id arun.sh
+
 exec_always --no-startup-id xinput disable 'Video Bus'
 
 # set keyboard layout
@@ -91,20 +94,6 @@ workspace $ws2 gaps outer 0
 
 workspace $ws5 gaps inner 0
 workspace $ws5 gaps outer 0
-
-# assign classes could be get with "xprop" after click on particular window
-# i.e.
-# assign [class="Google-chrome"] $ws2
-# exec --no-startup-id i3-msg 'workspace $ws2; exec google-chrome-stable; workspace $ws1'
-
-# exec chrome on workspace 2
-#exec --no-startup-id arun_chrome.sh
-
-# exec telegram on workspace 9
-#exec --no-startup-id arun_telegram.sh
-
-# exec ncmpcpp (music player) on workspace 10
-#exec --no-startup-id arun_ncmpcpp.sh
 
 #
 # *** END ***
