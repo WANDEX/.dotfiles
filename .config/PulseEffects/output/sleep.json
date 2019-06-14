@@ -749,7 +749,7 @@
         "limiter": {
             "state": "true",
             "input-gain": "0",
-            "limit": "-12",
+            "limit": "-18",
             "lookahead": "0.10000000000000001",
             "release": "1000",
             "asc": "false",
@@ -1005,8 +1005,8 @@
         "autogain": {
             "state": "true",
             "input-gain": "0",
-            "output-gain": "0",
-            "target": "-42",
+            "output-gain": "12",
+            "target": "-50",
             "weight-m": "1",
             "weight-s": "1",
             "weight-i": "1"
