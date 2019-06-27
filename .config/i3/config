@@ -17,9 +17,9 @@ set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
 
 # hardcoded because this does not work #set $output0 $OUT0/set $output1 $OUT1
 # left monitor
-set $output0 "HDMI-1-4"
+set $output0 "HDMI-0"
 # right monitor
-set $output1 "HDMI2"
+set $output1 "DVI-D-0"
 #
 # *** END ***
 
@@ -29,7 +29,11 @@ set $output1 "HDMI2"
 # chmod 755 "filepath" for right permissions? or chmod +x "filepath"?
 
 # run monitors configuration script on startup
-exec --no-startup-id sleep 2 && arun_xrandr.sh
+## fo nouveau drivers
+#exec --no-startup-id sleep 2 && arun_xrandr.sh
+## for nvidia drivers it is placed in .xinitrc
+#exec --no-startup-id nvidia-settings --load-config-only
+exec --no-startup-id sleep 2 && arun_nvidia.sh
 
 # autorun script that executes startup programs
 exec --no-startup-id arun.sh
