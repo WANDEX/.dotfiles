@@ -11,7 +11,7 @@ Xft.rgba: rgb
 Xft.lcdfilter: lcdlight
 ! Resolution for Xft, in 1024×dots/inch. -1 to use default value.
 ! xdpyinfo | grep -B2 resolution
-!Xft.dpi: 96
+Xft.dpi: 96
 
 Gtk.CanChangeAccels: true
 
