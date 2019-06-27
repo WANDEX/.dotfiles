@@ -749,7 +749,7 @@
         "limiter": {
             "state": "true",
             "input-gain": "0",
-            "limit": "-18",
+            "limit": "-20",
             "lookahead": "0.10000000000000001",
             "release": "1000",
             "asc": "false",
