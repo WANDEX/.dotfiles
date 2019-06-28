@@ -15,6 +15,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
 Plug 'tpope/vim-fugitive'
+Plug 'jreybert/vimagit'
+Plug 'airblade/vim-gitgutter'
 
 "Plug 'ap/vim-css-color'
 Plug 'lilydjwg/colorizer'
