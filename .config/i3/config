@@ -29,10 +29,9 @@ set $output1 "DVI-D-0"
 # chmod 755 "filepath" for right permissions? or chmod +x "filepath"?
 
 # run monitors configuration script on startup
-## fo nouveau drivers
+## for nouveau drivers
 #exec --no-startup-id sleep 2 && arun_xrandr.sh
-## for nvidia drivers it is placed in .xinitrc
-#exec --no-startup-id nvidia-settings --load-config-only
+## for nvidia drivers
 exec --no-startup-id sleep 2 && arun_nvidia.sh
 
 # autorun script that executes startup programs
