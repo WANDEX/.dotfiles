@@ -1006,7 +1006,7 @@
             "state": "true",
             "input-gain": "0",
             "output-gain": "20",
-            "target": "-50",
+            "target": "-54",
             "weight-m": "1",
             "weight-s": "1",
             "weight-i": "1"
