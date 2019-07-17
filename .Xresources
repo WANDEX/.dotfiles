@@ -19,25 +19,43 @@ st.font: Mononoki Nerd Font Mono:size=12
 !!*.font: Inconsolata:pixelsize=16:antialias=true:autohint=true;
 !!*.font: -gbdfed-creep-Regular-R-Normal--16-120-96-96-M-4-ISO10646-1;
 
-!! The default colors are changed "Gruvbox":
-*.color0: #1d2021
-*.color1: #AA3131
-*.color2: #98971a
-*.color3: #d79921
-*.color4: #458588
-*.color5: #b16286
-*.color6: #689d6a
-*.color7: #a89984
-*.color8: #928374
-*.color9: #fb4934
-*.color10: #b8bb26
-*.color11: #fabd2f
-*.color12: #83a598
-*.color13: #d3869b
-*.color14: #8ec07c
-*.color15: #ebdbb2
+!! Colors are changed "Monokai":
+*.color0:  #1A1A1A
+*.color1:  #FF6188
+*.color2:  #A9DC76
+*.color3:  #FFD866
+*.color4:  #FC9867
+*.color5:  #AB9DF2
+*.color6:  #78DCE8
+*.color7:  #A89984
+*.color8:  #727072
+*.color9:  #C4265E
+*.color10: #A6E22E
+*.color11: #E2E22E
+*.color12: #F4BF75
+*.color13: #AE81FF
+*.color14: #56ADBC
+*.color15: #EBDBB2
+
+!! Colors are changed "Gruvbox":
+!*.color0:  #1d2021
+!*.color1:  #AA3131
+!*.color2:  #98971a
+!*.color3:  #d79921
+!*.color4:  #458588
+!*.color5:  #b16286
+!*.color6:  #689d6a
+!*.color7:  #a89984
+!*.color8:  #928374
+!*.color9:  #fb4934
+!*.color10: #b8bb26
+!*.color11: #fabd2f
+!*.color12: #83a598
+!*.color13: #d3869b
+!*.color14: #8ec07c
+!*.color15: #ebdbb2
 
 !! Transparency (0-255):
 !!*.alpha: 230
-st.alpha: 230
+st.alpha: 220
 
