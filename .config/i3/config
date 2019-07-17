@@ -126,10 +126,10 @@ set $transparent_50                     #00000080
 set $transparent_70                     #000000B3
 
 #                       BORDER          BACKGROUND  TEXT        INDICATOR       CHILD_BORDER
-client.focused          $red            $red        $magenta    $darkmagenta    $darkblue
-client.unfocused        $transparent    $blue       $white      $darkblue       $darkblack
-client.focused_inactive $transparent    $blue       $white      $darkblue       $darkblack
-client.urgent           $darkred        $darkred    $black      $darkred        $darkred
+client.focused          $red            $red        $magenta    $darkmagenta    $cyan
+client.unfocused        $transparent    $blue       $white      $cyan           $darkblack
+client.focused_inactive $transparent    $blue       $white      $cyan           $darkblack
+client.urgent           $green          $green      $black      $green          $green
 client.background       $black
 
 #
@@ -141,14 +141,14 @@ bar {
     #i3bar_command i3bar -t
     height 18
     colors {
-        #background          $transparent_70
+        #background          $transparent
         background          $darkblack
         statusline          $darkwhite
         separator           $black
-        focused_workspace   $blue        $darkred    $white
-        active_workspace    $blue        $darkblue   $white
-        inactive_workspace  $darkblack   $darkblack  $white
-        urgent_workspace    $darkblack   $darkblack  $white
+        focused_workspace   $darkcyan   $red        $white
+        active_workspace    $darkcyan   $cyan       $white
+        inactive_workspace  $darkblack  $darkblack  $white
+        urgent_workspace    $darkblack  $darkblack  $white
     }
     #status_command i3status
     status_command py3status -c ~/.config/i3status/i3status.conf
