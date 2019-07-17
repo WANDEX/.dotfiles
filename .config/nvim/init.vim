@@ -467,7 +467,7 @@ let g:ale_fixers = {
 let g:ale_maximum_file_size = 1024 * 1024
 let g:ale_lint_on_text_changed = 'never' " run linters on a fly normal/never
 let g:ale_lint_on_save = 1
-let g:ale_fix_on_save = 1
+"let g:ale_fix_on_save = 1
 
 let g:lt_height = 10
 let g:lt_location_list_toggle_map = '<leader>l'
