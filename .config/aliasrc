@@ -16,11 +16,12 @@ alias \
     sbh='$EDITOR ~/.bash_history' \
     sxrc='$EDITOR ~/.xinitrc' \
     sxres='$EDITOR ~/.Xresources' \
-    sxlog='$EDITOR ~/.local/share/xorg/Xorg.0.log' \
-    sxrlog='$EDITOR /var/log/Xorg.0.log' \
+    sxlog='$PAGER ~/.local/share/xorg/Xorg.0.log' \
+    sxrlog='$PAGER /var/log/Xorg.0.log' \
     si3c='$EDITOR ~/.config/i3/config' \
     si3s='$EDITOR ~/.config/i3status/i3status.conf' \
     svc='$EDITOR ~/.config/nvim/init.vim' \
     scv='$EDITOR ~/.config/cvim/.cvimrc' \
+    sali='$EDITOR ~/.config/aliasrc' \
     sudo='sudo ' \
     pp='sudo pacman -S'
