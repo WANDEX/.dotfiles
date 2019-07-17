@@ -4,6 +4,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
+Plug 'patstockwell/vim-monokai-tasty'
 Plug 'brooth/far.vim'
 Plug 'mboughaba/i3config.vim'
 Plug 'scrooloose/nerdtree'
@@ -24,6 +25,7 @@ Plug 'KabbAmine/vCoolor.vim'
 
 Plug 'w0rp/ale'
 Plug 'Valloric/ListToggle'
+Plug 'metakirby5/codi.vim'
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
@@ -100,7 +102,7 @@ set timeoutlen=2000
 "*****************************************************************************
 "" Advanced
 "*****************************************************************************
-colorscheme gruvbox
+colorscheme vim-monokai-tasty
 set t_Co=256
 set termguicolors
 hi Normal guibg=NONE ctermbg=NONE
