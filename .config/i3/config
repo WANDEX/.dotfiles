@@ -138,11 +138,11 @@ client.background       $black
 
 bar {
     # for transparancy support
-    #i3bar_command i3bar -t
+    i3bar_command i3bar -t
     height 18
     colors {
-        #background          $transparent
-        background          $darkblack
+        background          $transparent
+        #background          $darkblack
         statusline          $darkwhite
         separator           $black
         focused_workspace   $darkcyan   $red        $white
