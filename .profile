@@ -5,20 +5,13 @@
 # add to $PATH .scripts and subdirs
 export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export PATH="${PATH}:$HOME/.local/bin"
-export EDITOR="nvim"
 export TERMINAL="st"
+export EDITOR="nvim"
 export BROWSER="google-chrome-stable"
-
 export PAGER="page -q 90000"
 export MANPAGER="nvim -c 'set ft=man' -"
 #export MANPAGER="nvim -u NORC -c 'set ft=man' - "
 #export MANPAGER="page -C -e 'au User PageDisconnect sleep 100m|%y p|enew! |bd! #|pu p|set ft=man'"
-
-#export QT_AUTO_SCREEN_SCALE_FACTOR=1
-#export QT_SCREEN_SCALE_FACTORS=2
-#export QT_SCALE_FACTOR=2
-#export GDK_SCALE=1
-#export GDK_DPI_SCALE=1
 
 # export workspace names into env variables
 source "$HOME/.scripts/sh/get_workspace_names.sh"
@@ -35,5 +28,5 @@ export LESS_TERMCAP_ue="$(printf '%b' '\E[0m')";        a="${a%_}"
 
 echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && source "$HOME/.bashrc"
 
-#start graphical serer if i3 not already running.
+# start graphical serer if i3 not already running.
 [[ "$(tty)" = "/dev/tty1" ]] && ! pgrep -x i3 >/dev/null && exec startx
