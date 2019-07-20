@@ -213,6 +213,7 @@ bindsym $mod+Print  exec --no-startup-id maim -i $(xdotool getactivewindow) -u\
 +repage ~/Downloads/Pictures/shadow.png && \
 xclip -selection clipboard -t image/png -i ~/Downloads/Pictures/shadow.png \
 
+bindsym $mod+Shift+Print exec --no-startup-id com.github.ronnydo.colorpicker
 #
 # *** END ***
 
