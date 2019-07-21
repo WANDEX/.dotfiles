@@ -16,11 +16,12 @@ set smartcase
 set incsearch
 set changelog
 set scalehints
-let defaultengine = "google"
 let activehighlight = '#2B2B2B'
 let highlight = '#252525'
+let defaultengine = "google"
+let searchalias g = "google"
 
-let mapleader = "<,>"
+let mapleader = ","
 
 " Miscellaneous
 map . repeatCommand
@@ -90,9 +91,6 @@ map zo zoomPageOut
 map z0 zoomOrig
 map z<Enter> toggleImageZoom
 
-
-"map gd :chrome://downloads<CR>
-"map ge :chrome://extensions<CR>
 
 map yy yankDocumentUrl
 map yY yankRootUrl
@@ -203,9 +201,17 @@ map <C-h> :set hud!<CR>
 "map gh :set numerichints!<CR>
 
 
+"map gd :chrome://downloads<CR>
+"map ge :chrome://extensions<CR>
+map <Leader>b :buffer<Space>
+map <Leader>h :history<Space>
+map <Leader>th :tabhistory<Space>
+
+map <Leader>gh :tabnew https://github.com/WANDEX<CR>
+map <Leader>tw :tabnew https://www.twitch.tv/directory/following/live<CR>
+map <Leader>yt :tabnew https://www.youtube.com/feed/subscriptions<CR>
 
 
-"test
 " following should be at the end of a file
 let homedirectory = '/home/wndx'
 let configpath = '~/.config/cvim/.cvimrc'
