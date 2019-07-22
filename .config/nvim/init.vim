@@ -164,9 +164,9 @@ map <C-E> <C-W>k
 map <C-H> <C-W>h
 map <C-I> <C-W>l
 
-nnoremap n j|xnoremap n j|onoremap n j
-nnoremap e k|xnoremap e k|onoremap e k
-nnoremap i l|xnoremap i l|onoremap i l
+nnoremap n j|xnoremap n j|onoremap n j|vnoremap n j
+nnoremap e k|xnoremap e k|onoremap e k|vnoremap e k
+nnoremap i l|xnoremap i l|onoremap i l|vnoremap i l
 
 " popupmenu-keys
 inoremap <C-l> <Down>
