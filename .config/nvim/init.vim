@@ -314,6 +314,17 @@ if has('autocmd')
         au FileType help nested call ILikeHelpToTheRight()
     aug END
 
+    "function! MyOnBattery()
+        "return readfile('/sys/class/power_supply/AC/online') == ['0']
+    "endfunction
+    "if MyOnBattery()
+        "call neomake#configure#automake('w')
+    "else
+        ""call neomake#configure#automake('nw', 1000)
+    "endif
+
+    call neomake#configure#automake('nrwi', 500)
+
     aug i3config_ft_detection
         au!
         au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
