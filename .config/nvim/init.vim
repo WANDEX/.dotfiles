@@ -24,7 +24,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'lilydjwg/colorizer'
 Plug 'KabbAmine/vCoolor.vim'
 
-"Plug 'w0rp/ale'
 Plug 'davidhalter/jedi-vim'
 Plug 'sbdchd/neoformat'
 Plug 'Valloric/ListToggle'
@@ -192,10 +191,6 @@ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-" Navigate between ale errors
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-
 inoremap <silent><expr> <TAB>
 \ pumvisible() ? "\<C-n>" :
 \ <SID>check_back_space() ? "\<TAB>" :
@@ -335,7 +330,7 @@ if has('autocmd')
     " Disables automatic commenting on newline:
     au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-    " close loclist - ALE window when buffer is closed
+    " close loclist - window when buffer is closed
     aug CloseLoclistWindowGroup
         au!
         au QuitPre * if empty(&buftype) | lclose | endif
@@ -423,57 +418,6 @@ else
     let g:airline_symbols.paste                     = 'ρ'
     let g:airline_symbols.whitespace                = 'Ξ'
 endif
-
-
-let g:ale_enabled = 1
-let g:ale_disable_lsp = 1
-let g:ale_completion_enabled = 0
-"let g:ale_sign_column_always = 1
-let g:ale_set_quickfix = 0 "if 1 - aug CloseLoclistWindowGroup don't work
-let g:ale_open_list = 0
-let g:ale_list_window_size = 2
-let g:ale_echo_cursor = 1
-let g:ale_set_balloons = 0
-let g:ale_set_balloons_legacy_echo = 0
-let g:ale_cursor_detail = 0                     "off annoying window
-let g:ale_close_preview_on_insert = 1
-let g:ale_echo_msg_format = ' >>> %s [%linter%] (%code%)'
-let g:ale_virtualtext_cursor = 1 "inline W/E text, not optimal!
-let g:ale_warn_about_trailing_blank_lines = 0
-let g:ale_warn_about_trailing_whitespace = 0
-"let g:ale_languagetool_executable = ''
-"let g:ale_writegood_executable = ''
-
-let g:ale_sign_error = 'E'
-let g:ale_sign_warning = 'W'
-let g:ale_sign_info = 'I'
-let g:ale_sign_style_error = 'e'
-let g:ale_sign_style_warning = 'w'
-let g:ale_set_signs = 0
-"why it still has glyphs?
-"probably because of pyls language server configuration
-
-let g:ale_linter_aliases = {
-\   'Dockerfile': 'dockerfile',
-\   'csh': 'sh',
-\   'plaintex': 'tex',
-\   'systemverilog': 'verilog',
-\   'verilog_systemverilog': ['verilog_systemverilog', 'verilog'],
-\   'vimwiki': 'markdown',
-\   'vue': ['vue', 'javascript'],
-\   'zsh': 'sh',
-\   }
-let g:ale_linters = {
-\   'python': ['flake8'],
-\   'zsh': ['shell'],
-\   }
-let g:ale_fixers = {
-\   'python': ['isort','black']
-\   }
-let g:ale_maximum_file_size = 1024 * 1024
-let g:ale_lint_on_text_changed = 'never' " run linters on a fly normal/never
-let g:ale_lint_on_save = 1
-"let g:ale_fix_on_save = 1
 
 let g:lt_height = 10
 let g:lt_location_list_toggle_map = '<leader>l'
