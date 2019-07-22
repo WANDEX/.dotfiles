@@ -203,6 +203,9 @@ endfunction"}}}
 inoremap <silent><expr> <C-Space> deoplete#mappings#manual_complete()
 inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 
+" deoplete + neosnippet + autopairs changes
+imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
+imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
 
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
@@ -425,12 +428,21 @@ let g:lt_height = 10
 let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
 
+" disable autocompletion, cause we use deoplete for completion
+let g:jedi#completions_enabled = 0
+" open the go-to function in split, not another buffer
+let g:jedi#use_splits_not_buffers = "right"
+
+let g:neoformat_enabled_python = ['black', 'docformatter', 'isort']
+let g:neoformat_run_all_formatters = 1
 
 set hidden
 let g:LanguageClient_serverCommands = {
 \   'python': ['pyls'],
 \   }
 let g:LanguageClient_changeThrottle = 5
+" linters and fixers are from other plugins, no need in extra gutter signs!
+let g:LanguageClient_diagnosticsEnable = 0
 let g:LanguageClient_autoStart = 1 " Automatically start language servers.
 
 let g:python3_host_prog = '/usr/bin/python'
@@ -517,6 +529,7 @@ call deoplete#custom#option({
 \   'prev_completion_mode': 'filter',
 \   })
 let g:deoplete#enable_at_startup = 1            " Use deoplete.
+let g:deoplete#auto_complete_start_length = 1
 "let g:deoplete#delimiters = ['/','.']
 let g:deoplete#sources#jedi#statement_length = 150 "Maximum length description
 let g:deoplete#sources#jedi#enable_typeinfo = 1 " If 0 faster!
@@ -525,6 +538,7 @@ let g:deoplete#sources#jedi#python_path = '/usr/bin/python'
 "let g:deoplete#sources#jedi#extra_path =
 let g:deoplete#sources#jedi#ignore_errors = 0
 
+let g:AutoPairsMapCR=0
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
@@ -549,6 +563,35 @@ let g:vcool_ins_rgba_map = '<localleader>gcra'  " Insert rgba color.
 let g:gruvbox_italicize_comments = 1
 let g:gruvbox_italicize_strings = 1
 let g:gruvbox_contrast_dark = 'soft'
+
+" do not highlight variable under cursor, it is distracting
+let g:semshi#mark_selected_nodes=0
+" do not show error sign since neomake is specicialized for that
+let g:semshi#error_sign=v:false
+
+" change warning signs and color, see https://goo.gl/eHcjSq
+" highlight NeomakeErrorMsg ctermfg=227 ctermbg=237
+"let g:neomake_warning_sign={'text': 'W', 'texthl': 'NeomakeWarningSign'}
+"let g:neomake_error_sign={'text': 'E'}
+let g:neomake_error_sign = {
+    \ 'text': 'E',
+    \ 'texthl': 'NeomakeErrorSign',
+    \ }
+let g:neomake_warning_sign = {
+    \   'text': 'W',
+    \   'texthl': 'NeomakeWarningSign',
+    \ }
+let g:neomake_message_sign = {
+    \   'text': 'M',
+    \   'texthl': 'NeomakeMessageSign',
+    \ }
+let g:neomake_info_sign = {
+    \ 'text': 'I',
+    \ 'texthl': 'NeomakeInfoSign'
+    \ }
+let g:neomake_python_enabled_makers = ['flake8', 'mypy']
+" whether to open quickfix or location list automatically
+let g:neomake_open_list = 0
 
 " Put these lines at the very end of your vimrc file.
 " Load all plugins now.
