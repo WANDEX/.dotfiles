@@ -5,13 +5,14 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'patstockwell/vim-monokai-tasty'
-Plug 'brooth/far.vim'
+"Plug 'brooth/far.vim'
 Plug 'mboughaba/i3config.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
@@ -23,10 +24,13 @@ Plug 'airblade/vim-gitgutter'
 Plug 'lilydjwg/colorizer'
 Plug 'KabbAmine/vCoolor.vim'
 
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
+Plug 'davidhalter/jedi-vim'
+Plug 'sbdchd/neoformat'
 Plug 'Valloric/ListToggle'
 Plug 'metakirby5/codi.vim'
-Plug 'python-mode/python-mode', { 'branch': 'develop' }
+"Plug 'python-mode/python-mode', { 'branch': 'develop' }
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 
@@ -36,10 +40,10 @@ Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'Shougo/neopairs.vim'
 Plug 'Shougo/neoinclude.vim'
 
 Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'neomake/neomake'
 
 call plug#end()
 
