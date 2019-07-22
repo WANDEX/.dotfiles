@@ -210,8 +210,10 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 
 nnoremap <silent> <C-K> :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gdl :call LanguageClient_textDocument_definition()<CR>
-"nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+nnoremap <buffer> <silent> gdv <c-w>v:call LanguageClient_textDocument_definition()<CR>
+nnoremap <buffer> <silent> gdh <c-w>s:call LanguageClient_textDocument_definition()<CR>
+nnoremap <buffer> <silent> gdt :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <Leader> R :call LanguageClient_textDocument_rename()<CR>
 
 " run current python buffer in nvim term
 nnoremap <F5><F5> :vs <CR> :term python % <CR>
