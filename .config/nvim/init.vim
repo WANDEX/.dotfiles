@@ -5,16 +5,21 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'patstockwell/vim-monokai-tasty'
+Plug 'machakann/vim-highlightedyank'
 "Plug 'brooth/far.vim'
 Plug 'mboughaba/i3config.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'majutsushi/tagbar'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+
+"WOW
+Plug 'mg979/vim-visual-multi'
 
 Plug 'tpope/vim-fugitive'
 Plug 'jreybert/vimagit'
