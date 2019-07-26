@@ -361,6 +361,9 @@ if has('autocmd')
     au BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") &&
                 \ b:NERDTree.isTabTree()) | q | endif
 
+    " If more than one window and previous buffer was NERDTree, go back to it.
+    au BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
+
     " color characters > 80 or draw line at 80 characters :TODO fix condition
     "if exists('+colorcolumn')
         "" characters to the end of a line
