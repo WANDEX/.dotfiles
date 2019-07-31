@@ -38,7 +38,6 @@ Plug 'metakirby5/codi.vim'
 " python code folding
 Plug 'kalekundert/vim-coiled-snake'
 Plug 'Konfekt/FastFold'
-"Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
@@ -511,55 +510,6 @@ let g:LanguageClient_autoStart = 1 " Automatically start language servers.
 let g:python3_host_prog = '/usr/bin/python'
 let g:loaded_python_provider = 1                "disable python 2 support
 
-
-let g:pymode = 1
-let g:pymode_warnings = 0
-"let g:pymode_paths = []
-let g:pymode_trim_whitespaces = 0
-let g:pymode_options = 1
-let g:pymode_options_colorcolumn = 0
-let g:pymode_quickfix_maxheight = 10
-let g:pymode_preview_height = &previewheight
-let g:pymode_indent = 1
-let g:pymode_folding = 0
-let g:pymode_doc = 1
-let g:pymode_doc_bind = 'K'
-let g:pymode_virtualenv = 1
-let g:pymode_run = 1
-let g:pymode_run_bind = '<leader>r'
-let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_bind = '<leader>b'
-let g:pymode_lint = 0
-let g:pymode_lint_on_write = 1
-let g:pymode_lint_on_fly = 0
-let g:pymode_lint_message = 1
-let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']
-let g:pymode_lint_cwindow = 1
-let g:pymode_lint_signs = 1
-let g:pymode_rope = 1
-let g:pymode_rope_show_doc_bind = 'gdr' "Show documentation for element under cursor
-let g:pymode_rope_goto_definition_bind = 'gdd'
-let g:pymode_rope_goto_definition_cmd = 'vnew'
-let g:pymode_rope_completion = 1
-let g:pymode_rope_complete_on_dot = 1
-let g:pymode_rope_completion_bind = '<C-N>'
-let g:pymode_rope_rename_bind = '<C-c>rr'
-let g:pymode_rope_rename_module_bind = '<C-c>r1r'
-let g:pymode_rope_module_to_package_bind = '<C-c>r1p'
-let g:pymode_rope_extract_method_bind = '<C-c>rm'
-let g:pymode_rope_extract_variable_bind = '<C-c>rl'
-let g:pymode_rope_use_function_bind = '<C-c>ru'
-let g:pymode_rope_move_bind = '<C-c>rv'
-let g:pymode_rope_change_signature_bind = '<C-c>rs'
-let g:pymode_syntax = 1
-let g:pymode_syntax_slow_sync = 1
-let g:pymode_syntax_all = 1
-let g:pymode_syntax_highlight_exceptions = g:pymode_syntax_all
-let g:pymode_syntax_docstrings = g:pymode_syntax_all
-let g:pymode_python = 'python3'
-
-
-let g:neopairs#enable = 1
 
 "call deoplete#custom#source('ale', 'rank', 999)
 call deoplete#custom#source('_',
