@@ -157,8 +157,8 @@ nnoremap k i|onoremap k i
 nnoremap B L
 
 " Look for next occurrence of {char}
-nnoremap l f|onoremap l f
-nnoremap L F|onoremap L F
+nnoremap <silent>l f|onoremap <silent>l f
+nnoremap <silent>L F|onoremap <silent>L F
 
 " Forward towards the end of a word
 nnoremap f e|onoremap f e
@@ -174,10 +174,14 @@ nnoremap N <C-f>
 nnoremap E <C-b>
 
 " Move windows with C-Direction
-map <C-N> <C-W>j
-map <C-E> <C-W>k
-map <C-H> <C-W>h
-map <C-I> <C-W>l
+nnoremap <C-W>n <C-W>j
+nnoremap <C-W>e <C-W>k
+nnoremap <C-W>h <C-W>h
+nnoremap <C-W>i <C-W>l
+"map <C-N> <C-W>j
+"map <C-E> <C-W>k
+"map <C-H> <C-W>h
+"map <C-I> <C-W>l
 
 nnoremap n j|xnoremap n j|onoremap n j|vnoremap n j
 nnoremap e k|xnoremap e k|onoremap e k|vnoremap e k
@@ -198,9 +202,13 @@ inoremap <silent><expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<P
 "" Extra Mappings
 "*****************************************************************************
 
+" fold mappings
+nnoremap <silent>zn zczjza
+nnoremap <silent>ze zczkza
+
 " Move to next/previous bufpage :bnext,:bprev
-nnoremap <silent> ]b :bn<CR>
-nnoremap <silent> [b :bp<CR>
+nnoremap <silent>]b :bn<CR>
+nnoremap <silent>[b :bp<CR>
 
 " Neosnippet. It must be "imap" and "smap".
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -210,29 +218,39 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 inoremap <silent><expr> <TAB>
 \ pumvisible() ? "\<C-n>" :
 \ <SID>check_back_space() ? "\<TAB>" :
-\ deoplete#mappings#manual_complete()
+\ deoplete#manual_complete()
 function! s:check_back_space() abort "{{{
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
 endfunction"}}}
 
-inoremap <silent><expr> <C-Space> deoplete#mappings#manual_complete()
+inoremap <silent><expr> <C-Space> deoplete#manual_complete()
 inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 
 " deoplete + neosnippet + autopairs changes
 imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
-imap <expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
+imap <expr><CR> pumvisible() ? deoplete#close_popup() : "\<CR>\<Plug>AutoPairsReturn"
 
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
     nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 endif
 
-nnoremap <silent> <C-K> :call LanguageClient_textDocument_hover()<CR>
-nnoremap <buffer> <silent> gdv <c-w>v:call LanguageClient_textDocument_definition()<CR>
-nnoremap <buffer> <silent> gdh <c-w>s:call LanguageClient_textDocument_definition()<CR>
-nnoremap <buffer> <silent> gdt :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <Leader> R :call LanguageClient_textDocument_rename()<CR>
+nnoremap <silent><C-K> :call LanguageClient_textDocument_hover()<CR>
+nnoremap <buffer><silent>gdv <c-w>v:call LanguageClient_textDocument_definition()<CR>
+nnoremap <buffer><silent>gdh <c-w>s:call LanguageClient_textDocument_definition()<CR>
+nnoremap <buffer><silent>gdt :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent><Leader>R :call LanguageClient_textDocument_rename()<CR>
+
+" Nerdtree mappings.
+nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <Leader>nt :NERDTreeToggle<CR>
+nnoremap <Leader>nf :NERDTreeFind<CR>
+
+nnoremap <F3> :TagbarToggle<CR>
+nnoremap <Leader>tb :TagbarToggle<CR>
+
+nnoremap <F4> :set relativenumber!<CR>
 
 " run current python buffer in nvim term
 nnoremap <F5><F5> :vs <CR> :term python % <CR>
@@ -243,8 +261,9 @@ nnoremap <F7> :setlocal spell! spelllang=en_us<CR>
 
 " delete current buffer
 nnoremap <Leader>dd :bd!<CR>
+
 " open bash terminal
-nnoremap <Leader>tt :sp term://bash
+nnoremap <Leader>tm :sp term://bash <CR>
 " easier terminal  Esc
 tnoremap <Esc> <C-\><C-n>
 
@@ -255,9 +274,6 @@ nnoremap <Leader>tn :tabnew ~/
 
 "swap top/bottom or left/right split
 nnoremap <leader>r <c-w>r
-
-"Break out current window into a new tabview
-nnoremap <Leader>tt <C-W>T
 
 "Close every window in the current tabview but the current one
 nnoremap <Leader>O <C-W>o
@@ -275,19 +291,12 @@ vnoremap > >gv
 " Add a semicolon to the current line
 nnoremap <Leader>; m'A;<ESC>`'
 
-" Nerdtree mappings. nt = toggle, nf = find.
-nnoremap <Leader>nt :NERDTreeToggle<CR>
-nnoremap <Leader>nf :NERDTreeFind<CR>
-
 " Run commands that require an interactive shell
 "nnoremap <Leader>r :RunInInteractiveShell<Space>
 
-" Open file menu
-"nnoremap <Leader>o :CtrlP<CR>
-" Open buffer menu
-"nnoremap <Leader>b :CtrlPBuffer<CR>
-" Open most recently used files
-"nnoremap <Leader>f :CtrlPMRUFiles<CR>
+" <Leader>b - search buffers, <Leader>f - search files
+" LeaderF find files in provided location
+nnoremap <Leader>F :LeaderfFile /
 
 " Source nvim config init.vim with <Leader>vc
 nnoremap <Leader>vc :source ~/.config/nvim/init.vim<CR>:echo "rel-ed .vim"<CR>
