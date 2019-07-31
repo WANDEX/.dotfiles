@@ -595,7 +595,20 @@ let g:deoplete#sources#jedi#ignore_errors = 0
 
 let g:AutoPairsMapCR=0
 
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+" disable bookmark and 'press ? for help ' text
+let NERDTreeMinimalUI=1
+" the ignore patterns are regular expression strings and seprated by comma
+let NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '\~$']
+" show current root as relative path from $HOME in NERDTree status bar
+let NERDTreeStatusline="%{exists('b:NERDTree')?fnamemodify(b:NERDTree.root.path.str(), ':~'):''}"
+
+let NERDTreeMapOpenExpl = "E"
+let NERDTreeMapOpenSplit = "v"                  " default is i
+let NERDTreeMapPreviewSplit = "gv"              " default is gi
+let NERDTreeMapCloseDir = "h"
+let NERDTreeMenuDown = "n"
+let NERDTreeMenuUp = "e"
+let NERDTreeMapActivateNode = "i"
 
 let g:echodoc#enable_at_startup = 1
 let g:echodoc#type = 'virtual'
