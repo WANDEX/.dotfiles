@@ -67,7 +67,7 @@ call plug#end()
 "*****************************************************************************
 set number relativenumber       " Show relative line numbers
 set linebreak                   " Break lines at word (requires Wrap lines)
-set showbreak=>                 " Wrap-broken line prefix
+set showbreak=>>>>              " Wrap-broken line prefix
 set showmatch                   " Highlight matching brace
 set visualbell                  " Use visual bell (no beeping)
 
