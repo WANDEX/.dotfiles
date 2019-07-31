@@ -616,6 +616,24 @@ let g:echodoc#type = 'virtual'
 let g:indentLine_char = '┊' "│, ¦, ┆, ┊, ▏
 let g:indentLine_conceallevel = 1
 
+let g:Lf_StlColorscheme = 'powerline'
+let g:Lf_StlSeparator = { 'left': '', 'right': '' }
+" <C-V> - open in vertical split
+let g:Lf_CommandMap = {
+    \               '<C-K>': ['<C-E>'],
+    \               '<C-J>': ['<C-N>'],
+    \               '<C-V>': ['<C-B>'],
+    \               '<C-]>': ['<C-V>'],
+    \ }
+" after pressing TAB: u - move up one dir, h - move to home dir
+let g:Lf_NormalMap = {
+    \ "File":   [["u", ':LeaderfFile ..<CR>'],
+    \            ["h", ':LeaderfFile ~<CR>'],
+    \            ["e", ':LeaderfFile /etc/<CR>'],
+    \            ["r", ':LeaderfFile /<CR>'],
+    \           ],
+    \ }
+
 "let g:colorizer_startup = 0
 let g:colorizer_fgcontrast = 0
 let g:colorizer_nomap = 1
