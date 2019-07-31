@@ -12,8 +12,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
 Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
+Plug 'christoomey/vim-titlecase'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -33,8 +35,11 @@ Plug 'davidhalter/jedi-vim'
 Plug 'sbdchd/neoformat'
 Plug 'Valloric/ListToggle'
 Plug 'metakirby5/codi.vim'
+" python code folding
+Plug 'kalekundert/vim-coiled-snake'
+Plug 'Konfekt/FastFold'
 "Plug 'python-mode/python-mode', { 'branch': 'develop' }
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 
