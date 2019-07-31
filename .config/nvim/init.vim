@@ -51,7 +51,13 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neoinclude.vim'
 
+" completions for Vim commands
+Plug 'Shougo/neco-vim'
+" for English word auto-completion
+Plug 'deathlyfrantic/deoplete-spell'
+" python3 completions
 Plug 'deoplete-plugins/deoplete-jedi'
+
 Plug 'neomake/neomake'
 
 call plug#end()
