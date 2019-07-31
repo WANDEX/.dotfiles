@@ -573,14 +573,6 @@ call deoplete#custom#source('_', 'converters',
 \   'converter_remove_overlap',
 \   'converter_auto_paren'])
 
-"call deoplete#custom#option('candidate_marks',
-"\   ['1', '2', '3', '4', '5'])
-"inoremap <expr>1       deoplete#insert_candidate(0)
-"inoremap <expr>2       deoplete#insert_candidate(1)
-"inoremap <expr>3       deoplete#insert_candidate(2)
-"inoremap <expr>4       deoplete#insert_candidate(3)
-"inoremap <expr>5       deoplete#insert_candidate(4)
-
 call deoplete#custom#option({
 \   'auto_complete_delay': 400,
 \   'ignore_case': v:true,
