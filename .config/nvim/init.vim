@@ -435,12 +435,15 @@ endif
 "*****************************************************************************
 " vim-airline
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#fnamemod = ':p:~'
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-
-let g:airline#extensions#branch#enabled = 1
+" show buffer number for easier switching between buffer
+" see https://github.com/vim-airline/vim-airline/issues/1149
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#fnamecollapse = 0      " fullpath in tabline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#branch#format = 1
+let g:airline#extensions#hunks#enabled=0
+let g:airline#extensions#tagbar#enabled = 0
 let g:airline#extensions#neomake#enabled = 1
 let g:airline_skip_empty_sections = 1
 
