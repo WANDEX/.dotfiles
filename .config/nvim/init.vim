@@ -632,6 +632,8 @@ let g:semshi#mark_selected_nodes=0
 " do not show error sign since neomake is specicialized for that
 let g:semshi#error_sign=v:false
 
+let g:highlightedyank_highlight_duration = 3000
+
 " change warning signs and color, see https://goo.gl/eHcjSq
 " highlight NeomakeErrorMsg ctermfg=227 ctermbg=237
 "let g:neomake_warning_sign={'text': 'W', 'texthl': 'NeomakeWarningSign'}
