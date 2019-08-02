@@ -6,6 +6,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'machakann/vim-highlightedyank'
+Plug 'ntpeters/vim-better-whitespace'
 "Plug 'brooth/far.vim'
 Plug 'mboughaba/i3config.vim'
 Plug 'scrooloose/nerdtree'
@@ -208,6 +209,10 @@ nnoremap <silent>ze zczkza
 " Move to next/previous bufpage :bnext,:bprev
 nnoremap <silent>]b :bn<CR>
 nnoremap <silent>[b :bp<CR>
+
+" To navigate to the previous or next trailing whitespace
+nnoremap ]w :NextTrailingWhitespace<CR>
+nnoremap [w :PrevTrailingWhitespace<CR>
 
 " Neosnippet. It must be "imap" and "smap".
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -484,6 +489,16 @@ else
     let g:airline_symbols.paste                     = 'ρ'
     let g:airline_symbols.whitespace                = 'Ξ'
 endif
+
+let g:better_whitespace_enabled = 1
+let g:strip_whitespace_on_save  = 1
+let g:strip_whitelines_at_eof   = 1
+let g:show_spaces_that_precede_tabs = 1
+let g:current_line_whitespace_disabled_soft = 1
+let g:better_whitespace_ctermcolor = 'Gray'
+let g:better_whitespace_guicolor   = 'Gray'
+let g:strip_max_file_size = 1000
+let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'unite', 'qf', 'help', 'markdown', 'man']
 
 let g:lt_height = 10
 let g:lt_location_list_toggle_map = '<leader>l'
