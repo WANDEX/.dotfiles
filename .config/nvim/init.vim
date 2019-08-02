@@ -417,10 +417,6 @@ if has('autocmd')
         "set colorcolumn=80,120
     "endif
 
-    " highlight tabs that not at the beginning and trailing whitespace.
-    hi ExtraWhitespace ctermbg=Gray guibg=Gray
-    au BufEnter * let ew=matchadd("ExtraWhitespace", '\s\+$\| \+\ze\t')
-
     " automatically deletes all trailing whitespace on save.
     au BufWritePre * %s/\s\+$//e
 
