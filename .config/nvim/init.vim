@@ -627,7 +627,21 @@ let g:neomake_info_sign = {
     \ 'text': 'I',
     \ 'texthl': 'NeomakeInfoSign'
     \ }
-let g:neomake_python_enabled_makers = ['flake8', 'mypy']
+let g:neomake_python_pylint_maker = {
+    \ 'args': [
+    \ '-d', 'C0103, C0111',
+    \ '-f', 'text',
+    \ '--msg-template="{path}:{line}:{column}:{C}: [{symbol}] {msg}"',
+    \ '-r', 'n'
+    \ ],
+    \ 'errorformat':
+    \ '%A%f:%l:%c:%t: %m,' .
+    \ '%A%f:%l: %m,' .
+    \ '%A%f:(%l): %m,' .
+    \ '%-Z%p^%.%#,' .
+    \ '%-G%.%#',
+    \ }
+let g:neomake_python_enabled_makers = ['pylint', 'flake8', 'mypy']
 " whether to open quickfix or location list automatically
 let g:neomake_open_list = 0
 
