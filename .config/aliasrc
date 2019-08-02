@@ -24,4 +24,5 @@ alias \
     scv='$EDITOR ~/.config/cvim/.cvimrc' \
     sali='$EDITOR ~/.config/aliasrc' \
     sudo='sudo ' \
-    pp='sudo pacman -S'
+    pp='sudo pacman -S' \
+    p='pydoc3'
