@@ -258,6 +258,9 @@ nnoremap <F5>h :15sp <CR> :term python % <CR>
 " toggle spell check
 nnoremap <F7> :setlocal spell! spelllang=en_us<CR>
 
+" re-indent whole file / fix indentation
+nnoremap <F12> gg=G<C-o><C-o>
+
 " delete current buffer
 nnoremap <Leader>dd :bd!<CR>
 
