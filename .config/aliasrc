@@ -25,4 +25,6 @@ alias \
     sali='$EDITOR ~/.config/aliasrc' \
     sudo='sudo ' \
     pp='sudo pacman -S' \
-    p='pydoc3'
+    p='pydoc3' \
+    pe='python -me'
+    # pe 'module_name' 'edit'/'view'. source:pypi.org/project/e/
