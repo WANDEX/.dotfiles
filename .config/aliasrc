@@ -1,4 +1,5 @@
 #!/bin/sh
+#---- COMMON ----#
 alias \
     neo='nvim ' \
     neoc='nvim +PlugClean +qall' \
@@ -24,6 +25,7 @@ alias \
     scv='$EDITOR ~/.config/cvim/.cvimrc' \
     sali='$EDITOR ~/.config/aliasrc' \
     sudo='sudo ' \
+    trm='rm -v ~/Downloads/torrents/*.torrent'
     pp='sudo pacman -S' \
     p='pydoc3' \
     pe='python -me'
