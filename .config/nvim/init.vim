@@ -538,7 +538,7 @@ call deoplete#custom#source('_', 'converters',
 \   'converter_auto_paren'])
 
 call deoplete#custom#option({
-\   'auto_complete_delay': 400,
+\   'auto_complete_delay': 200,
 \   'ignore_case': v:true,
 \   'smart_case': v:true,
 \   'max_list': 500,
