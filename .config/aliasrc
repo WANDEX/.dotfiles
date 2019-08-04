@@ -32,8 +32,8 @@ alias \
     # pe 'module_name' 'edit'/'view'. source:pypi.org/project/e/
 
 #---- PIP ----#
-alias pip-l="pip freeze | $PAGER"
-alias pip-s="pip freeze | grep -i"
-alias pip-r="pip uninstall"
-alias pip-i="pip install --ignore-installed --user --upgrade"
-alias pip-u-all="pip freeze --local | grep -v '^\-e' | cut -d = -f 1|xargs -n1 pip install --user --upgrade"
+alias pip-l="pip3 freeze | $PAGER"
+alias pip-s="pip3 freeze | grep -i"
+alias pip-r="pip3 uninstall"
+alias pip-i="pip3 install --ignore-installed --user --upgrade"
+alias pip-u-all="pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1|xargs -n1 pip3 install --user --upgrade"
