@@ -13,6 +13,7 @@ alias \
     lld='sudo du -ah --max-depth 1' \
     lld2='sudo du -ah --max-depth 2' \
     llda='sudo du -ah' \
+    mv='mv -vi' \
     sbrc='$EDITOR /etc/bash.bashrc' \
     sp='$EDITOR ~/.profile' \
     sbh='$EDITOR ~/.bash_history' \
