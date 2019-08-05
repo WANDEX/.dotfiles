@@ -1,6 +1,9 @@
 #!/bin/sh
 #---- COMMON ----#
 alias \
+    cp="cp -vi" \
+    rm="rm -vi" \
+    mv="mv -vi" \
     calc="python3 -ic 'from math import *'" \
     neo="nvim " \
     neoc="nvim +PlugClean +qall" \
@@ -13,7 +16,6 @@ alias \
     lld="sudo du -ah --max-depth 1" \
     lld2="sudo du -ah --max-depth 2" \
     llda="sudo du -ah" \
-    mv="mv -vi" \
     psl="ps -ef --forest" \
     psg="ps -ef | head -1; ps -ef | grep" \
     sbrc="$EDITOR /etc/bash.bashrc" \
