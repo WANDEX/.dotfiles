@@ -157,8 +157,8 @@ nnoremap k i|onoremap k i|vnoremap k i
 nnoremap B L
 
 " Look for next occurrence of {char}
-nnoremap <silent>l f|onoremap <silent>l f
-nnoremap <silent>L F|onoremap <silent>L F
+nnoremap l f|onoremap l f|vnoremap l f
+nnoremap L F|onoremap L F|vnoremap L F
 
 " Forward towards the end of a word
 nnoremap f e|onoremap f e
