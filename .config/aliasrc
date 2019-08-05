@@ -1,6 +1,7 @@
 #!/bin/sh
 #---- COMMON ----#
 alias \
+    calc="python3 -ic 'from math import *'" \
     neo='nvim ' \
     neoc='nvim +PlugClean +qall' \
     neou='nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall' \
