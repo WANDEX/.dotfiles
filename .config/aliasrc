@@ -2,35 +2,35 @@
 #---- COMMON ----#
 alias \
     calc="python3 -ic 'from math import *'" \
-    neo='nvim ' \
-    neoc='nvim +PlugClean +qall' \
-    neou='nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall' \
-    neous='nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall > /dev/null' \
-    grep='grep --color=auto' \
-    ls='ls -hN --color=auto --group-directories-first' \
-    la='ls -Fa --color=auto' \
-    ll='ls -Flas --color=auto' \
-    lld='sudo du -ah --max-depth 1' \
-    lld2='sudo du -ah --max-depth 2' \
-    llda='sudo du -ah' \
-    mv='mv -vi' \
-    sbrc='$EDITOR /etc/bash.bashrc' \
-    sp='$EDITOR ~/.profile' \
-    sbh='$EDITOR ~/.bash_history' \
-    sxrc='$EDITOR ~/.xinitrc' \
-    sxres='$EDITOR ~/.Xresources' \
-    sxlog='$PAGER ~/.local/share/xorg/Xorg.0.log' \
-    sxrlog='$PAGER /var/log/Xorg.0.log' \
-    si3c='$EDITOR ~/.config/i3/config' \
-    si3s='$EDITOR ~/.config/i3status/i3status.conf' \
-    svc='$EDITOR ~/.config/nvim/init.vim' \
-    scv='$EDITOR ~/.config/cvim/.cvimrc' \
-    sali='$EDITOR ~/.config/aliasrc' \
-    sudo='sudo ' \
-    trm='rm -v ~/Downloads/torrents/*.torrent' \
-    pp='sudo pacman -S' \
-    pd='python -m pydoc' \
-    pe='python -me'
+    neo="nvim " \
+    neoc="nvim +PlugClean +qall" \
+    neou="nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall" \
+    neous="nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall > /dev/null" \
+    grep="grep --color=auto" \
+    ls="ls -hN --color=auto --group-directories-first" \
+    la="ls -Fa --color=auto" \
+    ll="ls -Flas --color=auto" \
+    lld="sudo du -ah --max-depth 1" \
+    lld2="sudo du -ah --max-depth 2" \
+    llda="sudo du -ah" \
+    mv="mv -vi" \
+    sbrc="$EDITOR /etc/bash.bashrc" \
+    sp="$EDITOR ~/.profile" \
+    sbh="$EDITOR ~/.bash_history" \
+    sxrc="$EDITOR ~/.xinitrc" \
+    sxres="$EDITOR ~/.Xresources" \
+    sxlog="$PAGER ~/.local/share/xorg/Xorg.0.log" \
+    sxrlog="$PAGER /var/log/Xorg.0.log" \
+    si3c="$EDITOR ~/.config/i3/config" \
+    si3s="$EDITOR ~/.config/i3status/i3status.conf" \
+    svc="$EDITOR ~/.config/nvim/init.vim" \
+    scv="$EDITOR ~/.config/cvim/.cvimrc" \
+    sali="$EDITOR ~/.config/aliasrc" \
+    sudo="sudo " \
+    trm="rm -v ~/Downloads/torrents/*.torrent" \
+    pp="sudo pacman -S" \
+    pd="python -m pydoc" \
+    pe="python -me"
     # pe 'module_name' 'edit'/'view'. source:pypi.org/project/e/
 
 #---- PIP ----#
