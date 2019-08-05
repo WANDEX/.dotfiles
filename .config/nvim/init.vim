@@ -161,8 +161,8 @@ nnoremap l f|onoremap l f|vnoremap l f
 nnoremap L F|onoremap L F|vnoremap L F
 
 " Forward towards the end of a word
-nnoremap f e|onoremap f e
-nnoremap F E|onoremap F E
+nnoremap f e|onoremap f e|vnoremap f e
+nnoremap F E|onoremap F E|vnoremap F E
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
