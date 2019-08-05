@@ -151,7 +151,7 @@ endif
 "" hnei i.e. left/down/up/right
 
 " insert mode and modifier inside
-nnoremap k i|onoremap k i
+nnoremap k i|onoremap k i|vnoremap k i
 
 " Screen bottom
 nnoremap B L
