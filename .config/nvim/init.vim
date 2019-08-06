@@ -443,18 +443,18 @@ endif
 " Plug related
 "*****************************************************************************
 " vim-airline
-let g:airline_powerline_fonts = 1
 " show buffer number for easier switching between buffer
 " see https://github.com/vim-airline/vim-airline/issues/1149
+let g:airline_powerline_fonts                    = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
-let g:airline#extensions#tabline#fnamecollapse = 0      " fullpath in tabline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#branch#format = 1
-let g:airline#extensions#hunks#enabled=0
-let g:airline#extensions#tagbar#enabled = 0
-let g:airline#extensions#neomake#enabled = 1
-let g:airline_skip_empty_sections = 1
+let g:airline#extensions#tabline#fnamecollapse   = 0      " fullpath in tabline
+let g:airline#extensions#tabline#enabled         = 1
+let g:airline#extensions#branch#enabled          = 1
+let g:airline#extensions#branch#format           = 1
+let g:airline#extensions#hunks#enabled           = 0
+let g:airline#extensions#tagbar#enabled          = 0
+let g:airline#extensions#neomake#enabled         = 1
+let g:airline_skip_empty_sections                = 1
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -496,38 +496,38 @@ else
     let g:airline_symbols.whitespace                = 'Ξ'
 endif
 
-let g:better_whitespace_enabled = 1
-let g:strip_whitespace_on_save  = 1
-let g:strip_whitelines_at_eof   = 1
-let g:show_spaces_that_precede_tabs = 1
+let g:better_whitespace_enabled             = 1
+let g:strip_whitespace_on_save              = 1
+let g:strip_whitelines_at_eof               = 1
+let g:show_spaces_that_precede_tabs         = 1
 let g:current_line_whitespace_disabled_soft = 1
-let g:better_whitespace_ctermcolor = 'Gray'
-let g:better_whitespace_guicolor   = 'Gray'
-let g:strip_max_file_size = 1000
+let g:better_whitespace_ctermcolor          = 'Gray'
+let g:better_whitespace_guicolor            = 'Gray'
+let g:strip_max_file_size                   = 1000
 let g:better_whitespace_filetypes_blacklist = ['diff', 'gitcommit', 'unite', 'qf', 'help', 'markdown', 'man']
 
-let g:lt_height = 10
+let g:lt_height                   = 10
 let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
 
 " disable autocompletion, cause we use deoplete for completion
-let g:jedi#completions_enabled = 0
+let g:jedi#completions_enabled    = 0
 " open the go-to function in split, not another buffer
 let g:jedi#use_splits_not_buffers = "right"
 
-let g:neoformat_enabled_python = ['black', 'docformatter', 'isort']
+let g:neoformat_enabled_python     = ['black', 'docformatter', 'isort']
 let g:neoformat_run_all_formatters = 1
 
 set hidden
-let g:LanguageClient_serverCommands = {
+let g:LanguageClient_serverCommands    = {
 \   'python': ['pyls'],
 \   }
-let g:LanguageClient_changeThrottle = 5
+let g:LanguageClient_changeThrottle    = 5
 " linters and fixers are from other plugins, no need in extra gutter signs!
 let g:LanguageClient_diagnosticsEnable = 0
-let g:LanguageClient_autoStart = 1 " Automatically start language servers.
+let g:LanguageClient_autoStart         = 1 " Automatically start language servers.
 
-let g:python3_host_prog = '/usr/bin/python'
+let g:python3_host_prog      = '/usr/bin/python'
 let g:loaded_python_provider = 1                "disable python 2 support
 
 
@@ -553,50 +553,50 @@ call deoplete#custom#option({
 \   'refresh_always': v:false,
 \   'prev_completion_mode': 'filter',
 \   })
-let g:deoplete#enable_at_startup = 1            " Use deoplete.
-let g:deoplete#auto_complete_start_length = 1
+let g:deoplete#enable_at_startup             = 1            " Use deoplete.
+let g:deoplete#auto_complete_start_length    = 1
 "let g:deoplete#delimiters = ['/','.']
 let g:deoplete#sources#jedi#statement_length = 150 "Maximum length description
-let g:deoplete#sources#jedi#enable_typeinfo = 1 " If 0 faster!
-let g:deoplete#sources#jedi#show_docstring = 1  " if 1 causing comp. flickering
-let g:deoplete#sources#jedi#python_path = '/usr/bin/python'
+let g:deoplete#sources#jedi#enable_typeinfo  = 1 " If 0 faster!
+let g:deoplete#sources#jedi#show_docstring   = 1  " if 1 causing comp. flickering
+let g:deoplete#sources#jedi#python_path      = '/usr/bin/python'
 "let g:deoplete#sources#jedi#extra_path =
-let g:deoplete#sources#jedi#ignore_errors = 0
+let g:deoplete#sources#jedi#ignore_errors    = 0
 
-let g:AutoPairsMapCR=0
+let g:AutoPairsMapCR = 0
 
 " disable bookmark and 'press ? for help ' text
-let NERDTreeMinimalUI=1
+let NERDTreeMinimalUI  = 1
 " the ignore patterns are regular expression strings and seprated by comma
-let NERDTreeIgnore = ['\.pyc$', '^__pycache__$', '\~$']
+let NERDTreeIgnore     = ['\.pyc$', '^__pycache__$', '\~$']
 " show current root as relative path from $HOME in NERDTree status bar
-let NERDTreeStatusline="%{exists('b:NERDTree')?fnamemodify(b:NERDTree.root.path.str(), ':~'):''}"
+let NERDTreeStatusline = "%{exists('b:NERDTree')?fnamemodify(b:NERDTree.root.path.str(), ':~'):''}"
 
-let NERDTreeMapOpenExpl = "E"
-let NERDTreeMapOpenSplit = "v"                  " default is i
+let NERDTreeMapOpenExpl     = "E"
+let NERDTreeMapOpenSplit    = "v"                  " default is i
 let NERDTreeMapPreviewSplit = "gv"              " default is gi
-let NERDTreeMapCloseDir = "h"
-let NERDTreeMenuDown = "n"
-let NERDTreeMenuUp = "e"
+let NERDTreeMapCloseDir     = "h"
+let NERDTreeMenuDown        = "n"
+let NERDTreeMenuUp          = "e"
 let NERDTreeMapActivateNode = "i"
 
 let g:echodoc#enable_at_startup = 1
-let g:echodoc#type = 'virtual'
+let g:echodoc#type              = 'virtual'
 
-let g:indentLine_char = '┊' "│, ¦, ┆, ┊, ▏
+let g:indentLine_char         = '┊' "│, ¦, ┆, ┊, ▏
 let g:indentLine_conceallevel = 1
 
 let g:Lf_StlColorscheme = 'powerline'
-let g:Lf_StlSeparator = { 'left': '', 'right': '' }
+let g:Lf_StlSeparator   = { 'left': '', 'right': '' }
 " <C-V> - open in vertical split
-let g:Lf_CommandMap = {
+let g:Lf_CommandMap     = {
     \               '<C-K>': ['<C-E>'],
     \               '<C-J>': ['<C-N>'],
     \               '<C-V>': ['<C-B>'],
     \               '<C-]>': ['<C-V>'],
     \ }
 " after pressing TAB: u - move up one dir, h - move to home dir
-let g:Lf_NormalMap = {
+let g:Lf_NormalMap      = {
     \ "File":   [["u", ':LeaderfFile ..<CR>'],
     \            ["h", ':LeaderfFile ~<CR>'],
     \            ["e", ':LeaderfFile /etc/<CR>'],
@@ -606,24 +606,24 @@ let g:Lf_NormalMap = {
 
 "let g:colorizer_startup = 0
 let g:colorizer_fgcontrast = 0
-let g:colorizer_nomap = 1
-let g:colorizer_maxlines = 1000
+let g:colorizer_nomap      = 1
+let g:colorizer_maxlines   = 1000
 
-let g:vcoolor_custom_picker = 'zenity --title "IC" --color-selection '
+let g:vcoolor_custom_picker    = 'zenity --title "IC" --color-selection '
 let g:vcoolor_disable_mappings = 1
-let g:vcoolor_map        = '<localleader>gcc'
-let g:vcool_ins_rgb_map  = '<localleader>gcr'   " Insert rgb color.
-let g:vcool_ins_hsl_map  = '<localleader>gch'   " Insert hsl color.
-let g:vcool_ins_rgba_map = '<localleader>gcra'  " Insert rgba color.
+let g:vcoolor_map              = '<localleader>gcc'
+let g:vcool_ins_rgb_map        = '<localleader>gcr'   " Insert rgb color.
+let g:vcool_ins_hsl_map        = '<localleader>gch'   " Insert hsl color.
+let g:vcool_ins_rgba_map       = '<localleader>gcra'  " Insert rgba color.
 
 let g:gruvbox_italicize_comments = 1
-let g:gruvbox_italicize_strings = 1
-let g:gruvbox_contrast_dark = 'soft'
+let g:gruvbox_italicize_strings  = 1
+let g:gruvbox_contrast_dark      = 'soft'
 
 " do not highlight variable under cursor, it is distracting
-let g:semshi#mark_selected_nodes=0
+let g:semshi#mark_selected_nodes = 0
 " do not show error sign since neomake is specicialized for that
-let g:semshi#error_sign=v:false
+let g:semshi#error_sign          = v:false
 
 let g:highlightedyank_highlight_duration = 3000
 
@@ -631,23 +631,23 @@ let g:highlightedyank_highlight_duration = 3000
 " highlight NeomakeErrorMsg ctermfg=227 ctermbg=237
 "let g:neomake_warning_sign={'text': 'W', 'texthl': 'NeomakeWarningSign'}
 "let g:neomake_error_sign={'text': 'E'}
-let g:neomake_error_sign = {
+let g:neomake_error_sign            = {
     \ 'text': 'E',
     \ 'texthl': 'NeomakeErrorSign',
     \ }
-let g:neomake_warning_sign = {
+let g:neomake_warning_sign          = {
     \   'text': 'W',
     \   'texthl': 'NeomakeWarningSign',
     \ }
-let g:neomake_message_sign = {
+let g:neomake_message_sign          = {
     \   'text': 'M',
     \   'texthl': 'NeomakeMessageSign',
     \ }
-let g:neomake_info_sign = {
+let g:neomake_info_sign             = {
     \ 'text': 'I',
     \ 'texthl': 'NeomakeInfoSign'
     \ }
-let g:neomake_python_pylint_maker = {
+let g:neomake_python_pylint_maker   = {
     \ 'args': [
     \ '-d', 'C0103, C0111',
     \ '-f', 'text',
@@ -663,11 +663,11 @@ let g:neomake_python_pylint_maker = {
     \ }
 let g:neomake_python_enabled_makers = ['pylint', 'flake8', 'mypy']
 " whether to open quickfix or location list automatically
-let g:neomake_open_list = 0
+let g:neomake_open_list             = 0
 
 
-let g:VM_maps = {}
-let g:VM_mouse_mappings = 1
+let g:VM_maps                       = {}
+let g:VM_mouse_mappings             = 1
 "let g:VM_default_mappings = 0
 let g:VM_maps['Find Under']         = '<C-j>'           " replace C-n
 let g:VM_maps['Find Subword Under'] = '<C-j>'           " replace visual C-n
