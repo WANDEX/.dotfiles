@@ -82,7 +82,7 @@ set smartindent                 " Enable smart-indent
 set smarttab                    " Enable smart-tabs
 set shiftwidth=4                " Number of auto-indent spaces
 set softtabstop=4               " Number of spaces per Tab
-set shiftround                  " Round the indentation nearest to shiftwidth
+set shiftround                  " Round the indentation nearest to shift width
 set expandtab                   " Use spaces instead of tabs
 
 set splitbelow                  " Horizontal split below current.
@@ -96,7 +96,7 @@ set nowritebackup
 set noswapfile
 
 set undolevels=1000             " Number of undo levels
-set backspace=indent,eol,start  " Backspace behaviour
+set backspace=indent,eol,start  " Backspace behavior
 
 set laststatus=2                " Always display the status bar.
 set ruler                       " Show row and column ruler information
@@ -283,7 +283,7 @@ nnoremap <Leader>tn :tabnew ~/
 "swap top/bottom or left/right split
 nnoremap <leader>r <c-w>r
 
-"Close every window in the current tabview but the current one
+"Close every window in the current tab view but the current one
 nnoremap <Leader>O <C-W>o
 
 " Search and Replace
@@ -357,7 +357,7 @@ if has('autocmd')
         if a:fold.type == 'class'
             let a:fold.max_level = 1
         " Don't fold nested functions, but do fold methods
-        " (i.e. functions nested inside a class).
+        " (I.e. functions nested inside a class).
         elseif a:fold.type == 'function'
             let a:fold.max_level = 1
             if get(a:fold.parent, 'type', '') == 'class'
@@ -447,7 +447,7 @@ endif
 " see https://github.com/vim-airline/vim-airline/issues/1149
 let g:airline_powerline_fonts                    = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
-let g:airline#extensions#tabline#fnamecollapse   = 0      " fullpath in tabline
+let g:airline#extensions#tabline#fnamecollapse   = 0      " full path in tab line
 let g:airline#extensions#tabline#enabled         = 1
 let g:airline#extensions#branch#enabled          = 1
 let g:airline#extensions#branch#format           = 1
@@ -567,7 +567,7 @@ let g:AutoPairsMapCR = 0
 
 " disable bookmark and 'press ? for help ' text
 let NERDTreeMinimalUI  = 1
-" the ignore patterns are regular expression strings and seprated by comma
+" the ignore patterns are regular expression strings and separated by comma
 let NERDTreeIgnore     = ['\.pyc$', '^__pycache__$', '\~$']
 " show current root as relative path from $HOME in NERDTree status bar
 let NERDTreeStatusline = "%{exists('b:NERDTree')?fnamemodify(b:NERDTree.root.path.str(), ':~'):''}"
@@ -622,7 +622,7 @@ let g:gruvbox_contrast_dark      = 'soft'
 
 " do not highlight variable under cursor, it is distracting
 let g:semshi#mark_selected_nodes = 0
-" do not show error sign since neomake is specicialized for that
+" do not show error sign since neomake is specialized for that
 let g:semshi#error_sign          = v:false
 
 let g:highlightedyank_highlight_duration = 3000
