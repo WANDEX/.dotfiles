@@ -51,7 +51,7 @@ exec_always --no-startup-id xset r rate 200 50
 # unclutter makes the mouse invisible after a brief period
 exec --no-startup-id unclutter
 
-# proxychains curl http://icanhazip.com
+# proxychains curl http://icanhazip.com | also for checking: ss -tupln
 exec --no-startup-id nohup tor &
 
 # mpd & mpdscribble
