@@ -33,6 +33,7 @@ Plug 'lilydjwg/colorizer'
 Plug 'KabbAmine/vCoolor.vim'
 
 Plug 'davidhalter/jedi-vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'sbdchd/neoformat'
 Plug 'Valloric/ListToggle'
 Plug 'metakirby5/codi.vim'
@@ -294,6 +295,11 @@ vnoremap <Leader>s :sort<CR>
 " easier moving of code blocks, without losing of selection block
 vnoremap < <gv
 vnoremap > >gv
+
+" Easy align interactive
+vmap <Enter> <Plug>(EasyAlign)
+" Start interactive EasyAlign in normal/visual mode (e.g. vipga)
+nmap ga <Plug>(EasyAlign)| xmap ga <Plug>(EasyAlign)
 
 " Add a semicolon to the current line
 nnoremap <Leader>; m'A;<ESC>`'
