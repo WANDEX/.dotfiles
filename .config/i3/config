@@ -72,7 +72,7 @@ exec --no-startup-id compton --config ~/.config/compton/compton.conf
 
 exec --no-startup-id conky -d
 
-exec --no-startup-id deadd-notification-center
+exec --no-startup-id sleep 5 && deadd-notification-center
 
 exec --no-startup-id redshift
 #
