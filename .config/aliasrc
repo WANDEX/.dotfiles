@@ -43,3 +43,10 @@ alias pip-s="pip3 freeze | grep -i"
 alias pip-r="pip3 uninstall"
 alias pip-i="pip3 install --ignore-installed --user --upgrade"
 alias pip-u-all="pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1|xargs -n1 pip3 install --user --upgrade"
+
+#----- PIP FOR VENV -----#
+alias pip-list="pip freeze | less"
+alias pip-search="pip freeze | grep -i"
+alias pip-remove="pip uninstall"
+alias pip-install="pip install -U"
+alias pip-upgrade-all="pip freeze --local | grep -v '^\-e' | cut -d = -f 1|xargs -n1 pip install -U"
