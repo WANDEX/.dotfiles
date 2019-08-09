@@ -661,7 +661,8 @@ let g:neomake_python_pylint_maker   = {
     \ '%-Z%p^%.%#,' .
     \ '%-G%.%#',
     \ }
-let g:neomake_python_enabled_makers = ['pylint', 'flake8', 'mypy']
+"let g:neomake_python_enabled_makers = ['pylint', 'flake8', 'mypy']
+let g:neomake_python_enabled_makers = ['flake8']
 " whether to open quickfix or location list automatically
 let g:neomake_open_list             = 0
 
