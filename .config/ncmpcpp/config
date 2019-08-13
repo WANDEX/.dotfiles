@@ -226,7 +226,7 @@ selected_item_suffix = $9
 ## browser_sort_mode are "name", "mtime", "format" and "noop".
 ##
 #
-#browser_sort_mode = name
+browser_sort_mode = noop
 #
 #browser_sort_format = {%a - }{%t}|{%f} {(%l)}
 #
