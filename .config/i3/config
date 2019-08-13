@@ -54,9 +54,12 @@ exec --no-startup-id unclutter
 # proxychains curl http://icanhazip.com | also for checking: ss -tupln
 exec --no-startup-id nohup tor &
 
+# mopidy
+exec --no-startup-id nohup mopidy &
+
 # mpd & mpdscribble
-exec --no-startup-id mpd ~/.config/mpd/mpd.conf && \
-                     mpdscribble --conf ~/.config/mpdscribble/mpdscribble.conf
+#exec --no-startup-id mpd ~/.config/mpd/mpd.conf && \
+                     #mpdscribble --conf ~/.config/mpdscribble/mpdscribble.conf
 
 # set background wallpaper
 exec --no-startup-id sleep 5 && setbg.sh
