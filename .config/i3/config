@@ -26,7 +26,7 @@ set $output1 "DVI-D-0"
 
 # *** Starting External Scripts ***
 #
-# chmod 755 "filepath" for right permissions? or chmod +x "filepath"?
+# chmod +x "filepath" for execution permission
 
 # run monitors configuration script on startup
 ## for nouveau drivers
