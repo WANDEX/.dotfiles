@@ -10,8 +10,6 @@ export EDITOR="nvim"
 export BROWSER="google-chrome-stable"
 export PAGER="page -q 90000"
 export MANPAGER="nvim -c 'set ft=man' -"
-#export MANPAGER="nvim -u NORC -c 'set ft=man' - "
-#export MANPAGER="page -C -e 'au User PageDisconnect sleep 100m|%y p|enew! |bd! #|pu p|set ft=man'"
 
 # export workspace names into env variables
 source "$HOME/.scripts/sh/get_workspace_names.sh"
