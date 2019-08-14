@@ -54,7 +54,7 @@ exec --no-startup-id unclutter
 # proxychains curl http://icanhazip.com | also for checking: ss -tupln
 exec --no-startup-id nohup tor &
 
-# mopidy
+# mopidy includes scrobbler and other plugins
 exec --no-startup-id nohup mopidy &
 
 # mpd & mpdscribble
