@@ -264,6 +264,16 @@ nnoremap <F5>h :15sp <CR> :term python % <CR>
 " toggle spell check
 nnoremap <F7> :setlocal spell! spelllang=en_us<CR>
 
+" see encoding-values
+menu Encoding.utf-8         :e ++enc=utf-8<CR>
+menu Encoding.latin1        :e ++enc=latin1<CR>
+menu Encoding.default       :e ++enc=default<CR>
+menu Encoding.koi8-r        :e ++enc=koi8-r ++ff=unix<CR>
+menu Encoding.windows-1251  :e ++enc=cp1251 ++ff=dos<CR>
+menu Encoding.cp866         :e ++enc=cp866  ++ff=dos<CR>
+" use TAB to cycle between menu variants
+nnoremap <F8> :emenu Encoding.
+
 " re-indent whole file / fix indentation
 nnoremap <F12> gg=G<C-o><C-o>
 
