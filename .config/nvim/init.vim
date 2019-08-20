@@ -447,7 +447,7 @@ endif
 " see https://github.com/vim-airline/vim-airline/issues/1149
 let g:airline_powerline_fonts                    = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
-let g:airline#extensions#tabline#fnamecollapse   = 0      " full path in tab line
+let g:airline#extensions#tabline#fnamecollapse   = 1 " full/col path in tab line
 let g:airline#extensions#tabline#enabled         = 1
 let g:airline#extensions#branch#enabled          = 1
 let g:airline#extensions#branch#format           = 1
