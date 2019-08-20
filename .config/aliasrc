@@ -30,6 +30,7 @@ alias \
     svc="$EDITOR ~/.config/nvim/init.vim" \
     scv="$EDITOR ~/.config/cvim/.cvimrc" \
     sali="$EDITOR ~/.config/aliasrc" \
+    stodo="$EDITOR ~/Documents/Pomodoro/TODO.txt" \
     sudo="sudo " \
     trm="rm -v ~/Downloads/torrents/*.torrent" \
     pp="sudo pacman -S" \
