@@ -340,8 +340,8 @@ group conkyITD {
         arch_updates {
             cache_timeout = 10800
             hide_if_zero = True
-            format = ' {pacman}'        # if include_aur is False
-            #format = 'UPD: {pacman}/{aur}'  # if include_aur is True
+            #format = ' {pacman}'        # if include_aur is False
+            format = ' {pacman}/{aur}'  # if include_aur is True
         }
         conky info {
             format = ''
