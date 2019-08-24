@@ -160,8 +160,7 @@ bar {
         inactive_workspace  $darkblack  $darkblack  $white
         urgent_workspace    $darkblack  $darkblack  $white
     }
-    #status_command i3status
-    status_command py3status -c ~/.config/i3status/i3status.conf
+    status_command py3status
     position top
     #tray_output primary
 }
