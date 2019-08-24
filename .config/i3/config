@@ -9,7 +9,7 @@ font pango:NotoMono Nerd Font 8, Icons 8
 for_window [class="^.*"] border pixel 2
 gaps inner 10
 gaps outer 0
-set $term --no-startup-id $TERMINAL
+set $term $TERMINAL
 set $mod Mod4
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
@@ -266,7 +266,7 @@ bindsym $mod+F12 exec --no-startup-id toggle_mono.sh
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
