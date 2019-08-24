@@ -36,8 +36,7 @@ exec --no-startup-id sleep 2 && arun_nvidia.sh
 
 # autorun script that executes startup programs
 exec --no-startup-id arun.sh
-
-exec_always --no-startup-id xinput disable 'Video Bus'
+#exec --no-startup-id arun.sh
 
 # set keyboard layout
 exec --no-startup-id setxkbmap -model pc104 -layout us,ru -variant colemak,  -option grp:caps_toggle,grp_led:scroll
