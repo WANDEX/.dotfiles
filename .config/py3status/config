@@ -1,6 +1,3 @@
-# i3status configuration file.
-# see "man i3status" for documentation.
-
 # It is important that this file is edited as UTF-8.
 # The following line should contain a sharp s:
 # ß
@@ -25,13 +22,6 @@ general {
     color_playercolor   = "#596A15"
     color_soundcolor    = "#2C2C2C"
 }
-
-#order += "weather_owm"
-weather_owm {
-    #api_key = <my api key>
-    city = 'London'
-}
-
 
 order += "frame urgent_maintenance"
 frame urgent_maintenance {
