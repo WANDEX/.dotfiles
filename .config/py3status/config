@@ -283,7 +283,8 @@ group sound {
     background = 'soundcolor'
     frame sound {
         static_string separator_end_player { format = '\?color=playercolor ' }
-        format_separator = ' '
+        #format_separator = ' '
+        format_separator = '  '
         external_script {
             align = "left"
             cache_timeout = 1
