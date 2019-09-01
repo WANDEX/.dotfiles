@@ -35,17 +35,16 @@ set $output1 "DVI-D-0"
 exec --no-startup-id sleep 2 && arun_nvidia.sh
 
 # autorun script that executes startup programs
-exec --no-startup-id arun.sh
 #exec --no-startup-id arun.sh
 
 # set keyboard layout
 exec --no-startup-id setxkbmap -model pc104 -layout us,ru -variant colemak,  -option grp:caps_toggle,grp_led:scroll
 
 # disable display power manager signaling and monitor standby
-exec_always --no-startup-id xset -dpms && xset s off
+exec --no-startup-id xset -dpms && xset s off
 
 # keyboard delay and rate for X. for tty there is "kbdrate -r -d"
-exec_always --no-startup-id xset r rate 200 50
+exec --no-startup-id xset r rate 200 50
 
 # unclutter makes the mouse invisible after a brief period
 exec --no-startup-id unclutter
@@ -265,7 +264,7 @@ bindsym $mod+F12 exec --no-startup-id toggle_mono.sh
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
