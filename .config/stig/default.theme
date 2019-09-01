@@ -40,21 +40,21 @@
 
 # VARIABLES
 # black is transparent and untouched; default is untouched
-$white = #FFF
-$dark_gray = #222
-$light_gray = #444
-$dark_red = #820
-$light_red = #F40
-$dark_green = #9c3
-$light_green = #9a0
-$dark_blue = #222
-$light_blue = #0CF
-$dark_magenta = #9d3
-$light_magenta = #404
-$dark_cyan = #088
-$light_cyan = #BCC
-$brown = #EE0
-$yellow = #EE0
+$white         = #FFF
+$dark_gray     = #000
+$light_gray    = #777
+$dark_red      = #820
+$light_red     = #F40
+$dark_green    = #8C0
+$light_green   = #8C0
+$dark_blue     = #66C
+$light_blue    = #08F
+$dark_magenta  = #8C0
+$light_magenta = #C0C
+$dark_cyan     = #0AA
+$light_cyan    = #0AA
+$brown         = #EE0
+$yellow        = #EE0
 
 cli             black       on $light_gray
 scrollbar       $light_gray on $dark_gray
