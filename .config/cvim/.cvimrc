@@ -220,3 +220,4 @@ set localconfig
 " than the default options page in chrome
 " As long as localconfig is set in the .cvimrc file. cVim will continue to read
 " settings from there
+" extension need permission (Allow access to file URLs)
