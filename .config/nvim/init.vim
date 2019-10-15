@@ -32,7 +32,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'lilydjwg/colorizer'
 Plug 'KabbAmine/vCoolor.vim'
 
-Plug 'davidhalter/jedi-vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'sbdchd/neoformat'
 Plug 'Valloric/ListToggle'
@@ -51,6 +50,8 @@ Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neoinclude.vim'
+
+Plug 'davidhalter/jedi-vim'
 
 " completions for Vim commands
 Plug 'Shougo/neco-vim'
@@ -104,6 +105,7 @@ set scrolloff=5                 " Show next 3 lines while scrolling.
 set sidescrolloff=5             " Show next 5 columns while side-scrolling.
 
 set showcmd                     " Display incomplete commands
+set noshowmode
 set wildmenu                    " Command line tab complete options as a menu.
 set wildmode=list,full  " Enable autocompletion
 set wildignore+=*.pyc,*_build/*,*/coverage/*,*.swp
@@ -524,6 +526,7 @@ let g:lt_quickfix_list_toggle_map = '<leader>q'
 let g:jedi#completions_enabled    = 0
 " open the go-to function in split, not another buffer
 let g:jedi#use_splits_not_buffers = "right"
+let g:jedi#show_call_signatures   = 0
 
 let g:neoformat_enabled_python     = ['black', 'docformatter', 'isort']
 let g:neoformat_run_all_formatters = 1
