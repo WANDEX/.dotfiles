@@ -28,11 +28,11 @@
         "blacklist": "",
         "plugins_order": [
             "autogain",
-            "limiter",
             "loudness",
+            "compressor",
+            "limiter",
             "gate",
             "multiband_gate",
-            "compressor",
             "multiband_compressor",
             "convolver",
             "bass_enhancer",
@@ -61,13 +61,13 @@
             "listen": "false"
         },
         "compressor": {
-            "state": "false",
+            "state": "true",
             "input-gain": "0",
-            "output-gain": "0",
+            "output-gain": "20",
             "mode": "Downward",
             "attack": "0",
             "release": "100",
-            "threshold": "0",
+            "threshold": "-24",
             "ratio": "4",
             "knee": "-6",
             "makeup": "0",
@@ -749,7 +749,7 @@
         "limiter": {
             "state": "true",
             "input-gain": "0",
-            "limit": "-18",
+            "limit": "-24",
             "lookahead": "0.10000000000000001",
             "release": "1000",
             "asc": "false",
@@ -841,9 +841,9 @@
             }
         },
         "loudness": {
-            "state": "false",
+            "state": "true",
             "loudness": "-3.1000000000000001",
-            "output": "-6",
+            "output": "-2",
             "link": "-9.0999999999999996"
         },
         "multiband_gate": {
@@ -1004,9 +1004,10 @@
         },
         "autogain": {
             "state": "true",
+            "detect-silence": "true",
             "input-gain": "0",
             "output-gain": "20",
-            "target": "-54",
+            "target": "-84",
             "weight-m": "1",
             "weight-s": "1",
             "weight-i": "1"
