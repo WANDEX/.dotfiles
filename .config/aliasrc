@@ -23,8 +23,8 @@ alias \
     sbh="$EDITOR ~/.bash_history" \
     sxrc="$EDITOR ~/.xinitrc" \
     sxres="$EDITOR ~/.Xresources" \
-    sxlog="$PAGER ~/.local/share/xorg/Xorg.0.log" \
-    sxrlog="$PAGER /var/log/Xorg.0.log" \
+    sxlog="cat ~/.local/share/xorg/Xorg.0.log | $PAGER" \
+    sxrlog="cat /var/log/Xorg.0.log | $PAGER" \
     si3c="$EDITOR ~/.config/i3/config" \
     si3s="$EDITOR ~/.config/py3status/config" \
     svc="$EDITOR ~/.config/nvim/init.vim" \
