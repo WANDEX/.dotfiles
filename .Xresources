@@ -38,6 +38,6 @@ st.font: Mononoki Nerd Font Mono:size=12
 *.color15: #EBDBB2
 
 !! Transparency (0-255):
-st.alpha: 220
+st.alpha: 200
 !!*.alpha: 230
 
