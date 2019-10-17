@@ -7,10 +7,11 @@ font pango:NotoMono Nerd Font 8, Icons 8
 #
 # need for i3-gaps
 for_window [class="^.*"] border pixel 2
-gaps inner 10
+gaps inner 0
 gaps outer 0
 set $term $TERMINAL
 set $mod Mod4
+set $alt Mod1
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
