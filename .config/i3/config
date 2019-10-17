@@ -199,8 +199,8 @@ bindsym $mod+w mode "resize"
 bindsym $mod+Shift+m exec --no-startup-id arun_xrandr.sh
 
 # launch browser
-bindsym $mod+g exec --no-startup-id $BROWSER
-bindsym $mod+Shift+g exec --no-startup-id $BROWSER -incognito
+bindsym $mod+g exec --no-startup-id google-chrome-stable
+bindsym $mod+Shift+g exec --no-startup-id google-chrome-stable -incognito
 
 # toggle monitor mute on/off
 bindsym $mod+m exec --no-startup-id \
