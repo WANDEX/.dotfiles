@@ -56,8 +56,8 @@ exec --no-startup-id nohup tor &
 exec --no-startup-id nohup mopidy &
 
 # mpd & mpdscribble
-#exec --no-startup-id mpd ~/.config/mpd/mpd.conf && \
-                     #mpdscribble --conf ~/.config/mpdscribble/mpdscribble.conf
+exec --no-startup-id mpd ~/.config/mpd/mpd.conf
+exec --no-startup-id mpdscribble --conf ~/.config/mpdscribble/mpdscribble.conf
 
 # set background wallpaper
 exec --no-startup-id sleep 5 && setbg.sh
