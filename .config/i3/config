@@ -81,6 +81,11 @@ exec --no-startup-id redshift
 #
 # *** END ***
 
+# *** Window Specific Rules***
+#
+for_window [instance="Godot_Engine"] floating enable
+#
+# *** END ***
 
 # *** Startup Windows/Workspaces Configuration ***
 #
