@@ -174,16 +174,16 @@ bar {
 
 mode "resize" {
     # These bindings trigger as soon as you enter the resize mode
-    bindsym h resize grow width 10 px or 10 ppt
-    bindsym n resize shrink height 10 px or 10 ppt
-    bindsym e resize grow height 10 px or 10 ppt
-    bindsym i resize shrink width 10 px or 10 ppt
+    bindsym h resize grow width $resizepix px or $resizepix ppt
+    bindsym n resize shrink height $resizepix px or $resizepix ppt
+    bindsym e resize grow height $resizepix px or $resizepix ppt
+    bindsym i resize shrink width $resizepix px or $resizepix ppt
 
     # same bindings, but for the arrow keys
-    bindsym Left resize grow width 10 px or 10 ppt
-    bindsym Down resize shrink height 10 px or 10 ppt
-    bindsym Up resize grow height 10 px or 10 ppt
-    bindsym Right resize shrink width 10 px or 10 ppt
+    bindsym Left resize grow width $resizepix px or $resizepix ppt
+    bindsym Down resize shrink height $resizepix px or $resizepix ppt
+    bindsym Up resize grow height $resizepix px or $resizepix ppt
+    bindsym Right resize shrink width $resizepix px or $resizepix ppt
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
