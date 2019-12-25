@@ -45,7 +45,6 @@
             "delay",
             "deesser",
             "crossfeed",
-            "maximizer",
             "filter",
             "pitch"
         ],
@@ -64,12 +63,12 @@
         "compressor": {
             "state": "true",
             "input-gain": "0",
-            "output-gain": "20",
-            "mode": "Downward",
-            "attack": "0",
+            "output-gain": "6",
+            "mode": "Upward",
+            "attack": "70",
             "release": "100",
             "threshold": "-24",
-            "ratio": "4",
+            "ratio": "2",
             "knee": "-6",
             "makeup": "0",
             "sidechain": {
@@ -331,7 +330,7 @@
                     "q": "4.3600000000000003"
                 },
                 "band22": {
-                    "type": "Bell",
+                    "type": "Off",
                     "mode": "RLC (BT)",
                     "slope": "x1",
                     "solo": "false",
@@ -351,7 +350,7 @@
                     "q": "4.3600000000000003"
                 },
                 "band24": {
-                    "type": "Bell",
+                    "type": "Off",
                     "mode": "RLC (BT)",
                     "slope": "x1",
                     "solo": "false",
@@ -633,7 +632,7 @@
                     "q": "4.3600000000000003"
                 },
                 "band22": {
-                    "type": "Bell",
+                    "type": "Off",
                     "mode": "RLC (BT)",
                     "slope": "x1",
                     "solo": "false",
@@ -653,7 +652,7 @@
                     "q": "4.3600000000000003"
                 },
                 "band24": {
-                    "type": "Bell",
+                    "type": "Off",
                     "mode": "RLC (BT)",
                     "slope": "x1",
                     "solo": "false",
@@ -739,7 +738,7 @@
             "state": "false",
             "detection": "RMS",
             "stereo-link": "Average",
-            "range": "-24",
+            "range": "-6",
             "attack": "20",
             "release": "250",
             "threshold": "-18",
@@ -758,10 +757,10 @@
             "oversampling": "1"
         },
         "maximizer": {
-            "state": "false",
+            "state": "true",
             "release": "3.1600000000000001",
-            "ceiling": "0",
-            "threshold": "0"
+            "ceiling": "-24",
+            "threshold": "-30"
         },
         "pitch": {
             "state": "false",
@@ -842,9 +841,9 @@
             }
         },
         "loudness": {
-            "state": "true",
+            "state": "false",
             "loudness": "-3.1000000000000001",
-            "output": "-2",
+            "output": "-3",
             "link": "-9.0999999999999996"
         },
         "multiband_gate": {
@@ -909,18 +908,18 @@
             "input-gain": "0",
             "output-gain": "0",
             "balance-in": "0",
-            "balance-out": "0",
+            "balance-out": "-2.4286128663675299e-17",
             "softclip": "false",
             "mutel": "false",
             "muter": "false",
             "phasel": "false",
             "phaser": "false",
             "mode": "LR > LR (Stereo Default)",
-            "side-level": "0",
+            "side-level": "-36",
             "side-balance": "0",
-            "middle-level": "0",
+            "middle-level": "6",
             "middle-panorama": "0",
-            "stereo-base": "0",
+            "stereo-base": "7.5286998857393428e-16",
             "delay": "0",
             "sc-level": "1",
             "stereo-phase": "0"
@@ -1008,7 +1007,7 @@
             "detect-silence": "true",
             "input-gain": "0",
             "output-gain": "20",
-            "target": "-84",
+            "target": "-80",
             "weight-m": "1",
             "weight-s": "1",
             "weight-i": "1"
