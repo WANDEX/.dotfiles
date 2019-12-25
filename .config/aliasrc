@@ -30,6 +30,7 @@ alias \
     si3s="$EDITOR ~/.config/py3status/config" \
     svc="$EDITOR ~/.config/nvim/init.vim" \
     scv="$EDITOR ~/.config/cvim/.cvimrc" \
+    sqc="$EDITOR ~/.config/qutebrowser/config.py" \
     sali="$EDITOR ~/.config/aliasrc" \
     stodo="$EDITOR ~/Documents/Pomodoro/TODO.txt" \
     sudo="sudo " \
