@@ -22,7 +22,6 @@ set $resizepix 5
 set $output0 "HDMI-0"
 # right monitor
 set $output1 "VGA-0"
-#set $output1 "DVI-D-0"
 #
 # *** END ***
 
@@ -101,7 +100,8 @@ set $ws8 "8:  "
 set $ws9 "9:  "
 set $ws0 "10:  "
 
-# workspace outputs difinition
+## workspace outputs difinition
+
 workspace $ws1 output $output0
 workspace $ws2 output $output0
 workspace $ws3 output $output0
