@@ -43,7 +43,7 @@ s_css_dir = "css/"
 s_style_postfix = "-all-sites.css"
 s_family = "darculized"
 s_style_full = s_css_dir + s_family + "/" + s_family + s_style_postfix
-c.content.user_stylesheets = [s_style_full]
+# c.content.user_stylesheets = [s_style_full]
 
 ## rebindings
 ## Core Mappings For Colemak
@@ -70,3 +70,5 @@ remappings = {'i': 's', 'j': 'n', 'k': 'e', 'l': 'i', 'n': 'k', 's': 'j', 'I': '
 
 remap_in_all_modes(remappings)
 
+# c.bind()
+# c.bindings.key_mappings = {'j': 'n', 'n': 'k'}
