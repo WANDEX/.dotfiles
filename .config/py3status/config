@@ -293,7 +293,7 @@ group network {
     frame networkDU {
         transmission {
             format_torrent = '[\?if=status=Downloading '
-            format_torrent += '{name} D: {down}kb/s '
+            format_torrent += 'D: {down}kb/s '
             format_torrent += '[\?not_zero U: {up}kb/s ]'
             format_torrent += 'ETA:{eta} ]'
         }
