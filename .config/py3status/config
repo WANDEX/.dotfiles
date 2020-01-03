@@ -191,6 +191,65 @@ frame urgent_maintenance {
 }
 
 
+# unuglify transition to colored
+order += "static_string separator_beg_crypto"
+static_string separator_beg_crypto { format = '\?color=standardcolor ' }
+
+order += "group crypto"
+group crypto {
+    click_mode = "button"
+    format_button_closed = '+'
+    format_button_open = '-'
+    format_closed = '\?color=soundcolor {button}'
+    background = 'standardcolor'
+    frame cryptoFrame {
+        background = 'standardcolor'
+        format_separator = ' '
+        # show info stuff
+
+        coin_market USD {
+            format_coin = "[\?color=symbol {symbol}] ${price_usd:.0f} "
+            format_coin += "[\?color=percent_change_24h {percent_change_24h}%]"
+            markets = ["BTC", "ETH"]
+            thresholds = {
+                "symbol": [
+                    ("BTC", "greenyellow"),
+                    ("ETH", "orange"),
+                ],
+                "percent_change_24h": [(-100, "bad"), (0, "good"), (5, "greenyellow")],
+            }
+        }
+
+        coin_market BTC {
+            format_coin = "[\?color=symbol {symbol}] Ƀ{price_btc:.3f} "
+            format_coin += "[\?color=percent_change_24h {percent_change_24h}%]"
+            markets = ["BCH"]
+            thresholds = {
+                "symbol": [
+                    ("BCH", "yellow"),
+                ],
+                "percent_change_24h": [(-100, "bad"), (0, "good"), (5, "greenyellow")],
+            }
+        }
+
+        coin_market SHT {
+            format_coin = "[\?color=symbol {symbol}] ${price_usd:.3f} "
+            format_coin += "[\?color=percent_change_24h {percent_change_24h}%]"
+            markets = ["ZRX"]
+            thresholds = {
+                "symbol": [
+                    ("ZRX", "color_degraded"),
+                ],
+                "percent_change_24h": [(-100, "bad"), (0, "good"), (5, "greenyellow")],
+            }
+        }
+
+    }
+}
+
+# unuglify transition to colored
+order += "static_string separator_end_crypto"
+static_string separator_end_crypto { format = '\?color=standardcolor ' }
 
 # unuglify transition to colored
 order += "static_string separator_beg_network"
@@ -331,7 +390,8 @@ group conkyITD {
         arch_updates {
             cache_timeout = 10800
             hide_if_zero = True
-            format = ' {pacman}/{aur}'  # if include_aur is True
+            #format = ' {pacman}/{aur}'  # if include_aur is True
+            format = ' {pacman}'  # if include_aur is True
         }
         conky info {
             format = ''
