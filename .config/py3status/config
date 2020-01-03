@@ -202,48 +202,74 @@ group crypto {
     format_button_open = '-'
     format_closed = '\?color=soundcolor {button}'
     background = 'standardcolor'
-    frame cryptoFrame {
-        background = 'standardcolor'
-        format_separator = ' '
-        # show info stuff
-
-        coin_market USD {
-            format_coin = "[\?color=symbol {symbol}] ${price_usd:.0f} "
-            format_coin += "[\?color=percent_change_24h {percent_change_24h}%]"
-            markets = ["BTC", "ETH"]
-            thresholds = {
-                "symbol": [
-                    ("BTC", "greenyellow"),
-                    ("ETH", "orange"),
-                ],
-                "percent_change_24h": [(-100, "bad"), (0, "good"), (5, "greenyellow")],
+    group cryptoFRAMES {
+        fixed_width = false
+        # main frame
+        frame cryptoMAIN {
+            background = 'standardcolor'
+            format_separator = ' '
+            coin_market USD {
+                cache_timeout = 10
+                format_coin = "[\?color=symbol {symbol}] ${price_usd:.0f} "
+                format_coin += "[\?color=percent_change_24h {percent_change_24h}%]"
+                markets = ["BTC", "ETH"]
+                thresholds = {
+                    "symbol": [
+                        ("BTC", "greenyellow"),
+                        ("ETH", "orange"),
+                    ],
+                    "percent_change_24h": [(-100, "bad"), (0, "good"), (5, "greenyellow")],
+                }
+            }
+            coin_market BTC {
+                cache_timeout = 10
+                format_coin = "[\?color=symbol {symbol}] Ƀ{price_btc:.3f} "
+                format_coin += "[\?color=percent_change_24h {percent_change_24h}%]"
+                markets = ["BCH"]
+                thresholds = {
+                    "symbol": [
+                        ("BCH", "yellow"),
+                    ],
+                    "percent_change_24h": [(-100, "bad"), (0, "good"), (5, "greenyellow")],
+                }
+            }
+            coin_market SHT {
+                cache_timeout = 10
+                format_coin = "[\?color=symbol {symbol}] ${price_usd:.3f} "
+                format_coin += "[\?color=percent_change_24h {percent_change_24h}%]"
+                markets = ["ZRX"]
+                thresholds = {
+                    "symbol": [
+                        ("ZRX", "color_degraded"),
+                    ],
+                    "percent_change_24h": [(-100, "bad"), (0, "good"), (5, "greenyellow")],
+                }
             }
         }
-
-        coin_market BTC {
-            format_coin = "[\?color=symbol {symbol}] Ƀ{price_btc:.3f} "
-            format_coin += "[\?color=percent_change_24h {percent_change_24h}%]"
-            markets = ["BCH"]
-            thresholds = {
-                "symbol": [
-                    ("BCH", "yellow"),
-                ],
-                "percent_change_24h": [(-100, "bad"), (0, "good"), (5, "greenyellow")],
+        # secondary frame, display top 10 markets
+        frame cryptoTOP {
+            coin_market TOP {
+                cache_timeout = 10
+                format_coin = "[\?color=rank {rank}. {symbol} ${price_usd:.0f}] "
+                format_coin += "[\?color=percent_change_24h {percent_change_24h}%] "
+                markets = 10
+                thresholds = {
+                    "rank": [
+                        (1, "#d3d3d3"),
+                        (2, "#bdbdbd"),
+                        (3, "#a8a8a8"),
+                        (4, "#939393"),
+                        (5, "#7e7e7e"),
+                        (6, "#696969"),
+                        (7, "#545454"),
+                        (8, "#3f3f3f"),
+                        (9, "#545454"),
+                        (10, "#696969"),
+                    ],
+                    "percent_change_24h": [(-100, "bad"), (0, "good"), (5, "greenyellow")],
+                }
             }
         }
-
-        coin_market SHT {
-            format_coin = "[\?color=symbol {symbol}] ${price_usd:.3f} "
-            format_coin += "[\?color=percent_change_24h {percent_change_24h}%]"
-            markets = ["ZRX"]
-            thresholds = {
-                "symbol": [
-                    ("ZRX", "color_degraded"),
-                ],
-                "percent_change_24h": [(-100, "bad"), (0, "good"), (5, "greenyellow")],
-            }
-        }
-
     }
 }
 
