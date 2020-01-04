@@ -237,9 +237,10 @@ group crypto {
                 cache_timeout = 10
                 format_coin = "[\?color=symbol {symbol}] ${price_usd:.3f} "
                 format_coin += "[\?color=percent_change_24h {percent_change_24h}%]"
-                markets = ["ZRX"]
+                markets = ["ZEC", "ZRX"]
                 thresholds = {
                     "symbol": [
+                        ("ZEC", "color_degraded"),
                         ("ZRX", "color_degraded"),
                     ],
                     "percent_change_24h": [(-100, "bad"), (0, "good"), (5, "greenyellow")],
