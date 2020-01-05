@@ -271,6 +271,30 @@ group crypto {
                 }
             }
         }
+        # third frame, display top 10 markets cap
+
+        frame cryptoTOPcap {
+            coin_market TOPcap {
+                cache_timeout = 10
+                format_coin = "[\?color=rank {rank}. {symbol} ${market_cap_usd:.0f}] "
+                markets = 10
+                thresholds = {
+                    "rank": [
+                        (1, "#d3d3d3"),
+                        (2, "#bdbdbd"),
+                        (3, "#a8a8a8"),
+                        (4, "#939393"),
+                        (5, "#7e7e7e"),
+                        (6, "#696969"),
+                        (7, "#545454"),
+                        (8, "#3f3f3f"),
+                        (9, "#545454"),
+                        (10, "#696969"),
+                    ],
+                }
+            }
+        }
+
     }
 }
 
