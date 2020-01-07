@@ -272,12 +272,11 @@ group crypto {
             }
         }
         # third frame, display top 10 markets cap
-
         frame cryptoTOPcap {
             coin_market TOPcap {
                 cache_timeout = 10
-                format_coin = "[\?color=rank {rank}. {symbol} ] "
-                format_coin += "M$[\?max_length=-9&trim=both {market_cap_usd:.0f} ]"
+                format_coin = "[\?color=rank {rank}. {symbol} M$]"
+                format_coin += "[\?max_length=-6&trim=both {market_cap_usd:.0f}]"
                 markets = 10
                 thresholds = {
                     "rank": [
