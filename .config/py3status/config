@@ -452,7 +452,6 @@ group conkyITD {
                 'update_interval': 60,            # update interval for conky
             }
         }
-
         frame conkyDATE {
             conky time {
                 format = "  "
@@ -464,7 +463,6 @@ group conkyITD {
                     'update_interval': 1,       # update interval for conky
                 }
             }
-
             conky day {
                 format = ""
                 format += " {time %A} "
@@ -474,7 +472,6 @@ group conkyITD {
                     'update_interval': 3,       # update every 3 sec
                 }
             }
-
             conky date {
                 format = ""
                 format += "{time %m}."
@@ -485,9 +482,11 @@ group conkyITD {
                     'update_interval': 600,     # update every 30 minutes
                 }
             }
-
         }
-
     }
 }
+
+# unuglify transition to colored
+order += "static_string separator_end_crypto"
+static_string separator_end_conky { format = '\?color=standardcolor ' }
 
