@@ -203,20 +203,24 @@ group crypto {
     format_closed = '\?color=soundcolor {button}'
     background = 'standardcolor'
     group cryptoFRAMES {
-        fixed_width = false
-        # main frame
-        frame cryptoMAIN {
+        group cryptoCYCLE {
+            #position = 'center'
+            #min_length = 100
+            #cycle = 3
             background = 'standardcolor'
             format_separator = ' '
             coin_market USD {
                 cache_timeout = 20
-                format_coin = "[\?color=symbol {symbol}] ${price_usd:.0f} "
+                format_coin = "[\?color=symbol {symbol}] ${price_usd:.1f} "
                 format_coin += "[\?color=percent_change_24h {percent_change_24h}%]"
-                markets = ["BTC", "ETH"]
+                markets = ["BTC", "BCH", "ETH", "ZEC", "ZRX"]
                 thresholds = {
                     "symbol": [
                         ("BTC", "greenyellow"),
+                        ("BCH", "yellow"),
                         ("ETH", "orange"),
+                        ("ZEC", "color_degraded"),
+                        ("ZRX", "color_degraded"),
                     ],
                     "percent_change_24h": [(-100, "bad"), (0, "good"), (5, "greenyellow")],
                 }
@@ -225,21 +229,12 @@ group crypto {
                 cache_timeout = 20
                 format_coin = "[\?color=symbol {symbol}] Ƀ{price_btc:.3f} "
                 format_coin += "[\?color=percent_change_24h {percent_change_24h}%]"
-                markets = ["BCH"]
+                markets = ["BTC", "BCH", "ETH", "ZEC", "ZRX"]
                 thresholds = {
                     "symbol": [
+                        ("BTC", "greenyellow"),
                         ("BCH", "yellow"),
-                    ],
-                    "percent_change_24h": [(-100, "bad"), (0, "good"), (5, "greenyellow")],
-                }
-            }
-            coin_market SHT {
-                cache_timeout = 20
-                format_coin = "[\?color=symbol {symbol}] ${price_usd:.3f} "
-                format_coin += "[\?color=percent_change_24h {percent_change_24h}%]"
-                markets = ["ZEC", "ZRX"]
-                thresholds = {
-                    "symbol": [
+                        ("ETH", "orange"),
                         ("ZEC", "color_degraded"),
                         ("ZRX", "color_degraded"),
                     ],
