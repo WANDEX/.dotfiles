@@ -82,7 +82,17 @@ exec --no-startup-id redshift
 
 # *** Window Specific Rules***
 #
+## xprop
+## sticky enable
+## to get window size > $sleep 3; xdotool getwindowfocus getwindowgeometry
+# kill only the About dialog from Firefox
+#bindsym $mod+x [class="Firefox" window_role="About"] kill
+
+for_window [window_role="pop-up"] floating enable, move position center
+
 for_window [instance="Godot_Engine"] floating enable
+
+for_window [window_role="pop-up" title="Spreed - the speed reading extension"] sticky enable, resize set 1000 420
 #
 # *** END ***
 
