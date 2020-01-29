@@ -59,7 +59,8 @@ exec --no-startup-id mpd ~/.config/mpd/mpd.conf
 exec --no-startup-id mpdscribble --conf ~/.config/mpdscribble/mpdscribble.conf
 
 # set background wallpaper
-exec --no-startup-id sleep 5 && setbg.sh
+#exec --no-startup-id sleep 5 && setbg.sh --zoom
+exec --no-startup-id sleep 5 && xwallpaper --zoom ~/.config/wallpaper.png
 
 # load/reload resource file every i3 restart
 exec_always --no-startup-id xrdb ~/.Xresources
@@ -179,7 +180,7 @@ bar {
     }
     status_command py3status
     position top
-    #tray_output primary
+    tray_output primary
 }
 
 mode "resize" {
