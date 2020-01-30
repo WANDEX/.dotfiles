@@ -34,7 +34,7 @@ alias \
     sali="$EDITOR ~/.config/aliasrc" \
     stodo="$EDITOR ~/Documents/Pomodoro/TODO.txt" \
     sudo="sudo " \
-    trm="rm -v ~/Downloads/torrents/*.torrent" \
+    trm="rm -vf ~/Downloads/torrents/*.torrent" \
     pp="sudo pacman -S" \
     pd="python -m pydoc" \
     pe="python -me"
