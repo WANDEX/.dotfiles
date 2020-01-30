@@ -35,6 +35,7 @@ alias \
     stodo="$EDITOR ~/Documents/Pomodoro/TODO.txt" \
     sudo="sudo " \
     trm="rm -vf ~/Downloads/torrents/*.torrent" \
+    venv="source venv/bin/activate" \
     pp="sudo pacman -S" \
     pd="python -m pydoc" \
     pe="python -me"
