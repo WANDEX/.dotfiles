@@ -25,7 +25,10 @@
         ]
     },
     "output": {
-        "blacklist": "",
+        "blacklist": [
+            "Simultaneous output on HDA NVidia Digital Stereo (HDMI 2)",
+            "Simultaneous output on Built-in Audio Analog Stereo"
+        ],
         "plugins_order": [
             "autogain",
             "loudness",
@@ -1005,6 +1008,7 @@
         "autogain": {
             "state": "true",
             "detect-silence": "true",
+            "use-geometric-mean": "true",
             "input-gain": "0",
             "output-gain": "20",
             "target": "-80",
