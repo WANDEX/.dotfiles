@@ -25,8 +25,8 @@
 load-module module-combine-sink sink_name=combined
 set-default-sink combined
 
-# Make sink mono
-load-module module-remap-sink master=combined sink_name=mono sink_properties="device.description='Mono'" channels=2 channel_map=mono,mono
+# Load nvidia hdmi output
+load-module module-alsa-sink device=hw:1,7
 
 # Allowing multiple users to use PulseAudio at the same time
 #load-module module-native-protocol-unix auth-anonymous=1 socket=/run/user/1000/pulse/native
