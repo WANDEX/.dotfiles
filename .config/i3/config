@@ -216,7 +216,7 @@ bindsym $mod+Shift+g exec --no-startup-id google-chrome-stable -incognito
 
 # toggle monitor mute on/off
 bindsym $mod+m exec --no-startup-id \
-pactl set-sink-mute alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1 toggle
+pactl set-sink-mute alsa_output.hw_1_7 toggle
 
 # move workspaces between monitors/outputs
 bindsym $mod+Control+1 move workspace to output $output0
