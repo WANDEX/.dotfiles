@@ -419,7 +419,7 @@ group sound {
             cache_timeout = 1
             format = '[\?if=is_input | ]  {percentage}%'
             format_muted = '[\?if=is_input | ] MUTE'
-            device = 'alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1'
+            device = 'alsa_output.hw_1_7'
             thresholds = [
                 (0, "bad"), (50, "degraded"), (75, "good")
             ]
