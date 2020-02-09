@@ -102,7 +102,7 @@ map b :bookmarks
 map p openPaste
 map P openPasteTab
 
-map gj hideDownloadsShelf
+map gd hideDownloadsShelf
 map gf nextFrame
 map gF rootFrame
 map gq cancelWebRequest
