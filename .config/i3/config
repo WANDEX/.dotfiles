@@ -192,11 +192,21 @@ mode "resize" {
     bindsym e resize grow height $resizepix px or $resizepix ppt
     bindsym i resize shrink width $resizepix px or $resizepix ppt
 
+    bindsym $alt+h resize grow width 1 px or 1 ppt
+    bindsym $alt+n resize shrink height 1 px or 1 ppt
+    bindsym $alt+e resize grow height 1 px or 1 ppt
+    bindsym $alt+i resize shrink width 1 px or 1 ppt
+
     # same bindings, but for the arrow keys
     bindsym Left resize grow width $resizepix px or $resizepix ppt
     bindsym Down resize shrink height $resizepix px or $resizepix ppt
     bindsym Up resize grow height $resizepix px or $resizepix ppt
     bindsym Right resize shrink width $resizepix px or $resizepix ppt
+
+    bindsym $alt+Left resize grow width 1 px or 1 ppt
+    bindsym $alt+Down shrink height 1 px or 1 ppt
+    bindsym $alt+Up resize grow height 1 px or 1 ppt
+    bindsym $alt+Right resize shrink width 1 px or 1 ppt
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
