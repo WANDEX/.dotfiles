@@ -91,7 +91,7 @@ set splitright                  " Vertical split to right of current.
 
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=ucs-bom,utf-8,default,latin1,cp1250
+set fileencodings=ucs-bom,utf-8,default,cp1251,cp866,koi8-r,latin1,cp1250
 set nobackup
 set nowritebackup
 set noswapfile
