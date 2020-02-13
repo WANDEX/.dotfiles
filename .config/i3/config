@@ -7,6 +7,8 @@ font pango:NotoMono Nerd Font 8, Icons 8
 #
 # need for i3-gaps
 for_window [class="^.*"] border pixel 2
+default_floating_border none
+hide_edge_borders smart
 gaps inner 0
 gaps outer 0
 set $term $TERMINAL
@@ -222,9 +224,9 @@ bindsym $mod+w mode "resize"
 bindsym $mod+Shift+m exec --no-startup-id arun_xrandr.sh
 
 # launch browser
-bindsym $mod+q exec --no-startup-id qutebrowser
 bindsym $mod+g exec --no-startup-id google-chrome-stable
 bindsym $mod+Shift+g exec --no-startup-id google-chrome-stable -incognito
+#bindsym $mod+Shift+b exec --no-startup-id qutebrowser
 
 # toggle monitor mute on/off
 bindsym $mod+m exec --no-startup-id \
@@ -347,11 +349,14 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
+# toggle window border
+bindsym $mod+z border toggle 2
+
 # focus the parent container
-bindsym $mod+c focus parent
+bindsym $mod+x focus parent
 
 # focus the child container
-bindsym $mod+x focus child
+bindsym $mod+c focus child
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
