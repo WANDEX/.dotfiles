@@ -148,15 +148,17 @@ set_from_resource $blue         color12 #000000
 set_from_resource $magenta      color13 #000000
 set_from_resource $cyan         color14 #000000
 set_from_resource $white        color15 #000000
+set_from_resource $blood        color16 #000000
+set_from_resource $blackblue    color17 #000000
 set $transparent                        #00000000
 set $transparent_30                     #0000004D
 set $transparent_50                     #00000080
 set $transparent_70                     #000000B3
 
 #                       BORDER          BACKGROUND  TEXT        INDICATOR       CHILD_BORDER
-client.focused          $red            $red        $magenta    $darkmagenta    $cyan
-client.unfocused        $transparent    $blue       $white      $cyan           $darkblack
-client.focused_inactive $transparent    $blue       $white      $cyan           $darkblack
+client.focused          $red            $blood      $white      $darkmagenta    $cyan
+client.unfocused        $transparent    $black      $white      $cyan           $darkblack
+client.focused_inactive $transparent    $blackblue  $white      $cyan           $darkblack
 client.urgent           $green          $green      $black      $green          $green
 client.background       $black
 
@@ -180,7 +182,7 @@ bar {
     }
     status_command py3status
     position top
-    tray_output primary
+    #tray_output primary
 }
 
 mode "resize" {
