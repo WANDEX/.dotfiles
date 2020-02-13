@@ -35,13 +35,13 @@ load-module module-alsa-sink device=hw:1,7
 #load-module module-native-protocol-unix
 
 # set volume to 50% on boot
-set-sink-volume 0 32768
+#set-sink-volume 0 32768
 
 # set volume to 70% on boot
 #set-sink-volume 0 45875
 
 # set volume to 100% on boot
-#set-sink-volume 0 65536
+set-sink-volume 0 65536
 
 
 ### Automatically restore the volume of streams and devices
