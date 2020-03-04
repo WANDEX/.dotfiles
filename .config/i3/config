@@ -80,6 +80,8 @@ exec --no-startup-id sleep 5 && deadd-notification-center
 exec --no-startup-id transmission-daemon
 
 exec --no-startup-id redshift
+
+exec --no-startup-id xboxdrv.sh
 #
 # *** END ***
 
@@ -229,8 +231,8 @@ bindsym $mod+Shift+g exec --no-startup-id google-chrome-stable -incognito
 #bindsym $mod+Shift+b exec --no-startup-id qutebrowser
 
 # toggle monitor mute on/off
-bindsym $mod+m exec --no-startup-id \
-pactl set-sink-mute alsa_output.hw_1_7 toggle
+bindsym $mod+m exec --no-startup-id pactl set-sink-mute $sink1 toggle
+#pactl set-sink-mute alsa_output.hw_1_7 toggle
 
 # move workspaces between monitors/outputs
 bindsym $mod+Control+1 move workspace to output $output0
@@ -282,17 +284,17 @@ bindsym XF86AudioStop exec --no-startup-id mpc stop
 bindsym $mod+F8 exec --no-startup-id kill -s USR1 $(pidof deadd-notification-center)
 # F9
 #bindsym XF86AudioMute exec --no-startup-id mpc
-bindsym $mod+F9 exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym $mod+F9 exec --no-startup-id pactl set-sink-mute $sink0 toggle
 # F10
 bindsym XF86AudioLowerVolume exec --no-startup-id mpc volume -5
-bindsym $mod+F10 exec --no-startup-id pactl set-sink-volume 0 -10%
-bindsym $mod+$alt+F10 exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym $mod+Shift+F10 exec --no-startup-id pactl set-sink-volume 0 -50%
+bindsym $mod+F10 exec --no-startup-id pactl set-sink-volume $sink0 -10%
+bindsym $mod+$alt+F10 exec --no-startup-id pactl set-sink-volume $sink0 -5%
+bindsym $mod+Shift+F10 exec --no-startup-id pactl set-sink-volume $sink0 -50%
 # F11
 bindsym XF86AudioRaiseVolume exec --no-startup-id mpc volume +5
-bindsym $mod+F11 exec --no-startup-id pactl set-sink-volume 0 +10%
-bindsym $mod+$alt+F11 exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym $mod+Shift+F11 exec --no-startup-id pactl set-sink-volume 0 +50%
+bindsym $mod+F11 exec --no-startup-id pactl set-sink-volume $sink0 +10%
+bindsym $mod+$alt+F11 exec --no-startup-id pactl set-sink-volume $sink0 +5%
+bindsym $mod+Shift+F11 exec --no-startup-id pactl set-sink-volume $sink0 +50%
 # F12
 #bindsym $mod+F12 exec --no-startup-id toggle_mono.sh
 #
@@ -382,6 +384,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws0
 
+#killall -USR1 py3status
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
