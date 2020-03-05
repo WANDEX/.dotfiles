@@ -462,18 +462,18 @@ group sound {
             cache_timeout = 1
             format = '[\?if=is_input | ]   {percentage}%'
             format_muted = '[\?if=is_input | ]  MUTE'
-            device = '0'
+            device = "0"
             thresholds = [
                 (0, "bad"), (50, "degraded"), (75, "good")
             ]
         }
-        volume_status "B" {
+        volume_status "M" {
             align = "center"
             min_width = 50
             cache_timeout = 1
             format = '[\?if=is_input | ]  {percentage}%'
             format_muted = '[\?if=is_input | ] MUTE'
-            device = '3'
+            device = "3" # flag4sed M
             thresholds = [
                 (0, "bad"), (50, "degraded"), (75, "good")
             ]
