@@ -3,7 +3,8 @@
 
 
 # add to $PATH .scripts and subdirs
-export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+#export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+export PATH="$PATH:$(du "$HOME/.scripts/" --exclude=".git" --exclude=".*cache*" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export PATH="${PATH}:$HOME/.local/bin"
 export TERMINAL="st"
 export EDITOR="nvim"
