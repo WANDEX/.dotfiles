@@ -25,6 +25,10 @@
 load-module module-combine-sink sink_name=combined
 set-default-sink combined
 
+# Disable timer-based scheduling in order to work with
+# default-fragments and default-fragment-size-msec at daemon.conf
+load-module module-udev-detect tsched=0
+
 # Load nvidia hdmi output
 load-module module-alsa-sink device=hw:1,7
 
@@ -34,15 +38,20 @@ load-module module-alsa-sink device=hw:1,7
 #load-module module-native-protocol-unix auth-cookie-enabled=0
 #load-module module-native-protocol-unix
 
+# mute at boot sink N
+set-sink-mute 1 true
+
 # set volume to 50% on boot
-#set-sink-volume 0 32768
+#set-sink-volume 1 32768
 
 # set volume to 70% on boot
-#set-sink-volume 0 45875
+set-sink-volume 0 45875
 
 # set volume to 100% on boot
-set-sink-volume 0 65536
+#set-sink-volume 0 65536
 
+# set volume to 120% on boot
+set-sink-volume 1 78642
 
 ### Automatically restore the volume of streams and devices
 load-module module-device-restore
