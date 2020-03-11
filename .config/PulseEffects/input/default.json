@@ -40,7 +40,7 @@
             "pitch"
         ],
         "compressor": {
-            "state": "true",
+            "state": "false",
             "input-gain": "0",
             "output-gain": "0",
             "mode": "Downward",
@@ -61,7 +61,7 @@
             }
         },
         "deesser": {
-            "state": "true",
+            "state": "false",
             "detection": "RMS",
             "mode": "Wide",
             "threshold": "-18",
@@ -76,7 +76,7 @@
             "sc-listen": "false"
         },
         "equalizer": {
-            "state": "true",
+            "state": "false",
             "mode": "IIR",
             "num-bands": "10",
             "input-gain": "0",
@@ -297,7 +297,7 @@
             "inertia": "20"
         },
         "gate": {
-            "state": "true",
+            "state": "false",
             "detection": "RMS",
             "stereo-link": "Average",
             "range": "-12",
@@ -309,7 +309,7 @@
             "makeup": "0"
         },
         "limiter": {
-            "state": "true",
+            "state": "false",
             "input-gain": "6",
             "limit": "-12",
             "lookahead": "0.10000000000000001",
