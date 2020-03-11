@@ -450,12 +450,11 @@ group sound {
         static_string separator_end_player { format = '\?color=playercolor ' }
         #format_separator = ' '
         format_separator = '  '
-        #external_script {
-            #align = "left"
-            #cache_timeout = 1
-            #format = "{output}"
-            #script_path = "~/.scripts/.temp/.toggle_mono_status.sh"
-        #}
+        external_script "pulse_preset" {
+            format = "{output} "
+            cache_timeout = 1
+            script_path = "~/.scripts/.temp/.toggle_preset_status.sh"
+        }
         volume_status {
             align = "center"
             min_width = 50
