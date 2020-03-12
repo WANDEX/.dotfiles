@@ -451,7 +451,7 @@ group sound {
         #format_separator = ' '
         format_separator = '  '
         external_script "pulse_preset" {
-            format = "{output} "
+            format = "[\?if=!output=default {output} ]"
             cache_timeout = 1
             script_path = "~/.scripts/.temp/.toggle_preset_status.sh"
         }
