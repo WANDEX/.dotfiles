@@ -42,6 +42,9 @@ set $sink1 3
 ## for nvidia drivers
 exec --no-startup-id sleep 2 && arun_nvidia.sh
 
+# sed for editing i3 & py3status configs
+exec --no-startup-id sleep 4 && sed.sh
+
 # set keyboard layout and r rate
 exec --no-startup-id kb.sh
 
@@ -56,9 +59,6 @@ exec --no-startup-id unclutter
 
 # proxychains curl http://icanhazip.com | also for checking: ss -tupln
 exec --no-startup-id nohup tor &
-
-# mopidy includes scrobbler and other plugins
-exec --no-startup-id nohup mopidy &
 
 # mpd & mpdscribble
 exec --no-startup-id mpd ~/.config/mpd/mpd.conf
