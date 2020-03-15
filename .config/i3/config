@@ -283,6 +283,7 @@ bindsym XF86AudioPrev exec --no-startup-id mpc prev
 bindsym XF86AudioNext exec --no-startup-id mpc next
 # F7
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle
+bindsym $mod+F7 exec --no-startup-id switch_pulse_preset.sh
 # F8
 bindsym XF86AudioStop exec --no-startup-id mpc stop
 bindsym $mod+F8 exec --no-startup-id kill -s USR1 $(pidof deadd-notification-center)
