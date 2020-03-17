@@ -101,6 +101,8 @@ for_window [window_role="pop-up"] floating enable, move position center
 
 for_window [instance="Godot_Engine"] floating enable
 
+for_window [class="mpv" title="YTDL"] floating enable, resize set 720 480, move position center
+
 for_window [window_role="pop-up" title="Spreed - the speed reading extension"] sticky enable, resize set 1000 420
 #
 # *** END ***
@@ -244,6 +246,9 @@ bindsym $mod+Control+2 move workspace to output $output1
 
 # exec ranger
 bindsym $mod+Shift+Return exec --no-startup-id $term -e ranger
+
+# launch mpv with youtube-dl url link from xclip
+bindsym $mod+U exec --no-startup-id youtube-dl.sh
 
 bindsym $mod+Shift+k exec --no-startup-id \
 $term -e ncmpcpp --config ~/.config/ncmpcpp/config
