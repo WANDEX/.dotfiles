@@ -101,7 +101,7 @@ for_window [window_role="pop-up"] floating enable, move position center
 
 for_window [instance="Godot_Engine"] floating enable
 
-for_window [class="mpv" title="YTDL"] floating enable, resize set 720 480, move position center
+for_window [class="mpv" title="[YTDL]"] floating enable, move position center
 
 for_window [window_role="pop-up" title="Spreed - the speed reading extension"] sticky enable, resize set 1000 420
 #
