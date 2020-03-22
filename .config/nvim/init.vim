@@ -332,6 +332,8 @@ nnoremap <localleader>cw :%s/\s\+$//g<CR>:nohlsearch<CR>
 " Colorizer toggle color highlight
 nnoremap <localleader>gct :ColorToggle<CR>
 
+nmap <localleader>tc :call ToggleColumn()<CR>
+
 " unmap mouse wheel
 nmap <ScrollWheelUp> <nop>
 imap <ScrollWheelUp> <nop>
