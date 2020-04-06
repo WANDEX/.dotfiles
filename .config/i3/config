@@ -65,8 +65,7 @@ exec --no-startup-id mpd ~/.config/mpd/mpd.conf
 exec --no-startup-id mpdscribble --conf ~/.config/mpdscribble/mpdscribble.conf
 
 # set background wallpaper
-#exec --no-startup-id sleep 5 && setbg.sh --zoom
-exec --no-startup-id sleep 5 && xwallpaper --zoom ~/.config/wallpaper.png
+exec --no-startup-id sleep 5 && setbg.sh
 
 # load/reload resource file every i3 restart
 exec_always --no-startup-id xrdb ~/.Xresources
