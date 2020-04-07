@@ -15,9 +15,11 @@ Xft.dpi: 96
 
 Gtk.CanChangeAccels: true
 
-st.font: Mononoki Nerd Font Mono:size=12
-!!*.font: Inconsolata:pixelsize=16:antialias=true:autohint=true;
-!!*.font: -gbdfed-creep-Regular-R-Normal--16-120-96-96-M-4-ISO10646-1;
+!! for CJK text and screenshots
+!st.font: NotoSansMono Nerd Font:pixelsize=20
+!st.font: NotoSansMono Nerd Font:pixelsize=14
+st.font: Mononoki Nerd Font Mono:pixelsize=16
+!st.font: -gbdfed-creep-Regular-R-Normal--16-120-96-96-M-4-ISO10646-1;
 
 !! Colors are changed "Monokai":
 *.color0:  #1A1A1A
