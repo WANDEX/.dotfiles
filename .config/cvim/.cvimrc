@@ -72,8 +72,6 @@ map mf createMultiHint
 map mr multiReverseImage
 map my multiYankUrl
 
-map gy yankUrl
-map gr reverseImage
 " ; change the link hint focus???
 " Link Hints
 
@@ -96,6 +94,7 @@ map yy yankDocumentUrl
 map yY yankRootUrl
 map ya yankWindowUrls
 map yh yankHighlight
+map yu yankUrl
 
 map b :bookmarks
 
@@ -110,6 +109,7 @@ map gQ cancelAllWebRequests
 map gu goUpUrl
 map gU goToRootUrl
 map gs :viewsource!
+map gr reverseImage
 
 map <C-b> createBookmark
 
@@ -154,8 +154,8 @@ map <C-6> lastUsedTab
 map zz centerMatchH
 map jn nextSearchResult
 map jp previousSearchResult
-map jj :execute jn zz<CR>
-map je :execute jp zz<CR>
+map <Enter> :execute jn zz<CR>
+map <BS> :execute jp zz<CR>
 
 map L clearSearchHighlight
 " Find Mode
