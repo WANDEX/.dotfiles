@@ -206,6 +206,11 @@ mode "resize" {
     bindsym $alt+e resize grow height 1 px or 1 ppt
     bindsym $alt+i resize shrink width 1 px or 1 ppt
 
+    bindsym Shift+h resize grow width $resizepixbig px or $resizepixbig ppt
+    bindsym Shift+n resize shrink height $resizepixbig px or $resizepixbig ppt
+    bindsym Shift+e resize grow height $resizepixbig px or $resizepixbig ppt
+    bindsym Shift+i resize shrink width $resizepixbig px or $resizepixbig ppt
+
     # same bindings, but for the arrow keys
     bindsym Left resize grow width $resizepix px or $resizepix ppt
     bindsym Down resize shrink height $resizepix px or $resizepix ppt
@@ -217,6 +222,11 @@ mode "resize" {
     bindsym $alt+Up resize grow height 1 px or 1 ppt
     bindsym $alt+Right resize shrink width 1 px or 1 ppt
 
+    bindsym Shift+Left resize grow width $resizepixbig px or $resizepixbig ppt
+    bindsym Shift+Down resize shrink height $resizepixbig px or $resizepixbig ppt
+    bindsym Shift+Up resize grow height $resizepixbig px or $resizepixbig ppt
+    bindsym Shift+Right resize shrink width $resizepixbig px or $resizepixbig ppt
+
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -227,8 +237,6 @@ bindsym $mod+w mode "resize"
 
 # *** Custom Keyboard Shortcuts ***
 #
-# monitor configuration script hotkey
-bindsym $mod+Shift+m exec --no-startup-id arun_xrandr.sh
 
 # launch browser
 bindsym $mod+g exec --no-startup-id google-chrome-stable
@@ -246,8 +254,10 @@ bindsym $mod+Control+2 move workspace to output $output1
 # exec ranger
 bindsym $mod+Shift+Return exec --no-startup-id $term -e ranger
 
-# launch mpv with youtube-dl url link from xclip
-bindsym $mod+U exec --no-startup-id youtube-dl.sh
+# launch mpv with youtube-dl/streamlink url link from xclip
+bindsym $mod+U exec --no-startup-id mpvu
+
+bindsym $mod+k exec --no-startup-id $term -e manner.sh
 
 bindsym $mod+Shift+k exec --no-startup-id \
 $term -e ncmpcpp --config ~/.config/ncmpcpp/config
