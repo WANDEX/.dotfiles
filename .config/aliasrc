@@ -1,19 +1,15 @@
 #!/bin/sh
+
+# Use neovim for vim if present.
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+
 #---- COMMON ----#
 alias \
     cp="cp -vi" \
     rm="rm -vi" \
     mv="mv -vi" \
     calc="python3 -ic 'from math import *'" \
-    neo="nvim " \
-    neoc="nvim +PlugClean +qall" \
-    neou="nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall" \
-    neous="nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall > /dev/null" \
     nt="$TERMINAL &>/dev/null & disown" \
-    grep="grep --color=auto" \
-    ls="ls -hN --color=auto --group-directories-first" \
-    la="ls -Fa --color=auto" \
-    ll="ls -Flas --color=auto" \
     lld="sudo du -ah --max-depth 1" \
     lld2="sudo du -ah --max-depth 2" \
     llda="sudo du -ah" \
@@ -40,6 +36,23 @@ alias \
     pd="python -m pydoc" \
     pe="python -me"
     # pe 'module_name' 'edit'/'view'. source:pypi.org/project/e/
+
+# nvim
+alias \
+        neo="nvim " \
+        neoc="nvim +PlugClean +qall" \
+        neou="nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall" \
+        neous="nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall > /dev/null" \
+        magit="nvim -c MagitOnly"
+
+# Colorize commands when possible.
+alias \
+        grep="grep --color=auto" \
+        ls="ls -hN --color=auto --group-directories-first" \
+        la="ls -Fa --color=auto" \
+        ll="ls -Flas --color=auto" \
+        diff="diff --color=auto" \
+        ccat="highlight --out-format=ansi"
 
 #---- PIP ----#
 alias pip-l="pip3 freeze | $PAGER"
