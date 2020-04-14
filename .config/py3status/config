@@ -453,7 +453,7 @@ group sound {
         external_script "pulse_preset" {
             format = "[\?if=!output=default {output} ]"
             cache_timeout = 1
-            script_path = "~/.scripts/.temp/.toggle_preset_status.sh"
+            script_path = "~/.scripts/.temp/.switch_pulse_preset_status.sh"
         }
         volume_status {
             align = "center"
