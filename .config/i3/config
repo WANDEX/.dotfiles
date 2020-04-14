@@ -258,7 +258,8 @@ bindsym $mod+Shift+Return exec --no-startup-id $term -e ranger
 # launch mpv with youtube-dl/streamlink url link from xclip
 bindsym $mod+U exec --no-startup-id mpvu
 
-bindsym $mod+k exec --no-startup-id $term -e manner.sh
+# launch man pages search script
+bindsym $mod+k exec --no-startup-id $term -e mm
 
 bindsym $mod+Shift+k exec --no-startup-id \
 $term -e ncmpcpp --config ~/.config/ncmpcpp/config
