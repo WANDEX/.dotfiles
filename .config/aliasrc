@@ -10,6 +10,7 @@ alias \
     mv="mv -vi" \
     calc="python3 -ic 'from math import *'" \
     nt="$TERMINAL &>/dev/null & disown" \
+    vf="fzf | xargs -r -I % $EDITOR %" \
     lld="sudo du -ah --max-depth 1" \
     lld2="sudo du -ah --max-depth 2" \
     llda="sudo du -ah" \
@@ -32,10 +33,14 @@ alias \
     sudo="sudo " \
     trm="rm -vf ~/Downloads/torrents/*.torrent" \
     venv="source venv/bin/activate" \
-    pp="sudo pacman -S" \
     pd="python -m pydoc" \
     pe="python -me"
     # pe 'module_name' 'edit'/'view'. source:pypi.org/project/e/
+
+# pacman
+alias \
+        pp="sudo pacman -S" \
+        pvf="pacman -Slq | fzf -m --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
 
 # nvim
 alias \
