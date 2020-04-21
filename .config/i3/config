@@ -44,7 +44,7 @@ set $sink1 3
 exec --no-startup-id sleep 2 && arun_nvidia.sh
 
 # sed for editing i3 & py3status configs
-exec --no-startup-id sleep 4 && sed.sh
+exec --no-startup-id sleep 4 && sed_i3.sh
 
 # set keyboard layout and r rate
 exec --no-startup-id kb.sh
@@ -101,7 +101,10 @@ for_window [window_role="pop-up"] floating enable, move position center
 
 for_window [instance="Godot_Engine"] floating enable
 
-for_window [class="mpv" title="[YTDL]"] floating enable, move position center
+for_window [class="mpv"] floating enable, move position center
+for_window [title=" [STREAM]" class="mpv"] floating disable
+
+for_window [title="The-Matrix-Shell"] fullscreen
 
 for_window [window_role="pop-up" title="Spreed - the speed reading extension"] sticky enable, resize set 1000 420
 #
@@ -251,6 +254,9 @@ bindsym $mod+m exec --no-startup-id pactl set-sink-mute $sink1 toggle
 # move workspaces between monitors/outputs
 bindsym $mod+Control+1 move workspace to output $output0
 bindsym $mod+Control+2 move workspace to output $output1
+
+# move floating window to center (after window resize for example)
+bindsym $mod+Control+w move position center
 
 # exec ranger
 bindsym $mod+Shift+Return exec --no-startup-id $term -e ranger
