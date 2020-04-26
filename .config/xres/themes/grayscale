@@ -1,0 +1,33 @@
+! simple grayscale
+
+!      black      !
+#define c00 #101010
+#define c08 #525252
+
+!       red       !
+#define c01 #7C7C7C
+#define c09 #7C7C7C
+
+!      green      !
+#define c02 #8E8E8E
+#define c10 #8E8E8E
+
+!      yellow     !
+#define c03 #A0A0A0
+#define c11 #A0A0A0
+
+!       blue      !
+#define c04 #686868
+#define c12 #686868
+
+!     magenta     !
+#define c05 #747474
+#define c13 #747474
+
+!       cyan      !
+#define c06 #868686
+#define c14 #868686
+
+!      white      !
+#define c07 #B9B9B9
+#define c15 #F7F7F7

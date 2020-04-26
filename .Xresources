@@ -1,47 +1,32 @@
-Xft.antialias: 1
-Xft.autohint: 0
-Xft.hinting: 1
-! Subpixel hinting type: hintnone, hintslight, hintmedium, or hintfull.
-Xft.hintstyle: hintslight
-! Subpixel antialiasing:
-! none, rgb, bgr, vrgb, vbgr.
-Xft.rgba: rgb
-! lcdnone, lcdlight, lcddefault, lcdlegacy
-! http://www.spasche.net/files/lcdfiltering/
-Xft.lcdfilter: lcdlight
-! Resolution for Xft, in 1024×dots/inch. -1 to use default value.
-! xdpyinfo | grep -B2 resolution
-Xft.dpi: 96
+!!  @@@  @@@  @@@@@@@   @@@@@@@@   @@@@@@    @@@@@@
+!!  @@@  @@@  @@@@@@@@  @@@@@@@@  @@@@@@@   @@@@@@@@
+!!  @@!  !@@  @@!  @@@  @@!       !@@       @@!  @@@
+!!  !@!  @!!  !@!  @!@  !@!       !@!       !@!  @!@
+!!   !@@!@!   @!@!!@!   @!!!:!    !!@@!!    @!@  !@!
+!!    @!!!    !!@!@!    !!!!!:     !!@!!!   !@!  !!!
+!!   !: :!!   !!: :!!   !!:            !:!  !!:  !!!
+!!  :!:  !:!  :!:  !:!  :!:           !:!   :!:  !:!
+!!   ::  :::  ::   :::   :: ::::  :::: ::   ::::: ::
+!!   :   ::    :   : :  : :: ::   :: : :     : :  :
 
-Gtk.CanChangeAccels: true
+! libXft -> FONT DRAWING !
+#include "/home/wndx/.config/xres/xft"
 
-!! for CJK text and screenshots
-!st.font: NotoSansMono Nerd Font:pixelsize=20
-!st.font: NotoSansMono Nerd Font:pixelsize=14
-st.font: Mononoki Nerd Font Mono:pixelsize=16
-!st.font: -gbdfed-creep-Regular-R-Normal--16-120-96-96-M-4-ISO10646-1;
+! SOURCE TERMINAL COLORS !
+#include "/home/wndx/.config/xres/themes/graveyard"
+#include "/home/wndx/.config/xres/base16"
 
-!! Colors are changed "Monokai":
-*.color0:  #1A1A1A
-*.color1:  #FF6188
-*.color2:  #A9DC76
-*.color3:  #FFD866
-*.color4:  #FC9867
-*.color5:  #AB9DF2
-*.color6:  #78DCE8
-*.color7:  #A89984
-*.color8:  #727072
-*.color9:  #C4265E
-*.color10: #A6E22E
-*.color11: #E2E22E
-*.color12: #F4BF75
-*.color13: #AE81FF
-*.color14: #56ADBC
-*.color15: #EBDBB2
+! COMMON FOR ALL COLOR SCHEMES
 *.color16: #AA3131
 *.color17: #000350
 
-!! Transparency (0-255):
-st.alpha: 200
-!!*.alpha: 230
+! Transparency (0-255): !*.alpha: 230
+st.alpha: 220
+
+! FONT
+!! for CJK text and screenshots
+!st.font: NotoSansMono Nerd Font:pixelsize=20
+!st.font: NotoSansMono Nerd Font:pixelsize=14
+!st.font: -gbdfed-creep-Regular-R-Normal--16-120-96-96-M-4-ISO10646-1;
+st.font: Mononoki Nerd Font Mono:pixelsize=16
 

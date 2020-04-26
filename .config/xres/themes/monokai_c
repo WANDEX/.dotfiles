@@ -1,0 +1,33 @@
+! changed Monokai
+
+!      black      !
+#define c00 #1A1A1A
+#define c08 #727072
+
+!       red       !
+#define c01 #FF6188
+#define c09 #C4265E
+
+!      green      !
+#define c02 #A9DC76
+#define c10 #A6E22E
+
+!      yellow     !
+#define c03 #FFD866
+#define c11 #E2E22E
+
+!       blue      !
+#define c04 #FC9867
+#define c12 #F4BF75
+
+!     magenta     !
+#define c05 #AB9DF2
+#define c13 #AE81FF
+
+!       cyan      !
+#define c06 #78DCE8
+#define c14 #56ADBC
+
+!      white      !
+#define c07 #A89984
+#define c15 #EBDBB2
