@@ -55,7 +55,7 @@ exec --no-startup-id arun.sh
 # disable display power manager signaling and monitor standby
 exec --no-startup-id xset -dpms && xset s off
 
-# unclutter makes the mouse invisible after a brief period
+# unclutter makes mouse cursor invisible after a brief period
 exec --no-startup-id unclutter
 
 # proxychains curl http://icanhazip.com | also for checking: ss -tupln
@@ -101,8 +101,8 @@ for_window [window_role="pop-up"] floating enable, move position center
 
 for_window [instance="Godot_Engine"] floating enable
 
-for_window [class="mpv"] floating enable, move position center
-for_window [title=" [STREAM]" class="mpv"] floating disable
+# mpv --x11-name MPVfloat. it is set via mpv profiles
+for_window [instance="MPVfloat"] floating enable, move position center
 
 for_window [title="The-Matrix-Shell"] fullscreen
 
