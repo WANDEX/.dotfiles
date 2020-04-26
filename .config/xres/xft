@@ -1,0 +1,16 @@
+! XFTLIB
+
+Xft.antialias: 1
+Xft.autohint: 0
+Xft.hinting: 1
+! Subpixel hinting type: hintnone, hintslight, hintmedium, hintfull.
+Xft.hintstyle: hintslight
+! Subpixel antialiasing: none, rgb, bgr, vrgb, vbgr.
+Xft.rgba: rgb
+! lcdnone, lcdlight, lcddefault, lcdlegacy
+! http://www.spasche.net/files/lcdfiltering/
+Xft.lcdfilter: lcdlight
+! Resolution for Xft, in 1024×dots/inch. -1 to use default value.
+! xdpyinfo | grep -B2 resolution
+Xft.dpi: 96
+
