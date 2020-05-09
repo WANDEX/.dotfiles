@@ -1,0 +1,9 @@
+#!/bin/sh
+# MAIN
+
+export BROWSER="google-chrome-stable"
+export EDITOR="nvim"
+export MANPAGER="nvim -c 'set ft=man' -"
+export PAGER="page -q 90000"
+export TERMINAL="st"
+
