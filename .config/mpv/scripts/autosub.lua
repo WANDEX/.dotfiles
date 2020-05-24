@@ -18,7 +18,7 @@ local languages = {
 --          other languages will NOT be downloaded,
 --          so put your preferred language first:
             { 'English', 'en', 'eng' },
-            { 'Russian', 'ru', 'rus' },
+--          { 'Russian', 'ru', 'rus' },
 --          { 'Dutch', 'nl', 'dut' },
 --          { 'Spanish', 'es', 'spa' },
 --          { 'French', 'fr', 'fre' },
@@ -46,9 +46,11 @@ local logins = {
 -->>    ADDITIONAL OPTIONS:
 --=============================================================================
 local bools = {
+    hide_log = true, -- hide log output in both modes -> log()
+    hide_msg_log = true, -- hide log -> log_msg_only()
     auto = true,   -- Automatically download subtitles, no hotkeys required
     debug = false, -- Use `--debug` in subliminal command for debug output
-    force = true,  -- Force download; will overwrite existing subtitle files
+    force = false,  -- Force download; will overwrite existing subtitle files
     utf8 = true,   -- Save all subtitle files as UTF-8
 }
 local excludes = {
@@ -57,6 +59,8 @@ local excludes = {
     -- Full paths are also allowed, e.g.:
     -- '/home/david/Videos',
     'no-subs-dl',
+    'm',
+    'encode',
 }
 local includes = {
     -- If anything is defined here, only the movies with a path
@@ -129,17 +133,17 @@ function control_downloads()
     mp.set_property('sub-auto', 'fuzzy')
     -- Set subtitle language preference:
     mp.set_property('slang', languages[1][2])
-    mp.msg.warn('Reactivate external subtitle files:')
+    log_msg_only('Reactivate external subtitle files:')
     mp.commandv('rescan_external_files')
     directory, filename = utils.split_path(mp.get_property('path'))
 
     if directory:find('^http') then
-        mp.msg.warn('Automatic subtitle downloading is disabled for web streaming')
+        log_msg_only('Automatic subtitle downloading is disabled for web streaming')
         return
     end
 
     if not bools.auto then
-        mp.msg.warn('Automatic downloading disabled!')
+        log_msg_only('Automatic downloading disabled!')
         return
     end
 
@@ -148,7 +152,7 @@ function control_downloads()
         local excluded = directory:find(escaped_exclude)
 
         if excluded then
-            mp.msg.warn('This path is excluded from auto-downloading subs')
+            log_msg_only('This path is excluded from auto-downloading subs')
             return
         end
     end
@@ -159,14 +163,14 @@ function control_downloads()
 
         if included then break
         elseif i == #includes then
-            mp.msg.warn('This path is not included for auto-downloading subs')
+            log_msg_only('This path is not included for auto-downloading subs')
             return
         end
     end
 
     local duration = tonumber(mp.get_property('duration'))
     if duration < 900 then
-        mp.msg.warn('Video is less than 15 minutes\n' ..
+        log_msg_only('Video is less than 15 minutes\n' ..
                     '=> NOT downloading any subtitles')
         return
     end
@@ -179,12 +183,12 @@ function control_downloads()
     end
     if bools.debug then -- Log subtitle properties to terminal:
         for _, track in ipairs(sub_tracks) do
-            mp.msg.warn('Subtitle track', track['id'], ':\n{')
+            log_msg_only('Subtitle track', track['id'], ':\n{')
             for k, v in pairs(track) do
                 if type(v) == 'string' then v = '"' .. v .. '"' end
-                mp.msg.warn('  "' .. k .. '":', v)
+                log_msg_only('  "' .. k .. '":', v)
             end
-            mp.msg.warn('}\n')
+            log_msg_only('}\n')
         end
     end
 
@@ -206,7 +210,7 @@ function should_download_subs_in(language)
           and i == #sub_tracks then
             local status = track['selected'] and ' active' or ' present'
             log('Unknown ' .. subtitles .. status)
-            mp.msg.warn('=> NOT downloading new subtitles')
+            log_msg_only('=> NOT downloading new subtitles')
             return false -- Don't download if 'lang' key is absent
         elseif track['lang'] == language[3] or track['lang'] == language[2] or
           (track['title'] and track['title']:lower():find(language[3])) then
@@ -216,25 +220,32 @@ function should_download_subs_in(language)
             else
                 log(language[1] .. ' ' .. subtitles .. ' active')
             end
-            mp.msg.warn('=> NOT downloading new subtitles')
+            log_msg_only('=> NOT downloading new subtitles')
             return false -- The right subtitles are already present
         end
     end
-    mp.msg.warn('No ' .. language[1] .. ' subtitles were detected\n' ..
+    log_msg_only('No ' .. language[1] .. ' subtitles were detected\n' ..
                 '=> Proceeding to download:')
     return true
 end
 
 -- Log function: log to both terminal and MPV OSD (On-Screen Display)
 function log(string, secs)
-    secs = secs or 2.5  -- secs defaults to 2.5 when secs parameter is absent
-    mp.msg.warn(string)          -- This logs to the terminal
-    mp.osd_message(string, secs) -- This logs to MPV screen
+    if not bools.hide_log then
+        secs = secs or 2.5  -- secs defaults to 2.5 when secs parameter is absent
+        mp.msg.warn(string)          -- This logs to the terminal
+        mp.osd_message(string, secs) -- This logs to MPV screen
+    end
 end
 
+function log_msg_only(string, secs)
+    if not bools.hide_msg_log then
+        mp.msg.warn(string)          -- This logs to the terminal
+    end
+end
 
 --mp.add_key_binding('b', 'download_subs', download_subs)
 --mp.add_key_binding('n', 'download_subs2', download_subs2)
-mp.add_forced_key_binding('b', 'download_subs', download_subs)
-mp.add_forced_key_binding('B', 'download_subs2', download_subs2)
+--mp.add_forced_key_binding(nil, 'download_subs', download_subs)
+--mp.add_forced_key_binding(nil, 'download_subs2', download_subs2)
 mp.register_event('file-loaded', control_downloads)
