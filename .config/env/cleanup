@@ -1,0 +1,25 @@
+#!/bin/sh
+# clean home dir from .dot folders
+# arch wiki 'XDG Base Directory'
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_DIRS="/etc/xdg"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_DIRS="/usr/local/share:/usr/share"
+export XDG_DATA_HOME="$HOME/.local/share"
+
+export ADB_VENDOR_KEY="$XDG_DATA_HOME/android"
+export ANDROID_SDK_HOME="$XDG_DATA_HOME/android"
+export AURDEST="$HOME/Downloads/build"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
+export LESSHISTFILE="-" # disable hist file
+export MYPY_CACHE_DIR="$XDG_CACHE_HOME/mypy_cache"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export PYLINTHOME="$XDG_CACHE_HOME/pylint"
+export PYTHONSTARTUP="$ENVSCR/.pythonrc"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export STACK_ROOT="$XDG_DATA_HOME/stack"
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+export WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
+
+export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority" # this line could break some DMs.

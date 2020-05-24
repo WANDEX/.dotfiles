@@ -1,0 +1,12 @@
+#!/bin/sh
+# get workspace string names
+export WS1=$(grep 'set $ws1 ' ~/.config/i3/config | sed -n -e 's/^.*set $ws1 //p')
+export WS2=$(grep 'set $ws2 ' ~/.config/i3/config | sed -n -e 's/^.*set $ws2 //p')
+export WS3=$(grep 'set $ws3 ' ~/.config/i3/config | sed -n -e 's/^.*set $ws3 //p')
+export WS4=$(grep 'set $ws4 ' ~/.config/i3/config | sed -n -e 's/^.*set $ws4 //p')
+export WS5=$(grep 'set $ws5 ' ~/.config/i3/config | sed -n -e 's/^.*set $ws5 //p')
+export WS6=$(grep 'set $ws6 ' ~/.config/i3/config | sed -n -e 's/^.*set $ws6 //p')
+export WS7=$(grep 'set $ws7 ' ~/.config/i3/config | sed -n -e 's/^.*set $ws7 //p')
+export WS8=$(grep 'set $ws8 ' ~/.config/i3/config | sed -n -e 's/^.*set $ws8 //p')
+export WS9=$(grep 'set $ws9 ' ~/.config/i3/config | sed -n -e 's/^.*set $ws9 //p')
+export WS10=$(grep 'set $ws0 ' ~/.config/i3/config | sed -n -e 's/^.*set $ws0 //p')

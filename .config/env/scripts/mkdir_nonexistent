@@ -1,0 +1,11 @@
+#!/bin/sh
+# create nonexistent dirs
+
+mkdir -p "$XDG_CONFIG_HOME/npm"
+mkdir -p "$XDG_DATA_HOME/python"
+mkdir -p "$XDG_DATA_HOME/tor"
+mkdir -p "$XDG_DATA_HOME/vim/"{undo,swap,backup}
+mkdir -p "$XDG_DATA_HOME/wineprefixes"
+mkdir -p "$HOME/.local/.hid" --mode=700
+mkdir -p "$HOME/Downloads/build"
+

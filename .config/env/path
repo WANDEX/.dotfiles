@@ -2,7 +2,7 @@
 # PATH envs
 
 export PATH="${PATH}:$HOME/.local/bin"
-export PATH="${PATH}:$HOME/.cargo/bin"
+export PATH="${PATH}:$CARGO_HOME/bin"
 
 # add to $PATH .scripts and subdirs
-export PATH="$PATH:$(du "$HOME/.scripts/" --exclude=".git" --exclude=".*cache*" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+export PATH="$PATH:$(du "$SCRIPTS" --exclude=".git" --exclude=".*cache*" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"

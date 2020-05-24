@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import atexit
+import os
+import readline
+
+# history file
+histfile = os.path.join(os.environ['XDG_DATA_HOME'], 'python/.python_history')
+try:
+    readline.read_history_file(histfile)
+except IOError:
+    pass
+atexit.register(readline.write_history_file, histfile)
+del os, histfile, readline
+
+print("pythonrc loaded!")
+
+

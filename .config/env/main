@@ -6,4 +6,5 @@ export EDITOR="nvim"
 export MANPAGER="nvim -c 'set ft=man' -"
 export PAGER="page -q 90000"
 export TERMINAL="st"
+export SCRIPTS="$HOME/source/.scripts"
 
