@@ -1,4 +1,11 @@
 #!/bin/sh
+#/////////////////////////////////////////////////////////////////////////
+#//////____////__////////______////____//////______//______//////______///
+#///__////__//__//////////__////__////__//__////////__////__//__//////////
+#//________//__//////////__////________////____////______////__///////////
+#/__////__//__//////////__////__////__////////__//__////__//__////////////
+#__////__//________//______//__////__//______////__////__////______///////
+#/////////////////////////////////////////////////////////////////////////
 
 # Use neovim for vim if present.
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
@@ -31,8 +38,10 @@ alias \
     sali="$EDITOR ~/.config/aliasrc" \
     stodo="$EDITOR ~/Documents/Pomodoro/TODO.txt" \
     sudo="sudo " \
+    tor="tor --DataDirectory $XDG_DATA_HOME/tor" \
     trm="rm -vf ~/Downloads/torrents/*.torrent" \
     venv="source venv/bin/activate" \
+    wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts" \
     pd="python -m pydoc" \
     pe="python -me"
     # pe 'module_name' 'edit'/'view'. source:pypi.org/project/e/

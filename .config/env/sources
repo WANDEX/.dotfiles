@@ -1,6 +1,7 @@
 #!/bin/sh
 # env var core file
 export ENVDIR="$HOME/.config/env"
+export ENVSCR="$ENVDIR/scripts"
 #/////////////////////////////////////////////////////////////////
 #//////______////____////__////__//______//////______//________///
 #///__////////__////__//__////__//__////__//__////////__//////////
@@ -9,13 +10,14 @@ export ENVDIR="$HOME/.config/env"
 #______//////____//////____////__////__////______//________///////
 #/////////////////////////////////////////////////////////////////
 
-for f in $ENVDIR/.hid/*; do source $f; done; unset -v f
-
+source "$ENVDIR/cleanup"
 source "$ENVDIR/main"
 source "$ENVDIR/manless"
 source "$ENVDIR/path"
 
 # export i3 workspace names into env variables
-source "$HOME/.scripts/sh/get_i3_workspace_names.sh"
+source "$ENVSCR/get_i3_workspace_names"
+source "$ENVSCR/mkdir_nonexistent"
 
+for f in $ENVDIR/.hid/*; do source $f; done; unset -v f
 
