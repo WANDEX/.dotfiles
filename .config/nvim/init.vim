@@ -546,7 +546,6 @@ let g:python3_host_prog      = '/usr/bin/python'
 let g:loaded_python_provider = 1                "disable python 2 support
 
 
-"call deoplete#custom#source('ale', 'rank', 999)
 call deoplete#custom#source('_',
 \   'matchers', ['matcher_full_fuzzy'])
 call deoplete#custom#source('_',
@@ -559,6 +558,7 @@ call deoplete#custom#source('_', 'converters',
 \   'converter_auto_paren'])
 
 call deoplete#custom#option({
+\   'min_pattern_length': 1,
 \   'auto_complete_delay': 200,
 \   'ignore_case': v:true,
 \   'smart_case': v:true,
@@ -568,12 +568,10 @@ call deoplete#custom#option({
 \   'refresh_always': v:false,
 \   'prev_completion_mode': 'filter',
 \   })
-let g:deoplete#enable_at_startup             = 1            " Use deoplete.
-let g:deoplete#auto_complete_start_length    = 1
-"let g:deoplete#delimiters = ['/','.']
-let g:deoplete#sources#jedi#statement_length = 150 "Maximum length description
-let g:deoplete#sources#jedi#enable_typeinfo  = 1 " If 0 faster!
-let g:deoplete#sources#jedi#show_docstring   = 1  " if 1 causing comp. flickering
+let g:deoplete#enable_at_startup             = 1    " Use deoplete.
+let g:deoplete#sources#jedi#statement_length = 150  "Maximum length description
+let g:deoplete#sources#jedi#enable_typeinfo  = 1    " If 0 faster!
+let g:deoplete#sources#jedi#show_docstring   = 1    " if 1 causing comp. flickering
 let g:deoplete#sources#jedi#python_path      = '/usr/bin/python'
 "let g:deoplete#sources#jedi#extra_path =
 let g:deoplete#sources#jedi#ignore_errors    = 0
