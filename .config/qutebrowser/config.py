@@ -25,16 +25,14 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
 
+# Load existing settings made via :set
+config.load_autoconfig()
+
 # theme
 themes.dracula.draw.blood(c, {
     'spacing': {
         'vertical': 6,
         'horizontal': 8
-    },
-    'font': {
-        # 'family': 'Menlo, Terminus, Monaco, Monospace',
-        'family': 'UbuntuMono Nerd Font',
-        'size': 12
     }
 })
 
