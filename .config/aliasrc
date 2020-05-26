@@ -10,63 +10,75 @@
 # Use neovim for vim if present.
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
-#---- COMMON ----#
+# shortcuts to files with $EDITOR
 alias \
-    cp="cp -vi" \
-    rm="rm -vi" \
-    mv="mv -vi" \
-    calc="python3 -ic 'from math import *'" \
-    nt="$TERMINAL &>/dev/null & disown" \
-    vf="fzf | xargs -r -I % $EDITOR %" \
-    lld="sudo du -ah --max-depth 1" \
-    lld2="sudo du -ah --max-depth 2" \
-    llda="sudo du -ah" \
-    psl="ps -ef --forest" \
-    psg="ps -ef | head -1; ps -ef | grep" \
-    sbrc="$EDITOR /etc/bash.bashrc" \
-    sp="$EDITOR ~/.profile" \
+    sali="$EDITOR ~/.config/aliasrc" \
     sbh="$EDITOR ~/.bash_history" \
-    sxrc="$EDITOR ~/.xinitrc" \
-    sxres="$EDITOR ~/.Xresources" \
-    sxlog="cat ~/.local/share/xorg/Xorg.0.log | $PAGER" \
-    sxrlog="cat /var/log/Xorg.0.log | $PAGER" \
+    sbrc="$EDITOR /etc/bash.bashrc" \
+    scv="$EDITOR ~/.config/cvim/.cvimrc" \
+    shpg="$EDITOR ~/.scripts/sh/arun/arun_hpg.sh" \
     si3c="$EDITOR ~/.config/i3/config" \
     si3s="$EDITOR ~/.config/py3status/config" \
-    svc="$EDITOR ~/.config/nvim/init.vim" \
-    scv="$EDITOR ~/.config/cvim/.cvimrc" \
+    skd="$EDITOR ~/.config/sxhkd/sxhkdrc" \
+    sp="$EDITOR ~/.profile" \
     sqc="$EDITOR ~/.config/qutebrowser/config.py" \
-    sali="$EDITOR ~/.config/aliasrc" \
     stodo="$EDITOR ~/Documents/Pomodoro/TODO.txt" \
+    svc="$EDITOR ~/.config/nvim/init.vim" \
+    sxrc="$EDITOR ~/.xinitrc" \
+    sxres="$EDITOR ~/.Xresources"
+
+# common
+alias \
+    lld2="sudo du -ah --max-depth 2" \
+    lld="sudo du -ah --max-depth 1" \
+    llda="sudo du -ah" \
+    nt="$TERMINAL &>/dev/null & disown" \
+    psg="ps -ef | head -1; ps -ef | grep" \
+    psl="ps -ef --forest" \
     sudo="sudo " \
-    tor="tor --DataDirectory $XDG_DATA_HOME/tor" \
+    sxlog="cat ~/.local/share/xorg/Xorg.0.log | $PAGER" \
+    sxrlog="cat /var/log/Xorg.0.log | $PAGER" \
     trm="rm -vf ~/Downloads/torrents/*.torrent" \
     venv="source venv/bin/activate" \
-    wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts" \
+    vf="fzf | xargs -r -I % $EDITOR %" \
+    wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
+
+# python
+alias \
+    calc="python3 -ic 'from math import *'" \
     pd="python -m pydoc" \
     pe="python -me"
     # pe 'module_name' 'edit'/'view'. source:pypi.org/project/e/
 
 # pacman
 alias \
-        pp="sudo pacman -S" \
-        pvf="pacman -Slq | fzf -m --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+    pp="sudo pacman -S" \
+    pvf="pacman -Slq | fzf -m --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
 
 # nvim
 alias \
-        neo="nvim " \
-        neoc="nvim +PlugClean +qall" \
-        neou="nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall" \
-        neous="nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall > /dev/null" \
-        magit="nvim -c MagitOnly"
+    neo="nvim " \
+    neoc="nvim +PlugClean +qall" \
+    neou="nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall" \
+    neous="nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall > /dev/null" \
+    magit="nvim -c MagitOnly"
 
-# Colorize commands when possible.
+# colorize commands when possible.
 alias \
-        grep="grep --color=auto" \
-        ls="ls -hN --color=auto --group-directories-first" \
-        la="ls -Fa --color=auto" \
-        ll="ls -Flas --color=auto" \
-        diff="diff --color=auto" \
-        ccat="highlight --out-format=ansi"
+    grep="grep --color=auto" \
+    ls="ls -hN --color=auto --group-directories-first" \
+    la="ls -Fa --color=auto" \
+    ll="ls -Flas --color=auto" \
+    diff="diff --color=auto" \
+    ccat="highlight --out-format=ansi"
+
+# command replacement (fix)
+alias \
+    cp="cp -vi" \
+    rm="rm -vi" \
+    mv="mv -vi" \
+    mpdscribble="mpdscribble --conf ~/.config/mpdscribble/mpdscribble.conf" \
+    tor="tor --DataDirectory $XDG_DATA_HOME/tor"
 
 #---- PIP ----#
 alias pip-l="pip3 freeze | $PAGER"

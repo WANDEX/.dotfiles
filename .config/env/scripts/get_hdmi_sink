@@ -1,0 +1,3 @@
+#!/bin/sh
+# get hdmi sink name, because sink number fluctuate between i3 restarts/reloads
+export SINK1=$(pactl list sinks short | grep 'hdmi' | awk {'print $2'})

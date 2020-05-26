@@ -1,0 +1,78 @@
+#/////////////////////////////////////////////////////////////////////////////
+#//////______//__//////__//__////__//__////__//______////______//////______///
+#///__//////////__//__////__////__//__//__////__////__//__////__//__//////////
+#////____////////__//////________//____//////__////__//______////__///////////
+#///////__////__//__////__////__//__//__////__////__//__////__//__////////////
+#______////__//////__//__////__//__////__//______////__////__////______///////
+#/////////////////////////////////////////////////////////////////////////////
+
+# basic binds
+super + Return
+	$TERMINAL
+super + shift + Return
+	$TERMINAL -e ranger
+super + d
+	dmenu_run
+
+# custom
+super + shift + a
+	i3-auto-layout
+super + shift + t
+	tg_send_v.sh
+super + g
+	google-chrome-stable
+super + shift + g
+	google-chrome-stable -incognito
+# launch man pages search script
+super + k
+	$TERMINAL -e mm
+super + shift + k
+	$TERMINAL -e ncmpcpp
+super + ctrl + shift + h
+	$TERMINAL -e htop
+# launch mpv with youtube-dl/streamlink url link from xclip
+super + u ; {s,1,4,6,7,8,a}
+	mpvu {s,1,4,6,7,8,a}
+
+# move workspaces between monitors/outputs
+super + ctrl + 1
+	i3-msg move workspace to output $OUT0
+super + ctrl + 2
+	i3-msg move workspace to output $OUT1
+super + ctrl + w
+	i3-msg move position center
+
+#super + m is free now!
+
+# media keys
+XF86Audio{Prev,Next}
+	mpc {prev,next}
+XF86Audio{Play,Pause,Stop}
+	mpc {toggle,pause,stop}
+XF86AudioMute
+	pactl set-sink-mute $SINK1 toggle
+XF86Audio{Lower,Raise}Volume
+	mpc volume {-,+}5
+
+# function keys
+super + F7
+	switch_pulse_preset.sh
+super + F8
+	kill -s USR1 $(pidof deadd-notification-center)
+super + F9
+	pactl set-sink-mute $SINK0 toggle
+super + {F10,F11} + {_,shift,alt}
+	pactl set-sink-volume $SINK0 {-,+}{10,50,5}%
+ctrl  + {F10,F11} + {_,shift}
+	pactl set-sink-volume $SINK1 {-,+}{10,50}%
+
+# screenshots: selection, window, window with imagemagick processing
+Print
+	maim -u -s | xclip -selection clipboard -t image/png
+shift + Print
+	maim -i $(xdotool getactivewindow) -u | xclip -selection clipboard -t image/png
+super + Print
+	maim -i $(xdotool getactivewindow) -u | convert - \( +clone -background black -shadow 100x3+0+0 \) +swap -background none -layers merge +repage ~/Downloads/Pictures/shadow.png && xclip -selection clipboard -t image/png -i ~/Downloads/Pictures/shadow.png
+super + shift + Print
+	com.github.ronnydo.colorpicker
+

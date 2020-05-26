@@ -37,65 +37,27 @@ set $sink1 3
 #
 # chmod +x "filepath" for execution permission
 
-# run monitors configuration script on startup
-## for nouveau drivers
-#exec --no-startup-id sleep 2 && arun_xrandr.sh
-## for nvidia drivers
-exec --no-startup-id sleep 2 && arun_nvidia.sh
-
 # sed for editing i3 & py3status configs
 exec --no-startup-id sleep 4 && sed_i3.sh
-
-# set keyboard layout and r rate
-exec --no-startup-id kb.sh
 
 # autorun script that executes startup programs
 exec --no-startup-id arun.sh
 
-# disable display power manager signaling and monitor standby
-exec --no-startup-id xset -dpms && xset s off
-
-# unclutter makes mouse cursor invisible after a brief period
-exec --no-startup-id unclutter
-
-# proxychains curl http://icanhazip.com | also for checking: ss -tupln
-exec --no-startup-id nohup tor &
-
-# mpd & mpdscribble
-exec --no-startup-id mpd ~/.config/mpd/mpd.conf
-exec --no-startup-id mpdscribble --conf ~/.config/mpdscribble/mpdscribble.conf
-
-# set background wallpaper
-exec --no-startup-id sleep 5 && setbg.sh
-
 # load/reload resource file every i3 restart
-exec_always --no-startup-id xrdb ~/.Xresources
+#exec_always --no-startup-id xrdb ~/.Xresources
+
+exec_always --no-startup-id i3-auto-layout
 
 # set wal color scheme
 #exec_always --no-startup-id "wal -R"
 
-# run compton for transparancy support
-exec --no-startup-id compton --config ~/.config/compton/compton.conf
-
-exec --no-startup-id conky -d
-
-exec --no-startup-id sleep 5 && deadd-notification-center
-
-exec --no-startup-id transmission-daemon
-
-exec --no-startup-id redshift
-
-exec --no-startup-id xboxdrv.sh
 #
 # *** END ***
 
 # *** Window Specific Rules***
 #
 ## xprop
-## sticky enable
 ## to get window size > $sleep 3; xdotool getwindowfocus getwindowgeometry
-# kill only the About dialog from Firefox
-#bindsym $mod+x [class="Firefox" window_role="About"] kill
 
 for_window [window_role="pop-up"] floating enable, move position center
 
@@ -242,103 +204,24 @@ bindsym $mod+w mode "resize"
 # *** Custom Keyboard Shortcuts ***
 #
 
-# launch browser
-bindsym $mod+g exec --no-startup-id google-chrome-stable
-bindsym $mod+Shift+g exec --no-startup-id google-chrome-stable -incognito
-#bindsym $mod+Shift+b exec --no-startup-id qutebrowser
+# start a terminal
+#bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 
-# toggle monitor mute on/off
-bindsym $mod+m exec --no-startup-id pactl set-sink-mute $sink1 toggle
-#pactl set-sink-mute alsa_output.hw_1_7 toggle
+# start dmenu (a program launcher)
+#bindsym $mod+d exec --no-startup-id dmenu_run
 
 # move workspaces between monitors/outputs
-bindsym $mod+Control+1 move workspace to output $output0
-bindsym $mod+Control+2 move workspace to output $output1
+#bindsym $mod+Control+1 move workspace to output $output0
+#bindsym $mod+Control+2 move workspace to output $output1
 
-# move floating window to center (after window resize for example)
-bindsym $mod+Control+w move position center
-
-# exec ranger
-bindsym $mod+Shift+Return exec --no-startup-id $term -e ranger
-
-# launch mpv with youtube-dl/streamlink url link from xclip
-bindsym $mod+U exec --no-startup-id mpvu
-
-# launch man pages search script
-bindsym $mod+k exec --no-startup-id $term -e mm
-
-bindsym $mod+Shift+k exec --no-startup-id \
-$term -e ncmpcpp --config ~/.config/ncmpcpp/config
-
-# For screenshots: selection, window, window with imagemagick processing
-bindsym Print       exec --no-startup-id maim -u -s \
-| xclip -selection clipboard -t image/png
-
-bindsym Shift+Print exec --no-startup-id maim -i $(xdotool getactivewindow) -u\
-| xclip -selection clipboard -t image/png
-
-bindsym $mod+Print  exec --no-startup-id maim -i $(xdotool getactivewindow) -u\
-| convert - \( +clone -background black -shadow 100x3+0+0 \) \
-+swap -background none -layers merge \
-+repage ~/Downloads/Pictures/shadow.png && \
-xclip -selection clipboard -t image/png -i ~/Downloads/Pictures/shadow.png \
-
-bindsym $mod+Shift+Print exec --no-startup-id com.github.ronnydo.colorpicker
 #
 # *** END ***
-
-
-# *** MULTIMEDIA KEYS BINDINGS ***
-#
-
-# F1
-#XF86Explorer
-# F2
-#XF86Search
-# F3
-#XF86Calculator
-# F4
-#XF86Tools
-# F5
-bindsym XF86AudioPrev exec --no-startup-id mpc prev
-# F6
-bindsym XF86AudioNext exec --no-startup-id mpc next
-# F7
-bindsym XF86AudioPlay exec --no-startup-id mpc toggle
-bindsym $mod+F7 exec --no-startup-id switch_pulse_preset.sh
-# F8
-bindsym XF86AudioStop exec --no-startup-id mpc stop
-bindsym $mod+F8 exec --no-startup-id kill -s USR1 $(pidof deadd-notification-center)
-# F9
-#bindsym XF86AudioMute exec --no-startup-id mpc
-bindsym $mod+F9 exec --no-startup-id pactl set-sink-mute $sink0 toggle
-# F10
-bindsym XF86AudioLowerVolume exec --no-startup-id mpc volume -5
-bindsym $mod+F10 exec --no-startup-id pactl set-sink-volume $sink0 -10%
-bindsym $mod+$alt+F10 exec --no-startup-id pactl set-sink-volume $sink0 -5%
-bindsym $mod+Shift+F10 exec --no-startup-id pactl set-sink-volume $sink0 -50%
-# F11
-bindsym XF86AudioRaiseVolume exec --no-startup-id mpc volume +5
-bindsym $mod+F11 exec --no-startup-id pactl set-sink-volume $sink0 +10%
-bindsym $mod+$alt+F11 exec --no-startup-id pactl set-sink-volume $sink0 +5%
-bindsym $mod+Shift+F11 exec --no-startup-id pactl set-sink-volume $sink0 +50%
-# F12
-#bindsym $mod+F12 exec --no-startup-id toggle_mono.sh
-#
-# *** END ***
-
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
-
 # kill focused window
 bindsym $mod+Shift+q kill
-
-# start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
 
 # change focus
 bindsym $mod+h           focus left

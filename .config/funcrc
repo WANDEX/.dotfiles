@@ -1,0 +1,17 @@
+#!/bin/sh
+# FUNCTIONS that is work only in interactive mode
+# (cannot be used inside .xinitrc for example)
+
+#From the bash(1) man page:
+#Aliases are not expanded when the shell is not interactive, unless the
+#expand_aliases shell option is set using shopt
+#(see the description of shopt under SHELL BUILTIN COMMANDS below).
+
+# expand any alias in $1 before the execution
+rit()   { eval $1; }
+# suppress output of the $1 command
+sup()   { "$(rit $1)" >/dev/null 2>&1; }
+# fork $1 command to background and don't create nohup.out
+nhp()   { nohup "$(rit $1)" >/dev/null 2>&1 & }
+
+

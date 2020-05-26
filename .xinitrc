@@ -1,3 +1,25 @@
+#!/bin/sh
+#/////////////////////////////////////////////////////////////////////////////
+#////__//////__//______//__//////__//______//__________//______//////______///
+#/////__//__//////__////____////__////__////////__//////__////__//__//////////
+#//////__////////__////__//__//__////__////////__//////______////__///////////
+#///__//__//////__////__////____////__////////__//////__////__//__////////////
+#__//////__//______//__//////__//______//////__//////__////__////______///////
+#/////////////////////////////////////////////////////////////////////////////
+# to support expand_aliases in not interactive shell (in .xinitrc for example)
+# bashrc should contain shopt -s expand_aliases and be sourced by profile file
+[ -f ~/.bashrc ] && source ~/.bashrc
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources &
-i3
-/*ulimit -c unlimited && i3 >~/i3log-$(date +'%F-%k-%M-%S') 2>&1*/
+conky -dq &                     # fork conky to background and silence output
+arun_nvidia.sh && setbg.sh &    # display configuration, and set background
+xset -dpms && xset s off &      # off display power manager and monitor standby
+picom -b &                      # composite manager for transparency support
+kb.sh && sxhkd -r ~/sxhkd.log & # keyboard layout, repeat rate and key binds
+unclutter &                     # remove mouse cursor when idle
+nhp tor                         # fork in background and don't create nohup.out
+mpd && mpdscribble &
+deadd-notification-center &
+transmission-daemon &
+redshift &
+
+exec i3

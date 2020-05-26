@@ -1,0 +1,3 @@
+#!/bin/sh
+# get combined sink number, usually it's set as default in pulse config.
+export SINK0=$(pactl list sinks short | grep 'combined' | awk {'print $1'})
