@@ -449,11 +449,11 @@ def_key "E"
 def_key "E"
   edit_lyrics
 #
-#def_key "i"
-#  show_song_info
+def_key "I"
+  show_song_info
 #
-#def_key "I"
-#  show_artist_info
+def_key "ctrl-i"
+  show_artist_info
 #
 #def_key "g"
 #  jump_to_position_in_song
