@@ -1,4 +1,4 @@
-" ln -s ~/.config/nvim/symlinks/NERDTree/yank_path_mapping.vim ~/.local/share/nvim/plugged/nerdtree/nerdtree_plugin/yank_path_mapping.vim
+" ln -sr ~/.config/nvim/symlinks/NERDTree/yank_path_mapping.vim ~/.local/share/nvim/plugged/nerdtree/nerdtree_plugin/yank_path_mapping.vim
 call NERDTreeAddKeyMap({
         \ 'key': 'yf',
         \ 'callback': 'NERDTreeYankFullPath',

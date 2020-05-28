@@ -71,3 +71,11 @@ xrdb
 trying
 polishing
 polish
+DNS/!
+docformatter/!
+isort/!
+#apanese
+katakana
+hardcoded/!
+readme/!
+#creenshot/!
