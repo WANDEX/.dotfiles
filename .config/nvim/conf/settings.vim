@@ -53,7 +53,7 @@ set list                        " Show problematic characters.
 set nojoinspaces                " Use one space, not two, after punctuation.
 set clipboard+=unnamedplus
 set cursorline
-set timeoutlen=2000
+set timeoutlen=800 " used by vim-which-key as timeout before showing guide popup
 
 "*****************************************************************************
 "" Advanced

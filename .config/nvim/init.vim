@@ -41,6 +41,7 @@ let g:nvim_config_files = [
     \ 'conf/plug/vim-better-whitespace.vim',
     \ 'conf/plug/vim-textobj-user.vim',
     \ 'conf/plug/vim-visual-multi.vim',
+    \ 'conf/plug/vim-which-key.vim',
     \ ]
 
 function! s:cpath(...)
