@@ -82,6 +82,8 @@ Plug 'deathlyfrantic/deoplete-spell'
 " python3 completions
 Plug 'deoplete-plugins/deoplete-jedi'
 
+Plug 'liuchengxu/vim-which-key'
+
 Plug 'neomake/neomake'
 
 call plug#end()
