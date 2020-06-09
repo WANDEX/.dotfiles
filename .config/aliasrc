@@ -20,21 +20,33 @@ alias \
     si3c="$EDITOR ~/.config/i3/config" \
     si3s="$EDITOR ~/.config/py3status/config" \
     skd="$EDITOR ~/.config/sxhkd/sxhkdrc" \
-    sp="$EDITOR ~/.profile" \
+    spr="$EDITOR ~/.profile" \
     sqc="$EDITOR ~/.config/qutebrowser/config.py" \
     stodo="$EDITOR ~/Documents/Pomodoro/TODO.txt" \
+    sva="$EDITOR ~/.config/nvim/conf/auto.vim" \
     svc="$EDITOR ~/.config/nvim/init.vim" \
+    svm="$EDITOR ~/.config/nvim/conf/mappings.vim" \
+    svp="$EDITOR ~/.config/nvim/conf/plugins.vim" \
+    svs="$EDITOR ~/.config/nvim/conf/settings.vim" \
     sxrc="$EDITOR ~/.xinitrc" \
     sxres="$EDITOR ~/.Xresources"
 
+# shortcuts to dir with ranger
+alias \
+    dre="ranger ~/.config/env/" \
+    drv="ranger ~/.config/nvim/"
+
 # common
 alias \
+    kl="kill -9" \
     lld2="sudo du -ah --max-depth 2" \
     lld="sudo du -ah --max-depth 1" \
     llda="sudo du -ah" \
     nt="$TERMINAL &>/dev/null & disown" \
     psg="ps -ef | head -1; ps -ef | grep" \
     psl="ps -ef --forest" \
+    se="find "$SOURCE" -not -path '*/\.*/*' -not -path '*/__*/*' -not -path '*/lib*/*' -type f \( ! -iname '.*' \) | fzf | xargs -r -I % $EDITOR %" \
+    sp="source ~/.profile" \
     sudo="sudo " \
     sxlog="cat ~/.local/share/xorg/Xorg.0.log | $PAGER" \
     sxrlog="cat /var/log/Xorg.0.log | $PAGER" \

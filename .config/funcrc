@@ -14,4 +14,6 @@ sup()   { "$(rit $1)" >/dev/null 2>&1; }
 # fork $1 command to background and don't create nohup.out
 nhp()   { nohup "$(rit $1)" >/dev/null 2>&1 & }
 
+# source if file exist
+source_if_exist() { [[ -f "$1" ]] && source "$1"; }
 
