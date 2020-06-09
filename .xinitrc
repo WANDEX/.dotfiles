@@ -12,13 +12,14 @@
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources &
 conky -dq &                     # fork conky to background and silence output
 arun_nvidia.sh && setbg.sh &    # display configuration, and set background
+#arun_xrandr.sh && setbg.sh &    # display configuration, and set background
 xset -dpms && xset s off &      # off display power manager and monitor standby
 picom -b &                      # composite manager for transparency support
-kb.sh && sxhkd -r ~/sxhkd.log & # keyboard layout, repeat rate and key binds
+kb.sh && sxhkd &                # keyboard layout, repeat rate and key binds
 unclutter &                     # remove mouse cursor when idle
 nhp tor                         # fork in background and don't create nohup.out
 mpd && mpdscribble &
-deadd-notification-center &
+sleep 2 && deadd-notification-center &
 transmission-daemon &
 redshift &
 
