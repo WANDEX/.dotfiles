@@ -29,9 +29,6 @@ set-default-sink combined
 # default-fragments and default-fragment-size-msec at daemon.conf
 load-module module-udev-detect tsched=0
 
-# Load nvidia hdmi output
-load-module module-alsa-sink device=hw:1,7
-
 # Allowing multiple users to use PulseAudio at the same time
 #load-module module-native-protocol-unix auth-anonymous=1 socket=/run/user/1000/pulse/native
 #load-module module-native-protocol-unix socket=unix:/run/user/1000/pulse/native
@@ -48,10 +45,10 @@ set-sink-mute 1 true
 set-sink-volume 0 45875
 
 # set volume to 100% on boot
-#set-sink-volume 0 65536
+set-sink-volume 1 65536
 
 # set volume to 120% on boot
-set-sink-volume 1 78642
+#set-sink-volume 1 78642
 
 ### Automatically restore the volume of streams and devices
 load-module module-device-restore
@@ -101,9 +98,11 @@ load-module module-bluetooth-discover
 
 ### Load several protocols
 load-module module-dbus-protocol
-.ifexists module-esound-protocol-unix.so
-load-module module-esound-protocol-unix
-.endif
+
+#.ifexists module-esound-protocol-unix.so
+#load-module module-esound-protocol-unix
+#.endif
+
 load-module module-native-protocol-unix
 
 ### Network access (may be configured with paprefs, so leave this commented
