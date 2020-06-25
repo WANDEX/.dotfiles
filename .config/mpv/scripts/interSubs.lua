@@ -7,7 +7,8 @@
 --
 -- dirs in which interSubs will start automatically; part of path/filename will also work; case insensitive; regexp
 -- autostart_in = {'German', ' ger ', '%.ger%.', 'Deutsch', 'Hebrew'}
-autostart_in = {'watch', 'Films'}
+autostart_in = {'watch'}
+--autostart_in = {'watch', 'Films'}
 
 -- for Mac change python3 to python or pythonw
 start_command = 'python3 "%s" "%s" "%s"'
