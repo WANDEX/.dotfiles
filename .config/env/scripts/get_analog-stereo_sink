@@ -1,0 +1,3 @@
+#!/bin/sh
+# get analog-stereo sink name
+export SINKA=$(pactl list sinks short | grep 'analog-stereo' | awk {'print $2'})
