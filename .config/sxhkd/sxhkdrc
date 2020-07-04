@@ -17,8 +17,8 @@ super + d
 # custom
 super + shift + a
 	i3-auto-layout
-super + shift + t
-	tg_send_v.sh
+super + shift + t ; {v,s}
+	{tg_send_v.sh,tg_send_s.sh}
 super + g
 	google-chrome-stable
 super + shift + g
@@ -28,8 +28,18 @@ super + k
 	$TERMINAL -e mm
 super + shift + k
 	$TERMINAL -e ncmpcpp
+super + ctrl + shift + e
+	dmenu_unicode
 super + ctrl + shift + h
 	$TERMINAL -e htop
+super + ctrl + shift + m ; {m,u}
+	{dmenu_mount,dmenu_umount}
+super + ctrl + shift + c ; button{1-5}
+	repeat.sh -s 0.1 -c 'xdotool click {1-5}'
+super + ctrl + shift + x ; button{1-5}
+	repeat.sh -s 10 -c 'xdotool mousedown {1-5}'
+super + ctrl + shift + z ; button{1-5}
+	repeat.sh -s 1.0 -c 'xdotool mousedown {1-5} && sleep 10 && xdotool mouseup {1-5}'
 # launch mpv with youtube-dl/streamlink url link from xclip
 super + u ; {s,1,4,6,7,8,a}
 	mpvu {s,1,4,6,7,8,a}
