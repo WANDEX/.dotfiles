@@ -11,8 +11,8 @@
 [ -f ~/.bashrc ] && source ~/.bashrc
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources &
 conky -dq &                     # fork conky to background and silence output
-arun_nvidia.sh && setbg.sh &    # display configuration, and set background
-#arun_xrandr.sh && setbg.sh &    # display configuration, and set background
+nvidia.sh && setbg.sh &         # display configuration, and set background
+#xrandr.sh && setbg.sh &         # display configuration, and set background
 xset -dpms && xset s off &      # off display power manager and monitor standby
 picom -b &                      # composite manager for transparency support
 kb.sh && sxhkd &                # keyboard layout, repeat rate and key binds
