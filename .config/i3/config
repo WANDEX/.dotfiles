@@ -38,10 +38,11 @@ set $sink1 3
 # chmod +x "filepath" for execution permission
 
 # sed for editing i3 & py3status configs
-exec --no-startup-id sleep 4 && sed_i3.sh
+exec --no-startup-id sleep 3 && sed_i3.sh
 
 # autorun script that executes startup programs
-exec --no-startup-id arun.sh
+# for some reason does not work in non interactive mode (only from terminal)
+#exec --no-startup-id sleep 5 && arun_i3wm.sh
 
 # load/reload resource file every i3 restart
 #exec_always --no-startup-id xrdb ~/.Xresources
@@ -204,15 +205,12 @@ bindsym $mod+w mode "resize"
 # *** Custom Keyboard Shortcuts ***
 #
 
-# start a terminal
-#bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
-
-# start dmenu (a program launcher)
-#bindsym $mod+d exec --no-startup-id dmenu_run
-
 # move workspaces between monitors/outputs
-#bindsym $mod+Control+1 move workspace to output $output0
-#bindsym $mod+Control+2 move workspace to output $output1
+bindsym $mod+Control+1 move workspace to output $output0
+bindsym $mod+Control+2 move workspace to output $output1
+
+# move floating window into position center
+bindsym $mod+Control+w move position center
 
 #
 # *** END ***
