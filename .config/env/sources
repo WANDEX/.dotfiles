@@ -15,9 +15,8 @@ source "$ENVDIR/main"
 source "$ENVDIR/manless"
 source "$ENVDIR/path"
 
-# export i3 workspace names into env variables
-source "$ENVSCR/get_i3_workspace_names"
 source "$ENVSCR/mkdir_nonexistent"
+source "$ENVSCR/get_analog-stereo_sink"
 source "$ENVSCR/get_combined_sink"
 source "$ENVSCR/get_hdmi_sink"
 
