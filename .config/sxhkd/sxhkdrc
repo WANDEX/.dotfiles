@@ -17,14 +17,12 @@ super + d
 # custom
 super + shift + a
 	i3-auto-layout
-super + shift + t ; {v,s}
-	{tg_send_v.sh,tg_send_s.sh}
 super + g
 	google-chrome-stable
 super + shift + g
 	google-chrome-stable -incognito
 # launch man pages search script
-super + k
+super + m
 	$TERMINAL -e mm
 super + shift + k
 	$TERMINAL -e ncmpcpp
@@ -34,6 +32,8 @@ super + ctrl + shift + h
 	$TERMINAL -e htop
 super + ctrl + shift + m ; {m,u}
 	{dmenu_mount,dmenu_umount}
+super + ctrl + shift + t ; {v,s}
+	{tg_send_v.sh,tg_send_s.sh}
 super + ctrl + shift + c ; button{1-5}
 	repeat.sh -s 0.1 -c 'xdotool click {1-5}'
 super + ctrl + shift + x ; button{1-5}
@@ -41,18 +41,8 @@ super + ctrl + shift + x ; button{1-5}
 super + ctrl + shift + z ; button{1-5}
 	repeat.sh -s 1.0 -c 'xdotool mousedown {1-5} && sleep 10 && xdotool mouseup {1-5}'
 # launch mpv with youtube-dl/streamlink url link from xclip
-super + u ; {s,1,4,6,7,8,a}
+super + p ; {s,1,4,6,7,8,a}
 	mpvu {s,1,4,6,7,8,a}
-
-# move workspaces between monitors/outputs
-super + ctrl + 1
-	i3-msg move workspace to output $OUT0
-super + ctrl + 2
-	i3-msg move workspace to output $OUT1
-super + ctrl + w
-	i3-msg move position center
-
-#super + m is free now!
 
 # media keys
 XF86Audio{Prev,Next}
@@ -60,21 +50,23 @@ XF86Audio{Prev,Next}
 XF86Audio{Play,Pause,Stop}
 	mpc {toggle,pause,stop}
 XF86AudioMute
-	pactl set-sink-mute $SINK1 toggle
+	pactl set-sink-mute $SINK1 toggle; kill -44 $(pidof dwmblocks)
 XF86Audio{Lower,Raise}Volume
 	mpc volume {-,+}5
 
 # function keys
+super + F4
+	mpvu s
 super + F7
-	switch_pulse_preset.sh
+	switch_pulse_preset.sh; kill -53 $(pidof dwmblocks)
 super + F8
 	kill -s USR1 $(pidof deadd-notification-center)
 super + F9
-	pactl set-sink-mute $SINK0 toggle
+	pactl set-sink-mute $SINK0 toggle; kill -43 $(pidof dwmblocks)
 super + {F10,F11} + {_,shift,alt}
-	pactl set-sink-volume $SINK0 {-,+}{10,50,5}%
+	pactl set-sink-volume $SINK0 {-,+}{10,50,5}%; kill -43 $(pidof dwmblocks)
 ctrl  + {F10,F11} + {_,shift}
-	pactl set-sink-volume $SINK1 {-,+}{10,50}%
+	pactl set-sink-volume $SINK1 {-,+}{10,50}%; kill -44 $(pidof dwmblocks)
 
 # screenshots: selection, window, window with imagemagick processing
 Print
