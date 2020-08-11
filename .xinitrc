@@ -23,4 +23,5 @@ sleep 2 && deadd-notification-center &
 transmission-daemon &
 redshift &
 
-exec i3
+#exec i3
+exec dwm
