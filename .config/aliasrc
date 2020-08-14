@@ -16,7 +16,8 @@ alias \
     sbh="$EDITOR ~/.bash_history" \
     sbrc="$EDITOR /etc/bash.bashrc" \
     scv="$EDITOR ~/.config/cvim/.cvimrc" \
-    shpg="$EDITOR ~/.scripts/sh/arun/arun_hpg.sh" \
+    sdwb="$EDITOR $SOURCE/forks/luke/dwmblocks/config.h" \
+    sdwm="$EDITOR $SOURCE/forks/luke/dwm-fork/config.h" \
     si3c="$EDITOR ~/.config/i3/config" \
     si3s="$EDITOR ~/.config/py3status/config" \
     skd="$EDITOR ~/.config/sxhkd/sxhkdrc" \
@@ -34,6 +35,8 @@ alias \
 # shortcuts to dir with ranger
 alias \
     dre="ranger ~/.config/env/" \
+    drf="ranger $SOURCE/forks/" \
+    drl="ranger $SOURCE/forks/luke/" \
     drv="ranger ~/.config/nvim/"
 
 # common
@@ -45,6 +48,7 @@ alias \
     nt="$TERMINAL &>/dev/null & disown" \
     psg="ps -ef | head -1; ps -ef | grep" \
     psl="ps -ef --forest" \
+    pst="pstree -p $$" \
     se="find "$SOURCE" -not -path '*/\.*/*' -not -path '*/__*/*' -not -path '*/lib*/*' -type f \( ! -iname '.*' \) | fzf | xargs -r -I % $EDITOR %" \
     sp="source ~/.profile" \
     sudo="sudo " \
@@ -91,6 +95,10 @@ alias \
     mv="mv -vi" \
     mpdscribble="mpdscribble --conf ~/.config/mpdscribble/mpdscribble.conf" \
     tor="tor --DataDirectory $XDG_DATA_HOME/tor"
+
+# rlwrap (fix) to support arrow keys and command line history
+alias \
+    pomodoro="rlwrap pomodoro"
 
 #---- PIP ----#
 alias pip-l="pip3 freeze | $PAGER"
