@@ -11,8 +11,8 @@ super + Return
 	$TERMINAL
 super + shift + Return
 	$TERMINAL -e ranger
-super + d
-	dmenu_run
+#super + d
+	#dmenu_run
 
 # custom
 super + shift + a
@@ -24,6 +24,11 @@ super + shift + g
 # launch man pages search script
 super + m
 	$TERMINAL -e mm
+# launch mpv with youtube-dl/streamlink url link from xclip
+super + p ; {s,1,4,6,7,8,a}
+	mpvu {s,1,4,6,7,8,a}
+super + ctrl + n ; {a,c,C,h,m,P}
+	dunstctl {action,close,close-all,history-pop,context,set-paused toggle}
 super + shift + k
 	$TERMINAL -e ncmpcpp
 super + ctrl + shift + e
@@ -40,9 +45,6 @@ super + ctrl + shift + x ; button{1-5}
 	repeat.sh -s 10 -c 'xdotool mousedown {1-5}'
 super + ctrl + shift + z ; button{1-5}
 	repeat.sh -s 1.0 -c 'xdotool mousedown {1-5} && sleep 10 && xdotool mouseup {1-5}'
-# launch mpv with youtube-dl/streamlink url link from xclip
-super + p ; {s,1,4,6,7,8,a}
-	mpvu {s,1,4,6,7,8,a}
 
 # media keys
 XF86Audio{Prev,Next}
@@ -59,8 +61,6 @@ super + F4
 	mpvu s
 super + F7
 	switch_pulse_preset.sh; kill -53 $(pidof dwmblocks)
-super + F8
-	kill -s USR1 $(pidof deadd-notification-center)
 super + F9
 	pactl set-sink-mute $SINK0 toggle; kill -43 $(pidof dwmblocks)
 super + {F10,F11} + {_,shift,alt}
