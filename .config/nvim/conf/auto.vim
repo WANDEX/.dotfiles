@@ -30,17 +30,6 @@ if !exists('autocommands_loaded')
         au QuitPre * if empty(&buftype) | lclose | endif
     aug END
 
-    " When editing a file, always jump to the last known cursor position.
-    " Don't do it for commit messages, when the position is invalid, or when
-    " inside an event handler (happens when dropping a file on gvim).
-    aug LastKnownCursorPosition
-        au!
-        au BufReadPost *
-        \ if &ft != 'gitcommit' &&  line("'\"") > 0 && line("'\"") <= line("$") |
-        \   exe "normal g`\"" |
-        \ endif
-    aug END
-
     " hide status line if vim-which-key plugin pop-up is shown
     aug WhichKeyHideStatusline
         au! FileType which_key
@@ -59,6 +48,12 @@ if !exists('autocommands_loaded')
 
     " update binds when sxhkdrc is updated.
     au BufWritePost *sxhkdrc !pkill -USR1 sxhkd
+
+    " Have dwmblocks automatically recompile and run when you edit this file in
+    au BufWritePost ~/source/forks/luke/dwmblocks/config.h !cd ~/source/forks/luke/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
+
+    " Save file as sudo on files that require root permission
+    cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
     " fix in case of memory leak vim issue. Should be at the end.
     au BufWinLeave * call clearmatches()

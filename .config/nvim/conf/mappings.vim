@@ -129,9 +129,10 @@ nnoremap <Leader>O <C-W>o
 
 " Search and Replace
 nnoremap <Leader>s :%s///gc<Left><Left>
+vnoremap <Leader>s :s///gc<Left><Left>
 
 " sort visual selection
-vnoremap <Leader>s :sort<CR>
+vnoremap <Leader>S :sort<CR>
 
 " easier moving of code blocks, without losing of selection block
 vnoremap < <gv

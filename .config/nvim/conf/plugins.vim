@@ -24,6 +24,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-titlecase'
+Plug 'farmergreg/vim-lastplace'
 
 "" new text objects | more info: https://github.com/kana/vim-textobj-user/wiki
 Plug 'kana/vim-textobj-user'    " CORE
@@ -75,12 +76,15 @@ Plug 'Shougo/neoinclude.vim'
 
 Plug 'davidhalter/jedi-vim'
 
+Plug 'voldikss/vim-translator'
+
 " completions for Vim commands
 Plug 'Shougo/neco-vim'
 " for English word auto-completion
 Plug 'deathlyfrantic/deoplete-spell'
 " python3 completions
 Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'dbeniamine/cheat.sh-vim'
 
 Plug 'liuchengxu/vim-which-key'
 
