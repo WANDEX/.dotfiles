@@ -60,6 +60,60 @@ let g:which_key_map.l = {
     \ },
 \ }
 
+""" cheat
+let g:which_key_map.C = {
+\ 'name' : '+cht',
+\ 'b' : ['cheat#cheat("", getcurpos()[1], getcurpos()[1], 0, 0, "!")', 'buffer'],
+\ 'c' : ['cheat#navigate(0, "C")', 'comments toggle'],
+\ 'e' : ['cheat#cheat("", -1, -1 , -1, 5, "!")', 'error explain'],
+\ 'f' : {
+    \ 'name': '+framework',
+    \ 't' : ['cheat#frameworks#cycle(0)', 'cycle(0)'],
+    \ 'T' : ['cheat#frameworks#autodetect(1)', 'autodetect'],
+    \ },
+\ 'n' : {
+    \ 'name': '+next',
+    \ 'q' : ['cheat#navigate(1,"Q")', 'question'],
+    \ 'a' : ['cheat#navigate(1,"A")', 'answer'],
+    \ 'h' : ['cheat#navigate(1,"H")', 'history'],
+    \ 's' : ['cheat#navigate(1,"S")', 'see also'],
+    \ 'f' : ['cheat#frameworks#cycle(1)', 'framework'],
+    \ },
+\ 'p' : {
+    \ 'name': '+prev',
+    \ 'q' : ['cheat#navigate(-1,"Q")', 'question'],
+    \ 'a' : ['cheat#navigate(-1,"A")', 'answer'],
+    \ 'h' : ['cheat#navigate(-1,"H")', 'history'],
+    \ 's' : ['cheat#navigate(-1,"S")', 'see also'],
+    \ 'f' : ['cheat#frameworks#cycle(-1)', 'framework'],
+    \ },
+\ 'P' : {
+    \ 'name': '+paste',
+    \ 'p' : ['cheat#cheat("", getcurpos()[1], getcurpos()[1], 0, 3, "!")', 'paste'],
+    \ 'P' : ['cheat#cheat("", getcurpos()[1], getcurpos()[1], 0, 4, "!")', 'paste'],
+    \ },
+\ 'r' : ['cheat#cheat("", getcurpos()[1], getcurpos()[1], 0, 1, "!")', 'replace'],
+\ }
+
+""" translate
+let g:which_key_map.t = {
+\ 'name' : '+t/trans',
+\ 'n' : {
+    \ 'name' : '+Ntranslate',
+    \ 'e' : ['Translate', 'cmd'],
+    \ 'w' : ['TranslateW', 'window'],
+    \ 'r' : ['TranslateR', 'replace'],
+    \ 'x' : ['TranslateX', 'clipboard'],
+    \ },
+\ 'v' : {
+    \ 'name' : '+Vtranslate',
+    \ 'e' : ['TranslateV', 'cmd'],
+    \ 'w' : ['TranslateWV', 'window'],
+    \ 'r' : ['TranslateRV', 'replace'],
+    \ },
+\ }
+
+
 """ change description text in which-key pop-up menu on already existing mappings
 "let g:which_key_map_local.l = {
 "\ 'name' : '+local',
