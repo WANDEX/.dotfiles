@@ -187,3 +187,6 @@ map! <C-z> <nop>
 " Disable Ex mode
 nnoremap Q <nop>
 
+" Encode visual selection into qr code
+vnoremap Q !curl -s -F-=\<- https://qrenco.de
+
