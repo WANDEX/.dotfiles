@@ -26,7 +26,7 @@ super + m
 	$TERMINAL -e mm
 # launch mpv with youtube-dl/streamlink url link from xclip
 super + p ; {s,1,4,6,7,8,a}
-	mpvu {s,1,4,6,7,8,a}
+	mpvu -q {s,1,4,6,7,8,a}
 super + ctrl + n ; {a,c,C,h,m,P}
 	dunstctl {action,close,close-all,history-pop,context,set-paused toggle}
 super + shift + k
@@ -58,7 +58,7 @@ XF86Audio{Lower,Raise}Volume
 
 # function keys
 super + F4
-	mpvu s
+	mpvu -q s
 super + F7
 	switch_pulse_preset.sh; kill -53 $(pidof dwmblocks)
 super + F9
