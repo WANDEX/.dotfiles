@@ -32,6 +32,17 @@ alias \
     sxrc="$EDITOR ~/.xinitrc" \
     sxres="$EDITOR ~/.Xresources"
 
+# shortcuts cd to dir
+alias \
+    cdD="cd $HOME/Documents/" \
+    cdS="cd $SCRIPTS" \
+    cdd="cd $HOME/Downloads/" \
+    cdf="cd $SOURCE/forks/" \
+    cdg="cd $HOME/Downloads/git/" \
+    cdo="cd $SOURCE" \
+    cdp="cd $SOURCE/projects/" \
+    cds="cd $SCRIPTS/sh"
+
 # shortcuts to dir with ranger
 alias \
     dre="ranger ~/.config/env/" \
@@ -41,6 +52,7 @@ alias \
 
 # common
 alias \
+    chts="cht --shell" \
     kl="kill -9" \
     lld2="sudo du -ah --max-depth 2" \
     lld="sudo du -ah --max-depth 1" \
