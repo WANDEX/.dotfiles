@@ -34,7 +34,6 @@ filetype
 flickering
 fnamemodify
 functions
-g
 github
 gui
 helptags
@@ -71,11 +70,11 @@ xrdb
 trying
 polishing
 polish
-DNS/!
-docformatter/!
-isort/!
-#apanese
+DNS
+docformatter
+isort
 katakana
-hardcoded/!
-readme/!
-#creenshot/!
+hardcoded
+readme
+screenshot
+desync
