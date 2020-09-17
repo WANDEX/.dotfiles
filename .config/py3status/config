@@ -193,10 +193,10 @@ frame urgent_maintenance {
 
 
 # unuglify transition to colored
-order += "static_string separator_beg_crypto"
+#order += "static_string separator_beg_crypto"
 static_string separator_beg_crypto { format = '\?color=standardcolor ' }
 
-order += "group crypto"
+#order += "group crypto"
 group crypto {
     click_mode = "button"
     format_button_closed = '+'
@@ -208,7 +208,7 @@ group crypto {
             background = 'standardcolor'
             format_separator = ' '
             coin_market USD {
-                cache_timeout = 20
+                #cache_timeout = 20
                 format_coin = "[\?color=symbol {symbol}] ${price_usd:.1f} "
                 format_coin += "[\?color=percent_change_24h {percent_change_24h}%]"
                 markets = ["BTC", "ETH", "LTC", "EOS", "ZRX"]
@@ -224,7 +224,7 @@ group crypto {
                 }
             }
             coin_market BTC {
-                cache_timeout = 20
+                #cache_timeout = 20
                 format_coin = "[\?color=symbol {symbol}] Ƀ{price_btc:.3f} "
                 format_coin += "[\?color=percent_change_24h {percent_change_24h}%]"
                 markets = ["BTC", "ETH", "LTC", "EOS", "ZRX"]
@@ -243,7 +243,7 @@ group crypto {
         # secondary frame, display top 10 markets
         frame cryptoTOP {
             coin_market TOP {
-                cache_timeout = 20
+                #cache_timeout = 20
                 format_coin = "[\?color=rank {rank}. {symbol} ${price_usd:.0f}] "
                 format_coin += "[\?color=percent_change_24h {percent_change_24h}%] "
                 markets = 10
@@ -267,7 +267,7 @@ group crypto {
         # third frame, display top 10 markets cap
         frame cryptoTOPcap {
             coin_market TOPcap {
-                cache_timeout = 20
+                #cache_timeout = 20
                 format_coin = "[\?color=rank {rank}. {symbol} M$]"
                 format_coin += "[\?max_length=-6&trim=both {market_cap_usd:.0f}]"
                 markets = 10
@@ -292,7 +292,7 @@ group crypto {
 }
 
 # unuglify transition to colored
-order += "static_string separator_end_crypto"
+#order += "static_string separator_end_crypto"
 static_string separator_end_crypto { format = '\?color=standardcolor ' }
 
 order += "group loss_alert"
@@ -453,7 +453,7 @@ group sound {
         external_script "pulse_preset" {
             format = "[\?if=!output=default {output} ]"
             cache_timeout = 1
-            script_path = "~/.scripts/.temp/.switch_pulse_preset_status.sh"
+            script_path = "~/.cache/cscripts/pulse_active_preset"
         }
         volume_status {
             align = "center"
@@ -472,7 +472,7 @@ group sound {
             cache_timeout = 1
             format = '[\?if=is_input | ]  {percentage}%'
             format_muted = '[\?if=is_input | ] MUTE'
-            device = "3" # flag4sed M
+            device = "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1" # flag4sed M
             thresholds = [
                 (0, "bad"), (50, "degraded"), (75, "good")
             ]
