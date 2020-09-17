@@ -31,6 +31,8 @@ super + ctrl + n ; {a,c,C,h,m,P}
 	dunstctl {action,close,close-all,history-pop,context,set-paused toggle}
 super + shift + k
 	$TERMINAL -e ncmpcpp
+super + ctrl + shift + d ; {a,shift + a} ; {d,k,l,p,y}
+	download_audio.sh {_,-r} {_,-p kdi,-p lt,-p podcast,-p ytm}
 super + ctrl + shift + e
 	dmenu_unicode
 super + ctrl + shift + h
