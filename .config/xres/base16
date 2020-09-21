@@ -1,22 +1,29 @@
 !      base16     !
-*.color0:       c00
-*.color1:       c01
-*.color2:       c02
-*.color3:       c03
-*.color4:       c04
-*.color5:       c05
-*.color6:       c06
-*.color7:       c07
-*.color8:       c08
-*.color9:       c09
-*.color10:      c10
-*.color11:      c11
-*.color12:      c12
-*.color13:      c13
-*.color14:      c14
-*.color15:      c15
+*.color0:  #000000
+*.color1:  c01
+*.color2:  c02
+*.color3:  c03
+*.color4:  c04
+*.color5:  c05
+*.color6:  c06
+*.color7:  c07
+*.color8:  c08
+*.color9:  c09
+*.color10: c10
+*.color11: c11
+*.color12: c12
+*.color13: c13
+*.color14: c14
+*.color15: c15
+
+! COMMON FOR ALL COLOR SCHEMES
+*.color16: #AA3131
+*.color17: #000350
 
 !     special     !
-*.foreground:   c07
-*.background:   c00
-*.cursorColor:  c07
+*.foreground:  c07
+*.background:  c00
+!*.background: #000000
+*.cursorColor: c07
+!*fadeColor:   c08
+!*fading:       35
