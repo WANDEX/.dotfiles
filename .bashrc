@@ -13,6 +13,7 @@ shopt -s expand_aliases
 [[ $- = *i* ]] && source liquidprompt
 
 [[ $- = *i* ]] && source "/usr/share/bash-completion/bash_completion"
+[[ $- = *i* ]] && source "$CHTSH/bash_completion"
 
 # fzf enable fuzzy completion [example]: cd **<TAB>
 [[ $- = *i* ]] && source "/usr/share/fzf/completion.bash"
