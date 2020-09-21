@@ -15,6 +15,9 @@ import os
 # You always need to import ranger.api.commands here to get the Command class:
 from ranger.api.commands import Command
 
+from subprocess import (run, PIPE)
+import shlex
+
 
 # Any class that is a subclass of "Command" will be integrated into ranger as a
 # command.  Try typing ":my_edit<ENTER>" in ranger!
@@ -61,12 +64,22 @@ class my_edit(Command):
         # content of the current directory.
         return self._tab_directory_content()
 
-class empty(Command):
-    """:empty
 
-    Empties the trash directory ~/.Trash
+class select_random(Command):
+    """:select_random
+
+    Selects random file in current ranger dir
     """
 
-    def execute(self):
-        self.fm.run("rm -rf /home/myname/.Trash/{*,.[^.]*}")
+    def _sp(self):
+        # find "$(pwd)" -maxdepth 1 -type f | shuf -n 1
+        cmd = 'find "' + str(self.fm.thisdir) + '" -maxdepth 1 -type f'
+        cmds = shlex.split(cmd)
+        process = run(cmds, stdout=PIPE, universal_newlines=True)
+        process = run(['shuf', '-n', '1'], input=str(process.stdout), stdout=PIPE, universal_newlines=True)
+        one = str(process.stdout).strip()
+        return one
 
+    def execute(self):
+        target_filename = self._sp()
+        self.fm.select_file(target_filename)
