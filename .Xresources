@@ -13,15 +13,11 @@
 #include "/home/wndx/.config/xres/xft"
 
 ! SOURCE TERMINAL COLORS !
-#include "/home/wndx/.config/xres/themes/graveyard"
+#include "/home/wndx/.config/xres/themes/monokai_c"
 #include "/home/wndx/.config/xres/base16"
 
-! COMMON FOR ALL COLOR SCHEMES
-*.color16: #AA3131
-*.color17: #000350
-
 ! Transparency (0-1): *.alpha: 0.95
-st.alpha: 0.8
+st.alpha: 0.9
 
 ! FONT
 st.font: Mononoki Nerd Font Mono:pixelsize=16
