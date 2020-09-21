@@ -19,7 +19,7 @@ kb.sh && sxhkd &                # keyboard layout, repeat rate and key binds
 unclutter &                     # remove mouse cursor when idle
 nhp tor                         # fork in background and don't create nohup.out
 mpd && mpdscribble &
-sleep 2 && deadd-notification-center &
+dunst &
 transmission-daemon &
 redshift &
 
