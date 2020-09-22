@@ -17,3 +17,5 @@ nhp()   { nohup "$(rit $1)" >/dev/null 2>&1 & }
 # source if file exist
 source_if_exist() { [[ -f "$1" ]] && source "$1"; }
 
+. "$XDG_CONFIG_HOME/fzfgit"
+
