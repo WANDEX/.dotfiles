@@ -1,5 +1,5 @@
 #!/bin/sh
-# Gist Author: Daniel Choudhury dac09
+# Gist Original Author: Daniel Choudhury dac09
 #///////////////////////////////////////////////////////////////////
 #////________//__________//________////______//______//__________///
 #///__//////////////__////__////////__//////////__////////__////////
@@ -12,6 +12,16 @@
 fbr() {
   local branches branch
   branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+# fbl - checkout git branch (including remote branches),
+# sorted by most recent commit, limit N Last branches
+fbl() {
+  local branches branch
+  branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
   branch=$(echo "$branches" |
            fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
