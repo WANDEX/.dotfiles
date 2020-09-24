@@ -51,6 +51,8 @@ super + ctrl + shift + z ; button{1-5}
 # media keys
 XF86Audio{Prev,Next}
 	mpc {prev,next}
+XF86Audio{Prev,Next} + {alt, ctrl, shift}
+	mpc seek {-,+}{5,10,30}
 XF86Audio{Play,Pause,Stop}
 	mpc {toggle,pause,stop}
 XF86AudioMute
