@@ -44,7 +44,7 @@ if !exists('autocommands_loaded')
     au BufWritePre * %s/\s\+$//e
 
     " run xrdb whenever Xresources are updated.
-    au BufWritePost *Xresources !xrdb %
+    au BufWritePost \(*/.Xresources\|*/xres/*\) !xrdb ~/.Xresources
 
     " update binds when sxhkdrc is updated.
     au BufWritePost *sxhkdrc !pkill -USR1 sxhkd
