@@ -14,3 +14,4 @@ Xft.lcdfilter: lcdlight
 ! xdpyinfo | grep -B2 resolution
 Xft.dpi: 96
 
+! vim:set ft=xdefaults:

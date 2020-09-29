@@ -27,3 +27,5 @@
 *.cursorColor: c07
 !*fadeColor:   c08
 !*fading:       35
+
+! vim:set ft=xdefaults:

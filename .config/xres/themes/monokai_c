@@ -31,3 +31,5 @@
 !      white      !
 #define c07 #A89984
 #define c15 #EBDBB2
+
+! vim:set ft=xdefaults:
