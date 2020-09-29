@@ -10,11 +10,13 @@
 !!   :   ::    :   : :  : :: ::   :: : :     : :  :
 
 ! libXft -> FONT DRAWING !
-#include "/home/wndx/.config/xres/xft"
+#include ".config/xres/xft"
 
 ! SOURCE TERMINAL COLORS !
-#include "/home/wndx/.config/xres/themes/monokai_c"
-#include "/home/wndx/.config/xres/base16"
+#include ".config/xres/themes/monokai_c"
+#include ".config/xres/base16"
+
+#include ".config/xres/dmenu"
 
 ! Transparency (0-1): *.alpha: 0.95
 st.alpha: 0.9
