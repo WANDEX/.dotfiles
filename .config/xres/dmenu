@@ -1,0 +1,7 @@
+dmenu.font: monospace:size=8
+dmenu.background: #3E494C
+dmenu.foreground: #84969A
+dmenu.selbackground: #32393A
+dmenu.selforeground: #97A6AA
+
+! vim:set ft=xdefaults:
