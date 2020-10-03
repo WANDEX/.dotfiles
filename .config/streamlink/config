@@ -1,0 +1,39 @@
+## Syntax one command-line option (omitting the dashes) per line
+
+# Player options
+player=mpv --profile=stream
+#player-args=--profile=stream # why player-args doesn't work?
+player-continuous-http
+player-no-close
+default-stream="best,720p60,720p"
+retry-streams=5
+retry-max=12
+retry-open=1
+
+twitch-disable-hosting
+twitch-disable-ads
+#twitch-disable-reruns
+
+# Authenticate with Twitch
+twitch-oauth-token="$TWOA"
+
+# Timeouts for disconnects and etc.
+hds-segment-attempts=64
+hds-segment-timeout=10
+hds-timeout=60
+
+hls-segment-attempts=64
+hls-playlist-reload-attempts=64
+hls-segment-timeout=10
+hls-timeout=60
+
+http-stream-timeout=60
+
+rtmp-timeout=60
+
+stream-segment-attempts=64
+stream-segment-timeout=10
+stream-timeout=60
+
+http-timeout=60
+
