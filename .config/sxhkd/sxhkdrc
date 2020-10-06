@@ -71,6 +71,8 @@ super + {F10,F11} + {_,shift,alt}
 	pactl set-sink-volume $SINK0 {-,+}{10,50,5}%; kill -43 $(pidof dwmblocks)
 ctrl  + {F10,F11} + {_,shift}
 	pactl set-sink-volume $SINK1 {-,+}{10,50}%; kill -44 $(pidof dwmblocks)
+super + F12
+	killall -q dwmblocks;setsid dwmblocks &
 
 # screenshots: selection, window, window with imagemagick processing
 Print
@@ -82,3 +84,5 @@ super + Print
 super + shift + Print
 	com.github.ronnydo.colorpicker
 
+super + Insert
+	notify-send -u low "📋 Clipboard contents:" "$(xclip -o -selection clipboard)"
