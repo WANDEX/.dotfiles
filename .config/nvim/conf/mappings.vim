@@ -20,8 +20,6 @@ nnoremap F E|onoremap F E|vnoremap F E
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
-"nnoremap jj nzzzv
-"nnoremap je Nzzzv
 nnoremap <Enter> nzzzv
 nnoremap <BS> Nzzzv
 
@@ -34,10 +32,6 @@ nnoremap <C-W>n <C-W>j
 nnoremap <C-W>e <C-W>k
 nnoremap <C-W>h <C-W>h
 nnoremap <C-W>i <C-W>l
-"map <C-N> <C-W>j
-"map <C-E> <C-W>k
-"map <C-H> <C-W>h
-"map <C-I> <C-W>l
 
 nnoremap n j|xnoremap n j|onoremap n j|vnoremap n j
 nnoremap e k|xnoremap e k|onoremap e k|vnoremap e k
