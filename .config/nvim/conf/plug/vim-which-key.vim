@@ -17,8 +17,6 @@ nnoremap <silent> <leader>         :WhichKey       mapleader<cr>
 vnoremap <silent> <leader>         :WhichKeyVisual mapleader<cr>
 nnoremap <silent> <localleader>    :WhichKey       maplocalleader<cr>
 vnoremap <silent> <localleader>    :WhichKeyVisual maplocalleader<cr>
-nnoremap <silent> g                :WhichKey       'g'<cr>
-vnoremap <silent> g                :WhichKeyVisual 'g'<cr>
 nnoremap <silent> <leader><leader> :WhichKey       nr2char(getchar())<cr>
 vnoremap <silent> <leader><leader> :WhichKeyVisual nr2char(getchar())<cr>
 
@@ -98,18 +96,39 @@ let g:which_key_map.C = {
 """ translate
 let g:which_key_map.t = {
 \ 'name' : '+t/trans',
-\ 'n' : {
-    \ 'name' : '+Ntranslate',
-    \ 'e' : ['Translate', 'cmd'],
+\ 'w' : [":'<,'>TranslateW", 'windowV'],
+\ 'r' : [":'<,'>TranslateR", 'replaceV'],
+\ 'x' : ['TranslateX', 'clipboard'],
+\ 'l' : ['TranslateL', 'display log'],
+\ 'a' : {
+    \ 'name' : '+ -sl auto ',
+    \ 'w' : [":'<,'>TranslateW source_lang=auto", 'windowV'],
+    \ 'r' : [":'<,'>TranslateR source_lang=auto", 'replaceV'],
+    \ 'x' : ['TranslateX source_lang=auto', 'clipboard'],
+    \ '!' : {
+        \ 'name' : '+trans!',
+        \ 'w' : [":'<,'>TranslateW! source_lang=auto target_lang=en", 'windowV'],
+        \ 'r' : [":'<,'>TranslateR! source_lang=auto target_lang=en", 'replaceV'],
+        \ 'x' : ['TranslateX! source_lang=auto target_lang=en', 'clipboard'],
+        \ },
+    \ },
+\ '!' : {
+    \ 'name' : '+trans!',
+    \ 'w' : [":'<,'>TranslateW!", 'windowV'],
+    \ 'r' : [":'<,'>TranslateR!", 'replaceV'],
+    \ 'x' : ['TranslateX!', 'clipboard'],
+    \ },
+\ 'N' : {
+    \ 'name' : '+Ntrans',
+    \ 'c' : ['Translate', 'cmd'],
     \ 'w' : ['TranslateW', 'window'],
     \ 'r' : ['TranslateR', 'replace'],
-    \ 'x' : ['TranslateX', 'clipboard'],
-    \ },
-\ 'v' : {
-    \ 'name' : '+Vtranslate',
-    \ 'e' : ['TranslateV', 'cmd'],
-    \ 'w' : ['TranslateWV', 'window'],
-    \ 'r' : ['TranslateRV', 'replace'],
+    \ '!' : {
+        \ 'name' : '+Ntrans!',
+        \ 'c' : ['Translate!', 'cmd'],
+        \ 'w' : ['TranslateW!', 'window'],
+        \ 'r' : ['TranslateR!', 'replace'],
+        \ },
     \ },
 \ }
 
