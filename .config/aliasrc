@@ -53,6 +53,7 @@ alias \
 # common
 alias \
     chts="cht --shell" \
+    gali="alias | grep -i" \
     kl="kill -9" \
     lld2="sudo du -ah --max-depth 2" \
     lld="sudo du -ah --max-depth 1" \
