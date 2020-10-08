@@ -46,7 +46,6 @@ set wildignore+=*.pyc,*_build/*,*/coverage/*,*.swp
 
 set completeopt=menuone         " Somehow it fixes flickering in autocomplete
 set completeopt+=noinsert
-"set completeopt-=preview
 
 set listchars=tab:>\ ,trail:~\,extends:>,precedes:<,nbsp:+
 set list                        " Show problematic characters.
@@ -59,25 +58,13 @@ set timeoutlen=800 " used by vim-which-key as timeout before showing guide popup
 "" Advanced
 "*****************************************************************************
 colorscheme dim
-"colorscheme vim-monokai-tasty
 set t_Co=256
 hi Normal guibg=NONE ctermbg=NONE
 
-"let mapleader="\\"
 let mapleader="\<SPACE>"
 let maplocalleader="\\"
-
-
-" Enable file type detection.
-"filetype plugin on
 
 if has('conceal')
     set conceallevel=2 concealcursor=niv
 endif
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-"if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-    "syntax on
-"endif
 
