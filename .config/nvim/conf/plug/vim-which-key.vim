@@ -22,6 +22,20 @@ vnoremap <silent> <leader><leader> :WhichKeyVisual nr2char(getchar())<cr>
 
 """ create menus not based on existing mappings -> define new mappings
 
+" Add a semicolon to the end of the line
+nnoremap <leader>a; m'A;<esc>`'
+""" add
+let g:which_key_map.a = {
+\ 'name' : '+add',
+\ ';' : '$a;',
+\ }
+
+""" delete
+let g:which_key_map.d = {
+\ 'name' : '+delete',
+\ 'd' : [':bd!', 'del buffer'],
+\ }
+
 """ LeaderF [f/b] / List[l/q] -> already mapped
 let g:which_key_map.L = {
 \ 'name' : '+LeaderF/List/Limeligh',
@@ -65,6 +79,14 @@ let g:which_key_map.l = {
     \ },
 \ }
 
+""" Magit
+let g:which_key_map.M = {
+\ 'name' : '+Magit',
+\ 'h' : ["magit#show_magit('h')", 'hrz'],
+\ 'o' : ["magit#show_magit('c')", 'only'],
+\ 'v' : ["magit#show_magit('v')", 'vrt'],
+\ }
+
 """ cheat
 let g:which_key_map.C = {
 \ 'name' : '+cht',
@@ -98,6 +120,17 @@ let g:which_key_map.C = {
     \ 'P' : ['cheat#cheat("", getcurpos()[1], getcurpos()[1], 0, 4, "!")', 'paste'],
     \ },
 \ 'r' : ['cheat#cheat("", getcurpos()[1], getcurpos()[1], 0, 1, "!")', 'replace'],
+\ }
+
+nnoremap <leader>sr :%s///gc<Left><Left><Left><Left>
+vnoremap <leader>sr :s///gc<Left><Left><Left><Left>
+nnoremap <leader>ss :sort<cr>
+vnoremap <leader>ss :sort<cr>
+""" Search and Replace / sort visual selection
+let g:which_key_map.s = {
+\ 'name' : '+sort/replace',
+\ 'r' : 'replace',
+\ 's' : 'sort',
 \ }
 
 """ translate
@@ -139,10 +172,22 @@ let g:which_key_map.t = {
     \ },
 \ }
 
+""" window
+let g:which_key_map.w = {
+\ 'name' : '+window',
+\ 't' : ['TabToNewWindow()', 'tab -> new Window'],
+\ }
+
 """ copy to X clipboard <= @" return last yanked text
 let g:which_key_map.X = {
 \ 'name' : '+X',
 \ 'c' : [':call system("xclip -selection clipboard", @")', 'xclip'],
+\ }
+
+""" yank path of current file to system clipboard
+let g:which_key_map.y = {
+\ 'name' : '+yank',
+\ 'p' : [':let @+ = expand("%:p") | :echom "Copied " . @+', 'file path'],
 \ }
 
 

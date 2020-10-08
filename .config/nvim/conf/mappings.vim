@@ -79,7 +79,6 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 
 nnoremap <F3> :TagbarToggle<CR>
-nnoremap <Leader>tb :TagbarToggle<CR>
 
 nnoremap <F4> :set relativenumber!<CR>
 
@@ -103,30 +102,8 @@ nnoremap <F8> :emenu Encoding.
 " re-indent whole file / fix indentation
 nnoremap <F12> gg=G<C-o><C-o>
 
-" delete current buffer
-nnoremap <Leader>dd :bd!<CR>
-
-" open bash terminal
-nnoremap <Leader>tm :sp term://bash <CR>
-
-" easier terminal  Esc
+" easier terminal Esc
 tnoremap <Esc> <C-\><C-n>
-
-" open in a new tab provided file
-nnoremap <Leader>tn :tabnew ~/
-
-"swap top/bottom or left/right split
-nnoremap <Leader>r <c-w>r
-
-"Close every window in the current tab view but the current one
-nnoremap <Leader>O <C-W>o
-
-" Search and Replace
-nnoremap <Leader>s :%s///gc<Left><Left>
-vnoremap <Leader>s :s///gc<Left><Left>
-
-" sort visual selection
-vnoremap <Leader>S :sort<CR>
 
 " easier moving of code blocks, without losing of selection block
 vnoremap < <gv
@@ -136,18 +113,6 @@ vnoremap > >gv
 vmap <Enter> <Plug>(EasyAlign)
 " Start interactive EasyAlign in normal/visual mode (e.g. vipga)
 nmap ga <Plug>(EasyAlign)| xmap ga <Plug>(EasyAlign)
-
-" Add a semicolon to the current line
-nnoremap <Leader>; m'A;<ESC>`'
-
-" Run commands that require an interactive shell
-"nnoremap <Leader>r :RunInInteractiveShell<Space>
-
-" yank path of current file to system clipboard
-nnoremap <silent> <Leader>yp :let @+ = expand("%:p")<CR>:echom "Copied " . @+<CR>
-
-" open tab in new terminal instance
-nnoremap <Leader>W :call TabToNewWindow()<CR>
 
 " Reload vim configuration
 nnoremap <localleader>rc :ReloadConfig<CR>
