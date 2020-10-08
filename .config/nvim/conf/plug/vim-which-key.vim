@@ -22,6 +22,13 @@ vnoremap <silent> <leader><leader> :WhichKeyVisual nr2char(getchar())<cr>
 
 """ create menus not based on existing mappings -> define new mappings
 
+""" LeaderF [f/b] / List[l/q] -> already mapped
+let g:which_key_map.L = {
+\ 'name' : '+LeaderF/List/Limeligh',
+\ 'r' : [':LeaderfFile /', 'LeaderF /'],
+\ 'L' : [':Limelight!!', 'Limelight!!'],
+\ }
+
 """ LanguageClient
 let g:which_key_map.l = {
 \ 'name' : '+lsp',
@@ -130,6 +137,12 @@ let g:which_key_map.t = {
         \ 'r' : ['TranslateR!', 'replace'],
         \ },
     \ },
+\ }
+
+""" copy to X clipboard <= @" return last yanked text
+let g:which_key_map.X = {
+\ 'name' : '+X',
+\ 'c' : [':call system("xclip -selection clipboard", @")', 'xclip'],
 \ }
 
 
