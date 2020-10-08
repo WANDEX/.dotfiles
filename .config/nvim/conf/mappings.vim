@@ -143,10 +143,6 @@ nnoremap <Leader>; m'A;<ESC>`'
 " Run commands that require an interactive shell
 "nnoremap <Leader>r :RunInInteractiveShell<Space>
 
-" <Leader>b - search buffers, <Leader>f - search files
-" LeaderF find files in provided location
-nnoremap <Leader>F :LeaderfFile /
-
 " yank path of current file to system clipboard
 nnoremap <silent> <Leader>yp :let @+ = expand("%:p")<CR>:echom "Copied " . @+<CR>
 

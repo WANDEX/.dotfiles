@@ -5,6 +5,9 @@ let g:Lf_CacheDirectory = $XDG_CACHE_HOME
 let g:Lf_StlColorscheme = 'powerline'
 let g:Lf_StlSeparator   = { 'left': '', 'right': '' }
 
+let g:Lf_ShortcutF = '<Leader>Lf'
+let g:Lf_ShortcutB = '<Leader>Lb'
+
 " <C-V> - open in vertical split
 let g:Lf_CommandMap     = {
     \               '<C-K>': ['<C-E>'],
