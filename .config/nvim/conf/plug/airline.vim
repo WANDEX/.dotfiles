@@ -4,6 +4,8 @@
 " show buffer number for easier switching between buffer
 " see https://github.com/vim-airline/vim-airline/issues/1149
 
+let g:airline_theme='base16color' " .Xresources terminal colorscheme
+
 let g:airline_powerline_fonts                    = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#tabline#fnamecollapse   = 1 " full/col path in tab line
@@ -41,13 +43,19 @@ if !exists('g:airline_powerline_fonts')
     let g:airline_symbols.paste                     = '∥'
     let g:airline_symbols.whitespace                = 'Ξ'
 else
-    " powerline symbols
-    let g:airline#extensions#tabline#left_sep       = ''
-    let g:airline#extensions#tabline#left_alt_sep   = ''
-    let g:airline_left_sep                          = ''
-    let g:airline_left_alt_sep                      = ''
-    let g:airline_right_sep                         = ''
-    let g:airline_right_alt_sep                     = ''
+    let g:airline#extensions#tabline#left_sep       = ''
+    let g:airline#extensions#tabline#left_alt_sep   = ''
+    let g:airline_left_sep                          = ''
+    let g:airline_left_alt_sep                      = ''
+    let g:airline_right_sep                         = ''
+    let g:airline_right_alt_sep                     = ''
+    "" powerline symbols
+    "let g:airline#extensions#tabline#left_sep       = ''
+    "let g:airline#extensions#tabline#left_alt_sep   = ''
+    "let g:airline_left_sep                          = ''
+    "let g:airline_left_alt_sep                      = ''
+    "let g:airline_right_sep                         = ''
+    "let g:airline_right_alt_sep                     = ''
     let g:airline_symbols.branch                    = ''
     let g:airline_symbols.readonly                  = ''
     let g:airline_symbols.linenr                    = ''

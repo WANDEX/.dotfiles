@@ -4,6 +4,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'jeffkreeftmeijer/vim-dim' " (Xresources) consistent term colors w invers
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ntpeters/vim-better-whitespace'
 "Plug 'brooth/far.vim'
