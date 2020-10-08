@@ -33,6 +33,7 @@ let g:nvim_config_files = [
     \ 'conf/plug/leaderF.vim',
     \ 'conf/plug/limelight.vim',
     \ 'conf/plug/listToggle.vim',
+    \ 'conf/plug/magit.vim',
     \ 'conf/plug/markdown-preview.vim',
     \ 'conf/plug/neoformat.vim',
     \ 'conf/plug/neomake.vim',
