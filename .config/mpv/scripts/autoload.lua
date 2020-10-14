@@ -29,6 +29,7 @@ o = {
     disabled = false,
     images = true,
     videos = true,
+    toggle = true,
     audio = true
 }
 options.read_options(o)
@@ -217,4 +218,19 @@ function find_and_add_entries()
     add_files_at(pl_current, append[-1])
 end
 
+function toggle()
+    if o.toggle then
+        o.toggle = false
+        mp.osd_message("autoload OFF", 1)
+        mp.command_native({"playlist-clear"}) -- except the currently played file.
+    else
+        o.toggle = true
+        mp.osd_message("autoload ON", 1)
+        find_and_add_entries()
+    end
+end
+
 mp.register_event("start-file", find_and_add_entries)
+
+-- change key binding as desired
+mp.add_forced_key_binding('ctrl+A', 'toggle', toggle)
