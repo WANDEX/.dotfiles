@@ -8,6 +8,7 @@ local settings = {
    close_webtorrent = true,
    remove_files = true,
    download_directory = "/tmp/webtorrent",
+   temp_directory = "/tmp/webtorrent",
    webtorrent_flags = "",
    webtorrent_verbosity = "speed"
 }
@@ -59,8 +60,9 @@ function play_torrent()
       end
 
       os.execute("mkdir -p " .. settings.download_directory)
+      os.execute("mkdir -p " .. settings.temp_directory)
       -- don't reuse files (so multiple mpvs works)
-      local output_file = settings.download_directory
+      local output_file = settings.temp_directory
          .. "/webtorrent-output-" .. mp.get_time() .. ".log"
       -- --keep-seeding is to prevent webtorrent from quitting once the download
       -- is done
@@ -93,7 +95,7 @@ function play_torrent()
 
       if settings.webtorrent_verbosity == "speed" then
          local printer_pid
-         local printer_pid_file = settings.download_directory
+         local printer_pid_file = settings.temp_directory
             .. "/webtorrent-printer-" .. mp.get_time() .. ".pid"
          os.execute("tail -f " .. output_file
                        .. " | awk '/Speed:/' ORS='\r' & echo -n $! > "
