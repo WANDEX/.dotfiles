@@ -13,7 +13,7 @@
 #include ".config/xres/xft"
 
 ! SOURCE TERMINAL COLORS !
-#include ".config/xres/themes/monokai_c"
+#include ".config/xres/themes/nord"
 #include ".config/xres/base16"
 
 #include ".config/xres/dmenu"
