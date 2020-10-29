@@ -1,0 +1,31 @@
+!  color  palette  !
+#define cnbg #3E494C
+#define cnfg #84969A
+#define csbg #32393A
+#define csfg #97A6AA
+#define cbcl #5E6F73
+
+!#define cnbg #FE494C
+!#define cnfg #F4969A
+!#define csbg #F2393A
+!#define csfg #F7A6AA
+
+dmenu.font: monospace:size=8
+dmenu.background: cnbg
+dmenu.foreground: cnfg
+dmenu.selbackground: csbg
+dmenu.selforeground: csfg
+
+dwm.normbgcolor: cnbg
+dwm.normfgcolor: cnfg
+dwm.selbgcolor: csbg
+dwm.selfgcolor: csfg
+dwm.normbordercolor: cbcl
+dwm.selbordercolor: csfg
+
+dwm.dmenufont: monospace:size=8
+dwm.borderpx: 2
+dwm.showsystray: 1
+dwm.systraypinning: 2
+
+! vim:set ft=xdefaults:

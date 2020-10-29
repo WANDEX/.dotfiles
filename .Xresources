@@ -16,10 +16,11 @@
 #include ".config/xres/themes/nord"
 #include ".config/xres/base16"
 
-#include ".config/xres/dmenu"
+#include ".config/xres/core"
 
 ! Transparency (0-1): *.alpha: 0.95
 st.alpha: 0.9
+opaque.alpha: 1
 
 ! FONT
 st.font: Mononoki Nerd Font Mono:pixelsize=16
