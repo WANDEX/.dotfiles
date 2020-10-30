@@ -34,6 +34,7 @@ alias \
 
 # shortcuts cd to dir
 alias \
+    cdc="cd $SOURCE/projects/core/" \
     cdD="cd $HOME/Documents/" \
     cdS="cd $SCRIPTS" \
     cdd="cd $HOME/Downloads/" \
@@ -45,10 +46,12 @@ alias \
 
 # shortcuts to dir with ranger
 alias \
+    drc="ranger $SOURCE/projects/core/" \
     dre="ranger ~/.config/env/" \
     drf="ranger $SOURCE/forks/" \
     drl="ranger $SOURCE/forks/luke/" \
-    drv="ranger ~/.config/nvim/"
+    drv="ranger ~/.config/nvim/" \
+    drx="ranger ~/.config/xres/"
 
 # common
 alias \
@@ -98,7 +101,7 @@ alias \
     grep="grep --color=auto" \
     ls="ls -hN --color=auto --group-directories-first" \
     la="ls -Fa --color=auto" \
-    ll="ls -Flas --color=auto" \
+    ll="ls_colored" \
     diff="diff --color=auto" \
     ccat="highlight --out-format=ansi"
 
