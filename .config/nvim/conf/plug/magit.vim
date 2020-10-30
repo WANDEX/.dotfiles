@@ -12,5 +12,5 @@ let g:magit_jump_prev_hunk='<C-E>'
 "let g:magit_folding_toggle_mapping=[ '<CR>' ]
 let g:magit_folding_toggle_mapping=[ '<C-O>', '<C-Z>' ]
 
-let g:magit_commit_title_limit=79
+let g:magit_commit_title_limit=70
 let g:magit_scrolloff=5
