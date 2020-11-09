@@ -1,14 +1,8 @@
 !  color  palette  !
 #define cnbg #3E494C
-#define cnfg #84969A
+#define cnfg #E0E5E6
 #define csbg #32393A
 #define csfg #97A6AA
-#define cbcl #5E6F73
-
-!#define cnbg #FE494C
-!#define cnfg #F4969A
-!#define csbg #F2393A
-!#define csfg #F7A6AA
 
 dmenu.font: monospace:size=8
 dmenu.background: cnbg
@@ -18,9 +12,9 @@ dmenu.selforeground: csfg
 
 dwm.normbgcolor: cnbg
 dwm.normfgcolor: cnfg
-dwm.selbgcolor: csbg
-dwm.selfgcolor: csfg
-dwm.normbordercolor: cbcl
+dwm.selfgcolor: csbg
+dwm.selbgcolor: csfg
+dwm.normbordercolor: csbg
 dwm.selbordercolor: csfg
 
 dwm.dmenufont: monospace:size=8
