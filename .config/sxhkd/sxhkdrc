@@ -71,8 +71,9 @@ super + {F10,F11} + {_,shift,alt}
 	pactl set-sink-volume $SINK0 {-,+}{10,50,5}%; kill -43 $(pidof dwmblocks)
 ctrl  + {F10,F11} + {_,shift}
 	pactl set-sink-volume $SINK1 {-,+}{10,50}%; kill -44 $(pidof dwmblocks)
-super + F12
-	killall -q dwmblocks;setsid dwmblocks &
+super  + {_,shift} + F12
+	killall -q dwmblocks; {setsid dwmblocks &,xsetroot -name "dwm"}
+#super + ctrl + shift + F12
 
 # screenshots: selection, window, window with imagemagick processing
 Print
