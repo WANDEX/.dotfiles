@@ -15,8 +15,6 @@ super + shift + Return
 	#dmenu_run
 
 # custom
-super + shift + a
-	i3-auto-layout
 super + g
 	google-chrome-stable
 super + shift + g
