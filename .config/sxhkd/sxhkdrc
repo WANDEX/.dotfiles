@@ -39,8 +39,8 @@ super + ctrl + shift + h
 	$TERMINAL -e htop
 super + ctrl + shift + m ; {m,u}
 	{dmenu_mount,dmenu_umount}
-super + ctrl + shift + t ; {v,s}
-	{tg_send_v.sh,tg_send_s.sh}
+super + ctrl + shift + t ; {v,s,f}
+	{tg_send_v.sh,tg_send_s.sh,font_family_test.sh}
 super + ctrl + shift + c ; button{1-5}
 	repeat.sh -s 0.1 -c 'xdotool click {1-5}'
 super + ctrl + shift + x ; button{1-5}
