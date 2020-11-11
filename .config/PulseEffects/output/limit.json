@@ -34,9 +34,9 @@
             "Simultaneous output on GM107 High Definition Audio Controller [GeForce 940MX] Digital Stereo (HDMI 2)"
         ],
         "plugins_order": [
-            "compressor",
             "autogain",
             "loudness",
+            "compressor",
             "limiter",
             "maximizer",
             "gate",
@@ -70,14 +70,14 @@
         "compressor": {
             "state": "true",
             "input-gain": "0",
-            "output-gain": "20",
-            "mode": "Downward",
+            "output-gain": "6",
+            "mode": "Upward",
             "attack": "70",
             "release": "100",
             "release-threshold": "-200",
-            "threshold": "-60",
+            "threshold": "-24",
             "ratio": "2",
-            "knee": "-12",
+            "knee": "-6",
             "makeup": "0",
             "boost-threshold": "-72",
             "sidechain": {
@@ -763,7 +763,7 @@
         "limiter": {
             "state": "true",
             "input-gain": "0",
-            "limit": "-6",
+            "limit": "-24",
             "lookahead": "0.10000000000000001",
             "release": "1000",
             "auto-level": "false",
@@ -773,7 +773,7 @@
             "output-gain": "0"
         },
         "maximizer": {
-            "state": "false",
+            "state": "true",
             "release": "3.1600000000000001",
             "ceiling": "-24",
             "threshold": "-30"
@@ -1024,7 +1024,7 @@
             "use-geometric-mean": "true",
             "input-gain": "0",
             "output-gain": "20",
-            "target": "-60",
+            "target": "-80",
             "weight-m": "1",
             "weight-s": "1",
             "weight-i": "1"
