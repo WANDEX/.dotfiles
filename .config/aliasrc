@@ -10,49 +10,6 @@
 # Use neovim for vim if present.
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
-# shortcuts to files with $EDITOR
-alias \
-    sali="$EDITOR ~/.config/aliasrc" \
-    sbh="$EDITOR ~/.bash_history" \
-    sbrc="$EDITOR /etc/bash.bashrc" \
-    scv="$EDITOR ~/.config/cvim/.cvimrc" \
-    sdwb="$EDITOR $SOURCE/forks/luke/dwmblocks/config.h" \
-    sdwm="$EDITOR $SOURCE/forks/luke/dwm-fork/config.h" \
-    si3c="$EDITOR ~/.config/i3/config" \
-    si3s="$EDITOR ~/.config/py3status/config" \
-    skd="$EDITOR ~/.config/sxhkd/sxhkdrc" \
-    spr="$EDITOR ~/.profile" \
-    sqc="$EDITOR ~/.config/qutebrowser/config.py" \
-    stodo="$EDITOR ~/Documents/Pomodoro/TODO.txt" \
-    sva="$EDITOR ~/.config/nvim/conf/auto.vim" \
-    svc="$EDITOR ~/.config/nvim/init.vim" \
-    svm="$EDITOR ~/.config/nvim/conf/mappings.vim" \
-    svp="$EDITOR ~/.config/nvim/conf/plugins.vim" \
-    svs="$EDITOR ~/.config/nvim/conf/settings.vim" \
-    sxrc="$EDITOR ~/.xinitrc" \
-    sxres="$EDITOR ~/.Xresources"
-
-# shortcuts cd to dir
-alias \
-    cdc="cd $SOURCE/projects/core/" \
-    cdD="cd $HOME/Documents/" \
-    cdS="cd $SCRIPTS" \
-    cdd="cd $HOME/Downloads/" \
-    cdf="cd $SOURCE/forks/" \
-    cdg="cd $HOME/Downloads/git/" \
-    cdo="cd $SOURCE" \
-    cdp="cd $SOURCE/projects/" \
-    cds="cd $SCRIPTS/sh"
-
-# shortcuts to dir with ranger
-alias \
-    drc="ranger $SOURCE/projects/core/" \
-    dre="ranger ~/.config/env/" \
-    drf="ranger $SOURCE/forks/" \
-    drl="ranger $SOURCE/forks/luke/" \
-    drv="ranger ~/.config/nvim/" \
-    drx="ranger ~/.config/xres/"
-
 # common
 alias \
     chts="cht --shell" \
