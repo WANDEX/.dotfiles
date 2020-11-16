@@ -22,17 +22,16 @@ alias \
     psg="ps -ef | head -1; ps -ef | grep" \
     psl="ps -ef --forest" \
     pst="pstree -p $$" \
-    se="find "$SOURCE" -not -path '*/\.*/*' -not -path '*/__*/*' -not -path '*/lib*/*' -type f \( ! -iname '.*' \) | fzf | xargs -r -I % $EDITOR %" \
     smi="sudo make install" \
     smic="make clean && sudo make install" \
-    sp="source ~/.profile" \
+    sse="find "$SOURCE" -not -path '*/\.*/*' -not -path '*/__*/*' -not -path '*/lib*/*' -type f \( ! -iname '.*' \) | fzf | xargs -r -I % $EDITOR %" \
+    ssp="source ~/.profile" \
     sudo="sudo " \
     sxlog="cat ~/.local/share/xorg/Xorg.0.log | $PAGER" \
     sxrlog="cat /var/log/Xorg.0.log | $PAGER" \
     trm="rm -vf ~/Downloads/torrents/*.torrent" \
     venv="source venv/bin/activate" \
-    vf="fzf | xargs -r -I % $EDITOR %" \
-    wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
+    vf="fzf | xargs -r -I % $EDITOR %"
 
 # python
 alias \
@@ -70,7 +69,8 @@ alias \
     rm="rm -vi" \
     mv="mv -vi" \
     mpdscribble="mpdscribble --conf ~/.config/mpdscribble/mpdscribble.conf" \
-    tor="tor --DataDirectory $XDG_DATA_HOME/tor"
+    tor="tor --DataDirectory $XDG_DATA_HOME/tor" \
+    wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
 
 # rlwrap (fix) to support arrow keys and command line history
 alias \
