@@ -8,7 +8,7 @@
 #/////////////////////////////////////////////////////////////////////////
 
 # Use neovim for vim if present.
-command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
 
 # common
 alias \
