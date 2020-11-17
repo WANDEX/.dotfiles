@@ -14,6 +14,7 @@ shopt -s expand_aliases
 
 [[ $- = *i* ]] && source "/usr/share/bash-completion/bash_completion"
 [[ $- = *i* ]] && source "$CHTSH/bash_completion"
+[[ $- = *i* ]] && source "$SCRIPTS/sh/shortcuts/.cmpl_bash"
 
 # fzf enable fuzzy completion [example]: cd **<TAB>
 [[ $- = *i* ]] && source "/usr/share/fzf/completion.bash"
