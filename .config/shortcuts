@@ -1,0 +1,43 @@
+# MEMO: treat me as simple raw text file without execution permissions
+# ignores data after # character (comment string) & empty lines
+
+brc     "/etc/bash.bashrc"
+
+ali     "$CONF/aliasrc"
+cv      "$CONF/cvim/.cvimrc"
+i3c     "$CONF/i3/config"
+i3s     "$CONF/py3status/config"
+kd      "$CONF/sxhkd/sxhkdrc"
+qc      "$CONF/qutebrowser/config.py"
+va      "$CONF/nvim/conf/auto.vim"
+vc      "$CONF/nvim/init.vim"
+vm      "$CONF/nvim/conf/mappings.vim"
+vp      "$CONF/nvim/conf/plugins.vim"
+vs      "$CONF/nvim/conf/settings.vim"
+e       "$CONF/env/"
+v       "$CONF/nvim/"
+x       "$CONF/xres/"
+
+bh      "$HOME/.bash_history"
+pr      "$HOME/.profile"
+todo    "$HOME/Documents/Pomodoro/TODO.txt"
+xrc     "$HOME/.xinitrc"
+xres    "$HOME/.Xresources"
+D       "$HOME/Documents/"
+d       "$HOME/Downloads/"
+g       "$HOME/Downloads/git/"
+
+dwb     "$SOURCE/forks/luke/dwmblocks/config.h"
+dwm     "$SOURCE/forks/luke/dwm-fork/config.h"
+c       "$SOURCE/projects/core/"
+f       "$SOURCE/forks/"
+o       "$SOURCE/"
+p       "$SOURCE/projects/"
+c       "$SOURCE/projects/core/"
+f       "$SOURCE/forks/"
+l       "$SOURCE/forks/luke/"
+
+S       "$SCRIPTS/"
+s       "$SCRIPTS/sh/"
+
+# vim:set ft=sh:
