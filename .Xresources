@@ -25,6 +25,7 @@ opaque.alpha: 1
 ! FONT
 st.font: VictorMono Nerd Font Mono:pixelsize=14
 !st.font: Iosevka Term:style=Light:pixelsize=15
+!st.font: JetBrainsMono Nerd Font Mono:pixelsize=14
 !st.font: TerminessTTF Nerd Font Mono:pixelsize=17
 !st.font: Mononoki Nerd Font Mono:pixelsize=16
 !! for CJK text and screenshots
