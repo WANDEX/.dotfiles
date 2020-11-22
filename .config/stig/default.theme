@@ -57,7 +57,6 @@ $brown         = #EE0
 $yellow        = #EE0
 
 cli             black       on $light_gray
-scrollbar       $light_gray on $dark_gray
 helptext        $light_gray on black
 prompt          black,bold  on $yellow
 find.highlight  black       on $yellow
@@ -66,8 +65,6 @@ tabs.unfocused                $white         on black
 tabs.focused                  black          on $white
 tabs.torrentlist.unfocused    $light_cyan    on $dark_gray
 tabs.torrentlist.focused      black          on $dark_cyan
-tabs.torrentsummary.unfocused $light_blue    on $dark_gray
-tabs.torrentsummary.focused   black          on $light_blue
 tabs.filelist.unfocused       $light_magenta on $dark_gray
 tabs.filelist.focused         black          on $dark_magenta
 tabs.peerlist.unfocused       $light_green   on $dark_gray
@@ -403,10 +400,6 @@ torrentlist.name.discovering.complete.unfocused    $name.discovering_fg         
 torrentlist.name.discovering.complete.focused      $name.discovering_fg           on $tlist_bg.f
 
 
-torrentsummary       $light_gray on black
-torrentsummary.error $light_red  on black
-
-
 $flist_bg.uf = black
 $flist_bg.f  = $dark_gray
 filelist                                   default               on $flist_bg.uf
@@ -512,8 +505,6 @@ peerlist.eta.unfocused                     $eta_fg           on $plist_bg
 peerlist.eta.highlighted.unfocused         $eta_hl           on $plist_bg
 
 $country_fg = $dark_red
-peerlist.country.header                    $country_fg,underline on $plist_bg
-peerlist.country.unfocused                 $country_fg           on $plist_bg
 
 
 $trklist_bg.uf = black
