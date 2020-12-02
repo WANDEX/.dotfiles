@@ -33,6 +33,15 @@ alias \
     venv="source venv/bin/activate" \
     vf="fzf | xargs -r -I % $EDITOR %"
 
+# git
+alias \
+    ga="git add" \
+    gc="git commit" \
+    gca="git commit --amend" \
+    gp="git push" \
+    gs="git status" \
+    gl="git log"
+
 # python
 alias \
     calc="python3 -ic 'from math import *'" \
