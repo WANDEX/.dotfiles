@@ -19,6 +19,16 @@ nhp()   { nohup "$(rit $1)" >/dev/null 2>&1 & }
 # source if file exist
 source_if_exist() { [[ -f "$1" ]] && source "$1"; }
 
+# find process with fzf and kill it
+fkill() {
+  local pid
+  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+  if [ "x$pid" != "x" ]
+  then
+    echo $pid | xargs kill -${1:-9}
+  fi
+}
+
 ls_colored() {
     ls -Flav --color=always | awk '
         BEGIN {
