@@ -23,6 +23,8 @@ super + shift + g
 super + m
 	$TERMINAL -e mm
 # launch mpv with youtube-dl/streamlink url link from xclip
+super + {_,shift,ctrl,alt} + o ; {1-9,super+o}
+	mpvu -q {s,6,7,4} -a {1-9,1}
 super + ctrl + v ; {s,1,4,6,7,8,a}
 	mpvu -q {s,1,4,6,7,8,a}
 super + ctrl + {u,l,h,m}
