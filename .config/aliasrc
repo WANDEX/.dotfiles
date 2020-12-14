@@ -85,6 +85,15 @@ alias \
 alias \
     pomodoro="rlwrap pomodoro"
 
+# get random_image and set as wallpaper
+alias \
+    rwd="random_image | setbg" \
+    rwc="random_image ~/Wallpapers/cyberpunk/ | setbg" \
+    rwi="random_image ~/Wallpapers/IlyaKuvshinov/ | setbg" \
+    rwk="random_image ~/Wallpapers/KuldarLeement/ | setbg" \
+    rwt="random_image ~/Wallpapers/tnn/ | setbg" \
+    rwh="random_image ~/Wallpapers/hnt/ | setbg"
+
 #---- PIP ----#
 alias pip-l="pip3 freeze | $PAGER"
 alias pip-s="pip3 freeze | grep -i"
