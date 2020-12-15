@@ -4,5 +4,5 @@
 export PATH="${PATH}:$HOME/.local/bin"
 export PATH="${PATH}:$CARGO_HOME/bin"
 
-# add to $PATH scripts and subdirs
-export PATH="$PATH:$(du "$SCRIPTS" --exclude=".git" --exclude=".*cache*" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+# add to $PATH scripts and subdirs (excluding .* , _* dirs)
+export PATH="$PATH:$(find "$SCRIPTS" -type d ! -path "*/.*" ! -path "*/_*" -printf "%p:")"
