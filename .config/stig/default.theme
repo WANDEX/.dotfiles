@@ -41,7 +41,7 @@
 # VARIABLES
 # black is transparent and untouched; default is untouched
 $white         = #FFF
-$dark_gray     = #000
+$dark_gray     = #333
 $light_gray    = #777
 $dark_red      = #820
 $light_red     = #F40
