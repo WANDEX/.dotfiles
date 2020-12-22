@@ -63,6 +63,7 @@ Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'voldikss/vim-translator'
 Plug 'mg979/vim-visual-multi' " This is awesome!
 Plug 'farmergreg/vim-lastplace'
+Plug 'justinmk/vim-gtfo'
 
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
