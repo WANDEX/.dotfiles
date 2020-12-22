@@ -42,6 +42,7 @@ let g:nvim_config_files = [
     \ 'conf/plug/translate.vim',
     \ 'conf/plug/vCoolor.vim',
     \ 'conf/plug/vim-better-whitespace.vim',
+    \ 'conf/plug/vim-gtfo.vim',
     \ 'conf/plug/vim-textobj-user.vim',
     \ 'conf/plug/vim-visual-multi.vim',
     \ 'conf/plug/vim-which-key.vim',
