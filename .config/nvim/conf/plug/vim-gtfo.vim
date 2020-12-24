@@ -4,7 +4,7 @@
 " MEMO: How to Make gof working:
 " to get ranger.desktop for gof
 " curl --output-dir ~/Desktop/ --create-dirs -O https://raw.githubusercontent.com/ranger/ranger/master/doc/ranger.desktop
-" edit Exec line to -> Exec=st -e ranger
+" edit Exec line to -> Exec=setsid -f st -e ranger
 " if gof command opens dir in browser ->
 " gio files path differ from xdg-open, so check 'man gio' and copy .desktop file into applications dir
 " for me it's: $XDG_DATA_HOME/applications/mimeapps.list.
@@ -15,6 +15,5 @@
 " gio mime inode/directory
 " xdg-mime query default inode/directory
 
-" got
-"let g:gtfo#terminals = { 'unix': 'urxvt -cd' }
-let g:gtfo#terminals = { 'unix': 'setsid -f st -d' } " for st workingdir patch required
+" for st -d workingdir patch required
+let g:gtfo#terminals = { 'unix': 'setsid -f st -d' } " works both (got & goT)
