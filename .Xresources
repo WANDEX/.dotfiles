@@ -13,8 +13,9 @@
 #include ".config/xres/xft"
 
 ! SOURCE TERMINAL COLORS !
-#include ".config/xres/themes/nord"
+#include ".config/xres/themes/challenger_deep"
 #include ".config/xres/base16"
+#include ".config/xres/spec"
 
 #include ".config/xres/core"
 
