@@ -1,0 +1,40 @@
+! Challenger Deep https://challenger-deep-theme.github.io/
+
+!      black      !
+#define c00 #565575
+#define c08 #100e23
+
+!       red       !
+#define c01 #ff8080
+#define c09 #ff5458
+
+!      green      !
+#define c02 #95ffa4
+#define c10 #62d196
+
+!      yellow     !
+#define c03 #ffe9aa
+#define c11 #ffb378
+
+!       blue      !
+#define c04 #91ddff
+#define c12 #65b2ff
+
+!     magenta     !
+#define c05 #c991e1
+#define c13 #906cff
+
+!       cyan      !
+#define c06 #aaffe4
+#define c14 #63f2f1
+
+!      white      !
+#define c07 #cbe3e7
+#define c15 #a6b3cc
+
+!       special       !
+*.foreground:   #cbe3e7
+*.background:   #1e1c31
+*.cursorColor:  #fbfcfc
+
+! vim:set ft=xdefaults:

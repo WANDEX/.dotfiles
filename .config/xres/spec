@@ -1,0 +1,7 @@
+!     special     !
+*.foreground:  c07
+*.background:  c00
+!*.background: #000000
+*.cursorColor: c07
+
+! vim:set ft=xdefaults:
