@@ -20,17 +20,19 @@
 #include ".config/xres/core"
 
 ! Transparency (0-1): *.alpha: 0.95
-st.alpha: 0.9
+#define term_alpha 0.9
+st.alpha: term_alpha
 opaque.alpha: 1
 
-! FONT
-st.font: VictorMono Nerd Font Mono:pixelsize=14
-!st.font: Iosevka Term:style=Light:pixelsize=15
-!st.font: JetBrainsMono Nerd Font Mono:pixelsize=14
-!st.font: TerminessTTF Nerd Font Mono:pixelsize=17
-!st.font: Mononoki Nerd Font Mono:pixelsize=16
+! TERM FONT
+#define term_font VictorMono Nerd Font Mono:pixelsize=14
+!#define term_font Iosevka Term:style=Light:pixelsize=15
+!#define term_font JetBrainsMono Nerd Font Mono:pixelsize=14
+!#define term_font TerminessTTF Nerd Font Mono:pixelsize=17
+!#define term_font Mononoki Nerd Font Mono:pixelsize=16
 !! for CJK text and screenshots
-!st.font: NotoSansMono Nerd Font:pixelsize=20
-!st.font: NotoSansMono Nerd Font:pixelsize=14
-!st.font: -gbdfed-creep-Regular-R-Normal--16-120-96-96-M-4-ISO10646-1;
+!#define term_font NotoSansMono Nerd Font:pixelsize=20
+!#define term_font NotoSansMono Nerd Font:pixelsize=14
+!#define term_font -gbdfed-creep-Regular-R-Normal--16-120-96-96-M-4-ISO10646-1;
 
+st.font: term_font
