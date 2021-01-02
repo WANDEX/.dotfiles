@@ -48,5 +48,5 @@ ls_colored() {
     '
 }
 
-. "$XDG_CONFIG_HOME/fzfgit"
+. "$XDG_CONFIG_HOME/funcgit"
 
