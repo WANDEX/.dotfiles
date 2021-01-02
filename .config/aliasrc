@@ -18,20 +18,20 @@ alias \
     lld2="sudo du -ah --max-depth 2" \
     lld="sudo du -ah --max-depth 1" \
     llda="sudo du -ah" \
-    nt="$TERMINAL &>/dev/null & disown" \
+    nt="\$TERMINAL &>/dev/null & disown" \
     psg="ps -ef | head -1; ps -ef | grep" \
     psl="ps -ef --forest" \
-    pst="pstree -p $$" \
+    pst="pstree -p \$$" \
     smi="sudo make install" \
     smic="make clean && sudo make install" \
-    sse="find "$SOURCE" -not -path '*/\.*/*' -not -path '*/__*/*' -not -path '*/lib*/*' -type f \( ! -iname '.*' \) | fzf | xargs -r -I % $EDITOR %" \
+    sse="find \$SOURCE -not -path '*/\.*/*' -not -path '*/__*/*' -not -path '*/lib*/*' -type f \( ! -iname '.*' \) | fzf | xargs -r -I % \$EDITOR %" \
     ssp="source ~/.profile" \
     sudo="sudo " \
-    sxlog="cat ~/.local/share/xorg/Xorg.0.log | $PAGER" \
-    sxrlog="cat /var/log/Xorg.0.log | $PAGER" \
+    sxlog="cat ~/.local/share/xorg/Xorg.0.log | \$PAGER" \
+    sxrlog="cat /var/log/Xorg.0.log | \$PAGER" \
     trm="rm -vf ~/Downloads/torrents/*.torrent" \
     venv="source venv/bin/activate" \
-    vf="fzf | xargs -r -I % $EDITOR %"
+    vf="fzf | xargs -r -I % \$EDITOR %"
 
 # git
 alias \
@@ -104,7 +104,7 @@ alias \
     rwh="random_image ~/Wallpapers/hnt/ | setbg"
 
 #---- PIP ----#
-alias pip-l="pip3 freeze | $PAGER"
+alias pip-l="pip3 freeze | \$PAGER"
 alias pip-s="pip3 freeze | grep -i"
 alias pip-r="pip3 uninstall"
 alias pip-i="pip3 install --ignore-installed --user --upgrade"
