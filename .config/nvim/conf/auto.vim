@@ -40,9 +40,6 @@ if !exists('autocommands_loaded')
     " Disables automatic commenting on newline:
     au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-    " automatically deletes all trailing whitespace on save.
-    au BufWritePre * %s/\s\+$//e
-
     " run xrdb whenever Xresources are updated.
     au BufWritePost \(*/.Xresources\|*/xres/*\) !xrdb ~/.Xresources
 
