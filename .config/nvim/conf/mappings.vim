@@ -126,6 +126,9 @@ nnoremap <localleader>Ct :ColorToggle<CR>
 " toggle colored column at lines which character length exceed N
 nnoremap <silent> <localleader>ct :call ColumnToggle()<CR>
 
+" Save file as sudo on files that require root permission
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
 " unmap mouse wheel up
 nmap <ScrollWheelUp> <nop>
 imap <ScrollWheelUp> <nop>
