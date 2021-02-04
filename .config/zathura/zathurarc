@@ -1,0 +1,71 @@
+set recolor true
+set recolor-keephue true
+#set recolor-reverse-video true
+#set selection-clipboard clipboard
+
+# _   _ _ __  _ __ ___   __ _ _ __
+#| | | | '_ \| '_ ` _ \ / _` | '_ \
+#| |_| | | | | | | | | | (_| | |_) |
+# \__,_|_| |_|_| |_| |_|\__,_| .__/
+#                            |_|
+# move
+unmap j
+unmap J
+unmap k
+unmap K
+unmap l
+unmap [index] j
+unmap [index] k
+unmap [index] l
+unmap [index] L
+
+# search
+unmap n
+unmap N
+
+# scroll half page
+unmap <C-t>
+unmap <C-d>
+unmap <C-u>
+unmap <C-y>
+
+# Toggle dual page view
+unmap d
+map D toggle_page_mode
+
+# Show or hide statusbar
+unmap <C-n>
+map <C-s> toggle_statusbar
+
+# _ __ ___   __ _ _ __
+#| '_ ` _ \ / _` | '_ \
+#| | | | | | (_| | |_) |
+#|_| |_| |_|\__,_| .__/
+#                |_|
+# move
+map n scroll down
+map e scroll up
+map i scroll right
+
+# scroll half page
+map d scroll half-down
+map u scroll half-up
+# scroll half page with ctrl+shift
+map <C-H> scroll half-left
+map <C-N> scroll half-down
+map <C-E> scroll half-up
+map <C-I> scroll half-right
+
+# Go to the next/previous page
+map N navigate next
+map E navigate previous
+
+# search
+map <Return> search forward
+map <BackSpace> search backward
+
+# index mode
+map [index] n navigate_index down
+map [index] e navigate_index up
+map [index] i navigate_index expand
+map [index] I navigate_index expand-all
