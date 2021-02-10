@@ -76,7 +76,7 @@
     separator_color = auto
 
     # Sort messages by urgency.
-    sort = yes
+    sort = false
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -430,6 +430,11 @@
     background = "#AA3131"
     foreground = "#EFEFF1"
     #timeout = 3
+
+[youtube]
+    body = "*http*youtu*"
+    background = "#CD919A"
+    foreground = "#000000"
 
 [stream]
     summary = *\[stream\]*
