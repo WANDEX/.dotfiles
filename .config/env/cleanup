@@ -24,4 +24,4 @@ export STACK_ROOT="$XDG_DATA_HOME/stack"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
 
-export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority" # this line could break some DMs.
+#export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority" # this line could break some DMs.
