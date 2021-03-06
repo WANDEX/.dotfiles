@@ -11,17 +11,14 @@ super + Return
 	$TERMINAL
 super + shift + Return
 	$TERMINAL -e ranger
-#super + d
-	#dmenu_run
 
 # custom
 super + g
 	google-chrome-stable
 super + shift + g
 	google-chrome-stable -incognito
-# launch man pages search script
 super + m
-	$TERMINAL -e mm
+	mm # launch man pages search script
 # launch mpv with youtube-dl/streamlink url link from xclip
 super + {_,shift,ctrl,alt} + o ; {1-9,super+o}
 	mpvu -q {s,6,7,4} -a {1-9,1}
@@ -33,8 +30,6 @@ super + ctrl + {u,l,h,m}
 	dunstctl {action,close-all,history-pop,context}
 super + ctrl + n ; {a,c,C,h,m,P}
 	dunstctl {action,close,close-all,history-pop,context,set-paused toggle}
-super + shift + k
-	$TERMINAL -e ncmpcpp
 super + ctrl + shift + d ; {a,shift + a} ; {d,k,l,p,y}
 	download_audio.sh {_,-r} {_,-p kdi,-p lt,-p podcast,-p ytm}
 super + ctrl + shift + e
