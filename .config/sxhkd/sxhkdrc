@@ -22,6 +22,8 @@ super + shift +  p
 super + m
 	mm # launch man pages search script
 # launch mpv with youtube-dl/streamlink url link from xclip
+super + alt + {_,shift,ctrl} + t
+	dmenu_trans {-b,_,-c}
 super + {_,shift,ctrl,alt} + o ; {1-9,super+o}
 	mpvu -q {s,6,7,4} -a {1-9,1}
 super + o ; r
