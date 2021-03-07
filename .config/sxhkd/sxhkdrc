@@ -17,6 +17,8 @@ super + g
 	google-chrome-stable
 super + shift + g
 	google-chrome-stable -incognito
+super + shift +  p
+	dmenu_pulseeffects && kill -53 $(pidof dwmblocks)
 super + m
 	mm # launch man pages search script
 # launch mpv with youtube-dl/streamlink url link from xclip
