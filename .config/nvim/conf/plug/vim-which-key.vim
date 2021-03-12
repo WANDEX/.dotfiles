@@ -133,9 +133,10 @@ let g:which_key_map.s = {
 \ 's' : 'sort',
 \ }
 
-""" translate
+""" non existing mappings for manual visual selection
 let g:which_key_map.t = {
 \ 'name' : '+t/trans',
+\ 'W' : ['TranslateW', 'Word'],
 \ 'w' : [":'<,'>TranslateW", 'windowV'],
 \ 'r' : [":'<,'>TranslateR", 'replaceV'],
 \ 'x' : ['TranslateX', 'clipboard'],
@@ -154,6 +155,7 @@ let g:which_key_map.t = {
     \ },
 \ '!' : {
     \ 'name' : '+trans!',
+    \ 'W' : ['TranslateW!', 'Word'],
     \ 'w' : [":'<,'>TranslateW!", 'windowV'],
     \ 'r' : [":'<,'>TranslateR!", 'replaceV'],
     \ 'x' : ['TranslateX!', 'clipboard'],
