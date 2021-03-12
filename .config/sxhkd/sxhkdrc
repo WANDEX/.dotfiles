@@ -34,6 +34,8 @@ super + ctrl + {u,l,h,m}
 	dunstctl {action,close-all,history-pop,context}
 super + ctrl + n ; {a,c,C,h,m,P}
 	dunstctl {action,close,close-all,history-pop,context,set-paused toggle}
+super + ctrl + w
+	dmenu_wm_name
 super + ctrl + shift + d ; {a,shift + a} ; {d,k,l,p,y}
 	download_audio.sh {_,-r} {_,-p kdi,-p lt,-p podcast,-p ytm}
 super + ctrl + shift + e
