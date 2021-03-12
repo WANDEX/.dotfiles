@@ -473,6 +473,10 @@
     background = "#32393A88"
     foreground = "#EFEFF1"
 
+[clip]
+    summary = "📋*"
+    set_stack_tag = "clip"
+
 [history-ignore]
     history_ignore = yes
     stack_tag = "hi" # match this stack_tag
