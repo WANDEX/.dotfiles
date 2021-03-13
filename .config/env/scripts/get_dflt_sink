@@ -1,3 +1,5 @@
 #!/bin/sh
-# get combined sink number, usually it's set as default in pulse config.
-export SINK0=$(pactl list sinks short | grep 'combined' | awk {'print $1'})
+# get default sink name, usually it's set as default in pulse config.
+SINK0=$(pactl list sinks short | grep 'analog-stereo' | awk '{print $2}')
+[ -z "$SINK0" ] && SINK0="alsa_output.pci-0000:00:1b.0.analog-stereo"
+export SINK0="$SINK0"
