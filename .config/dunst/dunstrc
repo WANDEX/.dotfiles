@@ -475,6 +475,7 @@
 
 [clip]
     summary = "📋*"
+    history_ignore = yes
     set_stack_tag = "clip"
 
 [history-ignore]
