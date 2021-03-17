@@ -146,31 +146,25 @@
 ##
 ## The following actions are not bound to any key/command:
 ##
-##  - set_volume
-##
+
 def_key "n"
-    scroll_down
+  scroll_down
+
 def_key "e"
-    scroll_up
+  scroll_up
+
+def_key "ctrl-n"
+  page_down
 
 def_key "ctrl-e"
-    page_up
-#push_characters "kkkkkkkkkkkkkkk"
-def_key "ctrl-n"
-    page_down
-#push_characters "jjjjjjjjjjjjjjj"
-#def_key "u"
-#    page_up
-#push_characters "kkkkkkkkkkkkkkk"
-#def_key "d"
-#    page_down
-#push_characters "jjjjjjjjjjjjjjj"
-def_key "h"
-    previous_column
-def_key "i"
-    next_column
+  page_up
 
-#
+def_key "h"
+  previous_column
+
+def_key "i"
+  next_column
+
 #def_key "mouse"
 #  mouse_event
 #
@@ -211,10 +205,10 @@ def_key "i"
 #
 #def_key "end"
 #  move_end
-#
+
 def_key ";"
   select_item
-#
+
 #def_key "enter"
 #  enter_directory
 #
@@ -430,46 +424,47 @@ def_key "d"
 #
 #def_key "w"
 #  toggle_find_mode
-#
+
 def_key "E"
   edit_song
-#
+
 def_key "E"
   edit_library_tag
-#
+
 def_key "E"
   edit_library_album
-#
+
 def_key "E"
   edit_directory_name
-#
+
 def_key "E"
   edit_playlist_name
-#
+
 def_key "E"
   edit_lyrics
-#
+
 def_key "I"
   show_song_info
-#
+
 def_key "ctrl-i"
   show_artist_info
-#
+
 #def_key "g"
 #  jump_to_position_in_song
 #
 #def_key "l"
 #  show_lyrics
-#
-#def_key "ctrl-v"
-#  select_range
-#
-#def_key "v"
-#  reverse_selection
-#
-#def_key "V"
-#  remove_selection
-#
+
+def_key "ctrl-v"
+  reverse_selection
+
+def_key "V"
+  remove_selection
+
+# XXX broken?
+def_key "v"
+  select_range
+
 #def_key "B"
 #  select_album
 #
@@ -487,22 +482,22 @@ def_key "ctrl-i"
 #
 #def_key "C"
 #  crop_main_playlist
-#
+
 def_key "m"
   move_sort_order_up
-#
+
 def_key "m"
   move_selected_items_up
-#
+
 def_key "k"
   move_sort_order_down
-#
+
 def_key "k"
   move_selected_items_down
-#
+
 def_key "M"
   move_selected_items_to
-#
+
 #def_key "A"
 #  add
 #
