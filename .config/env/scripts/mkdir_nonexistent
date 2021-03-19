@@ -4,6 +4,7 @@
 mkdir -p "$CSCRDIR"
 mkdir -p "$CSCRDIR/rate"
 mkdir -p "$XDG_CONFIG_HOME/npm"
+mkdir -p "$XDG_DATA_HOME/mpd"
 mkdir -p "$XDG_DATA_HOME/python"
 mkdir -p "$XDG_DATA_HOME/tor"
 mkdir -p "$XDG_DATA_HOME/vim/"{undo,swap,backup}
