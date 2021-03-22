@@ -20,6 +20,17 @@ fu! Exec(command)
     return output
 endf
 
+" execute command and paste output in current buffer
+" :call Paste('hi')
+fu! Paste(command)
+    redir =>output
+    silent exec a:command
+    redir END
+    let @o = output
+    execute "put o"
+    return ''
+endf
+
 " help to right
 fu! ILikeHelpToTheRight()
     if !exists('w:help_is_moved') || w:help_is_moved != "right"
