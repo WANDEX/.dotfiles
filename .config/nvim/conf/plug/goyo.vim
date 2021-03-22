@@ -1,18 +1,23 @@
 """ goyo.vim
 " configuration for the plugin junegunn/goyo.vim
 
+let g:goyo_width  = 112 " (default: 80)
+let g:goyo_height = 85  " (default: 85%)
+let g:goyo_linenr = 0   " (default: 0)
+
 function! s:goyo_enter()
     set noshowcmd
     set scrolloff=999
-    let b:airline_disable_statusline = 1
     Limelight
+    NeomakeClean " hide warnings highlights etc.
 endfunction
 
 function! s:goyo_leave()
     set showcmd
     set scrolloff=5
-    hi Normal guibg=NONE ctermbg=NONE
     Limelight!
+    AirlineRefresh
+    "e
 endfunction
 
 aug goyo_enter_leave
