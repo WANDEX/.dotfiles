@@ -117,6 +117,9 @@ nmap ga <Plug>(EasyAlign)| xmap ga <Plug>(EasyAlign)
 " Reload vim configuration
 nnoremap <localleader>rc :ReloadConfig<CR>
 
+" toggle between background transparency
+nnoremap <silent> <localleader>b :call BgToggle()<CR>
+
 " Clear trailing whitespace
 nnoremap <localleader>cw :%s/\s\+$//g<CR>:nohlsearch<CR>
 

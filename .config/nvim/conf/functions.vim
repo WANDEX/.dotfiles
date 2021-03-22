@@ -10,6 +10,16 @@ if !exists('*ReloadConfig')
     command! ReloadConfig call ReloadConfig()
 endif
 
+" execute command and return output
+" let l:h = Exec('hi Normal')
+" if l:h =~ 'cleared' ...
+fu! Exec(command)
+    redir =>output
+    silent exec a:command
+    redir END
+    return output
+endf
+
 " help to right
 fu! ILikeHelpToTheRight()
     if !exists('w:help_is_moved') || w:help_is_moved != "right"
@@ -27,6 +37,15 @@ fu! HelpTab(...)
     exec printf(cmd, join(a:000, ' '))
 endf
 command! -nargs=* -complete=help H call HelpTab(<q-args>)
+
+" toggle between background transparency
+fu! BgToggle()
+    if Exec('hi Normal') =~ 'cleared'
+        hi Normal guibg=Black ctermbg=0
+    else
+        hi Normal guibg=NONE ctermbg=NONE
+    endif
+endf
 
 " toggle colored column at lines which character length exceed N
 fu! ColumnToggle()
