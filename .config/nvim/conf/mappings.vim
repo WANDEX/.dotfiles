@@ -60,6 +60,16 @@ nnoremap <silent>ze zczkza
 nnoremap <silent>]b :bn<CR>
 nnoremap <silent>[b :bp<CR>
 
+" create Qlist with word :vim bar %
+" Jump to next/previous Quickfix list item :cn,:cp
+nnoremap <silent>]q :cn<CR>
+nnoremap <silent>[q :cp<CR>
+
+" create Llist with word :lvim bar %
+" Jump to next/previous Location list item :lne,:lp
+nnoremap <silent>]l :lne<CR>
+nnoremap <silent>[l :lp<CR>
+
 " To navigate to the previous or next trailing whitespace
 nnoremap ]w :NextTrailingWhitespace<CR>
 nnoremap [w :PrevTrailingWhitespace<CR>
