@@ -16,18 +16,13 @@ if !exists('autocommands_loaded')
         au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
     aug END
 
-    aug cursorline_group
-        au!
-        hi cursorline cterm=none term=none
-        au WinEnter * setlocal cursorline
-        au WinLeave * setlocal nocursorline
-        hi CursorLine guibg=#333333 guifg=none
-    aug END
-
-    " close loclist - window when buffer is closed
+    " close loclist/Quickfix - window when buffer is closed
     aug CloseLoclistWindowGroup
         au!
+        " Close the window showing the location list for the current window
         au QuitPre * if empty(&buftype) | lclose | endif
+        " Close the Quickfix window.
+        au QuitPre * if empty(&buftype) | cclose | endif
     aug END
 
     " hide status line if vim-which-key plugin pop-up is shown
