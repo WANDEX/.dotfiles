@@ -1,5 +1,5 @@
 #!/bin/sh
 # get hdmi sink name, because sink number fluctuate between i3 restarts/reloads
 SINK1=$(pactl list sinks short | grep 'hdmi' | awk '{print $2}')
-[ -z "$SINK1" ] && SINK1="alsa_output.pci-0000:01:00.1.hdmi-stereo-extra1"
+[ -z "$SINK1" ] && SINK1="alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1"
 export SINK1="$SINK1"
