@@ -473,6 +473,10 @@
     background = "#32393A88"
     foreground = "#EFEFF1"
 
+[discard]
+    body = "*This site has been updated in the background.*"
+    format = "" # -> hide original notification
+
 [clip]
     summary = "📋*"
     history_ignore = yes
