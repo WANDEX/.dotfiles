@@ -11,6 +11,7 @@ if !exists('*ReloadConfig')
 endif
 
 " execute command and return output
+" !!! vim 8+ has built-in execute()
 " let l:h = Exec('hi Normal')
 " if l:h =~ 'cleared' ...
 fu! Exec(command)
