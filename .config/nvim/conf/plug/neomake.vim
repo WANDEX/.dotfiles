@@ -4,9 +4,6 @@
 " change warning signs and color, see https://goo.gl/eHcjSq
 " highlight NeomakeErrorMsg ctermfg=227 ctermbg=237
 
-"let g:neomake_warning_sign={'text': 'W', 'texthl': 'NeomakeWarningSign'}
-"let g:neomake_error_sign={'text': 'E'}
-
 let g:neomake_error_sign = {
     \ 'text': 'E',
     \ 'texthl': 'NeomakeErrorSign',
@@ -27,6 +24,9 @@ let g:neomake_info_sign = {
     \ 'texthl': 'NeomakeInfoSign'
     \ }
 
+" get only last line of output and full path to local eslint path (current cwd)
+let b:neomake_javascript_eslint_exe = LastLine('!npm-exec -p eslint')
+
 let g:neomake_python_pylint_maker = {
     \ 'args': [
     \ '-d', 'C0103, C0111',
@@ -44,6 +44,7 @@ let g:neomake_python_pylint_maker = {
 
 "let g:neomake_python_enabled_makers = ['pylint', 'flake8', 'mypy']
 let g:neomake_python_enabled_makers = ['flake8']
+
 " whether to open quickfix or location list automatically
 let g:neomake_open_list = 0
 

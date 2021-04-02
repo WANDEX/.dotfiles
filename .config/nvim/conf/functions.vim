@@ -21,6 +21,14 @@ fu! Exec(command)
     return output
 endf
 
+" use execute() and return only last line of output
+" let b:neomake_javascript_eslint_exe = LastLine('!npm-exec -p eslint')
+" :echo LastLine('buffers')
+fu! LastLine(command)
+    let l:v = remove(split(execute(a:command, 'silent!'), '\n'), -1)
+    return l:v
+endf
+
 " execute command and paste output in current buffer
 " :call Paste('hi')
 fu! Paste(command)
