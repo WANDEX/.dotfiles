@@ -11,6 +11,7 @@ set hlsearch                    " Highlight all search results
 set ignorecase                  " Always case-insensitive
 set smartcase                   " Enable smart-case search
 set incsearch                   " Searches for strings incrementally
+set inccommand=split            " :%s/foo/bar/ to preview substitute
 
 set autoindent                  " Auto-indent new lines
 set smartindent                 " Enable smart-indent
