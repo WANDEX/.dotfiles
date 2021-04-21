@@ -13,14 +13,16 @@
 #include ".config/xres/xft"
 
 ! SOURCE TERMINAL COLORS !
-#include ".config/xres/themes/challenger_deep"
+#include ".config/xres/themes/wal/cherry"
 #include ".config/xres/base16"
 #include ".config/xres/spec"
 
+!#include ".config/xres/core4b"
+#include ".config/xres/core4w"
 #include ".config/xres/core"
 
 ! Transparency (0-1): *.alpha: 0.95
-#define term_alpha 0.9
+#define term_alpha 0.8
 st.alpha: term_alpha
 opaque.alpha: 1
 
