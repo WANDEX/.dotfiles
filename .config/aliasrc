@@ -31,8 +31,7 @@ alias \
     sxrlog="cat /var/log/Xorg.0.log | \$PAGER" \
     trm="rm -vf ~/Downloads/torrents/*.torrent" \
     venv="source venv/bin/activate" \
-    vf="fzf | xargs -r -I % \$EDITOR %" \
-    week="\$EDITOR ~/Documents/Pomodoro/\$(date -d 'last week' +'week-%V-%Y.txt')"
+    vf="fzf | xargs -r -I % \$EDITOR %"
 
 # git
 alias \
