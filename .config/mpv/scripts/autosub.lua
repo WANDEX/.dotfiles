@@ -46,9 +46,9 @@ local logins = {
 -->>    ADDITIONAL OPTIONS:
 --=============================================================================
 local bools = {
-    hide_log = true, -- hide log output in both modes -> log()
-    hide_msg_log = true, -- hide log -> log_msg_only()
-    auto = true,   -- Automatically download subtitles, no hotkeys required
+    hide_log = false, -- hide log output in both modes -> log()
+    hide_msg_log = false, -- hide log -> log_msg_only()
+    auto = false,   -- Automatically download subtitles, no hotkeys required
     debug = false, -- Use `--debug` in subliminal command for debug output
     force = false,  -- Force download; will overwrite existing subtitle files
     utf8 = true,   -- Save all subtitle files as UTF-8
@@ -246,6 +246,6 @@ end
 
 --mp.add_key_binding('b', 'download_subs', download_subs)
 --mp.add_key_binding('n', 'download_subs2', download_subs2)
---mp.add_forced_key_binding(nil, 'download_subs', download_subs)
+mp.add_forced_key_binding('B', 'download_subs', download_subs)
 --mp.add_forced_key_binding(nil, 'download_subs2', download_subs2)
 mp.register_event('file-loaded', control_downloads)
