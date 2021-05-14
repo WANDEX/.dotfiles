@@ -52,10 +52,6 @@ inoremap <silent><expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<P
 "" Extra Mappings
 "*****************************************************************************
 
-" fold mappings
-nnoremap <silent>zn zczjza
-nnoremap <silent>ze zczkza
-
 " Move to next/previous bufpage :bnext,:bprev
 nnoremap <silent>]b :bn<CR>
 nnoremap <silent>[b :bp<CR>

@@ -26,6 +26,7 @@ let g:nvim_config_files = [
     \ 'conf/plug/deoplete.vim',
     \ 'conf/plug/echodoc.vim',
     \ 'conf/plug/editorconfig.vim',
+    \ 'conf/plug/fastfold.vim',
     \ 'conf/plug/goyo.vim',
     \ 'conf/plug/highlightedyank.vim',
     \ 'conf/plug/indentLine.vim',
