@@ -96,4 +96,6 @@ super + Insert
 	notify-send -u low "📋 Clipboard contents:" "\n$(xsel -bo)"
 # remove everything after '&' character and get clean url back to clipboard
 super + shift + Insert
-	xsel -bo | sed "s/[&].*$//" | xsel -bi && notify-send "📋 clean url in clipboard:" "\n$(xsel -bo)"
+	xsel -bo | sed "s/[&].*$//" | xsel -bi && notify-send "📋 clean url in clipboard:" "\n$(xsel -bo)\n"
+super + ctrl + Insert
+	xsel -bo | sed "s/[?].*$//" | xsel -bi && notify-send "📋 clean url in clipboard:" "\n$(xsel -bo)\n"
