@@ -8,20 +8,21 @@
 #/////////////////////////////////////////////////////////////////////////////
 # to support expand_aliases in not interactive shell (in .xinitrc for example)
 # bashrc should contain shopt -s expand_aliases and be sourced by profile file
-[ -f ~/.bashrc ] && source ~/.bashrc
+[ -f ~/.bashrc ] && . ~/.bashrc
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources &
 conky -dq &                     # fork conky to background and silence output
-nvidia.sh && setbg.sh &         # display configuration, and set background
-#xrandr.sh && setbg.sh &         # display configuration, and set background
+nvidia.sh && setbg --startup &  # display configuration, and set background
+#xrandr.sh && setbg --startup & # display configuration, and set background
 xset -dpms && xset s off &      # off display power manager and monitor standby
 picom -b &                      # composite manager for transparency support
 kb.sh && sxhkd &                # keyboard layout, repeat rate and key binds
 unclutter &                     # remove mouse cursor when idle
 nhp tor                         # fork in background and don't create nohup.out
-mpd && mpdscribble &
 dunst &
+clight &
 transmission-daemon &
-redshift &
+pipewire.sh && mpd && mpdas -d && mpdup &
+dwmblocks &
 
 #exec i3
 exec dwm
