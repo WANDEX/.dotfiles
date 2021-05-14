@@ -45,6 +45,21 @@ let g:neomake_python_pylint_maker = {
 "let g:neomake_python_enabled_makers = ['pylint', 'flake8', 'mypy']
 let g:neomake_python_enabled_makers = ['flake8']
 
+let g:neomake_python_flake8_maker = {
+    \ 'args': [
+    \ '--format=default',
+    \ '--ignore', 'E501'
+    \ ],
+    \ 'errorformat':
+    \ '%A%f:%l:%c: %t%n %m,' .
+    \ '%A%f:%l: %t%n %m,' .
+    \ '%-G%.%#',
+    \ 'postprocess': function('neomake#makers#ft#python#Flake8EntryProcess'),
+    \ 'short_name': 'fl8',
+    \ 'output_stream': 'stdout',
+    \ 'filter_output': function('neomake#makers#ft#python#FilterPythonWarnings'),
+    \ }
+
 " whether to open quickfix or location list automatically
 let g:neomake_open_list = 0
 
