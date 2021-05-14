@@ -1,9 +1,3 @@
-!  color  palette  !
-#define cnbg #3E494C
-#define cnfg #E0E5E6
-#define csbg #32393A
-#define csfg #97A6AA
-
 dmenu.font: monospace:size=8
 dmenu.background: cnbg
 dmenu.foreground: cnfg

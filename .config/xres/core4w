@@ -1,0 +1,17 @@
+!  color  palette  !
+#define cnbg c00
+#define csbg c08
+#define csfg c15
+#define cnfg c02
+! change cnfg ^ on preferable text color
+! wal generates only [c00-c08] colors
+! c00 c08 : black
+! c01 c09 : red
+! c02 c10 : green
+! c03 c11 : yellow
+! c04 c12 : blue
+! c05 c13 : magenta
+! c06 c14 : cyan
+! c07 c15 : white
+
+! vim:set ft=xdefaults:

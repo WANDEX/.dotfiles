@@ -1,0 +1,7 @@
+!  color  palette  !
+#define cnbg #3E494C
+#define cnfg #E0E5E6
+#define csbg #32393A
+#define csfg #97A6AA
+
+! vim:set ft=xdefaults:

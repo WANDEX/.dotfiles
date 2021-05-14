@@ -1,0 +1,35 @@
+! cherry - wal generated theme
+
+!      black      !
+#define c00 #0c090b
+#define c08 #988b8f
+
+!       red       !
+#define c01 #925D6F
+#define c09 #925D6F
+
+!      green      !
+#define c02 #C36979
+#define c10 #C36979
+
+!      yellow     !
+#define c03 #787188
+#define c11 #787188
+
+!       blue      !
+#define c04 #9B768B
+#define c12 #9B768B
+
+!     magenta     !
+#define c05 #C47B8A
+#define c13 #C47B8A
+
+!       cyan      !
+#define c06 #A891A3
+#define c14 #A891A3
+
+!      white      !
+#define c07 #dac7cd
+#define c15 #dac7cd
+
+! vimset ft=xdefaults
