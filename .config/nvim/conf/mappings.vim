@@ -109,8 +109,8 @@ menu Encoding.cp866         :e ++enc=cp866  ++ff=dos<CR>
 " use TAB to cycle between menu variants
 nnoremap <F8> :emenu Encoding.
 
-" re-indent whole file / fix indentation
-nnoremap <F12> gg=G<C-o><C-o>
+" re-indent whole file / fix indentation, or V selection -> =
+nnoremap <F12> gg=G''
 
 " easier terminal Esc
 tnoremap <Esc> <C-\><C-n>
