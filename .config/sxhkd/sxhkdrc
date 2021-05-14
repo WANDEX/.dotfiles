@@ -63,7 +63,7 @@ XF86Audio{Play,Pause,Stop}
 XF86AudioMute
 	pactl set-sink-mute $SINK1 toggle; kill -44 $(pidof dwmblocks)
 XF86Audio{Lower,Raise}Volume
-	mpc volume {-,+}5
+	mpc volume {-,+}5 && dunst_mpc_volume.sh
 
 # function keys
 super + F4
