@@ -38,6 +38,9 @@ if !exists('autocommands_loaded')
     " run xrdb whenever Xresources are updated.
     au BufWritePost \(*/.Xresources\|*/xres/*\) !xrdb ~/.Xresources
 
+    " run wal right after previous xrdb when this specific file is updated.
+    "au BufWritePost ~/.config/xres/core4w !wal -q -tn -i ~/.config/wallpaper.jpg
+
     " update binds when sxhkdrc is updated.
     au BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 
