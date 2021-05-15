@@ -52,7 +52,6 @@ set listchars=tab:>\ ,trail:~\,extends:>,precedes:<,nbsp:+
 set list                        " Show problematic characters.
 set nojoinspaces                " Use one space, not two, after punctuation.
 set clipboard+=unnamedplus
-set cursorline
 set timeoutlen=800 " used by vim-which-key as timeout before showing guide popup
 
 "*****************************************************************************
@@ -61,6 +60,15 @@ set timeoutlen=800 " used by vim-which-key as timeout before showing guide popup
 colorscheme dim
 set t_Co=256
 hi Normal guibg=NONE ctermbg=NONE
+
+" MEMO: :call Paste('hi') - to search in output of :hi command
+" also note: cterm=reverse gui=reverse
+
+" for whichkey & completions & etc.
+hi Pmenu ctermfg=15 guibg=NONE ctermbg=NONE
+
+" for neomake & etc.
+hi SignColumn ctermfg=14 guifg=Cyan ctermbg=NONE guibg=NONE
 
 let mapleader="\<SPACE>"
 let maplocalleader="\\"
