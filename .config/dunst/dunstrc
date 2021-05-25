@@ -473,6 +473,11 @@
     background = "#32393A88"
     foreground = "#EFEFF1"
 
+[ENCODE]
+    summary = "*\[ENCODEME\]*"
+    format = "" # -> hide original notification
+    script = dunst_encode.sh
+
 [discard]
     body = "*This site has been updated in the background.*"
     format = "" # -> hide original notification
