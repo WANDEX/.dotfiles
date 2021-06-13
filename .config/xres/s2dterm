@@ -1,0 +1,20 @@
+! term colors for: dwm, status2d, dwmblocks
+!      base16     !
+dwm.termcol0:  #000000
+dwm.termcol1:  c01
+dwm.termcol2:  c02
+dwm.termcol3:  c03
+dwm.termcol4:  c04
+dwm.termcol5:  c05
+dwm.termcol6:  c06
+dwm.termcol7:  c07
+dwm.termcol8:  c08
+dwm.termcol9:  c09
+dwm.termcol10: c10
+dwm.termcol11: c11
+dwm.termcol12: c12
+dwm.termcol13: c13
+dwm.termcol14: c14
+dwm.termcol15: c15
+
+! vim:set ft=xdefaults:

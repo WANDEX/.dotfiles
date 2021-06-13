@@ -20,6 +20,7 @@
 !#include ".config/xres/core4b"
 #include ".config/xres/core4w"
 #include ".config/xres/core"
+#include ".config/xres/s2dterm"
 
 ! Transparency (0-1): *.alpha: 0.95
 #define term_alpha 0.8

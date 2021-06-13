@@ -11,9 +11,15 @@ dwm.selbgcolor: csfg
 dwm.normbordercolor: csbg
 dwm.selbordercolor: csfg
 
+dwm.systraypinning: 2
+dwm.systrayonleft: 0
+dwm.systrayspacing: 0
+dwm.systraypinningfailfirst: 1
+dwm.showsystray: 1
+
 dwm.dmenufont: monospace:size=8
 dwm.borderpx: 2
-dwm.showsystray: 1
-dwm.systraypinning: 2
+dwm.extrabarmon: 0
+dwm.showextrabar: 1
 
 ! vim:set ft=xdefaults:
