@@ -97,6 +97,15 @@ super + shift + Print
 super + ctrl + shift + Print
 	maim -qus ~/Downloads/Pictures/tool/zoom.png && sxiv -qbfps f ~/Downloads/Pictures/tool/zoom.png
 
+super + alt + d
+	clipswap --delete --content
+super + alt + s
+	clipswap --swap
+super + alt + c
+	clipswap --content
+super + alt + v
+	clipswap --paste
+
 super + Insert
 	notify-send -u low "📋 Clipboard contents:" "\n$(xsel -bo)"
 # remove everything after '&' character and get clean url back to clipboard
