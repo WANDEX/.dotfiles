@@ -84,6 +84,8 @@ ctrl  + {F10,F11} + {_,shift}
 super  + {_,shift} + F12
 	killall -q dwmblocks; {setsid dwmblocks &,xsetroot -name "dwm"}
 #super + ctrl + shift + F12
+ctrl + F12
+	set_black
 
 # screenshots: selection, window, window with imagemagick processing
 Print
