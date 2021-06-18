@@ -3,18 +3,49 @@
 # example:
 # printf "%s\n" "Text in ${RED}red${END}, white and ${BLU}blue${END}."
 
-export END=$(printf '\e[0m')
-export RED=$(printf '\e[1;31m')
-export GRN=$(printf '\e[1;32m')
-export YEL=$(printf '\e[1;33m')
-export BLU=$(printf '\e[1;34m')
-export MAG=$(printf '\e[1;35m')
-export CYN=$(printf '\e[1;36m')
+# foreground colors
+END=$(printf '\e[0m')
+RED=$(printf '\e[1;31m')
+GRN=$(printf '\e[1;32m')
+YEL=$(printf '\e[1;33m')
+BLU=$(printf '\e[1;34m')
+MAG=$(printf '\e[1;35m')
+CYN=$(printf '\e[1;36m')
 
-export DEF_I=$(printf '\e[1;7m')
-export RED_I=$(printf '\e[1;41m')
-export GRN_I=$(printf '\e[1;42m')
-export YEL_I=$(printf '\e[1;43m')
-export BLU_I=$(printf '\e[1;44m')
-export MAG_I=$(printf '\e[1;45m')
-export CYN_I=$(printf '\e[1;46m')
+# use color & swap background and foreground colors
+DEF_S=$(printf '\e[1;7m')
+RED_S=$(printf '\e[1;41m')
+GRN_S=$(printf '\e[1;42m')
+YEL_S=$(printf '\e[1;43m')
+BLU_S=$(printf '\e[1;44m')
+MAG_S=$(printf '\e[1;45m')
+CYN_S=$(printf '\e[1;46m')
+
+# BOLD, ITALIC, UNDERLINE
+BLD=$(printf '\e[1m')
+ITQ=$(printf '\e[3m')
+UND=$(printf '\e[4m')
+
+# FOLLOWING LINES - ONLY EXPORTS
+# foreground colors
+export END
+export RED
+export GRN
+export YEL
+export BLU
+export MAG
+export CYN
+
+# use color & swap background and foreground colors
+export DEF_S
+export RED_S
+export GRN_S
+export YEL_S
+export BLU_S
+export MAG_S
+export CYN_S
+
+# BOLD, ITALIC, UNDERLINE
+export BLD
+export ITQ
+export UND
