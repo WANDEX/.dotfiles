@@ -1,4 +1,4 @@
-# shellckech config
+# shellcheck config
 
 # here string/document
 disable=SC3011 # In POSIX sh, here-strings are undefined. (w3011)
