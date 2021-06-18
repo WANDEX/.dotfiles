@@ -1,5 +1,7 @@
 #!/bin/sh
 # source terminal colors for global use in my scripts
+# example:
+# printf "%s\n" "Text in ${RED}red${END}, white and ${BLU}blue${END}."
 
 export END=$(printf '\e[0m')
 export RED=$(printf '\e[1;31m')
