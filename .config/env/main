@@ -13,3 +13,4 @@ export SOURCE="$HOME/source"
 export SCRIPTS="$SOURCE/scripts"
 export CSCRDIR="$XDG_CACHE_HOME/cscripts"
 export SUDO_ASKPASS="$SCRIPTS/sh/dmenu/dmenu_askpass"
+export S2D=1
