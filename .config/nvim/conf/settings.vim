@@ -16,10 +16,10 @@ set inccommand=split            " :%s/foo/bar/ to preview substitute
 set autoindent                  " Auto-indent new lines
 set smartindent                 " Enable smart-indent
 set smarttab                    " Enable smart-tabs
-set shiftwidth=4                " Number of auto-indent spaces
-set softtabstop=4               " Number of spaces per Tab
-set shiftround                  " Round the indentation nearest to shift width
-set expandtab                   " Use spaces instead of tabs
+" set shiftwidth=4                " Number of auto-indent spaces
+" set softtabstop=4               " Number of spaces per Tab
+" set shiftround                  " Round the indentation nearest to shift width
+" set expandtab                   " Use spaces instead of tabs
 
 set splitbelow                  " Horizontal split below current.
 set splitright                  " Vertical split to right of current.
