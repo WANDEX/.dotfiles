@@ -25,6 +25,7 @@
 ! Transparency (0-1): *.alpha: 0.95
 #define term_alpha 0.8
 st.alpha: term_alpha
+st.alphaUnfocused: 0.7
 opaque.alpha: 1
 
 ! TERM FONT
