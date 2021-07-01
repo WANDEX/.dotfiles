@@ -71,7 +71,7 @@ alias \
     neoc="nvim +PlugClean +qall" \
     neou="nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall" \
     neous="nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall > /dev/null" \
-    glog="nvim -c Glog" \
+    glog="nvim -c Gclog" \
     magit="nvim -c MagitOnly"
 
 # colorize commands when possible.
