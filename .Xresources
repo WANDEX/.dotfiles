@@ -23,20 +23,21 @@
 #include ".config/xres/s2dterm"
 
 ! Transparency (0-1): *.alpha: 0.95
-#define term_alpha 0.8
+#define term_alpha 0.85
 st.alpha: term_alpha
-st.alphaUnfocused: 0.7
+st.alphaUnfocused: 0.75
 opaque.alpha: 1
+opaque.alphaUnfocused: 1
 
 ! TERM FONT
 #define term_font VictorMono Nerd Font Mono:pixelsize=14
-!#define term_font Iosevka Term:style=Light:pixelsize=15
-!#define term_font JetBrainsMono Nerd Font Mono:pixelsize=14
-!#define term_font TerminessTTF Nerd Font Mono:pixelsize=17
-!#define term_font Mononoki Nerd Font Mono:pixelsize=16
+! #define term_font Iosevka Term:style=Light:pixelsize=15
+! #define term_font JetBrainsMono Nerd Font Mono:pixelsize=14
+! #define term_font TerminessTTF Nerd Font Mono:pixelsize=17
+! #define term_font Mononoki Nerd Font Mono:pixelsize=16
 !! for CJK text and screenshots
-!#define term_font NotoSansMono Nerd Font:pixelsize=20
-!#define term_font NotoSansMono Nerd Font:pixelsize=14
-!#define term_font -gbdfed-creep-Regular-R-Normal--16-120-96-96-M-4-ISO10646-1;
+! #define term_font NotoSansMono Nerd Font:pixelsize=20
+! #define term_font NotoSansMono Nerd Font:pixelsize=14
+! #define term_font -gbdfed-creep-Regular-R-Normal--16-120-96-96-M-4-ISO10646-1;
 
 st.font: term_font
