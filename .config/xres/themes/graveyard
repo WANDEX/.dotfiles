@@ -31,7 +31,7 @@
 #define c14 #4B5D64
 
 !      white      !
-#define c07 #829FA5
+#define c07 #ADC2C7
 #define c15 #CBD9DC
 
 ! vim:set ft=xdefaults:
