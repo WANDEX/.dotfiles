@@ -6,6 +6,18 @@
 !#define c00 #011F26
 #define c08 #374347
 
+!       red       !
+#define c01 #F8818E
+#define c09 #FB3D66
+
+!      green      !
+#define c02 #066060
+#define c10 #5A7278
+
+!      yellow     !
+#define c03 #5C757D
+#define c11 #9BB2B7
+
 !       blue      !
 #define c04 #39464B
 #define c12 #6C8A91
@@ -14,21 +26,9 @@
 #define c05 #033030
 #define c13 #495B5F
 
-!      green      !
-#define c02 #066060
-#define c10 #5A7278
-
 !       cyan      !
 #define c06 #4B5D64
 #define c14 #839EA5
-
-!       red       !
-#define c01 #F8818E
-#define c09 #FB3D66
-
-!      yellow     !
-#define c03 #5C757D
-#define c11 #9BB2B7
 
 !      white      !
 #define c07 #829FA5
