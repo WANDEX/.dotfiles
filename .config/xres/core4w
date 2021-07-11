@@ -2,7 +2,7 @@
 #define cnbg c00
 #define csbg c08
 #define csfg c15
-#define cnfg c02
+#define cnfg c07
 ! change cnfg ^ on preferable text color
 ! wal generates only [c00-c08] colors
 ! c00 c08 : black

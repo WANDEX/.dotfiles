@@ -1,0 +1,37 @@
+! wordplay: gray & rad(red)
+
+#define c00 #050606
+
+!      black      !
+!#define c00 #011F26
+#define c08 #374347
+
+!       blue      !
+#define c04 #033030
+#define c12 #495B5F
+
+!     magenta     !
+#define c05 #066060
+#define c13 #5A7278
+
+!      green      !
+#define c02 #39464B
+#define c10 #6C8A91
+
+!       cyan      !
+#define c06 #4B5D64
+#define c14 #839EA5
+
+!       red       !
+#define c01 #F8818E
+#define c09 #FB3D66
+
+!      yellow     !
+#define c03 #5C757D
+#define c11 #9BB2B7
+
+!      white      !
+#define c07 #829FA5
+#define c15 #CBD9DC
+
+! vim:set ft=xdefaults:
