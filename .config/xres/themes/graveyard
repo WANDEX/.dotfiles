@@ -1,10 +1,10 @@
 ! wordplay: gray & rad(red)
 
-#define c00 #050606
+! #define c00 #011F26
 
 !      black      !
-!#define c00 #011F26
-#define c08 #374347
+#define c00 #050606
+#define c08 #7C888C
 
 !       red       !
 #define c01 #F8818E
