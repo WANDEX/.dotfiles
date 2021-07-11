@@ -11,12 +11,12 @@
 #define c12 #495B5F
 
 !     magenta     !
-#define c05 #066060
-#define c13 #5A7278
+#define c05 #39464B
+#define c13 #6C8A91
 
 !      green      !
-#define c02 #39464B
-#define c10 #6C8A91
+#define c02 #066060
+#define c10 #5A7278
 
 !       cyan      !
 #define c06 #4B5D64
