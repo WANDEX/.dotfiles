@@ -7,12 +7,12 @@
 #define c08 #374347
 
 !       blue      !
-#define c04 #033030
-#define c12 #495B5F
+#define c04 #39464B
+#define c12 #6C8A91
 
 !     magenta     !
-#define c05 #39464B
-#define c13 #6C8A91
+#define c05 #033030
+#define c13 #495B5F
 
 !      green      !
 #define c02 #066060
