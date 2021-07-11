@@ -27,8 +27,8 @@
 #define c13 #495B5F
 
 !       cyan      !
-#define c06 #4B5D64
-#define c14 #839EA5
+#define c06 #839EA5
+#define c14 #4B5D64
 
 !      white      !
 #define c07 #829FA5
