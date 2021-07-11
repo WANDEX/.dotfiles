@@ -56,6 +56,10 @@ inoremap <silent><expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<P
 nnoremap <silent>]b :bn<CR>
 nnoremap <silent>[b :bp<CR>
 
+" Move to next/previous tab :tabNext,:tabprevious
+nnoremap <silent>]t :tabN<CR>
+nnoremap <silent>[t :tabp<CR>
+
 " create Qlist with word :vim bar %
 " Jump to next/previous Quickfix list item :cn,:cp
 nnoremap <silent>]q :cn<CR>
