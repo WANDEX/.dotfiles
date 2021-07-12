@@ -478,6 +478,11 @@
     format = "" # -> hide original notification
     script = dunst_encode.sh
 
+[web-scrobbler]
+    body = "*SoundCloud*"
+    format = "" # -> hide original notification
+    script = dunst_web_scrobbler.sh
+
 [discard]
     body = "*This site has been updated in the background.*"
     format = "" # -> hide original notification
