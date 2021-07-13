@@ -164,3 +164,6 @@ nnoremap Q <nop>
 " Encode visual selection into qr code
 vnoremap Q !curl -s -F-=\<- https://qrenco.de
 
+" CDC = Change to Directory of Current file
+command CDC cd %:p:h
+
