@@ -19,7 +19,7 @@ call deoplete#custom#source('_', 'converters',
 
 call deoplete#custom#option({
 \   'min_pattern_length': 1,
-\   'auto_complete_delay': 200,
+\   'auto_complete_delay': 100,
 \   'ignore_case': v:true,
 \   'smart_case': v:true,
 \   'max_list': 500,
