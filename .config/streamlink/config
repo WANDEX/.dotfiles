@@ -13,9 +13,7 @@ retry-open=1
 twitch-disable-hosting
 twitch-disable-ads
 #twitch-disable-reruns
-
-# Authenticate with Twitch
-twitch-oauth-token="$TWOA"
+twitch-low-latency
 
 # Timeouts for disconnects and etc.
 hds-segment-attempts=64
