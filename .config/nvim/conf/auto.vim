@@ -45,7 +45,7 @@ if !exists('autocommands_loaded')
     au BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 
     " Have dwmblocks automatically recompile and run when you edit this file in
-    au BufWritePost ~/source/forks/luke/dwmblocks/config.h !cd ~/source/forks/luke/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
+    au BufWritePost ~/source/projects/core/fork/dwmblocks/config.h !cd ~/source/projects/core/fork/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
 
     " fix in case of memory leak vim issue. Should be at the end.
     au BufWinLeave * call clearmatches()
