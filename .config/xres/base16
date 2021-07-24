@@ -16,8 +16,4 @@
 *.color14: c14
 *.color15: c15
 
-! COMMON FOR ALL COLOR SCHEMES
-*.color16: #AA3131
-*.color17: #000350
-
 ! vim:set ft=xdefaults:
