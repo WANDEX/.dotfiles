@@ -3,8 +3,9 @@
 
 set hidden
 let g:LanguageClient_serverCommands    = {
-\   'python': ['pyls'],
+\   'python': ['~/.local/bin/pyls'],
 \   }
+"\   'python': ['pyls'],
 
 let g:LanguageClient_changeThrottle    = 5
 

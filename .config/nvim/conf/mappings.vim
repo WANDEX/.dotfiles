@@ -1,27 +1,38 @@
 "*****************************************************************************
 "" Core Mappings For Colemak
 "*****************************************************************************
+"" MEMO: use :verbose map 'key or sequence' - to see if mapping is used
 "" hjkl remapped for colemak to
 "" hnei i.e. left/down/up/right
 
 " insert mode and modifier inside
-nnoremap k i|onoremap k i|vnoremap k i|xnoremap k i
+"nnoremap k i|onoremap k i|vnoremap k i|xnoremap k i
+nnoremap k i|onoremap k i|xnoremap k i
 
 " Screen bottom
-nnoremap B L
+"nnoremap B L
 
 " Look for next occurrence of {char}
 nnoremap l f|onoremap l f|vnoremap l f
 nnoremap L F|onoremap L F|vnoremap L F
 
 " Forward towards the end of a word
-nnoremap f e|onoremap f e|vnoremap f e
-nnoremap F E|onoremap F E|vnoremap F E
+"nnoremap W e|onoremap W e|vnoremap W e
+"vnoremap W e|onoremap W e|vnoremap W e
+"nnoremap f e|onoremap f e|vnoremap f e
+"nnoremap F E|onoremap F E|vnoremap F E
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
 nnoremap <Enter> nzzzv
 nnoremap <BS> Nzzzv
+"nnoremap <M-n> nzzzv
+"nnoremap <M-e> Nzzzv
+"nnoremap <Esc>^[n nzzzv
+"nnoremap <Esc>^[e Nzzzv
+"nnoremap \e^[j nzzzv
+"nnoremap \e^[k Nzzzv
+
 
 " Move screen one page
 nnoremap N <C-f>
@@ -35,7 +46,8 @@ nnoremap <C-W>i <C-W>l
 
 nnoremap n j|xnoremap n j|onoremap n j|vnoremap n j
 nnoremap e k|xnoremap e k|onoremap e k|vnoremap e k
-nnoremap i l|xnoremap i l|onoremap i l|vnoremap i l
+"nnoremap i l|xnoremap i l|onoremap i l|vnoremap i l
+nnoremap i l|xnoremap i l|onoremap i l
 
 " popupmenu-keys
 inoremap <C-l> <Down>
