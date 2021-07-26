@@ -108,12 +108,12 @@ alias \
 # week
 alias \
     wcd="week curr day calc" \
-    wpd="week prev day calc" \
     wcdt="week curr day calc total" \
-    wpdt="week prev day calc total" \
+    wpd="week curr -1day calc" \
+    wpdt="week curr -1day calc total" \
     wcw="week curr week calc" \
-    wpw="week prev week calc" \
     wcwt="week curr week calc total" \
+    wpw="week prev week calc" \
     wpwt="week prev week calc total"
 
 #---- PIP ----#
