@@ -37,7 +37,7 @@ super + ctrl + n ; {a,c,C,h,m,P}
 super + ctrl + {w,W}
 	{dmenu_wm_name --modify, dmenu_wm_name}
 super + ctrl + shift + d ; {a,shift + a} ; {d,k,l,p,y}
-	download_audio.sh {_,-r} {_,-p kdi,-p lt,-p podcast,-p ytm}
+	download_audio.sh -e {1,-1} {_,-p kdi,-p lt,-p podcast,-p ytm}
 super + ctrl + shift + e
 	dmenu_unicode
 super + ctrl + shift + h
