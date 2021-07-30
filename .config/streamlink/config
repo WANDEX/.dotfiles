@@ -13,7 +13,7 @@ retry-open=1
 twitch-disable-hosting
 twitch-disable-ads
 #twitch-disable-reruns
-twitch-low-latency
+# twitch-low-latency
 
 # Timeouts for disconnects and etc.
 hds-segment-attempts=64
