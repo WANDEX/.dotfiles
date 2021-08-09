@@ -1,0 +1,52 @@
+{
+    "output": {
+        "autogain": {
+            "target": -23.0
+        },
+        "blocklist": [
+            "Simultaneous output on Built-in Audio Analog Stereo",
+            "Simultaneous output on GM107 High Definition Audio Controller [GeForce 940MX] Digital Stereo (HDMI 2)"
+        ],
+        "compressor": {
+            "attack": 20.0,
+            "boost-threshold": -72.0,
+            "hpf-frequency": 10.0,
+            "hpf-mode": "off",
+            "input-gain": 0.0,
+            "knee": -12.0,
+            "lpf-frequency": 20000.0,
+            "lpf-mode": "off",
+            "makeup": 0.0,
+            "mode": "Downward",
+            "output-gain": 0.0,
+            "ratio": 4.0,
+            "release": 100.0,
+            "release-threshold": -120.0,
+            "sidechain": {
+                "lookahead": 0.0,
+                "mode": "RMS",
+                "preamp": 0.0,
+                "reactivity": 10.0,
+                "source": "Middle",
+                "type": "Feed-forward"
+            },
+            "threshold": -12.0
+        },
+        "limiter": {
+            "asc": false,
+            "asc-level": 0.5,
+            "auto-level": false,
+            "input-gain": 0.0,
+            "limit": -12.0,
+            "lookahead": 5.0,
+            "output-gain": 0.0,
+            "oversampling": 1,
+            "release": 50.0
+        },
+        "plugins_order": [
+            "autogain",
+            "compressor",
+            "limiter"
+        ]
+    }
+}

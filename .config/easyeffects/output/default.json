@@ -1,0 +1,11 @@
+{
+    "output": {
+        "autogain": {
+            "target": -24.0
+        },
+        "blocklist": [],
+        "plugins_order": [
+            "autogain"
+        ]
+    }
+}
