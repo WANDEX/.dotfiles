@@ -16,18 +16,17 @@ sup()   { "$(rit $1)" >/dev/null 2>&1; }
 # fork $1 command to background and don't create nohup.out
 nhp()   { nohup "$(rit $1)" >/dev/null 2>&1 & }
 
-# source if file exist
-source_if_exist() { [[ -f "$1" ]] && source "$1"; }
+# shellcheck disable=SC1090 ## can't follow non-constant source.
+sie() { [ -f "$1" ] && . "$1"; } # source if file exist
 
-sage() { eval $(ssh-agent); }
+sage() { eval "$(ssh-agent)"; }
 
-# find process with fzf and kill it
-k() {
-    local pid
+k() { # find process with fzf and kill it
     pid=$(ps -ef | sed "/fzf --header-lines=1/d" | fzf --header-lines=1 -e -0 -1 -q "$1" | awk '{print $2}')
     [ -n "$pid" ] && kill -9 "$pid"
 }
 
+# shellcheck disable=SC2012 ## Use find instead
 ls_colored() {
     ls -Flav "$@" | head -n 1
     ls -Flav --color=always "$@" | sed 1d | awk '
