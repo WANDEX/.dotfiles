@@ -2,6 +2,7 @@
 # FUNCTIONS that is work only in interactive mode
 # (cannot be used inside .xinitrc for example)
 # shellcheck disable=SC1090 ## can't follow non-constant source.
+# shellcheck disable=SC2086 ## Double quote to prevent globbing and word splitting.
 
 #From the bash(1) man page:
 #Aliases are not expanded when the shell is not interactive, unless the
