@@ -1,6 +1,7 @@
 #!/bin/sh
 # FUNCTIONS that is work only in interactive mode
 # (cannot be used inside .xinitrc for example)
+# shellcheck disable=SC1090 ## can't follow non-constant source.
 
 #From the bash(1) man page:
 #Aliases are not expanded when the shell is not interactive, unless the
@@ -16,8 +17,8 @@ sup()   { "$(rit $1)" >/dev/null 2>&1; }
 # fork $1 command to background and don't create nohup.out
 nhp()   { nohup "$(rit $1)" >/dev/null 2>&1 & }
 
-# shellcheck disable=SC1090 ## can't follow non-constant source.
 sie() { [ -f "$1" ] && . "$1"; } # source if file exist
+sip() { hash "$1"   && . "$1"; } # source if found at $PATH
 
 sage() { eval "$(ssh-agent)"; }
 
