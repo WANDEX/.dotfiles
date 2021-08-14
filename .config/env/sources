@@ -23,5 +23,5 @@ export ENVSCR="$ENVDIR/scripts"
 . "$ENVSCR/get_hdmi_sink"
 . "$ENVSCR/termcolors"
 
-for f in "$ENVDIR/.hid/"*; do . "$f"; done; unset -v f
+[ -d "$ENVDIR/.hid/" ] && for f in "$ENVDIR/.hid/"*; do . "$f"; done; unset -v f
 
