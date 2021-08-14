@@ -1,6 +1,7 @@
 #!/bin/sh
 # FUNCTIONS that is work only in interactive mode
 # (cannot be used inside .xinitrc for example)
+# color variables are sourced once in .profile from termcolors script
 # shellcheck disable=SC1090 ## can't follow non-constant source.
 # shellcheck disable=SC2086 ## Double quote to prevent globbing and word splitting.
 
@@ -8,8 +9,6 @@
 #Aliases are not expanded when the shell is not interactive, unless the
 #expand_aliases shell option is set using shopt
 #(see the description of shopt under SHELL BUILTIN COMMANDS below).
-
-red=$'\e[1;31m'; grn=$'\e[1;32m'; yel=$'\e[1;33m'; blu=$'\e[1;34m'; mag=$'\e[1;35m'; cyn=$'\e[1;36m'; end=$'\e[0m'
 
 # expand any alias in $1 before the execution
 rit()   { eval $1; }
@@ -37,13 +36,13 @@ ls_colored() {
             OFS = "";
         }
         {
-            $2 = "'"${red}"'" $2 "'"${end}"'";
-            $3 = "'"${cyn}"'" $3 "'"${end}"'";
-            $4 = "'"${cyn}"'" $4 "'"${end}"'";
-            $5 = "'"${red}"'" $5 "'"${end}"'";
-            $6 = "'"${cyn}"'" $6 "'"${end}"'";
-            $7 = "'"${cyn}"'" $7 "'"${end}"'";
-            $8 = "'"${red}"'" $8 "'"${end}"'";
+            $2 = "'"${RED}"'" $2 "'"${END}"'";
+            $3 = "'"${CYN}"'" $3 "'"${END}"'";
+            $4 = "'"${CYN}"'" $4 "'"${END}"'";
+            $5 = "'"${RED}"'" $5 "'"${END}"'";
+            $6 = "'"${CYN}"'" $6 "'"${END}"'";
+            $7 = "'"${CYN}"'" $7 "'"${END}"'";
+            $8 = "'"${RED}"'" $8 "'"${END}"'";
             print
         }
     ' | awk '
@@ -52,12 +51,12 @@ ls_colored() {
             OFS = "";
         }
         {
-            $2 = "'"${cyn}"'" $2 "'"${end}"'";
-            $4 = "'"${red}"'" $4 "'"${end}"'";
-            $5 = "'"${cyn}"'" $5 "'"${end}"'";
-            $7 = "'"${red}"'" $7 "'"${end}"'";
-            $8 = "'"${cyn}"'" $8 "'"${end}"'";
-            $10 = "'"${red}"'" $10 "'"${end}"'";
+            $2 = "'"${CYN}"'" $2 "'"${END}"'";
+            $4 = "'"${RED}"'" $4 "'"${END}"'";
+            $5 = "'"${CYN}"'" $5 "'"${END}"'";
+            $7 = "'"${RED}"'" $7 "'"${END}"'";
+            $8 = "'"${CYN}"'" $8 "'"${END}"'";
+            $10 = "'"${RED}"'" $10 "'"${END}"'";
             print
         }
     '
