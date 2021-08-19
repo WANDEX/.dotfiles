@@ -487,6 +487,13 @@
     body = "*This site has been updated in the background.*"
     format = "" # -> hide original notification
 
+[chess]
+    body = "*www.chess.com*"
+    set_stack_tag = "chess"
+    background = "#32393A"
+    format = "♟ %s"
+    timeout = 0
+
 [clip]
     summary = "📋*"
     history_ignore = yes
