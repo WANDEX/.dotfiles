@@ -194,7 +194,7 @@ local function reset_drcbox()
   updateOSD()
 end
 
-mp.add_forced_key_binding(key_toggle_drcbox, toggle_drcbox)
+mp.add_forced_key_binding(key_toggle_drcbox, "toggle-drcbox", toggle_drcbox)
 mp.add_forced_key_binding(key_toggle_bindings, toggle_bindings)
 mp.add_forced_key_binding(key_reset_drcbox, reset_drcbox)
 if bindings_enabled then toggle_bindings(true, true) end
