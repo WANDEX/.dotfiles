@@ -45,6 +45,9 @@ alias \
     glf="git log --pretty=fuller " \
     glo="git log --pretty=oneline " \
     gls="git log --stat " \
+    gsh="--date=short " \
+    grel="--date=relative " \
+    gloc="--date=local " \
     gg="--grep " \
     gall="--all-match " \
     ginv="--invert-grep " \
