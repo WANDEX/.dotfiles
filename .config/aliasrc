@@ -72,9 +72,11 @@ alias \
 # nvim
 alias \
     neo="nvim " \
-    neoc="nvim +PlugClean +qall" \
-    neou="nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall" \
-    neous="nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall > /dev/null" \
+    neou="nvim -c 'PackerSync'" \
+    neous="nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'" \
+    neopu="nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall" \
+    neopc="nvim +PlugClean +qall" \
+    neopus="nvim +PlugClean +PlugInstall +PlugUpdate +UpdateRemotePlugins +qall > /dev/null" \
     glog="nvim -c Gclog" \
     magit="nvim -c MagitOnly"
 
