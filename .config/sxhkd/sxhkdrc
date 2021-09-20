@@ -43,6 +43,8 @@ super + ctrl + shift + e
 	dmenu_unicode
 super + ctrl + shift + h
 	$TERMINAL -e htop
+super + ctrl + shift + k
+	kb.sh
 super + ctrl + shift + m ; {l,L}
 	dunst_mpc_love.sh {love,unlove}
 super + ctrl + shift + m ; {m,u}
