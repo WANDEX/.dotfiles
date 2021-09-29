@@ -3,6 +3,9 @@
 # activate vi mode with <Esc>, from vi mode 'bind -P' - to see all key bindings
 set -o vi
 
+# next/prev [C-N/C-E] command from history
+bind '"\C-E": previous-history'
+
 # expand bash aliases and be able to use functions inside non interactive shell
 shopt -s expand_aliases
 # functions defined in funcrc
