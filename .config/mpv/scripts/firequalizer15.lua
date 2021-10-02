@@ -18,6 +18,8 @@ local key_prev_entry = "e"
 local key_next_entry = "n"
 local key_decrease = "h"
 local key_increase = "i"
+local key_decrease_big = "H"
+local key_increase_big = "I"
 local key_copy_prev = "["
 local key_copy_next = "]"
 local key_set_to_min = "9"
@@ -169,15 +171,8 @@ local function next_entry()
     show_osd_ass()
 end
 
-local function decrease_gain()
-    gain_table[eq(selected_entry)] = math.max(gain_table[eq(selected_entry)]-10, min_val)
-    send_command()
-    show_osd_ass()
-    save_gain_table()
-end
-
-local function increase_gain()
-    gain_table[eq(selected_entry)] = math.min(gain_table[eq(selected_entry)]+10, max_val)
+local function change_gain(value)
+    gain_table[eq(selected_entry)] = math.min(math.max(gain_table[eq(selected_entry)]+value, min_val), max_val)
     send_command()
     show_osd_ass()
     save_gain_table()
@@ -237,8 +232,10 @@ local function toggle_control()
         show_osd_ass()
         mp.add_forced_key_binding(key_prev_entry, binding_name("prev"), prev_entry, {repeatable=true})
         mp.add_forced_key_binding(key_next_entry, binding_name("next"), next_entry, {repeatable=true})
-        mp.add_forced_key_binding(key_decrease, binding_name("decrease"), decrease_gain, {repeatable=true})
-        mp.add_forced_key_binding(key_increase, binding_name("increase"), increase_gain, {repeatable=true})
+        mp.add_forced_key_binding(key_decrease, binding_name("decrease"), function() change_gain(-10); end, {repeatable=true})
+        mp.add_forced_key_binding(key_increase, binding_name("increase"), function() change_gain(10); end, {repeatable=true})
+        mp.add_forced_key_binding(key_decrease_big, binding_name("decrease_big"), function() change_gain(-60); end, {repeatable=true})
+        mp.add_forced_key_binding(key_increase_big, binding_name("increase_big"), function() change_gain(60); end, {repeatable=true})
         mp.add_forced_key_binding(key_copy_prev, binding_name("copy_prev"), copy_prev)
         mp.add_forced_key_binding(key_copy_next, binding_name("copy_next"), copy_next)
         mp.add_forced_key_binding(key_set_to_min, binding_name("set_to_min"), set_to_min)
@@ -251,6 +248,8 @@ local function toggle_control()
         mp.remove_key_binding(binding_name("next"))
         mp.remove_key_binding(binding_name("decrease"))
         mp.remove_key_binding(binding_name("increase"))
+        mp.remove_key_binding(binding_name("decrease_big"))
+        mp.remove_key_binding(binding_name("increase_big"))
         mp.remove_key_binding(binding_name("copy_prev"))
         mp.remove_key_binding(binding_name("copy_next"))
         mp.remove_key_binding(binding_name("set_to_min"))
