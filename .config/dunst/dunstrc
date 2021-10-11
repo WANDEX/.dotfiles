@@ -503,5 +503,27 @@
     history_ignore = yes
     stack_tag = "hi" # match this stack_tag
 
+# AT THE VERY END TO OVERRIDE ANY PREVIOUSLY DEFINED RULES
+
+[warning]
+    summary = "*warning*"
+    background = "#F4BF75"
+    foreground = "#1A1A1A"
+
+[WARNING]
+    summary = "*WARNING*"
+    background = "#F4BF75"
+    foreground = "#1A1A1A"
+
+[error]
+    summary = "*error*"
+    background = "#FF6188"
+    foreground = "#1A1A1A"
+
+[ERROR]
+    summary = "*ERROR*"
+    background = "#FF6188"
+    foreground = "#1A1A1A"
+
 #
 # vim: ft=cfg
