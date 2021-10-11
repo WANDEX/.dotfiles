@@ -5,7 +5,7 @@ export BROWSER="google-chrome-stable"
 export EDITOR="nvim"
 export HISTSIZE=404
 export MANPAGER="nvim +Man!"
-export PAGER="page -q 90000"
+export PAGER="page -q 90000 -e 'call timer_start(500, { -> cursor(1,1) })'"
 export TERMINAL="st"
 
 export CONF=${XDG_CONFIG_HOME:-$HOME/.config}
