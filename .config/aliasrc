@@ -7,6 +7,7 @@
 #__////__//________//______//__////__//______////__////__////______///////
 #/////////////////////////////////////////////////////////////////////////
 
+# shellcheck disable=SC2139 # $ expands when defined, not when used. Consider escaping \$
 # Use neovim for vim if present.
 [ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
 
@@ -28,8 +29,8 @@ alias \
     sse="find \$SOURCE -not -path '*/\.*/*' -not -path '*/__*/*' -not -path '*/lib*/*' -type f \( ! -iname '.*' \) | fzf | xargs -r -I % \$EDITOR %" \
     ssp="source ~/.profile" \
     sudo="sudo " \
-    sxlog="cat ~/.local/share/xorg/Xorg.0.log | \$PAGER" \
-    sxrlog="cat /var/log/Xorg.0.log | \$PAGER" \
+    sxlog="cat ~/.local/share/xorg/Xorg.0.log | $PAGER" \
+    sxrlog="cat /var/log/Xorg.0.log | $PAGER" \
     trm="rm -vf ~/Downloads/torrents/*.torrent" \
     venv="source venv/bin/activate" \
     vf="fzf | xargs -r -I % \$EDITOR %"
