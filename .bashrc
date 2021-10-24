@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # activate vi mode with <Esc>, from vi mode 'bind -P' - to see all key bindings
-set -o vi
+# set -o vi
 
 # next/prev [C-N/C-E] command from history
 bind '"\C-E": previous-history'
