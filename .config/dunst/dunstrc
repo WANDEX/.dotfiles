@@ -186,6 +186,7 @@
     summary = "*live*"
     body = "*twitch*"
     skip_display = true # -> hide original notification
+    history_ignore = true
     script = dunst_twitch.sh
 
 [strend]
@@ -201,6 +202,7 @@
 [DOWNLOAD_COMPLETED]
     summary = "*\[DOWNLOAD\]*\[COMPLETED\]*\(*\)*"
     skip_display = true # -> hide original notification
+    history_ignore = true
     script = dunst_download_completed.sh
 
 [DOWNLOAD_PROGRESS]
@@ -212,16 +214,19 @@
 [ENCODE]
     summary = "*\[ENCODEME\]*"
     skip_display = true # -> hide original notification
+    history_ignore = true
     script = dunst_encode.sh
 
 [web-scrobbler]
     body = "*SoundCloud*"
     skip_display = true # -> hide original notification
+    history_ignore = true
     script = dunst_web_scrobbler.sh
 
 [discard]
     body = "*This site has been updated in the background.*"
     skip_display = true # -> hide original notification
+    history_ignore = true
 
 [chess]
     body = "*www.chess.com*"
