@@ -10,7 +10,7 @@
     #   none: don't follow anything
     follow = none
 
-    width = (0, 300)
+    width = (0, 1916)
 
     origin = top-right
     offset = 2x17
