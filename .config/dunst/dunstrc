@@ -138,8 +138,8 @@
 
     ### mouse
     mouse_left_click = close_current
-    mouse_middle_click = do_action, close_current
-    mouse_right_click = close_all
+    mouse_middle_click = do_action, open_url
+    mouse_right_click = open_url
 
 [urgency_low]
     history_ignore = true
