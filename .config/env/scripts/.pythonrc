@@ -1,9 +1,44 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# F401 - imported but unused
 
 import atexit
 import os
 import readline
+
+
+try:
+    from rich import inspect
+
+    def _i(*args, **kwargs):
+        """ inspect(inspect) or inspect with any args, kwargs. """
+        if not args and not kwargs:
+            return inspect(inspect)
+        else:
+            return inspect(*args, **kwargs)
+
+    def _ia(*args, **kwargs):
+        """ Show all attributes. """
+        return inspect(*args, **kwargs, all=True)
+
+    def _id(*args, **kwargs):
+        """ Show attributes starting with double underscore. """
+        return inspect(*args, **kwargs, dunder=True)
+
+    def _ih(*args, **kwargs):
+        """ Show full help text rather than just first paragraph. """
+        return inspect(*args, **kwargs, help=True)
+
+    def _im(*args, **kwargs):
+        """ Enable inspection of callables (methods). """
+        return inspect(*args, **kwargs, methods=True)
+
+    def _ip(*args, **kwargs):
+        """ Show private attributes (beginning with underscore). """
+        return inspect(*args, **kwargs, private=True)
+
+except ImportError:
+    pass
 
 # history file
 histfile = os.path.join(os.environ['XDG_DATA_HOME'], 'python/.python_history')
