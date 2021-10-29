@@ -14,6 +14,12 @@ except IOError:
 atexit.register(readline.write_history_file, histfile)
 del os, histfile, readline
 
+try:
+    # Rich
+    from rich.pretty import pprint  # noqa: F401
+    from rich.traceback import install
+    install(show_locals=True)
+except ImportError:
+    pass
+
 print("pythonrc loaded!")
-
-
