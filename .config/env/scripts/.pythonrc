@@ -6,6 +6,11 @@ import atexit
 import os
 import readline
 
+try:
+    # relod imported module: _r(module_name)
+    from importlib import reload as _r  # noqa: F401
+except ImportError:
+    pass
 
 try:
     from rich import inspect
