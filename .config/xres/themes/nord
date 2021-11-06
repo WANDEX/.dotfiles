@@ -29,7 +29,6 @@
 #define c14 #8FBCBB
 
 !      white      !
-!#define nord4 #D8DEE9
 #define c07 #E5E9F0
 #define c15 #ECEFF4
 
@@ -38,5 +37,6 @@
 *.background:  #2E3440
 *.cursorColor: #D8DEE9
 *fadeColor:    #4C566A
+*fading: 35
 
 ! vim:set ft=xdefaults:
