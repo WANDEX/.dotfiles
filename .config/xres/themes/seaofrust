@@ -1,0 +1,35 @@
+! seaofrust
+
+!      black      !
+#define c00 #181818
+#define c08 #585858
+
+!       red       !
+#define c01 #604938
+#define c09 #675348
+
+!      green      !
+#define c02 #9A6D50
+#define c10 #282828
+
+!      yellow     !
+#define c03 #AA6640
+#define c11 #383838
+
+!       blue      !
+#define c04 #B1875F
+#define c12 #b8b8b8
+
+!     magenta     !
+#define c05 #D09339
+#define c13 #e8e8e8
+
+!       cyan      !
+#define c06 #4F9692
+#define c14 #DA9561
+
+!      white      !
+#define c07 #d8d8d8
+#define c15 #f8f8f8
+
+! vim:set ft=xdefaults:
