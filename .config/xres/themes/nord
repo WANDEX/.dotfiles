@@ -1,0 +1,42 @@
+! nord
+
+!      black      !
+#define c00 #3B4252
+#define c08 #4C566A
+
+!       red       !
+#define c01 #BF616A
+#define c09 #D08770
+
+!      green      !
+#define c02 #A3BE8C
+#define c10 #A3BE8C
+
+!      yellow     !
+#define c03 #EBCB8B
+#define c11 #EBCB8B
+
+!       blue      !
+#define c04 #5E81AC
+#define c12 #81A1C1
+
+!     magenta     !
+#define c05 #B48EAD
+#define c13 #B48EAD
+
+!       cyan      !
+#define c06 #88C0D0
+#define c14 #8FBCBB
+
+!      white      !
+!#define nord4 #D8DEE9
+#define c07 #E5E9F0
+#define c15 #ECEFF4
+
+!       special       !
+*.foreground:  #D8DEE9
+*.background:  #2E3440
+*.cursorColor: #D8DEE9
+*fadeColor:    #4C566A
+
+! vim:set ft=xdefaults:
