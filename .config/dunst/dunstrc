@@ -159,7 +159,7 @@
 
 [pomodoro]
     summary = "*\[pomodoro\]*"
-    # set_stack_tag = "pomodoro" # FIXME: uncomment me when set_stack_tag will be fixed
+    set_stack_tag = "pomodoro"
     history_ignore = true
     background = "#AA3131"
     foreground = "#EFEFF1"
