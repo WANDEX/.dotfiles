@@ -26,6 +26,7 @@ local key_set_to_min = "9"
 local key_set_to_zero = "0"
 local key_set_to_max = "-"
 local key_reset = "r"
+local key_high_cut_preset = "ctrl+h"
 
 local control_enabled = false
 local num_entry = 15
@@ -222,6 +223,18 @@ local function reset()
     save_gain_table()
 end
 
+local function high_cut_preset()
+    gain_table[eq(14)] = min_val
+    gain_table[eq(13)] = min_val
+    gain_table[eq(12)] = -240
+    gain_table[eq(11)] = -180
+    gain_table[eq(10)] = -120
+    gain_table[eq(9)] = -60
+    send_command()
+    show_osd_ass()
+    save_gain_table()
+end
+
 local function binding_name(name)
     return mp.get_script_name() .. "-" .. name
 end
@@ -242,6 +255,7 @@ local function toggle_control()
         mp.add_forced_key_binding(key_set_to_max, binding_name("set_to_max"), set_to_max)
         mp.add_forced_key_binding(key_set_to_zero, binding_name("set_to_zero"), set_to_zero)
         mp.add_forced_key_binding(key_reset, binding_name("reset"), reset)
+        mp.add_forced_key_binding(key_high_cut_preset, binding_name("high_cut_preset"), high_cut_preset)
     else
         hide_osd_ass()
         mp.remove_key_binding(binding_name("prev"))
@@ -256,6 +270,7 @@ local function toggle_control()
         mp.remove_key_binding(binding_name("set_to_max"))
         mp.remove_key_binding(binding_name("set_to_zero"))
         mp.remove_key_binding(binding_name("reset"))
+        mp.remove_key_binding(binding_name("high_cut_preset"))
     end
 end
 
