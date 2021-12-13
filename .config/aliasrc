@@ -46,6 +46,10 @@ alias \
     glf="git log --pretty=fuller " \
     glo="git log --pretty=oneline " \
     gls="git log --stat " \
+    glt="gl --since=-1day " \
+    gltt="gl --since=-1day | wc -l" \
+    glp="gl --since=-2day --until=-1day " \
+    glpt="gl --since=-2day --until=-1day | wc -l" \
     gsh="--date=short " \
     grel="--date=relative " \
     gloc="--date=local " \
