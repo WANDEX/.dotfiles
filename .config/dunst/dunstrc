@@ -189,6 +189,12 @@
     history_ignore = true
     script = dunst_twitch.sh
 
+[goodgame-stream-started]
+    body = "*>goodgame.ru<*"
+    skip_display = true # -> hide original notification
+    history_ignore = true
+    script = dunst_goodgame.sh
+
 [strend]
     summary = "*\[stream\]\[end\]*"
     background = "#9A6D50"
