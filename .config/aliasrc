@@ -133,6 +133,7 @@ alias \
 alias pip-l="pip3 freeze --local | $PAGER"
 alias pip-s="pip3 freeze --local | grep -i"
 alias pip-r="pip3 uninstall"
+alias pip-e="pip3 install -e ."
 alias pip-i="pip3 install -U"
 alias pip-i-user="pip3 install -U --user"
 alias pip-u-all-user="pip3 freeze --user --exclude-editable | cut -d= -f1 | xargs -n1 pip3 install -U --user"
