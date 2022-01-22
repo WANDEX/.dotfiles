@@ -58,7 +58,8 @@ alias \
     ginv="--invert-grep " \
     gi="--regexp-ignore-case " \
     gaft="--after " \
-    gbef="--before "
+    gbef="--before " \
+    gtl="git tag --list | tail -n1"
 
 # python
 alias \
