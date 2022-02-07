@@ -80,8 +80,8 @@ XF86Audio{Lower,Raise}Volume
 # function keys
 super + F4
 	mpvu -q s
-super + F7
-	switch_pulse_preset.sh; kill -53 $(pidof dwmblocks)
+super + F8 + {_,shift}
+	dmenu_record {kill, demo}
 super + F9
 	pactl set-sink-mute $SINK0 toggle; kill -43 $(pidof dwmblocks)
 super + {F10,F11} + {_,shift,alt}
