@@ -1,0 +1,15 @@
+#!/bin/sh
+# Called by sxiv(1) whenever an image gets loaded.
+# The output is displayed in sxiv's status bar.
+#
+# MEMO: chmod +x ./image-info
+#
+# image: path=$1 width=$2 height=$3
+
+exec 2>/dev/null
+
+filename=$(basename -- "$1")
+filesize=$(du -Hh -- "$1" | cut -f 1)
+geometry="${2}x${3}"
+
+printf "%s [%s] %s" "${geometry}" "${filesize}" "${filename}"
