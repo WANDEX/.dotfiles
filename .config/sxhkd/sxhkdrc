@@ -117,6 +117,8 @@ super + alt + v
 	clipswap --paste
 super + alt + w
 	dmenu_wm_name "SILENCE"
+super + alt + W ; {c,e,P,p,s}
+	setbg {--clear-margs,--edit,--preset -1,--preset 1,--preset 0}
 
 super + Insert
 	notify-send -u low "📋 Clipboard contents:" "\n$(xsel -bo)"
