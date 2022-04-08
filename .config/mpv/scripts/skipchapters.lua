@@ -4,7 +4,7 @@ local opt = {
         "OP","[Oo]pening$", "^[Oo]pening:", "[Oo]pening [Cc]redits",
         "ED","[Ee]nding$", "^[Ee]nding:", "[Ee]nding [Cc]redits",
         "[Pp]review$",
-        "[Ii]ntro", "[Oo]utro",
+        -- "[Ii]ntro", "[Oo]utro",
     },
 }
 read_options(opt)
