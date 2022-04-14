@@ -78,8 +78,8 @@ XF86Audio{Lower,Raise}Volume
 	mpc volume {-,+}5 && dunst_mpc_volume.sh
 
 # function keys
-super + F4
-	mpvu -q s
+super + {_,shift} + F4
+	{mpvu -q s, mpv "$(xclip -selection clipboard -out)"}
 super + F8 + {_,shift}
 	dmenu_record {kill, demo}
 super + F9
