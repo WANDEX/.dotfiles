@@ -1,8 +1,8 @@
 #!/bin/sh
 # Profile file. Runs on login.
-source "$HOME/.config/env/sources"
+. "$HOME/.config/env/sources"
 
-echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && source "$HOME/.bashrc"
+echo "$0" | grep "bash$" >/dev/null && [ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
 
 if pacman -Qs libxft-bgra >/dev/null 2>&1; then
     # Start graphical server on tty1 if not already running.
