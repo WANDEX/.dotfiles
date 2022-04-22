@@ -1,5 +1,6 @@
 #!/bin/sh
 # less/man colors
+# shellcheck disable=SC2155 # Declare and assign separately to avoid masking return values.
 
 export LESS=-R
 export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"

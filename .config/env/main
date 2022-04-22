@@ -8,7 +8,7 @@ export MANPAGER="nvim +Man!"
 export PAGER="page -q 90000 -e 'call timer_start(500, { -> cursor(1,1) })'"
 export TERMINAL="st"
 
-export CONF=${XDG_CONFIG_HOME:-$HOME/.config}
+export CONF="${XDG_CONFIG_HOME:-$HOME/.config}"
 export SOURCE="$HOME/source"
 export SCRIPTS="$SOURCE/scripts"
 export CSCRDIR="$XDG_CACHE_HOME/cscripts"

@@ -6,4 +6,5 @@ export PATH="${PATH}:$CARGO_HOME/bin"
 export PATH="${PATH}:${XDG_DATA_HOME}/npm/bin"
 
 # add to $PATH scripts and subdirs (excluding .* , _* dirs)
-export PATH="$PATH:$(find "$SCRIPTS" -type d ! -path "*/.*" ! -path "*/_*" -printf "%p:")"
+spaths="$(find "$SCRIPTS" -type d ! -path "*/.*" ! -path "*/_*" -printf "%p:")"
+export PATH="$PATH:$spaths"
