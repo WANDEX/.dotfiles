@@ -127,6 +127,8 @@ super + shift + Insert
 	xsel -bo | sed "s/[&].*$//" | xsel -bi && notify-send "📋 clean url in clipboard:" "\n$(xsel -bo)\n"
 super + ctrl + Insert
 	xsel -bo | sed "s/[?].*$//" | xsel -bi && notify-send "📋 clean url in clipboard:" "\n$(xsel -bo)\n"
+super + alt + Insert
+	xsel -bo | sed "s/[#].*$//" | xsel -bi && notify-send "📋 clean url in clipboard:" "\n$(xsel -bo)\n"
 
 alt + ctrl + shift + h
 	$TERMINAL -e htop
