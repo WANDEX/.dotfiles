@@ -1,5 +1,6 @@
 require 'mp.options'
-local opt = {
+local o = {
+    active = true,
     patterns = {
         "OP","[Oo]pening$", "^[Oo]pening:", "[Oo]pening [Cc]redits",
         "ED","[Ee]nding$", "^[Ee]nding:", "[Ee]nding [Cc]redits",
@@ -7,13 +8,13 @@ local opt = {
         -- "[Ii]ntro", "[Oo]utro",
     },
 }
-read_options(opt)
+read_options(o)
 
 function check_chapter(_, chapter)
-    if not chapter then
+    if not o.active or not chapter then
         return
     end
-    for _, p in pairs(opt.patterns) do
+    for _, p in pairs(o.patterns) do
         if string.match(chapter, p) then
             print("Skipping chapter:", chapter)
             mp.command("no-osd add chapter 1")
@@ -22,4 +23,16 @@ function check_chapter(_, chapter)
     end
 end
 
+function toggle()
+    if o.active then
+        o.active = false
+        mp.osd_message("skip chapters OFF", 1)
+    else
+        o.active = true
+        mp.osd_message("skip chapters ON", 1)
+    end
+end
+
 mp.observe_property("chapter-metadata/by-key/title", "string", check_chapter)
+
+mp.add_forced_key_binding('alt+c', 'toggle', toggle)
