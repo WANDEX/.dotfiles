@@ -17,8 +17,8 @@
 #include ".config/xres/base16"
 #include ".config/xres/spec"
 
-! #include ".config/xres/core4b"
-#include ".config/xres/core4w"
+#include ".config/xres/core4b"
+! #include ".config/xres/core4w"
 #include ".config/xres/core"
 #include ".config/xres/s2dterm"
 
