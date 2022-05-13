@@ -1,4 +1,4 @@
-
+#!/bin/sh
 ####################################
 # LIQUID PROMPT DEFAULT THEME FILE #
 ####################################
@@ -8,8 +8,8 @@
 # characters at once.
 # Below is an example of how to fallback to ASCII if the term is not Unicode-capable.
 # Defaults to UTF-8 characters.
-if [[ "$(locale -k LC_CTYPE | sed -n 's/^charmap="\(.*\)"/\1/p')" == *"UTF-8"* ]]; then
-    # If charset is UTF-8.
+case $(locale -ck charmap) in
+*UTF-8*) # If charset is UTF-8.
     LP_MARK_BATTERY="⌁ "       # in front of the battery charge
     LP_MARK_ADAPTER="⏚ "       # displayed when plugged
     LP_MARK_LOAD="⌂ "          # in front of the load
@@ -24,8 +24,8 @@ if [[ "$(locale -k LC_CTYPE | sed -n 's/^charmap="\(.*\)"/\1/p')" == *"UTF-8"* ]
     LP_MARK_STASH="+"          # if git has stashs
     LP_MARK_SHORTEN_PATH=" … " # prompt mark in shortened paths
     LP_MARK_PERM=":"           # separator between host and path
-else
-    # If charset is anything else, fallback to ASCII chars
+;;
+*) # If charset is anything else, fallback to ASCII chars
     LP_MARK_BATTERY="b"
     LP_MARK_ADAPTER="p"
     LP_MARK_LOAD="c"
@@ -40,7 +40,7 @@ else
     LP_MARK_STASH="+"
     LP_MARK_SHORTEN_PATH=" ... "
     LP_MARK_PERM=":"
-fi
+esac
 
 LP_MARK_BRACKET_OPEN="["  # open bracket
 LP_MARK_BRACKET_CLOSE="]" # close bracket

@@ -1,11 +1,11 @@
-
+#!/bin/sh
 ####################################
 # LIQUID PROMPT CONFIGURATION FILE #
 ####################################
 
 # If you want to use different themes and features,
 # you can load the corresponding files here:
-source ~/.config/liquidprompt/wndx.theme
+. ~/.config/liquidprompt/wndx.theme
 LP_PS1_FILE=~/.config/liquidprompt/wndx.ps1
 
 #############
@@ -116,7 +116,7 @@ LP_ENABLE_BZR=0
 # Show time of when the current prompt was displayed. (Must be enabled and
 # disabled in the config file and not after liquidprompt has already been
 # sourced.)
-LP_ENABLE_TIME=0
+LP_ENABLE_TIME=1
 
 # Show runtime of the previous command if over LP_RUNTIME_THRESHOLD
 # Recommended value is 0

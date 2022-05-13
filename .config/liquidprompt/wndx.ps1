@@ -1,4 +1,4 @@
-
+#!/bin/sh
 #######################################
 # LIQUID PROMPT DEFAULT TEMPLATE FILE #
 #######################################
@@ -31,7 +31,7 @@
 # span (U+2500 ─ ) character to the length of the terminal
 #HORIZON="`printf -vch "%${COLUMNS}s" ""; printf "%s" "${ch// /─}"`"
 
-LP_MARK_PREFIX="\n "
+LP_PS1_POSTFIX="\n"
 
 # add time, jobs, load and battery
 LP_PS1="${LP_PS1_PREFIX}${LP_TIME}${LP_BATT}${LP_LOAD}${LP_JOBS}"
@@ -46,7 +46,7 @@ LP_PS1="${LP_PS1}${LP_PWD}${LP_VENV}${LP_PROXY}"
 LP_PS1="${LP_PS1}${LP_VCS}"
 
 # add return code and prompt mark
-LP_PS1="${LP_PS1}${LP_RUNTIME}${LP_ERR}${LP_MARK_PREFIX}${LP_MARK}${LP_PS1_POSTFIX}"
+LP_PS1="${LP_PS1}${LP_RUNTIME}${LP_MARK_PREFIX}${LP_MARK}${LP_ERR}${LP_PS1_POSTFIX}"
 
 # "invisible" parts
 # Get the current prompt on the fly and make it a title
