@@ -93,7 +93,6 @@ alias \
     cp="cp -vi" \
     rm="rm -vi" \
     mv="mv -vi" \
-    mpdscribble="mpdscribble --conf ~/.config/mpdscribble/mpdscribble.conf" \
     tor="tor --DataDirectory $XDG_DATA_HOME/tor" \
     wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
 
