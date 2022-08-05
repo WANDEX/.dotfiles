@@ -127,3 +127,9 @@ super + alt + Insert
 
 alt + ctrl + shift + h
 	$TERMINAL -e htop
+
+# PageUp/PageDown
+super + alt + Prior
+	xsel -bo | tr "[:lower:]" "[:upper:]" | xsel -bi && notify-send "📋 to UPPER case:" "\n$(xsel -bo)\n"
+super + alt + Next
+	xsel -bo | tr "[:upper:]" "[:lower:]" | xsel -bi && notify-send "📋 to lower case:" "\n$(xsel -bo)\n"
