@@ -91,5 +91,5 @@ local function write_chapter()
     mp.osd_message("Export file to: "..out_path, 3)
 end
 
-mp.add_forced_key_binding("M", "create_chapter", create_chapter, {repeatable=true})
+mp.add_forced_key_binding("Ctrl+M", "create_chapter", create_chapter, {repeatable=true})
 mp.add_forced_key_binding("Ctrl+Shift+M", "write_chapter", write_chapter, {repeatable=false})
