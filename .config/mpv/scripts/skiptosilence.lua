@@ -48,6 +48,34 @@ old_speed = 1
 was_paused = false
 was_muted = false
 
+filters_added = false
+is_skipping = true
+
+old_demux_max = 0 --demuxer-max-bytes=<bytesize>
+new_demux_max = 248000000 -- 248Mib
+
+function toggleSkip()
+    -- add filters only once & after first activation by the key press
+    if not filters_added then
+        add_filters()
+        filters_added = true
+    end
+
+    -- increase demuxer-max-bytes if current value is too low
+    old_demux_max = mp.get_property_native("demuxer-max-bytes")
+    if old_demux_max < new_demux_max then
+        mp.set_property("demuxer-max-bytes", new_demux_max)
+    end
+
+    is_skipping = not is_skipping -- flip the bool value
+    if is_skipping then
+        curr_time_pos = mp.get_property_native("time-pos")
+        foundSilence("manual-cancel-skip", curr_time_pos)
+    else
+        doSkip()
+    end
+end
+
 function doSkip()
     setAudioFilter(true)
     setVideoFilter(true, mp.get_property_native("width"), mp.get_property_native("height"))
@@ -72,9 +100,13 @@ function foundSilence(name, value)
     end
 
     timecode = tonumber(string.match(value, "%d+%.?%d+"))
-    time_pos = mp.get_property_native("time-pos")
-    if timecode == nil or timecode < time_pos + 1 then
-        return -- Ignore anything less than a second ahead.
+
+    -- check only if not "manual-cancel-skip"
+    if name ~= "manual-cancel-skip" then
+        time_pos = mp.get_property_native("time-pos")
+        if timecode == nil or timecode < time_pos + 1 then
+            return -- Ignore anything less than a second ahead.
+        end
     end
 
     mp.set_property_bool("mute", was_muted)
@@ -99,10 +131,9 @@ function osdSkippedMessage()
 end
 
 
--- Adds the filters to the filtergraph on mpv init
--- in a disabled state.
+-- Adds the filters to the filtergraph in a disabled state.
 -- Filter documentation: https://ffmpeg.org/ffmpeg-filters.html
-function init()
+function add_filters()
     -- `silencedetect` is an audio filter that listens for silence
     -- and emits text output with details whenever silence is detected.
     local af_table = mp.get_property_native("af")
@@ -164,6 +195,5 @@ function setVideoFilter(state, width, height)
 end
 
 options.read_options(opts)
-init()
 
-mp.add_forced_key_binding("F3", "skip-to-silence", doSkip)
+mp.add_forced_key_binding("F3", "toggle-skip-to-silence", toggleSkip)
