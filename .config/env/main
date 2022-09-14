@@ -15,3 +15,8 @@ export CSCRDIR="$XDG_CACHE_HOME/cscripts"
 export SUDO_ASKPASS="$SCRIPTS/sh/dmenu/dmenu_askpass"
 export S2D=1
 export VHI="$XDG_CONFIG_HOME/nvim/conf/hi.vim"
+export POMODORO_DIR="$HOME/Documents/Pomodoro"
+
+export CMAKE_EXPORT_COMPILE_COMMANDS=1
+export CC=/usr/bin/clang
+export CXX=/usr/bin/clang++
