@@ -402,6 +402,40 @@ def_key "d"
 #def_key "ctrl-r"
 #  reverse_playlist
 #
+
+# move cursor from the parent dir onto the first entry
+# (if parent dir entry under cursor)
+def_command "mcfpd" [immediate]
+  require_runnable "find_item_forward"
+  push_characters "."
+  push_character "enter"
+  find_item_forward
+
+def_key "f3"
+  require_runnable "execute_command"
+  push_characters  "mcfpd"
+  execute_command
+
+# filter and open first matching dir then clear filter
+# mcfpd - to not open parent dir
+def_key "f"
+  require_runnable "execute_command"
+  push_characters  "mcfpd"
+  execute_command
+
+  require_runnable "apply_filter" # hand typed filter/find dir selection
+  apply_filter
+
+  require_runnable "enter_directory"
+  enter_directory
+
+  push_character "ctrl-w" # to clear previously entered filter (not perfect hack!)
+  push_character "enter"  # confirm applying of empty filter (to disable filtering)
+  apply_filter
+
+def_key "F"
+  apply_filter
+
 #
 #def_key "ctrl-_"
 #  select_found_items
