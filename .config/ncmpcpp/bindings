@@ -403,6 +403,11 @@ def_key "d"
 #  reverse_playlist
 #
 
+# run_external_console_command "music -p"
+# copy path of currently playing file into clipboard
+def_key "ctrl-x"
+  run_external_command "music -p"
+
 # move cursor from the parent dir onto the first entry
 # (if parent dir entry under cursor)
 def_command "mcfpd" [immediate]
