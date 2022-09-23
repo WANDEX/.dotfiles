@@ -75,8 +75,8 @@ XF86Audio{Lower,Raise}Volume
 # function keys
 super + {_,shift} + F4
 	{mpvu -q s, mpv "$(xclip -selection clipboard -out)"}
-super + F8 + {_,shift}
-	dmenu_record {kill, demo}
+super + F8 + {_,shift, ctrl + shift}
+	dmenu_record {kill, demo, rs}
 super + F9
 	pactl set-sink-mute $SINK0 toggle; kill -43 $(pidof dwmblocks)
 super + {F10,F11} + {_,shift,alt}
