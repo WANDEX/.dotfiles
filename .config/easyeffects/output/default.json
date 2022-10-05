@@ -1,7 +1,10 @@
 {
     "output": {
         "autogain": {
-            "target": -32.0
+            "input-gain": 0.0,
+            "output-gain": 12.0,
+            "reference": "Geometric Mean (MSI)",
+            "target": -48.0
         },
         "blocklist": [],
         "plugins_order": [
