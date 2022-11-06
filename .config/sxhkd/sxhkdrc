@@ -137,3 +137,6 @@ super + ctrl + Prior
 	xsel -bo | sed "s/_/ /g" | xsel -bi && notify-send "📋 _ -> ' ' replaced:" "\n$(xsel -bo)\n"
 super + ctrl + Next
 	xsel -bo | sed "s/ /_/g" | xsel -bi && notify-send "📋 ' ' -> _ replaced:" "\n$(xsel -bo)\n"
+
+super + alt + ctrl + shift + Prior
+	basename $(xsel -bo) | sed "s/_rs-.*$//; s/_/ /g" | xsel -bi && notify-send "📋 clean rs title:" "\n$(xsel -bo)\n"
