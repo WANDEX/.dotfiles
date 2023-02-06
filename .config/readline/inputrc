@@ -1,0 +1,87 @@
+## man readline
+## MEMO:
+## * to see all key bindings:
+## * 'bind -P' or 'bind -p'
+## * "\C-x\C-r": re-read-init-file || or
+## * 'bind -f ~/.config/readline/inputrc'
+## # 'exec bash -l' - after unbind restart of bash required!
+##
+## Q: What are readline's modes, keymaps and their default bindings?
+## 'https://unix.stackexchange.com/questions/303479/what-are-readlines-modes-keymaps-and-their-default-bindings'
+## 'https://unix.stackexchange.com/questions/374441/unbind-default-key-from-inputrc'
+
+$include /etc/inputrc
+
+set bell-style none
+
+set editing-mode vi
+set show-mode-in-prompt on
+set vi-ins-mode-string \1\e[6 q\2
+set vi-cmd-mode-string \1\e[2 q\2
+set emacs-mode-string \1\e[4 q\2
+
+## fix for Delete not working properly, arrow-keys...
+set enable-keypad on
+
+## display all possible matches for an ambiguous pattern at first complete (TAB)
+set show-all-if-ambiguous on
+
+## DOUBTS: not sure that this is a good idea...
+## "to ignore special characters: 'stty -a' these?"
+# set bind-tty-special-chars off
+
+
+## *** (UN)BIND VI-INSERT BEG ***
+## bind/unbind after this line, because keymap matters!
+set keymap vi-insert
+$include ~/.config/readline/vi-common-unbind
+
+## leave insert mode (go to vi-move mode)
+"\C-l": vi-movement-mode
+
+## for terminals TAB & C-I is the same, so C-I inevitable does the same thing. :(
+TAB: complete
+
+# XXX: bind to something
+# "\e-k": vi-movement-mode
+
+$include ~/.config/readline/vi-common-bind
+## *** (UN)BIND VI-INSERT END ***
+
+
+## *** (UN)BIND VI-MOVE BEG ***
+## bind/unbind after this line, because keymap matters!
+set keymap vi-move
+$include ~/.config/readline/vi-common-unbind
+
+## emacs-editing-mode
+"\C-E":
+
+## abort
+"\C-G":
+
+## vi-end-word
+"e":
+"E":
+
+## vi-insertion-mode
+"i":
+## forward-char
+"l":
+
+## next-history/prev-history,
+"j":
+"k":
+
+## leave move/command mode (go to vi-insert mode)
+"\C-l": vi-insertion-mode
+
+"l": vi-end-word
+"L": vi-end-word
+
+"k": vi-insertion-mode
+"i": forward-char
+
+$include ~/.config/readline/vi-common-bind
+## *** (UN)BIND VI-MOVE END ***
+

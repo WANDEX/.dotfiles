@@ -1,0 +1,35 @@
+## common for both vi modes:
+## insert & move (command)
+## BIND
+
+## \C-J \C-M (following line still also bind \C-M back)
+RET: accept-line
+
+## alt + .
+"\eh": beginning-of-line
+"\eo": end-of-line
+
+## [C-h/C-o] move cursor back/forward on one word
+"\C-h": backward-word
+"\C-o": forward-word
+"\C-h": shell-backward-word
+"\C-o": shell-forward-word
+
+## alt + ctrl + .
+"\e\C-h": backward-kill-word
+"\e\C-o": kill-word
+"\e\C-h": shell-backward-kill-word
+"\e\C-o": shell-kill-word
+
+## next/prev [C-n/C-e] command from history
+"\C-n": next-history
+"\C-e": previous-history
+
+## after cursor position
+"\C-k": kill-line
+"\e\C-k": kill-whole-line
+
+"\C-x\C-e": edit-and-execute-command
+"\C-x\C-r": re-read-init-file
+
+## vim:set ft=readline:

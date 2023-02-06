@@ -1,0 +1,30 @@
+## common for both vi modes:
+## insert & move (command)
+## UNBIND
+
+## complete
+"\C-I":
+
+## backward-delete-char / backward-char
+"\C-H":
+
+## accept-line
+"\C-J":
+"\C-M":
+
+## forward-search-history
+"\C-S":
+
+## transpose-chars
+"\C-T":
+
+## unix-line-discard
+"\C-U":
+
+## unix-word-rubout
+"\C-W":
+
+## undo / vi-undo
+"\C-_":
+
+## vim:set ft=readline:
