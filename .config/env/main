@@ -5,7 +5,7 @@ export BROWSER="google-chrome-stable"
 export EDITOR="nvim"
 export HISTSIZE=404
 export MANPAGER="nvim +Man!"
-export PAGER="page -q 90000 -e 'call timer_start(500, { -> cursor(1,1) })'"
+export PAGER="page -w -q 90000 -e 'call timer_start(500, { -> cursor(1,1) })'"
 export TERMINAL="st"
 
 export CONF="${XDG_CONFIG_HOME:-$HOME/.config}"
@@ -19,5 +19,6 @@ export POMODORO_DIR="$HOME/Documents/Pomodoro"
 
 export CMAKE_EXPORT_COMPILE_COMMANDS=1
 export CTEST_OUTPUT_ON_FAILURE=1
-export CC=/usr/bin/clang
+
+export  CC=/usr/bin/clang
 export CXX=/usr/bin/clang++
