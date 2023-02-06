@@ -2,6 +2,9 @@
 # create nonexistent dirs
 # shellcheck disable=SC2174 # -m only applies to the deepest directory
 
+# this check is the simple optimization (force run all if $1 not empty)
+if [ ! -d "$CSCRDIR" ] || [ -n "$1" ]; then
+
 mkdir -p "$CSCRDIR"
 mkdir -p "$CSCRDIR/rate"
 mkdir -p "$XDG_CONFIG_HOME/npm"
@@ -12,3 +15,5 @@ mkdir -p "$XDG_DATA_HOME/vim/undo" "$XDG_DATA_HOME/vim/swap" "$XDG_DATA_HOME/vim
 mkdir -p "$XDG_DATA_HOME/wineprefixes"
 mkdir -p "$HOME/Downloads/build"
 mkdir -p -m 0700 "$HOME/.local/.hid"
+
+fi
