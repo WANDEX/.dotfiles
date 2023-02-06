@@ -13,6 +13,7 @@ export AURDEST="$HOME/Downloads/build"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export CHTSH="$XDG_DATA_HOME/cht_sh"
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
+export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
 export LESSHISTFILE="-" # disable hist file
 export MYPY_CACHE_DIR="$XDG_CACHE_HOME/mypy_cache"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
