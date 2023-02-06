@@ -4,7 +4,10 @@
 ## * 'bind -P' or 'bind -p'
 ## * "\C-x\C-r": re-read-init-file || or
 ## * 'bind -f ~/.config/readline/inputrc'
-## # 'exec bash -l' - after unbind restart of bash required!
+##
+## after unbind restart of bash required,
+## so this is the perfect candidate for reloading:
+## 'exec bash -l'
 ##
 ## Q: What are readline's modes, keymaps and their default bindings?
 ## 'https://unix.stackexchange.com/questions/303479/what-are-readlines-modes-keymaps-and-their-default-bindings'
@@ -18,7 +21,7 @@ set editing-mode vi
 set show-mode-in-prompt on
 set vi-ins-mode-string \1\e[6 q\2
 set vi-cmd-mode-string \1\e[2 q\2
-set emacs-mode-string \1\e[4 q\2
+set  emacs-mode-string \1\e[4 q\2
 
 ## fix for Delete not working properly, arrow-keys...
 set enable-keypad on
@@ -41,9 +44,6 @@ $include ~/.config/readline/vi-common-unbind
 
 ## for terminals TAB & C-I is the same, so C-I inevitable does the same thing. :(
 TAB: complete
-
-# XXX: bind to something
-# "\e-k": vi-movement-mode
 
 $include ~/.config/readline/vi-common-bind
 ## *** (UN)BIND VI-INSERT END ***
