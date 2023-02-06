@@ -22,10 +22,17 @@
 #include ".config/xres/core"
 #include ".config/xres/s2dterm"
 
-! Transparency (0-1): *.alpha: 0.95
+!! Transparency (0-1): *.alpha: 0.95
+!! "default"
 #define term_alpha 0.95
 st.alpha: term_alpha
 st.alphaUnfocused: 0.85
+!! "semi-transparent"
+sts.alpha: 0.8
+sts.alphaUnfocused: 0.7
+!! "transparent"
+stt.alpha: 0.7
+stt.alphaUnfocused: 0.5
 opaque.alpha: 1
 opaque.alphaUnfocused: 1
 
