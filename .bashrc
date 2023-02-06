@@ -1,26 +1,25 @@
 #!/bin/bash
+# shellcheck disable=SC1090 ## can't follow non-constant source.
 
-# activate vi mode with <Esc>, from vi mode 'bind -P' - to see all key bindings
-# set -o vi
+sie() { [ -f "$1" ] && . "$1" ;} # source if file exist
+sip() { hash "$1"   && . "$1" ;} # source if found at $PATH
 
-# next/prev [C-N/C-E] command from history
-bind '"\C-E": previous-history'
+# XXX put into one case/esac block
+case "$-" in
+*i*) # if in interactive mode:
+    sie "/usr/share/bash-completion/bash_completion"
 
-# expand bash aliases and be able to use functions inside non interactive shell
-shopt -s expand_aliases
-# functions defined in funcrc
-[ -f "$HOME/.config/funcrc"  ] && source "$HOME/.config/funcrc"
+    sie "$CHTSH/bash_completion"
+    sie "$SCRIPTS/sh/shortcuts/.cmpl_bash"
 
-# sip() - source if found at $PATH
-[[ $- = *i* ]] && sip liquidprompt
+    ## fzf enable fuzzy completion [example]: cd **<TAB>
+    # sie "/usr/share/fzf/completion.bash"
+    sie "/usr/share/fzf/key-bindings.bash"
 
-# sie() - source if exist
-sie "$HOME/.config/aliasrc"
+    sip liquidprompt
 
-[[ $- = *i* ]] && sie "/usr/share/bash-completion/bash_completion"
-[[ $- = *i* ]] && sie "$CHTSH/bash_completion"
-[[ $- = *i* ]] && sie "$SCRIPTS/sh/shortcuts/.cmpl_bash"
+    sie "$XDG_CONFIG_HOME/funcrc"
+    sie "$XDG_CONFIG_HOME/aliasrc"
+;;
+esac
 
-# fzf enable fuzzy completion [example]: cd **<TAB>
-[[ $- = *i* ]] && sie "/usr/share/fzf/completion.bash"
-[[ $- = *i* ]] && sie "/usr/share/fzf/key-bindings.bash"
