@@ -85,3 +85,13 @@ $include ~/.config/readline/vi-common-unbind
 $include ~/.config/readline/vi-common-bind
 ## *** (UN)BIND VI-MOVE END ***
 
+## (seems like that this not gives performance penalty.)
+## I do not need an emacs mode. But why not...
+set keymap emacs
+"\eq": vi-editing-mode
+$include ~/.config/readline/vi-common-unbind
+$include ~/.config/readline/vi-common-bind
+set keymap vi-move
+"\eq": emacs-editing-mode
+set keymap vi-insert
+"\eq": emacs-editing-mode
