@@ -7,6 +7,12 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_DIRS="/usr/local/share:/usr/share"
 export XDG_DATA_HOME="$HOME/.local/share"
 
+# bash
+export HISTCONTROL="ignorespace:erasedups"
+export HISTFILE="$XDG_CACHE_HOME/history"
+export HISTFILESIZE=2000
+export HISTSIZE=2000
+
 export ADB_VENDOR_KEY="$XDG_DATA_HOME/android"
 export ANDROID_SDK_HOME="$XDG_DATA_HOME/android"
 export AURDEST="$HOME/Downloads/build"
