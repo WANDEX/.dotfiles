@@ -3,19 +3,21 @@
 # Player options
 player=mpv --profile=stream
 #player-args=--profile=stream # why player-args doesn't work?
-player-continuous-http
+# player-continuous-http
 player-no-close
 default-stream="best,720p60,720p"
 retry-streams=5
 retry-max=12
 retry-open=5
 
+ringbuffer-size=64M
+
 stream-segment-threads=2
-stream-segment-attempts=4
+stream-segment-attempts=8
 stream-segment-timeout=10
-stream-timeout=60
+stream-timeout=180
 
 twitch-disable-hosting
 twitch-disable-ads
 #twitch-disable-reruns
-# twitch-low-latency
+twitch-low-latency
