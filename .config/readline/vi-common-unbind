@@ -9,7 +9,8 @@
 "\C-H":
 
 ## accept-line
-"\C-J":
+# NOTE: do not unbind "\C-J" => introduces wrong behavior in rlwrap:
+# to accept line double press of key is required! (i.e. RETURN key)
 "\C-M":
 
 ## forward-search-history
