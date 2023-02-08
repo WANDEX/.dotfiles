@@ -9,9 +9,12 @@
 ## so this is the perfect candidate for reloading:
 ## 'exec bash -l'
 ##
-## Q: What are readline's modes, keymaps and their default bindings?
+## useful resources:
 ## 'https://unix.stackexchange.com/questions/303479/what-are-readlines-modes-keymaps-and-their-default-bindings'
 ## 'https://unix.stackexchange.com/questions/374441/unbind-default-key-from-inputrc'
+## 'https://orelfichman.com/blog/terminal-escape-codes-are-awesome'
+## 'https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797'
+## 'https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h2-Special-Keyboard-Keys'
 
 $include /etc/inputrc
 
@@ -19,15 +22,30 @@ set bell-style none
 
 set editing-mode vi
 set show-mode-in-prompt on
-set vi-ins-mode-string \1\e[6 q\2
-set vi-cmd-mode-string \1\e[2 q\2
-set  emacs-mode-string \1\e[4 q\2
+## search for DECSCUSR in: 'https://invisible-island.net/xterm/ctlseqs/ctlseqs.html'
+## FIXME: if cursor at the leftmost column (at the border of terminal screen),
+## changing modes introduces visual artifact, find a way to fix this.
+## artifact: overdraws already present text by the '6,2,4' characters!
+set vi-ins-mode-string "\1\e[6 q\2"
+set vi-cmd-mode-string "\1\e[2 q\2"
+set  emacs-mode-string "\1\e[4 q\2"
+## the same as: '\001\033 q\002' with the cursor style in between (num: 0-6).
+## terminal must support DECSCUSR (st, xterm, urxvt, iTerm2, etc.) tmux with (TERM=xterm-256color).
 
 ## fix for Delete not working properly, arrow-keys...
 set enable-keypad on
 
+## colored completions
+set colored-completion-prefix on
+set colored-stats on
+
+## these already colored, so no need in another visual clue
+set visible-stats off
+
 ## display all possible matches for an ambiguous pattern at first complete (TAB)
 set show-all-if-ambiguous on
+
+set enable-bracketed-paste on
 
 ## DOUBTS: not sure that this is a good idea...
 ## "to ignore special characters: 'stty -a' these?"
@@ -81,6 +99,10 @@ $include ~/.config/readline/vi-common-unbind
 
 "k": vi-insertion-mode
 "i": forward-char
+
+## XXX not very useful, feel free to rebind those keys for the other purpose.
+"n": next-screen-line
+"e": previous-screen-line
 
 $include ~/.config/readline/vi-common-bind
 ## *** (UN)BIND VI-MOVE END ***
