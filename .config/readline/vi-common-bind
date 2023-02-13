@@ -29,6 +29,10 @@ RET: accept-line
 "\C-k": kill-line
 "\e\C-k": kill-whole-line
 
+## calls kill-whole-line to clear line before executing macros
+"\C-x\C-h": '\e\C-k$EDITOR "$HISTFILE"\n'
+
+"\C-x\C-l": clear-screen
 "\C-x\C-e": edit-and-execute-command
 "\C-x\C-r": re-read-init-file
 
