@@ -182,18 +182,28 @@
     foreground = "#EFEFF1"
     timeout = 10
 
-[twitch-stream-started]
-    summary = "*live*"
-    body = "*twitch*"
-    skip_display = true # -> hide original notification
-    history_ignore = true
-    script = dunst_twitch.sh
+## XXX: twitch.tv not sends me notifications anymore. :(
+## [twitch-stream-started]
+##     summary = "*live*"
+##     body = "*twitch*"
+##     skip_display = true # -> hide original notification
+##     history_ignore = true
+##     script = dunst_twitch.sh
 
-[goodgame-stream-started]
-    body = "*>goodgame.ru<*"
+# notification from browser extension
+[twitch-stream-started-ext]
+    summary = "Twitch Live Channels"
     skip_display = true # -> hide original notification
     history_ignore = true
-    script = dunst_goodgame.sh
+    script = dunst_twitch_ext.sh
+
+# notification from browser extension
+[goodgame-stream-started-ext]
+    summary = "* запустил стрим"
+    body = "Игра: *"
+    skip_display = true # -> hide original notification
+    history_ignore = true
+    script = dunst_goodgame_ext.sh
 
 [strend]
     summary = "*\[stream\]\[end\]*"
