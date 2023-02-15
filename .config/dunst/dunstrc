@@ -93,7 +93,7 @@
     min_icon_size = 0
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 32
+    max_icon_size = 0
 
     # Paths to default icons.
     # icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
@@ -134,7 +134,7 @@
     # Useful to enforce the timeout set by dunst configuration. Without this
     # parameter, an application may close the notification sent before the
     # user defined timeout.
-    ignore_dbusclose = false
+    ignore_dbusclose = true
 
     ### mouse
     mouse_left_click = close_current
@@ -239,10 +239,10 @@
     history_ignore = true
     script = dunst_web_scrobbler.sh
 
-[discard]
-    body = "*This site has been updated in the background.*"
-    skip_display = true # -> hide original notification
-    history_ignore = true
+# [discard]
+#     body = "*This site has been updated in the background.*"
+#     skip_display = true # -> hide original notification
+#     history_ignore = true
 
 [chess]
     body = "*www.chess.com*"
