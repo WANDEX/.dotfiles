@@ -88,15 +88,23 @@ alias \
     la="ls -Fa --color=auto" \
     ll="ls_colored" \
     diff="diff --color=auto" \
-    ccat="highlight --out-format=ansi"
+    ccat="highlight --out-format=ansi" \
+    ip="ip -color=auto"
 
 # command replacement (fix)
 alias \
     cp="cp -vi" \
     rm="rm -vi" \
     mv="mv -vi" \
+    ffmpeg="ffmpeg -hide_banner" \
     tor="tor --DataDirectory $XDG_DATA_HOME/tor" \
+    nvidia-settings="nvidia-settings --config=$XDG_DATA_HOME/nvidia-settings-rc" \
     wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
+
+## XXX: currently useless
+## dirs still created: ~/.mozilla/{Crash Reports,Pending Pings}
+## so this is not clearing our home dir from stupid .mozilla/ dir.
+# alias firefox-developer-edition="firefox-developer-edition --profile $XDG_DATA_HOME/mozilla/firefox/*-default/"
 
 # rlwrap (fix) to support arrow keys and command line history
 alias \
