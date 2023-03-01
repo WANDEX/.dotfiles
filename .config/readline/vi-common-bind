@@ -5,17 +5,20 @@
 ## \C-J \C-M (following line still also bind \C-M back)
 RET: accept-line
 
-## alt + .
-"\eh": beginning-of-line
-"\eo": end-of-line
+## "\C-H": backward-delete-char
+## NOTE ^ do not rebind => backspace will be broken!
 
-## [C-h/C-o] move cursor back/forward on one word
-"\C-h": backward-word
-"\C-o": forward-word
-"\C-h": shell-backward-word
-"\C-o": shell-forward-word
+## ctrl + a/o
+"\C-a": beginning-of-line
+"\C-o": end-of-line
 
-## alt + ctrl + .
+## alt + h/o move cursor back/forward on one word
+"\eh": backward-word
+"\eo": forward-word
+"\eh": shell-backward-word
+"\eo": shell-forward-word
+
+## alt + ctrl + h/o
 "\e\C-h": backward-kill-word
 "\e\C-o": kill-word
 "\e\C-h": shell-backward-kill-word

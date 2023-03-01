@@ -6,7 +6,8 @@
 "\C-I":
 
 ## backward-delete-char / backward-char
-"\C-H":
+## "\C-H":
+## NOTE: ^ do not rebind => backspace will be broken!
 
 ## accept-line
 # NOTE: do not unbind "\C-J" => introduces wrong behavior in rlwrap:
