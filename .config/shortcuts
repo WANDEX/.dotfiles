@@ -25,6 +25,8 @@ D       "$HOME/Documents/"
 d       "$HOME/Downloads/"
 g       "$HOME/Downloads/git/"
 
+algo    "$SOURCE/projects/algorithms/"
+
 dwmc    "$SOURCE/projects/core/dwm/dwm/config.h"
 dwmd    "$SOURCE/projects/core/dwm/dwm/config.def.h"
 dwb     "$SOURCE/projects/core/fork/dwmblocks/config.h"
