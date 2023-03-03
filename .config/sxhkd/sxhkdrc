@@ -9,6 +9,9 @@ super + Return
 super + shift + Return
 	$TERMINAL -e ranger
 
+alt + ctrl + shift + h
+	$TERMINAL -e htop
+
 super + {_,shift} + g
 	firefox-developer-edition {--private-window,_}
 super + shift + ctrl + {_,alt} + g
@@ -124,9 +127,6 @@ super + ctrl + Insert
 	xsel -bo | sed "s/[?].*$//" | xsel -bi && notify-send "📋 clean url in clipboard:" "\n$(xsel -bo)\n"
 super + alt + Insert
 	xsel -bo | sed "s/[#].*$//" | xsel -bi && notify-send "📋 clean url in clipboard:" "\n$(xsel -bo)\n"
-
-alt + ctrl + shift + h
-	$TERMINAL -e htop
 
 # PageUp/PageDown
 super + alt + Prior
