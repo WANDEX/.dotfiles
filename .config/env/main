@@ -1,15 +1,15 @@
 #!/bin/sh
 # MAIN
 
-export BROWSER="google-chrome-stable"
+export BROWSER="firefox-developer-edition"
 export EDITOR="nvim"
+export VISUAL="st nvim"
 export MANPAGER="nvim +Man!"
 export PAGER="page -w -q 90000 -e 'call timer_start(500, { -> cursor(1,1) })'"
 export TERMINAL="st"
 
-export CONF="${XDG_CONFIG_HOME:-$HOME/.config}"
 export SOURCE="$HOME/source"
-export SCRIPTS="$SOURCE/scripts"
+export SCRIPTS="$SOURCE/scripts-wndx"
 export CSCRDIR="$XDG_CACHE_HOME/cscripts"
 export SUDO_ASKPASS="$SCRIPTS/sh/dmenu/dmenu_askpass"
 export S2D=1
