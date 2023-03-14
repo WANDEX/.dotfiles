@@ -3,7 +3,6 @@
 
 export BROWSER="firefox-developer-edition"
 export EDITOR="nvim"
-export VISUAL="st nvim"
 export MANPAGER="nvim +Man!"
 export PAGER="page -w -q 90000 -e 'call timer_start(500, { -> cursor(1,1) })'"
 export TERMINAL="st"
