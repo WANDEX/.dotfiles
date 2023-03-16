@@ -1,10 +1,23 @@
 #!/bin/sh
-# PATH envs
+## populate PATH with additional dirs to look for the executables
 
-export PATH="${PATH}:$HOME/.local/bin"
-export PATH="${PATH}:$CARGO_HOME/bin"
-export PATH="${PATH}:${XDG_DATA_HOME}/npm/bin"
+## PATH variable before the modification by this file
+[ -z "$PATH0" ] && export PATH0="$PATH"
+## to be able to re-source this file after modification
+## without adding duplicates from the previous PATH env.
+PATH="$PATH0"
 
-# add to $PATH scripts and subdirs (excluding .* , _* dirs)
-spaths="$(find "$SCRIPTS" -type d ! -path "*/.*" ! -path "*/_*" -printf "%p:")"
-export PATH="$PATH:$spaths"
+
+PATH="${PATH}:$HOME/.local/bin"
+PATH="${PATH}:$CARGO_HOME/bin"
+PATH="${PATH}:$XDG_DATA_HOME/npm/bin"
+
+
+if [ -n "$SCRIPTS" ]; then
+    ## add to the $PATH subdirs of the SCRIPTS dir (excluding .* , _* dirs)
+    spaths=$(find "$SCRIPTS" -type d ! -path "*/.*" ! -path "*/_*" -printf "%p:")
+    PATH="${PATH}:$spaths"
+fi
+
+
+export PATH
