@@ -102,6 +102,10 @@ alias \
     nvidia-settings="nvidia-settings --config=$XDG_DATA_HOME/nvidia-settings-rc" \
     wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
 
+
+alias fzf_alt="$FZF_DEFAULT_COMMAND"
+
+
 ## XXX: currently useless
 ## dirs still created: ~/.mozilla/{Crash Reports,Pending Pings}
 ## so this is not clearing our home dir from stupid .mozilla/ dir.
