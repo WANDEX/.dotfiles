@@ -1,4 +1,5 @@
 set tui.theme default.theme
+set connect.port 3395
 
 unbind --context tabs n
 bind --context tabs N tab

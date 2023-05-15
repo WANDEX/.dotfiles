@@ -51,7 +51,7 @@
     "rpc-host-whitelist": "",
     "rpc-host-whitelist-enabled": true,
     "rpc-password": "{36b54aceec436e95bc2f533104279474ab49680eHlxXNGt9",
-    "rpc-port": 68931,
+    "rpc-port": 3395,
     "rpc-socket-mode": "0700",
     "rpc-url": "/transmission/",
     "rpc-username": "wndx",
