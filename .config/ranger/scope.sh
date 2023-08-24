@@ -35,7 +35,7 @@ FILE_EXTENSION_LOWER=$(echo ${FILE_EXTENSION} | tr '[:upper:]' '[:lower:]')
 
 # Settings
 HIGHLIGHT_SIZE_MAX=262143  # 256KiB
-HIGHLIGHT_TABWIDTH=8
+HIGHLIGHT_TABWIDTH=4
 HIGHLIGHT_STYLE='pablo'
 PYGMENTIZE_STYLE='autumn'
 
@@ -140,14 +140,14 @@ handle_image() {
             { fn=$(bsdtar --list --file "${FILE_PATH}") && bsd=1 && tar=""; } || \
             { [ "$rar" ] && fn=$(unrar lb -p- -- "${FILE_PATH}"); } || \
             { [ "$zip" ] && fn=$(zipinfo -1 -- "${FILE_PATH}"); } || return
-        
+
             fn=$(echo "$fn" | python -c "import sys; import mimetypes as m; \
                     [ print(l, end='') for l in sys.stdin if \
                       (m.guess_type(l[:-1])[0] or '').startswith('image/') ]" |\
                 sort -V | head -n 1)
             [ "$fn" = "" ] && return
             [ "$bsd" ] && fn=$(printf '%b' "$fn")
-        
+
             [ "$tar" ] && tar --extract --to-stdout \
                 --file "${FILE_PATH}" -- "$fn" > "${IMAGE_CACHE_PATH}" && exit 6
             fe=$(echo -n "$fn" | sed 's/[][*?\]/\\\0/g')
@@ -179,8 +179,11 @@ handle_mime() {
                 local pygmentize_format='terminal'
                 local highlight_format='ansi'
             fi
+            env COLORTERM=8bit bat --tabs="${HIGHLIGHT_TABWIDTH}" --color=always --style="plain" "${FILE_PATH}" && exit 5
+
             highlight --replace-tabs="${HIGHLIGHT_TABWIDTH}" --out-format="${highlight_format}" \
                 --style="${HIGHLIGHT_STYLE}" --force -- "${FILE_PATH}" && exit 5
+
             # pygmentize -f "${pygmentize_format}" -O "style=${PYGMENTIZE_STYLE}" -- "${FILE_PATH}" && exit 5
             exit 2;;
 
