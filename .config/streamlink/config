@@ -1,8 +1,8 @@
 ## Syntax one command-line option (omitting the dashes) per line
 
 # Player options
-player=mpv --profile=stream
-#player-args=--profile=stream # why player-args doesn't work?
+player=mpv
+player-args=--profile=stream
 # player-continuous-http
 player-no-close
 default-stream="best,720p60,720p"
@@ -10,14 +10,14 @@ retry-streams=5
 retry-max=12
 retry-open=5
 
-ringbuffer-size=64M
+ringbuffer-size=128M
 
 stream-segment-threads=2
-stream-segment-attempts=8
-stream-segment-timeout=10
+stream-segment-attempts=10
+stream-segment-timeout=120
 stream-timeout=180
 
-twitch-disable-hosting
 twitch-disable-ads
-#twitch-disable-reruns
+# twitch-disable-hosting
+# twitch-disable-reruns
 twitch-low-latency
