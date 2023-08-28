@@ -16,7 +16,8 @@ alias \
     nt="\$TERMINAL &>/dev/null & disown" \
     psg="ps -ef | head -1; ps -ef | grep" \
     psl="ps -ef --forest" \
-    pst="pstree -p \$$" \
+    psp="pstree -p \$$" \
+    pss="pstree -s \$$" \
     shredder="shred –vfzu -n 5" \
     smi="sudo make install" \
     smic="make clean && sudo make install" \
@@ -70,6 +71,16 @@ alias \
     pu="sudo pacman -Syu" \
     au="paru -Sua --skipreview --removemake=yes" \
     pvf="pacman -Slq | fzf -m --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+
+# ubuntu apt
+# remove
+alias ari="dpkg --list | fzf -m --preview 'apt-cache showpkg {1}' | awk '{print \$2}' | xargs -ro sudo apt-get purge"
+alias aRi="dpkg --list | fzf -m --preview 'apt-cache showpkg {1}' | awk '{print \$2}' | xargs -ro sudo apt-get remove"
+alias \
+    ai="sudo apt-get install" \
+    ar="sudo apt-get remove" \
+    ard="sudo apt-get purge --auto-remove" \
+    avf="apt-cache search . | fzf -m --preview 'apt-cache showpkg {1}' | awk '{print \$1}' | xargs -ro sudo apt-get install"
 
 # nvim
 alias \
