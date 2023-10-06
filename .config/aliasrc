@@ -29,6 +29,9 @@ alias \
     venv="source venv/bin/activate" \
     vf="fzf | xargs -r -I % \$EDITOR %"
 
+alias mnt_user="sudo mount -o defaults,rw,user,uid=wndx,gid=wndx"
+alias mnt_vfat="sudo mount -t vfat -o defaults,rw,user,uid=wndx,gid=wndx"
+
 # git
 alias \
     ga="git add" \
