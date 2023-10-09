@@ -89,7 +89,7 @@ ctrl  + {F10,F11} + {_,shift}
 super  + {_,shift} + F12
 	killall -q dwmblocks; {setsid dwmblocks &,xsetroot -name "dwm"}
 super + ctrl + shift + F12
-	slock matrixlock
+	slock matrixlock && killall -g matrixlock
 ctrl + {_,shift} + F12
 	{set_black,echo "" > "$CSCRDIR/bar/music-web"; kill -46 $(pidof dwmblocks)}
 
