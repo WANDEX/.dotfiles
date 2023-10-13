@@ -13,8 +13,7 @@ case "$-" in
     sie "$SCRIPTS/sh/shortcuts/.cmpl_bash"
 
     ## fzf fuzzy completion [example]: cd ~/source/**<TAB>
-    sie "/usr/share/fzf/completion.bash"
-    sie "/usr/share/fzf/key-bindings.bash"
+    sie "$XDG_CONFIG_HOME/fzf/fzf.bash"
 
     sip liquidprompt
 
