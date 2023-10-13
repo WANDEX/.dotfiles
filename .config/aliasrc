@@ -111,6 +111,7 @@ alias \
     cp="cp -vi" \
     rm="rm -vi" \
     mv="mv -vi" \
+    cpy="rsync -ah --info=progress2" \
     ffmpeg="ffmpeg -hide_banner" \
     tor="tor --DataDirectory $XDG_DATA_HOME/tor" \
     nvidia-settings="nvidia-settings --config=$XDG_DATA_HOME/nvidia-settings-rc" \
