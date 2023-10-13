@@ -1,3 +1,4 @@
+*.dat
 *.log
 *.tdb
 .bash_logout
@@ -17,3 +18,6 @@ source/
 .config/transmission-daemon/bandwidth-groups.json
 .editorconfig
 .gitconfig
+.config/libreoffice/
+.config/dconf/
+.config/wallpaper.jpg
