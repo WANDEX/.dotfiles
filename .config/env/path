@@ -7,17 +7,14 @@
 ## without adding duplicates from the previous PATH env.
 PATH="$PATH0"
 
+PATH="${PATH}:$SCRIPTS_WNDX/.pth/bin"
+PATH="${PATH}:$SCRIPTS_WNDX/.pth/sbin"
+PATH="${PATH}:$SCRIPTS_WNDX/.pth/msym"
+PATH="${PATH}:$SCRIPTS_WNDX/.pth/lnch"
 
 PATH="${PATH}:$HOME/.local/bin"
 PATH="${PATH}:$CARGO_HOME/bin"
 PATH="${PATH}:$XDG_DATA_HOME/npm/bin"
-
-
-if [ -n "$SCRIPTS" ]; then
-    ## add to the $PATH subdirs of the SCRIPTS dir (excluding .* , _* dirs)
-    spaths=$(find "$SCRIPTS" -type d ! -path "*/.*" ! -path "*/_*" -printf "%p:")
-    PATH="${PATH}:$spaths"
-fi
 
 
 export PATH
