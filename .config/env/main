@@ -7,10 +7,10 @@ export MANPAGER="nvim +Man!"
 export PAGER="page -w -q 90000 -e 'call timer_start(500, { -> cursor(1,1) })'"
 export TERMINAL="st"
 
-export SOURCE="$HOME/source"
-export SCRIPTS="$SOURCE/scripts-wndx"
+export SOURCE_WNDX="$HOME/source"
+export SCRIPTS_WNDX="$SOURCE_WNDX/scripts-wndx"
 export CSCRDIR="$XDG_CACHE_HOME/cscripts"
-export SUDO_ASKPASS="$SCRIPTS/sh/dmenu/dmenu_askpass"
+export SUDO_ASKPASS="$SCRIPTS_WNDX/sh/dmenu/dmenu_askpass"
 export S2D=1
 export VHI="$XDG_CONFIG_HOME/nvim/conf/hi.vim"
 export POMODORO_DIR="$HOME/Documents/Pomodoro"
