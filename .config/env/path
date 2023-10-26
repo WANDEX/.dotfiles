@@ -7,10 +7,10 @@
 ## without adding duplicates from the previous PATH env.
 PATH="$PATH0"
 
-PATH="${PATH}:$SCRIPTS_WNDX/.pth/bin"
-PATH="${PATH}:$SCRIPTS_WNDX/.pth/sbin"
-PATH="${PATH}:$SCRIPTS_WNDX/.pth/msym"
-PATH="${PATH}:$SCRIPTS_WNDX/.pth/lnch"
+PATH="${PATH}:$WNDX_SCRIPTS/.pth/bin"
+PATH="${PATH}:$WNDX_SCRIPTS/.pth/sbin"
+PATH="${PATH}:$WNDX_SCRIPTS/.pth/msym"
+PATH="${PATH}:$WNDX_SCRIPTS/.pth/lnch"
 
 PATH="${PATH}:$HOME/.local/bin"
 PATH="${PATH}:$CARGO_HOME/bin"
