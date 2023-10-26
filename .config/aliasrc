@@ -21,7 +21,7 @@ alias \
     shredder="shred –vfzu -n 5" \
     smi="sudo make install" \
     smic="make clean && sudo make install" \
-    sse="find \$SOURCE -not -path '*/\.*/*' -not -path '*/__*/*' -not -path '*/lib*/*' -type f \( ! -iname '.*' \) | fzf | xargs -r -I % \$EDITOR %" \
+    sse="find \$WNDX_SOURCES -not -path '*/\.*/*' -not -path '*/__*/*' -not -path '*/lib*/*' -type f \( ! -iname '.*' \) | fzf | xargs -r -I % \$EDITOR %" \
     ssp="source ~/.profile" \
     sxlog="cat ~/.local/share/xorg/Xorg.0.log | $PAGER" \
     sxrlog="cat /var/log/Xorg.0.log | $PAGER" \
