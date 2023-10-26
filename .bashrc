@@ -10,7 +10,7 @@ case "$-" in
     sie "/usr/share/bash-completion/bash_completion"
 
     sie "$CHTSH/bash_completion"
-    sie "$SCRIPTS/sh/shortcuts/.cmpl_bash"
+    sie "$WNDX_SCRIPTS/sh/shortcuts/.cmpl_bash"
 
     ## fzf fuzzy completion [example]: cd ~/source/**<TAB>
     sie "$XDG_CONFIG_HOME/fzf/fzf.bash"
