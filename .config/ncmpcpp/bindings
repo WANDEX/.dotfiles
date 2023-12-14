@@ -342,12 +342,6 @@ def_key "d"
 #def_key "backspace"
 #  replay_song
 #
-#def_key "f"
-#  seek_forward
-#
-#def_key "b"
-#  seek_backward
-#
 #def_key "r"
 #  toggle_repeat
 #
@@ -440,6 +434,12 @@ def_key "f"
 
 def_key "F"
   apply_filter
+
+def_key "h"
+  seek_backward
+
+def_key "i"
+  seek_forward
 
 #
 #def_key "ctrl-_"
