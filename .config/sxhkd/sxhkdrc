@@ -24,11 +24,11 @@ super + m
 super + alt + {_,shift,ctrl} + t
 	dmenu_trans {-b,_,-c}
 super + {_,shift,ctrl,alt} + o ; {1-9,super+o}
-	mpvu -q {s,6,7,4} -a {1-9,1}
+	mpvu -q {b,s,7,4} -a {1-9,1}
 super + o ; r
 	ytdl_random_playlist_entry.sh
-super + ctrl + v ; {s,1,4,6,7,8,a}
-	mpvu -q {s,1,4,6,7,8,a}
+super + ctrl + v ; {b,s,1,4,6,7,8,a}
+	mpvu -q {b,s,1,4,6,7,8,a}
 super + ctrl + {u,l,h,m}
 	dunstctl {action,close-all,history-pop,context}
 super + ctrl + n ; {a,c,C,h,m,P}
@@ -80,7 +80,7 @@ super + alt + {F8,F9,F10,F11}
     mpc {stop,toggle,prev,next}; kill -43 $(pidof dwmblocks)
 
 super + {_,shift} + F4
-	{mpvu -q s, mpv "$(xclip -selection clipboard -out)"}
+	mpvu -q {b,s}
 super + F8 + {_,shift, ctrl + shift}
 	dmenu_record {kill, demo, rs}
 super + F9
