@@ -18,5 +18,8 @@ export POMODORO_DIR="$HOME/Documents/Pomodoro"
 export CMAKE_EXPORT_COMPILE_COMMANDS=1
 export CTEST_OUTPUT_ON_FAILURE=1
 
-export  CC=/usr/bin/clang
-export CXX=/usr/bin/clang++
+# export  CC=/usr/bin/clang
+# export CXX=/usr/bin/clang++
+
+export  CC=/usr/bin/gcc
+export CXX=/usr/bin/g++
