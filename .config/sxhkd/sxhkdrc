@@ -109,11 +109,12 @@ super + ctrl + shift + Print
 	maim -qus ~/Downloads/Pictures/tool/zoom.png && sxiv -qbfps f ~/Downloads/Pictures/tool/zoom.png
 
 # crop-slides creation mode
-super + ctrl + Print
-	dp="$HOME/Downloads/Pictures/tool/slides/$(date --rfc-3339=date)" && mkdir -p "$dp"; \
+super + ctrl + {_,alt} + Print
+	dp="$HOME/Downloads/Pictures/tool/slides/$(date --rfc-3339=date)"; mkdir -p "$dp"; \
 	fn="$(date +%s).png"; fp="$dp/$fn"; \
-	maim -qus "$fp" && sxiv -qbps f "$fp" && \
-	notify-send -u low "SLIDE: $fn" "created"
+    maim -qus "$fp" && \
+	notify-send -u low "SLIDE: $fn" "created"; \
+	{_, sxiv -qbps f "$fp" }
 
 super + alt + d
 	clipswap --delete --content
