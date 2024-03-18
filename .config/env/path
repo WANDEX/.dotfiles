@@ -7,6 +7,24 @@
 ## without adding duplicates from the previous PATH env.
 PATH="$PATH0"
 
+llvm_project_dir="$HOME/Downloads/git/top/llvm-project"
+if [ -d "$llvm_project_dir" ]; then
+    LIBRARY_PATH="$llvm_project_dir/install/lib"
+    C_INCLUDE_PATH="$llvm_project_dir/install/include"
+    CPLUS_INCLUDE_PATH="$llvm_project_dir/install/include"
+
+    export LIBRARY_PATH
+    export C_INCLUDE_PATH
+    export CPLUS_INCLUDE_PATH
+
+    # PATH="${PATH}:$llvm_project_dir/install/bin"
+    # PATH="${PATH}:$llvm_project_dir/build-clang/bin"
+
+    # to have precedence over system default bin paths
+    PATH="$llvm_project_dir/install/bin:${PATH}"
+    PATH="$llvm_project_dir/build-clang/bin:${PATH}"
+fi
+
 PATH="${PATH}:$WNDX_SCRIPTS/.pth/bin"
 PATH="${PATH}:$WNDX_SCRIPTS/.pth/sbin"
 PATH="${PATH}:$WNDX_SCRIPTS/.pth/msym"
