@@ -1,4 +1,4 @@
-dmenu.font: monospace:size=8
+dmenu.font: NotoMono Nerd Font:size=8
 dmenu.background: cnbg
 dmenu.foreground: cnfg
 dmenu.selbackground: csbg
@@ -17,7 +17,7 @@ dwm.systrayspacing: 0
 dwm.systraypinningfailfirst: 1
 dwm.showsystray: 1
 
-dwm.dmenufont: monospace:size=8
+dwm.dmenufont: NotoMono Nerd Font:size=8
 dwm.borderpx: 2
 dwm.extrabarmon: 0
 dwm.showextrabar: 1
