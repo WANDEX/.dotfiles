@@ -2,6 +2,7 @@
 *.jpg
 *.log
 *.tdb
+.anydesk/
 .bash_logout
 .cache/
 .cargo/
@@ -23,9 +24,9 @@
 .gr_fftw_wisdom.lock
 .local/
 .ssh/
+__pycache__/
 Documents/
 Downloads/
 Music/
 Wallpapers
-__pycache__/
 source/
