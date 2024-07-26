@@ -82,7 +82,7 @@ super + alt + {F8,F9,F10,F11}
 super + {_,shift} + F4
 	mpvu -q {b,s}
 super + F8 + {_,shift, ctrl + shift}
-	dmenu_record {kill, demo, rs}
+	dmenu_record {kill, area, rs}
 super + F9
 	pactl set-sink-mute $SINK0 toggle; kill -43 $(pidof dwmblocks)
 super + {F10,F11} + {_,shift,alt}
