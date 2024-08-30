@@ -11,6 +11,7 @@ export ENVSCR="$ENVDIR/scripts"
 . "$ENVDIR/manless"
 . "$ENVDIR/path"
 
+. "$ENVSCR/x11_java"
 . "$ENVSCR/mkdir_nonexistent"
 . "$ENVSCR/get_analog-stereo_sink"
 . "$ENVSCR/get_dflt_sink"

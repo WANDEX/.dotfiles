@@ -1,0 +1,13 @@
+#!/bin/sh
+
+### TO FIX SOME * with Vivado, SDK, STM32 CubeMX:
+## see here for the useful notes:
+## https://wiki.archlinux.org/title/Xilinx_Vivado
+##
+## important for X11
+export DISPLAY=":0.0"
+## Blank/grey UI when using WM (non-reparenting window manager)
+export _JAVA_AWT_WM_NONREPARENTING=1
+## Fonts ignore system anti-aliasing settings
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
+
