@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export FZF_DEFAULT_COMMAND="fzf \
+export FZF_DEFAULT_COMMAND="fzf --cycle \
 --bind=ctrl-l:abort,ctrl-o:end-of-line,\
 ctrl-e:up,alt-e:page-up,alt-n:page-down,\
 ctrl-alt-k:unix-line-discard,alt-p:toggle-preview"
