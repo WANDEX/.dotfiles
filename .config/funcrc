@@ -13,7 +13,10 @@
 # expand any alias in $1 before the execution
 rit()   { eval $1; }
 # suppress output of the $1 command
-sup()   { "$(rit $1)" >/dev/null 2>&1; }
+sup_all() { "$(rit $1)" >/dev/null 2>&1 ;} # suppress output & errors
+sup_out() { "$(rit $1)" >/dev/null      ;} # suppress output
+sup_err() { "$(rit $1)"            2>&1 ;} # suppress errors
+
 # fork $1 command to background and don't create nohup.out
 nhp()   { nohup "$(rit $1)" >/dev/null 2>&1 & }
 
