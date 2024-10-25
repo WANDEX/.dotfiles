@@ -1,0 +1,12 @@
+#!/bin/sh
+## ALL THIS MOZILLA STUFF DOES NOT WORK!
+## SAVED FOR FUTURE REFERENCE, THAT I ALREADY TRIED THOSE!
+## TODO: find way to move .mozilla dir from home dir
+
+# (1): ~/.mozilla/ else if (0): ${XDG_CONFIG_HOME:-~/.config}/mozilla
+# export MOZ_LEGACY_HOME=0
+
+# export MOZILLA_CONFIG="$XDG_DATA_HOME/mozilla"
+# export MOZ_USER_DIR="$XDG_DATA_HOME/mozilla"
+
+
