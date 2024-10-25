@@ -37,6 +37,7 @@ opaque.alpha: 1
 opaque.alphaUnfocused: 1
 
 ! TERM FONT
+! #define term_font VictorMono Nerd Font Mono:pixelsize=24
 #define term_font VictorMono Nerd Font Mono:pixelsize=14
 ! #define term_font Iosevka Term:style=Light:pixelsize=15
 ! #define term_font JetBrainsMono Nerd Font Mono:pixelsize=14
