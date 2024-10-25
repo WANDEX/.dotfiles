@@ -141,16 +141,22 @@ alias \
 
 # week
 alias \
-    wcd="week curr today calc" \
+    wcd=" week curr today calc" \
     wcdt="week curr today calc total" \
-    wpd="week curr -1day calc" \
+    wpd=" week curr -1day calc" \
     wpdt="week curr -1day calc total" \
-    wcw="week curr week calc" \
-    wcwt="week curr week calc total" \
+    wcw=" week curr  week calc" \
+    wcwt="week curr  week calc total" \
     wcwi="week curr iweek calc total" \
-    wpw="week prev week calc" \
-    wpwt="week prev week calc total" \
+    wpw=" week prev  week calc" \
+    wpwt="week prev  week calc total" \
     wpwi="week prev iweek calc total"
+
+
+alias cpu_performance="echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"
+alias cpu_powersave="echo powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"
+alias cpu_schedutil="echo schedutil | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"
+alias cpu_freq='watch -n 1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""'
 
 #---- PIP ----#
 alias pip-l="pip3 freeze --local | $PAGER"
