@@ -7,15 +7,19 @@
 
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources &
 conky -dq &                     # fork conky to background and silence output
-nvidia.sh && setbg --startup &  # display configuration, and set background
-#xrandr.sh && setbg --startup & # display configuration, and set background
+## display configuration
+# nvidia.sh
+# nvidia_2.sh
+nvidia_3.sh
+# xrandr.sh
+setbg --startup & ## set background
 xset -dpms && xset s off &      # off display power manager and monitor standby
 picom -b &                      # composite manager for transparency support
 kb.sh && sxhkd &                # keyboard layout, repeat rate and key binds
 unclutter &                     # remove mouse cursor when idle
 dunst &
 clight &
-transmission-daemon &
+pidof -q transmission-daemon || transmission-daemon &
 pipewire.sh && mpd && mpdas -d && mpdup &
 dwmblocks &
 
