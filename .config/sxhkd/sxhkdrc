@@ -151,3 +151,9 @@ super + ctrl + Next
 
 super + alt + ctrl + shift + Prior
 	basename $(xsel -bo) | sed "s/_rs-.*$//; s/_/ /g" | xsel -bi && notify-send "📋 clean rs title:" "\n$(xsel -bo)\n"
+
+super + alt + ctrl + shift + M
+	mpv --loop-file=inf "https://www.youtube.com/watch?v=sWblpsLZ-O8"
+super + alt + ctrl + shift + J
+	mpv "https://www.twitch.tv/virtualjapan"
+
