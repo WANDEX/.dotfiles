@@ -18,7 +18,7 @@ super + shift + ctrl + {_,alt} + g
 	google-chrome-stable {--incognito,_}
 
 super + shift + p
-	dmenu_effects && kill -53 $(pidof dwmblocks)
+	dmenu_effects; kill -49 $(pidof dwmblocks)
 super + m
 	mm
 super + alt + {_,shift,ctrl} + t
