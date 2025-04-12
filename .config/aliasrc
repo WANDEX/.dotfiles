@@ -23,8 +23,8 @@ alias \
     smic="make clean && sudo make install" \
     sse="find \$WNDX_SOURCES -not -path '*/\.*/*' -not -path '*/__*/*' -not -path '*/lib*/*' -type f \( ! -iname '.*' \) | fzf | xargs -r -I % \$EDITOR %" \
     ssp="source ~/.profile" \
-    sxlog="cat ~/.local/share/xorg/Xorg.0.log | $PAGER" \
-    sxrlog="cat /var/log/Xorg.0.log | $PAGER" \
+    sxlog="cat ~/.local/share/xorg/Xorg.0.log | pager" \
+    sxrlog="cat /var/log/Xorg.0.log | pager" \
     trm="rm -vf ~/Downloads/torrents/*.torrent" \
     venv="source venv/bin/activate" \
     vf="fzf | xargs -r -I % \$EDITOR %"
@@ -162,7 +162,7 @@ alias cpu_schedutil="echo schedutil | sudo tee /sys/devices/system/cpu/cpu*/cpuf
 alias cpu_freq='watch -n 1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""'
 
 #---- PIP ----#
-alias pip-l="pip3 freeze --local | $PAGER"
+alias pip-l="pip3 freeze --local | pager"
 alias pip-s="pip3 freeze --local | grep -i"
 alias pip-r="pip3 uninstall"
 alias pip-e="pip3 install -e ."
