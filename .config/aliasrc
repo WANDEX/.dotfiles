@@ -44,6 +44,7 @@ alias \
     gp="git push" \
     gs="git status" \
     gl="git log --pretty=format:'%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(7,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D' " \
+    glm="git log --pretty=format:'commit hash: %C(auto,yellow)%h %C(auto,blue)%>(12,trunc)%ad %C(auto,cyan)%>(10,trunc)%as%C(auto,red)% gD% D%n%C(auto,green)%s%C(auto,reset)%n%b'" \
     glt="git log --date=local --pretty=format:'%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(24,trunc)%ad %C(auto,green)%<(7,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D' " \
     glemail="git log --pretty=format:'%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(7,trunc)%aN %C(auto,magenta)%ae%C(auto,blue) %ce%C(auto,reset) %s%C(auto,red)% gD% D' " \
     glf="git log --pretty=fuller " \
