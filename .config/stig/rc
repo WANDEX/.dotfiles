@@ -1,10 +1,132 @@
-set tui.theme default.theme
+# Default columns in torrent lists
+# Default: marked, size, downloaded, uploaded, ratio, seeds, peers, status,
+#          eta, %downloaded, rate-down, rate-up, name
+set columns.torrents marked size downloaded uploaded ratio seeds peers status \
+                     eta %downloaded rate-down rate-up path name added
+
+# List of sort orders in torrent lists
+# Default: name
+set sort.torrents path name added
+
+# List of sort orders in peer lists
+# Default: torrent
+#set sort.peers torrent
+
+# List of sort orders in setting lists
+# Default: name
+#set sort.settings name
+
+# List of sort orders in tracker lists
+# Default: domain
+#set sort.trackers domain
+
+
+### TABS
+
+tab ls leeching
+tab ls downloading
+tab ls uploading
+tab ls
+tab -t peers lsp -s torrent
+tab ls stopped -s ratio,path -c size,%downloaded,seeds,ratio,activity,completed,path,name
+tab ls isolated -c error,tracker,path,name -s tracker
+tab --focus 1
+
+
+### SETTINGS
+
+# Hostname or IP of Transmission RPC interface
+# Default: localhost
+#set connect.host localhost
+
+# Password to use for authentication with Transmission RPC interface
+# Default:
+#set connect.password
+
+# Path of Transmission RPC interface
+# Default: /transmission/rpc
+#set connect.path /transmission/rpc
+
+# Port of Transmission RPC interface
+# Default: 9091
 set connect.port 3395
 
+# SOCKS5, SOCKS4 or HTTP proxy URL to tunnel RPC communication through
+# Default:
+#set connect.proxy
+
+# Number of seconds before connecting to Transmission RPC interface fails
+# Default: 10
+#set connect.timeout 10
+
+# Whether to connect via HTTPS to the Transmission RPC interface
+# Default: off
+#set connect.tls disabled
+
+# URL of the Transmission RPC interface
+# Default: http://localhost:9091/transmission/rpc
+set connect.url http://localhost:3395/transmission/rpc
+
+# Username to use for authentication with Transmission RPC interface
+# Default:
+#set connect.user
+
+# Maximum number of torrents to remove without extra confirmation; negative
+# numbers mean "unlimited"
+# Default: 10
+#set remove.max-hits 10
+
+# Whether to lookup peers' host names
+# Default: enabled
+#set reverse-dns enabled
+
+
+### UNBIND
+
+unbind <j>
+unbind <k>
+unbind <l>
+unbind <ctrl-n>
+unbind <ctrl-p>
+unbind <ctrl-f>
+unbind <ctrl-b>
+
+unbind <ctrl-e>
+
 unbind --context tabs n
-bind --context tabs N tab
-bind n <down>
-bind e <up>
-bind h <left>
-bind i <right>
+unbind --context tabs L
+
+unbind --context helptext n
+unbind --context helptext N
+
+
+### KEYBINDINGS
+
+#bind <g> <home>
+#bind <G> <end>
+#bind <h> <left>
+bind <i> <right>
+bind <n> <down>
+bind <e> <up>
+bind <N> <pgdn>
+bind <E> <pgup>
+#bind --context tabs H tab --move left
+bind  --context tabs I tab --move right
+
+bind <alt-n> find --next
+bind <alt-e> find --previous
+
+bind --description "Show details about torrent of focused tracker in new tab" \
+    --context torrent "<t> <I>" tab details
+bind --description "List files of torrent of focused tracker in a new tab" \
+    --context torrent "<t> <f>" tab filelist
+
+bind --description "Increase global download rate limit by 500 kilobytes" \
+     --context main <]> rate --quiet dn -- +=500kB global
+bind --description "Decrease global download rate limit by 500 kilobytes" \
+     --context main <[> rate --quiet dn -- -=500kB global
+bind --description "Increase global upload rate limit by 500 kilobytes" \
+     --context main <alt-]> rate --quiet up -- +=500kB global
+bind --description "Decrease global upload rate limit by 500 kilobytes" \
+     --context main <alt-[> rate --quiet up -- -=500kB global
 
