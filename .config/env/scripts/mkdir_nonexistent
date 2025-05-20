@@ -7,13 +7,14 @@ if [ ! -d "$CSCRDIR" ] || [ -n "$1" ]; then
 
 mkdir -p "$CSCRDIR"
 mkdir -p "$CSCRDIR/rate"
+mkdir -p "$HOME/Downloads/build"
+mkdir -p "$XDG_CACHE_HOME/hist"
 mkdir -p "$XDG_CONFIG_HOME/npm"
 mkdir -p "$XDG_DATA_HOME/mpd"
 mkdir -p "$XDG_DATA_HOME/python"
 mkdir -p "$XDG_DATA_HOME/tor"
 mkdir -p "$XDG_DATA_HOME/vim/undo" "$XDG_DATA_HOME/vim/swap" "$XDG_DATA_HOME/vim/backup"
 mkdir -p "$XDG_DATA_HOME/wineprefixes"
-mkdir -p "$HOME/Downloads/build"
 mkdir -p -m 0700 "$HOME/.local/.hid"
 
 fi
