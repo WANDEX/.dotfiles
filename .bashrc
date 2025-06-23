@@ -12,7 +12,7 @@ case "$-" in
     sie "$CHTSH/bash_completion"
     sie "$WNDX_SCRIPTS/sh/shortcuts/.cmpl_bash"
 
-    ## fzf fuzzy completion [example]: cd ~/source/**<TAB>
+    sie "$WNDX_ENVSCR/fzf_default_command"
     sie "$XDG_CONFIG_HOME/fzf/fzf.bash"
 
     sip liquidprompt
@@ -21,4 +21,3 @@ case "$-" in
     sie "$XDG_CONFIG_HOME/aliasrc"
 ;;
 esac
-

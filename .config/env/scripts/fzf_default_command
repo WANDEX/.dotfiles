@@ -1,6 +1,23 @@
 #!/bin/sh
 
-export FZF_DEFAULT_COMMAND="fzf --cycle \
+export FZF_DEFAULT_OPTS="--height 80% --style minimal --cycle
 --bind=ctrl-l:abort,ctrl-o:end-of-line,\
 ctrl-e:up,alt-e:page-up,alt-n:page-down,\
 ctrl-alt-k:unix-line-discard,alt-p:toggle-preview"
+
+export FZF_DEFAULT_COMMAND="fzf"
+
+# Setting fd as the default source for fzf
+# export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix"
+# export FZF_DEFAULT_COMMAND="fd --strip-cwd-prefix"
+
+# To apply the command to CTRL-T as well
+# export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+fd_def_cmd="fd --no-ignore --exclude .git"
+export FZF_CTRL_T_COMMAND="$fd_def_cmd"
+
+# export FZF_CTRL_T_COMMAND="$fd_def_cmd --bind 'ctrl-d:reload($fd_def_cmd --type d),ctrl-f:reload($fd_def_cmd --type t)'"
+
+# export FZF_CTRL_T_COMMAND="$fd_def_cmd \
+# --bind 'ctrl-d:reload($fd_def_cmd --type d),ctrl-f:reload(eval $FZF_CTRL_T_COMMAND)'"

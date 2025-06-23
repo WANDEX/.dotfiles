@@ -7,11 +7,14 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_DIRS="/usr/local/share:/usr/share"
 export XDG_DATA_HOME="$HOME/.local/share"
 
-# bash
+# shellcheck disable=SC1090 ## can't follow non-constant source.
+# shellcheck disable=SC1091 ## Not following (No such file or directory)
+. "$XDG_CONFIG_HOME/user-dirs.dirs"
+
 export HISTCONTROL="ignorespace:erasedups"
-export HISTFILE="$XDG_CACHE_HOME/history"
-export HISTFILESIZE=2000
-export HISTSIZE=2000
+export HISTFILE="$XDG_CACHE_HOME/hist/history"
+export HISTFILESIZE=20000
+export HISTSIZE=20000
 
 export ADB_VENDOR_KEY="$XDG_DATA_HOME/android"
 export ANDROID_SDK_HOME="$XDG_DATA_HOME/android"
@@ -19,16 +22,17 @@ export AURDEST="$HOME/Downloads/build"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export CHTSH="$XDG_DATA_HOME/cht_sh"
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
+export GOPATH="$XDG_DATA_HOME/go"
 export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
 export LESSHISTFILE="-" # disable hist file
 export MYPY_CACHE_DIR="$XDG_CACHE_HOME/mypy_cache"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export PYLINTHOME="$XDG_CACHE_HOME/pylint"
-export PYTHONSTARTUP="$ENVSCR/.pythonrc"
+export PYTHONSTARTUP="$WNDX_ENVSCR/.pythonrc"
+export PYTHON_HISTORY="$XDG_CACHE_HOME/hist/python_history"
 export RLWRAP_HOME="$XDG_DATA_HOME/rlwrap"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export STACK_ROOT="$XDG_DATA_HOME/stack"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
 export XAUTHORITY="$XDG_DATA_HOME/Xauthority" # NOTE: this line could break some DMs.
-

@@ -2,11 +2,12 @@
 # ---------
 # shellcheck disable=SC1091 # No such file or directory
 
-FZF_DIR="$HOME/Downloads/git/fzf"
+FZF_DIR="$HOME/Downloads/git/top/fzf"
 [ -d "$FZF_DIR" ] || return
 
 if [[ ! "$PATH" == *${FZF_DIR}/bin* ]]; then
-  PATH="${PATH:+${PATH}:}${FZF_DIR}/bin"
+  # PATH="${PATH:+${PATH}:}${FZF_DIR}/bin"
+  PATH="${PATH:+${FZF_DIR}/bin:}${PATH}" ## at the beginning of the path
 fi
 
 # Auto-completion
@@ -16,4 +17,3 @@ source "${FZF_DIR}/shell/completion.bash"
 # Key bindings
 # ------------
 source "${FZF_DIR}/shell/key-bindings.bash"
-

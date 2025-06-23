@@ -3,21 +3,20 @@
 
 # shellcheck disable=SC1090 ## can't follow non-constant source.
 # shellcheck disable=SC1091 ## Not following (No such file or directory)
-export ENVDIR="$HOME/.config/env"
-export ENVSCR="$ENVDIR/scripts"
+export XDG_CONFIG_HOME="$HOME/.config" # duplicate in cleanup
+export WNDX_ENVDIR="$XDG_CONFIG_HOME/env"
+export WNDX_ENVSCR="$WNDX_ENVDIR/scripts"
 
-. "$ENVDIR/cleanup"
-. "$ENVDIR/main"
-. "$ENVDIR/manless"
-. "$ENVDIR/path"
+. "$WNDX_ENVDIR/cleanup"
+. "$WNDX_ENVDIR/main"
+. "$WNDX_ENVDIR/manless"
+. "$WNDX_ENVDIR/path"
 
-. "$ENVSCR/x11_java"
-. "$ENVSCR/mkdir_nonexistent"
-. "$ENVSCR/get_analog-stereo_sink"
-. "$ENVSCR/get_dflt_sink"
-. "$ENVSCR/get_hdmi_sink"
-. "$ENVSCR/termcolors"
-. "$ENVSCR/fzf_default_command"
+. "$WNDX_ENVSCR/x11_java"
+. "$WNDX_ENVSCR/mkdir_nonexistent"
+. "$WNDX_ENVSCR/get_analog-stereo_sink"
+. "$WNDX_ENVSCR/get_dflt_sink"
+. "$WNDX_ENVSCR/get_hdmi_sink"
+. "$WNDX_ENVSCR/termcolors"
 
-[ -d "$ENVDIR/.hid/" ] && for f in "$ENVDIR/.hid/"*; do . "$f"; done; unset -v f
-
+[ -d "$WNDX_ENVDIR/.hid/" ] && for f in "$WNDX_ENVDIR/.hid/"*; do . "$f"; done; unset -v f
