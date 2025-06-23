@@ -36,16 +36,20 @@ stt.alphaUnfocused: 0.5
 opaque.alpha: 1
 opaque.alphaUnfocused: 1
 
-! TERM FONT
-! #define term_font VictorMono Nerd Font Mono:pixelsize=24
-#define term_font VictorMono Nerd Font Mono:pixelsize=14
-! #define term_font Iosevka Term:style=Light:pixelsize=15
-! #define term_font JetBrainsMono Nerd Font Mono:pixelsize=14
-! #define term_font TerminessTTF Nerd Font Mono:pixelsize=17
-! #define term_font Mononoki Nerd Font Mono:pixelsize=16
-!! for CJK text and screenshots
-! #define term_font NotoSansMono Nerd Font:pixelsize=20
-! #define term_font NotoSansMono Nerd Font:pixelsize=14
-! #define term_font -gbdfed-creep-Regular-R-Normal--16-120-96-96-M-4-ISO10646-1;
+!! TERM FONT
+! #define term_font VictorMono NF:pixelsize=14
+
+#define term_font Hack Nerd Font:pixelsize=14
+
+!! font with wide chars
+! #define term_font AnonymicePro Nerd Font:pixelsize=16
+
+! #define term_font Mononoki Nerd Font:pixelsize=14
+
+! #define term_font NotoMono NF:pixelsize=14
+! #define term_font NotoMono Nerd Font:pixelsize=14
+
+!! for CJK texts
+! #define term_font Noto Sans Mono CJK HK:pixelsize=21
 
 st.font: term_font
