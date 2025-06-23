@@ -6,12 +6,12 @@
 #
 
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources &
-conky -dq &                     # fork conky to background and silence output
 ## display configuration
 # nvidia.sh
 # nvidia_2.sh
 nvidia_3.sh
 # xrandr.sh
+# xrandr_3.sh
 setbg --startup & ## set background
 xset -dpms && xset s off &      # off display power manager and monitor standby
 picom -b &                      # composite manager for transparency support
