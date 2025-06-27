@@ -1,0 +1,44 @@
+#!/bin/sh
+## man gcc.1 /GCC_COLORS | clang does not support configuring of diagnostics colors
+## https://www.ditig.com/256-colors-cheat-sheet
+
+## check that TERM contains 256color in name
+if [ "$TERM" = "${TERM#*256color}" ]; then ## default colors
+export GCC_COLORS=\
+"error=01;31:warning=01;35:note=01;36:range1=32:range2=34:locus=01:\
+quote=01:path=01;36:fixit-insert=32:fixit-delete=31:\
+diff-filename=01:diff-hunk=32:diff-delete=31:diff-insert=32:\
+type-diff=01;32:fnname=01;32:targs=35:valid=01;31:invalid=01;32\
+highlight-a=01;32:highlight-b=01;34"
+else # 256color mode
+
+## 130" # DarkOrange3 # 52"  # DarkRed # 131" # IndianRed  # 157" # DarkSeaGreen2
+## 202" # OrangeRed1  # 88"  # DarkRed # 167" # IndianRed  # 158" # DarkSeaGreen1
+## 208" # DarkOrange  # 124" # Red3    # 203" # IndianRed1 # 151" # DarkSeaGreen2
+## 209" # Salmon1     # 160" # Red3    # 204" # IndianRed1
+## 210" # LightCoral  # 196" # Red1
+#
+## 53"  # DeepPink4       # 132" # HotPink3       # 219" # Plum
+## 89"  # DeepPink4       # 168" # HotPink3       # 224" # MistyRose
+## 125" # DeepPink4       # 169" # HotPink2       # 225" # Thistle
+## 126" # MediumVioletRed # 205" # HotPink        # 146" # LightSteelBlue3
+## 127" # Magenta3        # 206" # HotPink        # 189" # LightSteelBlue1
+## 128" # DarkViolet      # 211" # PaleVioletRed1
+
+f="38;5;"
+b="48;5;"
+fg74="${f}250" # Grey74
+bg35="${b}240" # Grey35
+
+_error="01;38;5;203" # IndianRed1
+_note="00;38;5;146"  # LightSteelBlue3
+
+_targs="00;38;5;131" # IndianRed # my favorite!
+
+export GCC_COLORS=\
+"error=$_error:warning=01;35:note=$_note:range1=32:range2=34:locus=02;$fg74:\
+quote=00;$bg35:path=01;36:fixit-insert=32:fixit-delete=31:\
+diff-filename=01:diff-hunk=32:diff-delete=31:diff-insert=32:\
+type-diff=01;32:fnname=07;$fg74:targs=$_targs:valid=01;31:invalid=01;32\
+highlight-a=01;32:highlight-b=01;34"
+fi
