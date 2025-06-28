@@ -1,0 +1,66 @@
+# 0   #000000 Black   (SYSTEM)  | 64  #5f8700 Chartreuse4       | 128 #af00d7 DarkViolet        | 192 #d7ff87 DarkOliveGreen1   |
+# 1   #800000 Maroon  (SYSTEM)  | 65  #5f875f DarkSeaGreen4     | 129 #af00ff Purple            | 193 #d7ffaf DarkSeaGreen1     |
+# 2   #008000 Green   (SYSTEM)  | 66  #5f8787 PaleTurquoise4    | 130 #af5f00 DarkOrange3       | 194 #d7ffd7 Honeydew2         |
+# 3   #808000 Olive   (SYSTEM)  | 67  #5f87af SteelBlue         | 131 #af5f5f IndianRed         | 195 #d7ffff LightCyan1        |
+# 4   #000080 Navy    (SYSTEM)  | 68  #5f87d7 SteelBlue3        | 132 #af5f87 HotPink3          | 196 #ff0000 Red1              |
+# 5   #800080 Purple  (SYSTEM)  | 69  #5f87ff CornflowerBlue    | 133 #af5faf MediumOrchid3     | 197 #ff005f DeepPink2         |
+# 6   #008080 Teal    (SYSTEM)  | 70  #5faf00 Chartreuse3       | 134 #af5fd7 MediumOrchid      | 198 #ff0087 DeepPink1         |
+# 7   #c0c0c0 Silver  (SYSTEM)  | 71  #5faf5f DarkSeaGreen4     | 135 #af5fff MediumPurple2     | 199 #ff00af DeepPink1         |
+# 8   #808080 Grey    (SYSTEM)  | 72  #5faf87 CadetBlue         | 136 #af8700 DarkGoldenrod     | 200 #ff00d7 Magenta2          |
+# 9   #ff0000 Red     (SYSTEM)  | 73  #5fafaf CadetBlue         | 137 #af875f LightSalmon3      | 201 #ff00ff Magenta1          |
+# 10  #00ff00 Lime    (SYSTEM)  | 74  #5fafd7 SkyBlue3          | 138 #af8787 RosyBrown         | 202 #ff5f00 OrangeRed1        |
+# 11  #ffff00 Yellow  (SYSTEM)  | 75  #5fafff SteelBlue1        | 139 #af87af Grey63            | 203 #ff5f5f IndianRed1        |
+# 12  #0000ff Blue    (SYSTEM)  | 76  #5fd700 Chartreuse3       | 140 #af87d7 MediumPurple2     | 204 #ff5f87 IndianRed1        |
+# 13  #ff00ff Fuchsia (SYSTEM)  | 77  #5fd75f PaleGreen3        | 141 #af87ff MediumPurple1     | 205 #ff5faf HotPink           |
+# 14  #00ffff Aqua    (SYSTEM)  | 78  #5fd787 SeaGreen3         | 142 #afaf00 Gold3             | 206 #ff5fd7 HotPink           |
+# 15  #ffffff White   (SYSTEM)  | 79  #5fd7af Aquamarine3       | 143 #afaf5f DarkKhaki         | 207 #ff5fff MediumOrchid1     |
+# 16  #000000 Grey0             | 80  #5fd7d7 MediumTurquoise   | 144 #afaf87 NavajoWhite3      | 208 #ff8700 DarkOrange        |
+# 17  #00005f NavyBlue          | 81  #5fd7ff SteelBlue1        | 145 #afafaf Grey69            | 209 #ff875f Salmon1           |
+# 18  #000087 DarkBlue          | 82  #5fff00 Chartreuse2       | 146 #afafd7 LightSteelBlue3   | 210 #ff8787 LightCoral        |
+# 19  #0000af Blue3             | 83  #5fff5f SeaGreen2         | 147 #afafff LightSteelBlue    | 211 #ff87af PaleVioletRed1    |
+# 20  #0000d7 Blue3             | 84  #5fff87 SeaGreen1         | 148 #afd700 Yellow3           | 212 #ff87d7 Orchid2           |
+# 21  #0000ff Blue1             | 85  #5fffaf SeaGreen1         | 149 #afd75f DarkOliveGreen3   | 213 #ff87ff Orchid1           |
+# 22  #005f00 DarkGreen         | 86  #5fffd7 Aquamarine1       | 150 #afd787 DarkSeaGreen3     | 214 #ffaf00 Orange1           |
+# 23  #005f5f DeepSkyBlue4      | 87  #5fffff DarkSlateGray2    | 151 #afd7af DarkSeaGreen2     | 215 #ffaf5f SandyBrown        |
+# 24  #005f87 DeepSkyBlue4      | 88  #870000 DarkRed           | 152 #afd7d7 LightCyan3        | 216 #ffaf87 LightSalmon1      |
+# 25  #005faf DeepSkyBlue4      | 89  #87005f DeepPink4         | 153 #afd7ff LightSkyBlue1     | 217 #ffafaf LightPink1        |
+# 26  #005fd7 DodgerBlue3       | 90  #870087 DarkMagenta       | 154 #afff00 GreenYellow       | 218 #ffafd7 Pink1             |
+# 27  #005fff DodgerBlue2       | 91  #8700af DarkMagenta       | 155 #afff5f DarkOliveGreen2   | 219 #ffafff Plum1             |
+# 28  #008700 Green4            | 92  #8700d7 DarkViolet        | 156 #afff87 PaleGreen1        | 220 #ffd700 Gold1             |
+# 29  #00875f SpringGreen4      | 93  #8700ff Purple            | 157 #afffaf DarkSeaGreen2     | 221 #ffd75f LightGoldenrod2   |
+# 30  #008787 Turquoise4        | 94  #875f00 Orange4           | 158 #afffd7 DarkSeaGreen1     | 222 #ffd787 LightGoldenrod2   |
+# 31  #0087af DeepSkyBlue3      | 95  #875f5f LightPink4        | 159 #afffff PaleTurquoise1    | 223 #ffd7af NavajoWhite1      |
+# 32  #0087d7 DeepSkyBlue3      | 96  #875f87 Plum4             | 160 #d70000 Red3              | 224 #ffd7d7 MistyRose1        |
+# 33  #0087ff DodgerBlue1       | 97  #875faf MediumPurple3     | 161 #d7005f DeepPink3         | 225 #ffd7ff Thistle1          |
+# 34  #00af00 Green3            | 98  #875fd7 MediumPurple3     | 162 #d70087 DeepPink3         | 226 #ffff00 Yellow1           |
+# 35  #00af5f SpringGreen3      | 99  #875fff SlateBlue1        | 163 #d700af Magenta3          | 227 #ffff5f LightGoldenrod1   |
+# 36  #00af87 DarkCyan          | 100 #878700 Yellow4           | 164 #d700d7 Magenta3          | 228 #ffff87 Khaki1            |
+# 37  #00afaf LightSeaGreen     | 101 #87875f Wheat4            | 165 #d700ff Magenta2          | 229 #ffffaf Wheat1            |
+# 38  #00afd7 DeepSkyBlue2      | 102 #878787 Grey53            | 166 #d75f00 DarkOrange3       | 230 #ffffd7 Cornsilk1         |
+# 39  #00afff DeepSkyBlue1      | 103 #8787af LightSlateGrey    | 167 #d75f5f IndianRed         | 231 #ffffff Grey100           |
+# 40  #00d700 Green3            | 104 #8787d7 MediumPurple      | 168 #d75f87 HotPink3          | 232 #080808 Grey3             |
+# 41  #00d75f SpringGreen3      | 105 #8787ff LightSlateBlue    | 169 #d75faf HotPink2          | 233 #121212 Grey7             |
+# 42  #00d787 SpringGreen2      | 106 #87af00 Yellow4           | 170 #d75fd7 Orchid            | 234 #1c1c1c Grey11            |
+# 43  #00d7af Cyan3             | 107 #87af5f DarkOliveGreen3   | 171 #d75fff MediumOrchid1     | 235 #262626 Grey15            |
+# 44  #00d7d7 DarkTurquoise     | 108 #87af87 DarkSeaGreen      | 172 #d78700 Orange3           | 236 #303030 Grey19            |
+# 45  #00d7ff Turquoise2        | 109 #87afaf LightSkyBlue3     | 173 #d7875f LightSalmon3      | 237 #3a3a3a Grey23            |
+# 46  #00ff00 Green1            | 110 #87afd7 LightSkyBlue3     | 174 #d78787 LightPink3        | 238 #444444 Grey27            |
+# 47  #00ff5f SpringGreen2      | 111 #87afff SkyBlue2          | 175 #d787af Pink3             | 239 #4e4e4e Grey30            |
+# 48  #00ff87 SpringGreen1      | 112 #87d700 Chartreuse2       | 176 #d787d7 Plum3             | 240 #585858 Grey35            |
+# 49  #00ffaf MediumSpringGreen | 113 #87d75f DarkOliveGreen3   | 177 #d787ff Violet            | 241 #626262 Grey39            |
+# 50  #00ffd7 Cyan2             | 114 #87d787 PaleGreen3        | 178 #d7af00 Gold3             | 242 #6c6c6c Grey42            |
+# 51  #00ffff Cyan1             | 115 #87d7af DarkSeaGreen3     | 179 #d7af5f LightGoldenrod3   | 243 #767676 Grey46            |
+# 52  #5f0000 DarkRed           | 116 #87d7d7 DarkSlateGray3    | 180 #d7af87 Tan               | 244 #808080 Grey50            |
+# 53  #5f005f DeepPink4         | 117 #87d7ff SkyBlue1          | 181 #d7afaf MistyRose3        | 245 #8a8a8a Grey54            |
+# 54  #5f0087 Purple4           | 118 #87ff00 Chartreuse1       | 182 #d7afd7 Thistle3          | 246 #949494 Grey58            |
+# 55  #5f00af Purple4           | 119 #87ff5f LightGreen        | 183 #d7afff Plum2             | 247 #9e9e9e Grey62            |
+# 56  #5f00d7 Purple3           | 120 #87ff87 LightGreen        | 184 #d7d700 Yellow3           | 248 #a8a8a8 Grey66            |
+# 57  #5f00ff BlueViolet        | 121 #87ffaf PaleGreen1        | 185 #d7d75f Khaki3            | 249 #b2b2b2 Grey70            |
+# 58  #5f5f00 Orange4           | 122 #87ffd7 Aquamarine1       | 186 #d7d787 LightGoldenrod2   | 250 #bcbcbc Grey74            |
+# 59  #5f5f5f Grey37            | 123 #87ffff DarkSlateGray1    | 187 #d7d7af LightYellow3      | 251 #c6c6c6 Grey78            |
+# 60  #5f5f87 MediumPurple4     | 124 #af0000 Red3              | 188 #d7d7d7 Grey84            | 252 #d0d0d0 Grey82            |
+# 61  #5f5faf SlateBlue3        | 125 #af005f DeepPink4         | 189 #d7d7ff LightSteelBlue1   | 253 #dadada Grey85            |
+# 62  #5f5fd7 SlateBlue3        | 126 #af0087 MediumVioletRed   | 190 #d7ff00 Yellow2           | 254 #e4e4e4 Grey89            |
+# 63  #5f5fff RoyalBlue1        | 127 #af00af Magenta3          | 191 #d7ff5f DarkOliveGreen1   | 255 #eeeeee Grey93            |
+# term code, HEX | 256 colors table | source: https://www.ditig.com/256-colors-cheat-sheet
+# vim:set ft=txt nowrap
