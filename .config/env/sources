@@ -17,6 +17,7 @@ export WNDX_ENVSCR="$WNDX_ENVDIR/scripts"
 . "$WNDX_ENVSCR/get_analog-stereo_sink"
 . "$WNDX_ENVSCR/get_dflt_sink"
 . "$WNDX_ENVSCR/get_hdmi_sink"
+. "$WNDX_ENVSCR/gcc_colors"
 . "$WNDX_ENVSCR/termcolors"
 
 [ -d "$WNDX_ENVDIR/.hid/" ] && for f in "$WNDX_ENVDIR/.hid/"*; do . "$f"; done; unset -v f
