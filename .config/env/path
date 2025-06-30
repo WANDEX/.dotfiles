@@ -8,7 +8,7 @@
 PATH="$PATH0"
 
 llvm_project_dir="$HOME/Downloads/git/top/llvm-project"
-if [ -d "$llvm_project_dir" ]; then
+if false && [ -d "$llvm_project_dir" ]; then
     LIBRARY_PATH="$llvm_project_dir/install/lib"
     C_INCLUDE_PATH="$llvm_project_dir/install/include"
     CPLUS_INCLUDE_PATH="$llvm_project_dir/install/include"
@@ -24,6 +24,8 @@ if [ -d "$llvm_project_dir" ]; then
     PATH="$llvm_project_dir/install/bin:${PATH}"
     PATH="$llvm_project_dir/build-clang/bin:${PATH}"
 fi
+
+PATH="${PATH}:$HOME/Downloads/git/top/drmemory/build/ninja_release/deploy/bin64"
 
 PATH="${PATH}:$WNDX_SCRIPTS/.pth/bin"
 PATH="${PATH}:$WNDX_SCRIPTS/.pth/sbin"
