@@ -6,9 +6,12 @@ export XDG_CONFIG_DIRS="/etc/xdg"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_DIRS="/usr/local/share:/usr/share"
 export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_PUBLICSHARE_DIR="$XDG_DATA_HOME/Public"
+export XDG_TEMPLATES_DIR="$XDG_DATA_HOME/Templates"
 
 # shellcheck disable=SC1090 ## can't follow non-constant source.
 # shellcheck disable=SC1091 ## Not following (No such file or directory)
+# xdg-user-dirs-update changes dirs that I specify there manually?
 . "$XDG_CONFIG_HOME/user-dirs.dirs"
 
 export HISTCONTROL="ignorespace:erasedups"
