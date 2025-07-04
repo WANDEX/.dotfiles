@@ -85,6 +85,8 @@ super + F8 + {_,shift, ctrl + shift}
 	dmenu_record {kill, area, rs}
 super + F9
 	pactl set-sink-mute $SINK0 toggle; kill -43 $(pidof dwmblocks)
+super + ctrl + F9
+	pactl set-sink-mute $SINK1 toggle; kill -44 $(pidof dwmblocks)
 super + {F10,F11} + {_,shift,alt}
 	pactl set-sink-volume $SINK0 {-,+}{10,50,5}%; kill -43 $(pidof dwmblocks)
 ctrl  + {F10,F11} + {_,shift}
