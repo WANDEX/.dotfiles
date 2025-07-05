@@ -130,6 +130,8 @@ super + alt + w
 	dmenu_wm_name "SILENCE"
 super + alt + W ; {c,e,P,p,s}
 	setbg {--clear-margs,--edit,--preset -1,--preset 1,--preset 0}
+super + alt + ctrl + {z,h,k}
+	random_image ~/Wallpapers/{tnn,hnt,KuldarLeement}/ | setbg -c
 
 super + Insert
 	notify-send -u low "📋 Clipboard contents:" "\n$(xsel -bo)"
