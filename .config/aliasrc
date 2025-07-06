@@ -50,13 +50,12 @@ alias \
     glf="git log --pretty=fuller " \
     glo="git log --pretty=oneline " \
     gls="git log --stat " \
-    glc="gl --since=-1day " \
-    glcl="glc | wc -l" \
-    glp="gl --since=-2day --until=-1day " \
-    glpl="glp | wc -l" \
-    gsh="--date=short " \
-    grel="--date=relative " \
+    gsc="--since=-1day " \
+    gsp="--since=-2day --until=-1day " \
+    giso="--date=iso " \
     gloc="--date=local " \
+    grel="--date=relative " \
+    gsho="--date=short " \
     gg="--grep " \
     gall="--all-match " \
     ginv="--invert-grep " \
@@ -64,6 +63,10 @@ alias \
     gaft="--after " \
     gbef="--before " \
     gtl="git tag --list | tail -n1"
+
+alias gldl="git --no-pager log -2 --pretty=tformat:%aI" # iso-8601
+alias gldn="date --date='$(gldl | tail -n1)+1day' --iso-8601=seconds"
+alias gedate="gedate.sh '$(gldn)'"
 
 # python
 alias \
@@ -81,15 +84,15 @@ alias \
     vfu="paru -Slq | fzf -m --preview 'paru -Sii {1}' | xargs -ro echo" \
     vfp="pacman -Slq | fzf -m --preview 'pacman -Sii {1}' | xargs -ro sudo pacman -S"
 
+# shellcheck disable=2142 # Aliases can't use positional parameters. Use a function. (e2142)
 # ubuntu apt
-# remove
-alias ari="dpkg --list | fzf -m --preview 'apt-cache showpkg {1}' | awk '{print \$2}' | xargs -ro sudo apt-get purge"
-alias aRi="dpkg --list | fzf -m --preview 'apt-cache showpkg {1}' | awk '{print \$2}' | xargs -ro sudo apt-get remove"
 alias \
-    ai="sudo apt-get install" \
-    ar="sudo apt-get remove" \
-    ard="sudo apt-get purge --auto-remove" \
-    vfa="apt-cache search . | fzf -m --preview 'apt-cache showpkg {1}' | awk '{print \$1}' | xargs -ro sudo apt-get install"
+    apti="sudo apt-get install" \
+    aptr="sudo apt-get remove" \
+    aptrd="sudo apt-get purge --auto-remove" \
+    aptri="dpkg --list | fzf -m --preview 'apt-cache showpkg {1}' | awk '{print \$2}' | xargs -ro sudo apt-get purge" \
+    aptRi="dpkg --list | fzf -m --preview 'apt-cache showpkg {1}' | awk '{print \$2}' | xargs -ro sudo apt-get remove" \
+    aptvfa="apt-cache search . | fzf -m --preview 'apt-cache showpkg {1}' | awk '{print \$1}' | xargs -ro sudo apt-get install"
 
 # nvim
 alias \
