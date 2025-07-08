@@ -2,6 +2,7 @@
 *.jpg
 *.log
 *.tdb
+*.txt
 .anydesk/
 .bash_logout
 .cache/
@@ -58,3 +59,7 @@ source/
 Films
 Music
 Wallpapers
+.config/ruffle/
+.config/go/
+.steampid
+.Xauthority
