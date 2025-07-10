@@ -106,3 +106,7 @@ ftags() {
   ) && $EDITOR $(cut -f3 <<< "$line") -c "set nocst" \
                                       -c "silent tag $(cut -f2 <<< "$line")"
 }
+
+gldl()   { git --no-pager log -2 --pretty=tformat:%aI ;} # iso-8601
+gldn()   { arg="${1:-+1day}"; date --date="$(gldl | tail -n1)${arg}" --iso-8601=seconds ;}
+gedate() { arg="${1:-+1day}"; gedate.sh "$(gldn "$arg")" ;}

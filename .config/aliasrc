@@ -64,10 +64,6 @@ alias \
     gbef="--before " \
     gtl="git tag --list | tail -n1"
 
-alias gldl="git --no-pager log -2 --pretty=tformat:%aI" # iso-8601
-alias gldn="date --date='$(gldl | tail -n1)+1day' --iso-8601=seconds"
-alias gedate="gedate.sh '$(gldn)'"
-
 # python
 alias \
     calc="python3 -ic 'from math import *'" \
