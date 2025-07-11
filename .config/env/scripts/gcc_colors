@@ -15,8 +15,12 @@ else # 256color mode
 ## 130" # DarkOrange3 # 52"  # DarkRed # 131" # IndianRed  # 157" # DarkSeaGreen2
 ## 202" # OrangeRed1  # 88"  # DarkRed # 167" # IndianRed  # 158" # DarkSeaGreen1
 ## 208" # DarkOrange  # 124" # Red3    # 203" # IndianRed1 # 151" # DarkSeaGreen2
-## 209" # Salmon1     # 160" # Red3    # 204" # IndianRed1
-## 210" # LightCoral  # 196" # Red1
+## 209" # Salmon1     # 160" # Red3    # 204" # IndianRed1 # 192" # DarkOliveGreen1
+## 210" # LightCoral  # 196" # Red1    #                   # 191" # DarkOliveGreen1
+#
+## 184" # Yellow3
+## 190" # Yellow2
+## 178" # Gold3
 #
 ## 53"  # DeepPink4       # 132" # HotPink3       # 219" # Plum
 ## 89"  # DeepPink4       # 168" # HotPink3       # 224" # MistyRose
@@ -27,18 +31,20 @@ else # 256color mode
 
 f="38;5;"
 b="48;5;"
-fg74="${f}250" # Grey74
-bg35="${b}240" # Grey35
+fg62="${f}247" # Grey62
+bg23="${b}237" # Grey23
 
 _error="01;38;5;203" # IndianRed1
+# _warning="00;38;5;184" # Yellow3
+_warning="00;38;5;178" # Gold3
 _note="00;38;5;146"  # LightSteelBlue3
 
 _targs="00;38;5;131" # IndianRed # my favorite!
 
 export GCC_COLORS=\
-"error=$_error:warning=01;35:note=$_note:range1=32:range2=34:locus=02;$fg74:\
-quote=00;$bg35:path=01;36:fixit-insert=32:fixit-delete=31:\
+"error=$_error:warning=$_warning:note=$_note:range1=32:range2=34:locus=02;$fg62:\
+quote=00;$bg23:path=01;36:fixit-insert=32:fixit-delete=31:\
 diff-filename=01:diff-hunk=32:diff-delete=31:diff-insert=32:\
-type-diff=01;32:fnname=07;$fg74:targs=$_targs:valid=01;31:invalid=01;32\
+type-diff=01;32:fnname=07;$fg62:targs=$_targs:valid=01;31:invalid=01;32\
 highlight-a=01;32:highlight-b=01;34"
 fi
