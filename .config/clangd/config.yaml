@@ -2,3 +2,11 @@ Hover:
   ShowAKA: Yes
 Diagnostics:
   UnusedIncludes: Strict
+CompileFlags:
+  Add: -Wno-unknown-warning-option
+  Remove: [-m*, -f*] # suppress [drv_unknown_argument]
+
+## https://github.com/clangd/clangd/issues/662 [drv_unknown_argument]
+# 1. clang: Unknown argument: '-mno-direct-extern-access' [drv_unknown_argument]
+# 2. clang: Unknown argument: '-fdiagnostics-urls=always' [drv_unknown_argument]
+# 3. clang: Unknown argument: '-fdiagnostics-generate-patch' [drv_unknown_argument]
