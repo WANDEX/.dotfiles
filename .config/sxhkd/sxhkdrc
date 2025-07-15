@@ -1,9 +1,8 @@
-#             __   __      __
-#   _____ __ / /  / /_____/ /_______
-#  (_-<\ \ // _ \/  '_/ _  / __/ __/
-# /___/_\_\/_//_/_/\_\\_,_/_/  \__/
+##             __   __      __
+##   _____ __ / /  / /_____/ /_______
+##  (_-<\ \ // _ \/  '_/ _  / __/ __/
+## /___/_\_\/_//_/_/\_\\_,_/_/  \__/
 
-# basic binds
 super + Return
 	$TERMINAL
 super + shift + Return
@@ -63,7 +62,7 @@ super + alt + grave
 super + alt + ctrl + 1
 	mouse_move.sh && xdotool click 1
 
-# media keys
+## media keys
 XF86Audio{Prev,Next}
 	mpc {prev,next}
 XF86Audio{Prev,Next} + {alt, ctrl, shift}
@@ -75,9 +74,9 @@ XF86AudioMute
 XF86Audio{Lower,Raise}Volume
 	mpc volume {-,+}5 && dunst_mpc_volume.sh
 
-# function keys
+## function keys
 super + alt + {F8,F9,F10,F11}
-    mpc {stop,toggle,prev,next}; kill -43 $(pidof dwmblocks)
+	mpc {stop,toggle,prev,next}; kill -43 $(pidof dwmblocks)
 
 super + {_,shift} + F4
 	mpvu -q {b,s}
@@ -98,7 +97,7 @@ super + ctrl + shift + F12
 ctrl + {_,shift} + F12
 	{set_black,echo "" > "$CSCRDIR/bar/music-web"; kill -46 $(pidof dwmblocks)}
 
-# screenshots: selection, window, window with imagemagick processing
+## screenshots: selection, window, window with imagemagick processing
 Print
 	maim -u -s | xclip -selection clipboard -t image/png
 shift + Print
@@ -110,11 +109,11 @@ super + shift + Print
 super + ctrl + shift + Print
 	maim -qus ~/Downloads/Pictures/tool/zoom.png && sxiv -qbfps f ~/Downloads/Pictures/tool/zoom.png
 
-# crop-slides creation mode
+## crop-slides creation mode
 super + ctrl + {_,alt} + Print
 	dp="$HOME/Downloads/Pictures/tool/slides/$(date --rfc-3339=date)"; mkdir -p "$dp"; \
 	fn="$(date +%s).png"; fp="$dp/$fn"; \
-    maim -qus "$fp" && \
+	maim -qus "$fp" && \
 	notify-send -u low "SLIDE: $fn" "created"; \
 	{_, sxiv -qbps f "$fp" }
 
@@ -131,11 +130,11 @@ super + alt + w
 super + alt + W ; {c,e,P,p,s}
 	setbg {--clear-margs,--edit,--preset -1,--preset 1,--preset 0}
 super + alt + ctrl + {z,h,k}
-	random_image ~/Wallpapers/{tnn,hnt,KuldarLeement}/ | setbg -c
+	random_image ~/Wallpapers/{tnn,hnt,kuldarleement}/ | setbg -c
 
 super + Insert
 	notify-send -u low "📋 Clipboard contents:" "\n$(xsel -bo)"
-# remove everything after '&' character and get clean url back to clipboard
+## remove everything after '&' character and get clean url back to clipboard
 super + shift + Insert
 	xsel -bo | sed "s/[&].*$//" | xsel -bi && notify-send "📋 clean url in clipboard:" "\n$(xsel -bo)\n"
 super + ctrl + Insert
@@ -143,7 +142,7 @@ super + ctrl + Insert
 super + alt + Insert
 	xsel -bo | sed "s/[#].*$//" | xsel -bi && notify-send "📋 clean url in clipboard:" "\n$(xsel -bo)\n"
 
-# PageUp/PageDown
+## PageUp/PageDown
 super + alt + Prior
 	xsel -bo | tr "[:lower:]" "[:upper:]" | xsel -bi && notify-send "📋 to UPPER case:" "\n$(xsel -bo)\n"
 super + alt + Next
@@ -161,3 +160,4 @@ super + alt + ctrl + shift + M
 super + alt + ctrl + shift + J
 	mpv "https://www.twitch.tv/virtualjapan"
 
+## vim: set ft=sxhkd noet ts=4 sw=4 sts=4:
